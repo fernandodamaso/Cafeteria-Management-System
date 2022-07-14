@@ -14,3 +14,8 @@
     margin-bottom: 24px;
   }
 }
+
+.tableScroll {
+  height: calc(80vh - 105px);
+  overflow-y: scroll;
+}

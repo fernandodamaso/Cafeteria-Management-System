@@ -83,7 +83,7 @@ a {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 4px 24px #22292f12;
-overflow: hidden;
+  overflow: hidden;
   .filtros {
     display: flex;
     justify-content: space-between;
@@ -117,7 +117,7 @@ overflow: hidden;
 }
 
 .alignRight {
-text-align: right;
+  text-align: right;
 }
 
 .tableScroll {
@@ -138,16 +138,21 @@ table {
       text-align: left;
       padding: 12px 20px;
     }
-  }
-
-  tr {
     &:nth-child(odd) {
-    background-color: #F8F9FA;
+      background-color: #f8f9fa;
     }
     td {
+      cursor: pointer;
       padding: 12px 20px;
       font-family: "Montserrat", sans-serif;
       color: $corTexto;
+      transition: all ease-in-out 0.1s;
+    }
+    &:hover {
+      td {
+        background-color: $azul;
+        color: #fff;
+      }
     }
   }
 }
@@ -160,42 +165,41 @@ table {
   padding: 5px 10px;
 
   &.tipoAcai {
-    background-color: #E1DEFE;
-    color: #776BF1;
+    background-color: #e1defe;
+    color: #776bf1;
   }
 
   &.tipoDoce {
-    background-color: #EFE5D7;
+    background-color: #efe5d7;
     color: #806551;
   }
   &.tipoBebida {
-    background-color: #DDEEF9;
-    color: #3498DB;
+    background-color: #ddeef9;
+    color: #3498db;
   }
   &.tipoSalgado {
-    background-color: #FFEDDB;
-    color: #FF9F43;
+    background-color: #ffeddb;
+    color: #ff9f43;
   }
 
   &.grauQM {
     background-color: #e5f8ed;
-    color: #3ABF75;
+    color: #3abf75;
   }
   &.grauCDC {
     background-color: #ddeef9;
-    color: #3498DB;
+    color: #3498db;
   }
   &.grauCI {
     background-color: #ffeddb;
-    color: #FF9F43;
+    color: #ff9f43;
   }
   &.grauQS {
     background-color: #f4eafd;
-    color: #996FC2;
-
+    color: #996fc2;
   }
   &.grauVI {
     background-color: #eef2f6;
-    color: #5E5873;
+    color: #5e5873;
   }
 }

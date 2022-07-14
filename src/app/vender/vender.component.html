@@ -4,9 +4,14 @@
     <a>Editar</a>
   </div>
   <div class="filtros">
-    <input type="text" placeholder="Busca por nome" />
-    <select name="grau" title="Filtro por Grau">
-      <option value="">Grau</option>
+    <input type="text" placeholder="Busca por nome" [(ngModel)]="filterSocios" />
+    <select name="grau" title="Filtro por Grau" [(ngModel)]="filterGrau">
+      <option value="">Filtro por Grau</option>
+      <option value="VI">Visitante</option>
+      <option value="QS">Quadro de Sócio</option>
+      <option value="CI">Corpo Instrutivo</option>
+      <option value="CDC">Corpo do Conselho</option>
+      <option value="QM">Quadro de Mestre</option>
     </select>
   </div>
   <div class="tableScroll">
@@ -20,7 +25,7 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let socio of dataSocios">
+        <tr *ngFor="let socio of dataSocios | buscaPalavras: filterSocios | buscaGrau: filterGrau">
           <td>
             <span
               [ngClass]="{
@@ -49,9 +54,10 @@
     <a>Editar</a>
   </div>
   <div class="filtros">
-    <input type="text" placeholder="Busca por nome" />
-    <select name="tipo" title="Filtro por Tipo">
-      <option value="">Tipo</option>
+    <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
+    <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
+      <option value="">Filtro por Tipo</option>
+      <option value="{{ produto.tipo }}" *ngFor="let produto of dataProdutos">{{ produto.tipo }}</option>
     </select>
   </div>
   <table>
@@ -60,7 +66,7 @@
       <th>NOME</th>
       <th class="alignRight">PREÇO</th>
     </tr>
-    <tr *ngFor="let produto of dataProdutos">
+    <tr *ngFor="let produto of dataProdutos | buscaPalavras: filterProdutos | buscaTipo: filterTipo">
       <td>
         <span
           [ngClass]="{

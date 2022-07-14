@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { PageEvent } from "@angular/material/paginator";
 import { startWith } from "rxjs";
-import { ProdutoModel, SocioModel } from "../_models/data.model";
+import { GrauModel, ProdutoModel, SocioModel } from "../_models/data.model";
 import { GetDataService } from "../_services/get-data.service";
 
 @Component({
@@ -14,6 +14,10 @@ export class VenderComponent implements OnInit {
 
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
+  filterSocios = "";
+  filterProdutos = "";
+  filterGrau = "";
+  filterTipo = "";
 
   ngOnInit(): void {
     this.getData();

@@ -1,19 +1,493 @@
 {
-  "posts": [
+  "graus": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "1",
+      "nome": "QM"
+    },
+    {
+      "id": "2",
+      "nome": "CI"
+    },
+    {
+      "id": "3",
+      "nome": "CDC"
+    },
+    {
+      "id": "4",
+      "nome": "QS"
+    },
+    {
+      "id": "5",
+      "nome": "VI"
     }
   ],
-  "comments": [
+
+  "historico": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "usuario": "Fernando Dâmaso",
+      "historico": "Arthur Cunha anotou: 2 paçocas, 1 açaí. total: R$ 35,00",
+      "data": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "usuario": "Fernando Dâmaso",
+      "historico": "Camila Maria pagou 32 reais. total: R$ 35,00",
+      "data": "2012-04-24T18:25:43.511Z"
+    },
+    {
+      "usuario": "Fernando Dâmaso",
+      "historico": "Isabela Sá anotou: 1 agua com gás, 3 pães de queijo, 1 brownie. total: R$ 35,00",
+      "data": "2012-04-25T18:25:43.511Z"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "produtos": [
+    { "id": 1, "nome": "Açai", "preco": 1000, "tipo": "Açai" },
+    { "id": 2, "nome": "Paçoca", "preco": 1000, "tipo": "Doce" },
+    { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+    { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+  ],
+  "socios": [
+    {
+      "nome": "Romualdo Francisco",
+      "grau": "QM",
+      "credito": 4000,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Murilo Fresco",
+      "grau": "QM",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Paulo Rocha",
+      "grau": "QM",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Plinio Ribeiro Mauro Filho",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Patrick Junior",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Maurilio Ricardo",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Jorge Peixoto",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Patrick Junior",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Jorge Peixoto",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Patrick Junior",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Romualdo Francisco",
+      "grau": "QM",
+      "credito": 4000,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Murilo Fresco",
+      "grau": "QM",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Paulo Rocha",
+      "grau": "QM",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Plinio Ribeiro Mauro Filho",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Patrick Junior",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Maurilio Ricardo",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Jorge Peixoto",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Patrick Junior",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Jorge Peixoto",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Patrick Junior",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Romualdo Francisco",
+      "grau": "QM",
+      "credito": 4000,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Murilo Fresco",
+      "grau": "QM",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Paulo Rocha",
+      "grau": "QM",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Plinio Ribeiro Mauro Filho",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Patrick Junior",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CDC",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Maurilio Ricardo",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Jorge Peixoto",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Patrick Junior",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "CI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Jorge Peixoto",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Patrick Junior",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+    {
+      "nome": "Arthur Cunha",
+      "grau": "QS",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    },
+
+    {
+      "nome": "Mario Neto",
+      "grau": "VI",
+      "credito": 0,
+      "whatsapp": "27995066670",
+      "produtosEmAberto": [
+        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
+        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+      ]
+    }
+  ]
 }
