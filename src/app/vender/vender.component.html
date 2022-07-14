@@ -1,0 +1,84 @@
+<div class="box">
+  <div class="tituloBox">
+    <h2>Lista de Sócios</h2>
+    <a>Editar</a>
+  </div>
+  <div class="filtros">
+    <input type="text" placeholder="Busca por nome" />
+    <select name="grau" title="Filtro por Grau">
+      <option value="">Grau</option>
+    </select>
+  </div>
+  <div class="tableScroll">
+    <table>
+      <thead>
+        <tr>
+          <th>GRAU</th>
+          <th>NOME</th>
+          <th class="alignRight">DÉBITO</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let socio of dataSocios">
+          <td>
+            <span
+              [ngClass]="{
+                grauQM: socio.grau === 'QM',
+                grauCDC: socio.grau === 'CDC',
+                grauCI: socio.grau === 'CI',
+                grauQS: socio.grau === 'QS',
+                grauVI: socio.grau === 'VI'
+              }"
+              class="tag"
+              >{{ socio.grau }}</span
+            >
+          </td>
+          <td>
+            <span class="nome">{{ socio.nome }}</span>
+          </td>
+          <td class="alignRight"><span class="debito">R$ 4,00</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="box">
+  <div class="tituloBox">
+    <h2>Lista de Produtos</h2>
+    <a>Editar</a>
+  </div>
+  <div class="filtros">
+    <input type="text" placeholder="Busca por nome" />
+    <select name="tipo" title="Filtro por Tipo">
+      <option value="">Tipo</option>
+    </select>
+  </div>
+  <table>
+    <tr>
+      <th>Tipo</th>
+      <th>NOME</th>
+      <th class="alignRight">PREÇO</th>
+    </tr>
+    <tr *ngFor="let produto of dataProdutos">
+      <td>
+        <span
+          [ngClass]="{
+            tipoAcai: produto.tipo === 'Açai',
+            tipoDoce: produto.tipo === 'Doce',
+            tipoBebida: produto.tipo === 'Bebida',
+            tipoSalgado: produto.tipo === 'Salgado'
+          }"
+          class="tag"
+          >{{ produto.tipo }}</span
+        >
+      </td>
+      <td>
+        <span class="nome">{{ produto.nome }}</span>
+      </td>
+      <td class="alignRight">
+        <span class="debito">{{ produto.preco }}</span>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  .box {
+    flex: 1;
+    margin: 0 10px;
+  }
+  .tituloBox {
+    h2 {
+    }
+    a {
+    }
+  }
+  .filtros {
+    margin-bottom: 24px;
+  }
+}
