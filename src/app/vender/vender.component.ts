@@ -17,6 +17,7 @@ export class VenderComponent implements OnInit {
   filterGrau = "";
   filterTipo = "";
   socioSelecionado: SocioModel;
+  produtoSelecionado: ProdutoModel;
 
   jsonDataResult: any;
 
@@ -41,7 +42,13 @@ export class VenderComponent implements OnInit {
   }
 
   pegarSocio(socio: SocioModel) {
-    console.log(socio);
     this.socioSelecionado = socio;
   }
+
+
+  pegarProduto(produto: ProdutoModel) {
+    this.produtoSelecionado = produto;
+  }
+
+
 }

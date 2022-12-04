@@ -41,3 +41,4 @@ export interface SocioModel {
   grau: GrauModel[];
   produtosEmAberto: ProdutoModel[];
 }
+

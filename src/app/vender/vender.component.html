@@ -67,7 +67,7 @@
         <th>NOME</th>
         <th class="alignRight">PREÇO</th>
       </tr>
-      <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo">
+      <tr (click)="pegarProduto(produto)" *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo">
         <td>
           <span
             [ngClass]="{
@@ -91,4 +91,4 @@
   </div>
 </div>
 
-<app-barra-venda [socioSelecionado]="socioSelecionado"></app-barra-venda>
+<app-barra-venda [socioSelecionado]="socioSelecionado" [produtoSelecionado]="produtoSelecionado"></app-barra-venda>

@@ -1,38 +1,33 @@
 <div class="layout">
   <div class="nomeSocio coluna">
     <p class="titulo">Vender Para:</p>
-    <span class="nome">{{socioSelecionadoInterno?.nome}}</span>
+    <span class="nome">{{ socioSelecionadoInterno?.nome }}</span>
     <span class="campoVazio" *ngIf="!socioSelecionadoInterno">Nenhum Sócio Selecionado</span>
   </div>
   <div class="produtos coluna">
     <p class="titulo">Produtos</p>
     <ul>
-      <li>
-        <span class="tag tipoAcai">
-          Açai 300ml
-          <span class="fechar">x</span>
-        </span>
-      </li>
-      <li>
-        <span class="tag tipoAcai">
-          Açai 300ml
-          <span class="fechar">x</span>
-        </span>
-      </li>
-      <li>
-        <span class="tag tipoAcai">
-          Açai 300ml
+      <li (click)="deletarProduto(produto)" *ngFor="let produto of produtosSelecionadosInterno">
+        <span
+          class="tag"
+          [ngClass]="{
+            tipoAcai: produto.tipo === 'Açai',
+            tipoDoce: produto.tipo === 'Doce',
+            tipoBebida: produto.tipo === 'Bebida',
+            tipoSalgado: produto.tipo === 'Salgado'
+          }">
+          {{ produto.nome }}
           <span class="fechar">x</span>
         </span>
       </li>
     </ul>
-    <p class="campoVazio" *ngIf="nenhumProdutoSelecionado">Nenhum Produto Selecionado</p>
+    <p class="campoVazio" *ngIf="produtosSelecionadosInterno.length == 0">Nenhum Produto Selecionado</p>
   </div>
-  <div class="data coluna">
+  <div class="data coluna" *ngIf="socioSelecionadoInterno">
     <label for="data">Data da compra</label>
     <input id="data" type="date" />
   </div>
-  <div class="valores coluna">
+  <div class="valores coluna" *ngIf="socioSelecionadoInterno">
     <div class="col">
       <p class="titulo">Saldo Atual</p>
       <p class="valor azul">R$ 5,00</p>
@@ -42,7 +37,7 @@
       <p class="valor verde">R$ 35,00</p>
     </div>
   </div>
-  <div class="coluna botoes">
+  <div class="coluna botoes" *ngIf="socioSelecionadoInterno">
     <button class="botao azul">Pagar Agora</button>
     <button class="botao borda" (click)="anotar()">Anotar</button>
   </div>
