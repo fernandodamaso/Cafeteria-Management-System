@@ -12,7 +12,7 @@ export class BarraVendaComponent implements OnInit {
   constructor() {}
 
   nenhumProdutoSelecionado = false;
-  socioSelecionadoInterno: any;
+  socioSelecionadoInterno: SocioModel;
 
   ngOnChanges() {
     this.socioSelecionadoInterno = this.socioSelecionado;
@@ -21,6 +21,6 @@ export class BarraVendaComponent implements OnInit {
   ngOnInit(): void {}
 
   anotar() {
-    this.socioSelecionadoInterno = undefined;
+    this.socioSelecionadoInterno = undefined!;
   }
 }
