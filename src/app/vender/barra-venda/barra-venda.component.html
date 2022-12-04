@@ -1,8 +1,8 @@
 <div class="layout">
   <div class="nomeSocio coluna">
     <p class="titulo">Vender Para:</p>
-    <span class="nome">Fernando Dâmaso</span>
-    <span class="campoVazio" *ngIf="nenhumProdutoSelecionado">Nenhum Sócio Selecionado</span>
+    <span class="nome">{{socioSelecionadoInterno?.nome}}</span>
+    <span class="campoVazio" *ngIf="!socioSelecionadoInterno">Nenhum Sócio Selecionado</span>
   </div>
   <div class="produtos coluna">
     <p class="titulo">Produtos</p>
@@ -44,6 +44,6 @@
   </div>
   <div class="coluna botoes">
     <button class="botao azul">Pagar Agora</button>
-    <button class="botao borda">Anotar</button>
+    <button class="botao borda" (click)="anotar()">Anotar</button>
   </div>
 </div>
