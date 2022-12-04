@@ -25,7 +25,7 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
+        <tr (click)="pegarSocio(socio)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
           <td>
             <span
               [ngClass]="{
@@ -90,3 +90,5 @@
     </table>
   </div>
 </div>
+
+<app-barra-venda></app-barra-venda>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { ProdutoModel, SocioModel } from "../_models/data.model";
 import { GetDataService } from "../_services/get-data.service";
 
@@ -8,7 +8,11 @@ import { GetDataService } from "../_services/get-data.service";
   styleUrls: ["./vender.component.scss"],
 })
 export class VenderComponent implements OnInit {
+  @Output() enviarSocio = new EventEmitter<any>();
+
+
   constructor(private GetDataService: GetDataService) {}
+
 
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
@@ -37,5 +41,10 @@ export class VenderComponent implements OnInit {
       error: (e) => console.error(e),
       complete: () => console.log(this.dataProdutos),
     });
+  }
+
+  pegarSocio(socio: any) {
+    console.log(socio);
+     this.enviarSocio.emit(socio);
   }
 }

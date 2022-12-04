@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { VenderComponent } from "./vender/vender.component";
+import { SocioModel } from "./_models/data.model";
 
 @Component({
   selector: "app-root",
@@ -20,5 +21,10 @@ export class AppComponent {
         animal: "panda",
       },
     });
+  }
+
+  recebeuSocio(event: any) {
+    console.log("bateu")
+    console.log(event);
   }
 }

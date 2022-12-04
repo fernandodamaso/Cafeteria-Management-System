@@ -4,9 +4,10 @@ import { VenderRoutingModule } from "./vender-routing.module";
 import { VenderComponent } from "./vender.component";
 import { FormsModule } from "@angular/forms";
 import { SharedModule } from "../_shared/shared.module";
+import { BarraVendaComponent } from "../barra-venda/barra-venda.component";
 
 @NgModule({
-  declarations: [VenderComponent],
+  declarations: [VenderComponent, BarraVendaComponent],
   imports: [CommonModule, VenderRoutingModule, FormsModule, SharedModule],
 })
 export class VenderModule {}
