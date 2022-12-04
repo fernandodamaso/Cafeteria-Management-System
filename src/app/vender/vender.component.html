@@ -15,7 +15,7 @@
     </select>
   </div>
   <div class="tableScroll">
-    <table>
+    <table class="socios">
       <thead>
         <tr>
           <th>GRAU</th>
@@ -25,19 +25,19 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let socio of dataSocios | buscaPalavras: filterSocios | buscaGrau: filterGrau">
+        <tr *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
           <td>
             <span
               [ngClass]="{
-                grauQM: socio.grau === 'QM',
-                grauCDC: socio.grau === 'CDC',
-                grauCI: socio.grau === 'CI',
-                grauQS: socio.grau === 'QS',
-                grauVI: socio.grau === 'VI'
+                grauQM: socio.grau[0].nome === 'QM',
+                grauCDC: socio.grau[0].nome === 'CDC',
+                grauCI: socio.grau[0].nome === 'CI',
+                grauQS: socio.grau[0].nome === 'QS',
+                grauVI: socio.grau[0].nome === 'VI'
               }"
-              class="tag"
-              >{{ socio.grau }}</span
-            >
+              class="tag">
+              {{ socio.grau[0].nome }}
+            </span>
           </td>
           <td>
             <span class="nome">{{ socio.nome }}</span>
@@ -60,31 +60,33 @@
       <option value="{{ produto.tipo }}" *ngFor="let produto of dataProdutos">{{ produto.tipo }}</option>
     </select>
   </div>
-  <table>
-    <tr>
-      <th>Tipo</th>
-      <th>NOME</th>
-      <th class="alignRight">PREÇO</th>
-    </tr>
-    <tr *ngFor="let produto of dataProdutos | buscaPalavras: filterProdutos | buscaTipo: filterTipo">
-      <td>
-        <span
-          [ngClass]="{
-            tipoAcai: produto.tipo === 'Açai',
-            tipoDoce: produto.tipo === 'Doce',
-            tipoBebida: produto.tipo === 'Bebida',
-            tipoSalgado: produto.tipo === 'Salgado'
-          }"
-          class="tag"
-          >{{ produto.tipo }}</span
-        >
-      </td>
-      <td>
-        <span class="nome">{{ produto.nome }}</span>
-      </td>
-      <td class="alignRight">
-        <span class="debito">{{ produto.preco }}</span>
-      </td>
-    </tr>
-  </table>
+  <div class="tableScroll">
+    <table class="produtos">
+      <tr>
+        <th>Tipo</th>
+        <th>NOME</th>
+        <th class="alignRight">PREÇO</th>
+      </tr>
+      <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo">
+        <td>
+          <span
+            [ngClass]="{
+              tipoAcai: produto.tipo === 'Açai',
+              tipoDoce: produto.tipo === 'Doce',
+              tipoBebida: produto.tipo === 'Bebida',
+              tipoSalgado: produto.tipo === 'Salgado'
+            }"
+            class="tag"
+            >{{ produto.tipo }}</span
+          >
+        </td>
+        <td>
+          <span class="nome">{{ produto.nome }}</span>
+        </td>
+        <td class="alignRight">
+          <span class="debito">{{ produto.precoVenda }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

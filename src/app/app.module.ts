@@ -9,6 +9,7 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { PagarComponent } from "./pagar/pagar.component";
 import { BarraVendaComponent } from "./barra-venda/barra-venda.component";
+import { SharedModule } from './_shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, HistoricoComponent, PagarComponent, BarraVendaComponent],
@@ -19,6 +20,7 @@ import { BarraVendaComponent } from "./barra-venda/barra-venda.component";
     MatPaginatorModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

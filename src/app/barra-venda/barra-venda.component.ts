@@ -9,6 +9,8 @@ export class BarraVendaComponent implements OnInit {
 
   constructor() { }
 
+  nenhumProdutoSelecionado = false;
+
   ngOnInit(): void {
   }
 

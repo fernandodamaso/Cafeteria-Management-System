@@ -1,32 +1,43 @@
 export interface DataModel {
-  socios:    SocioModel[];
-  produtos:  ProdutoModel[];
+  socios: SocioModel[];
+  produtos: ProdutoModel[];
   historico: HistoricoModel[];
-  Grau:      GrauModel[];
+  grau: GrauModel[];
+  categoria: categoriaModel[];
 }
 
 export interface GrauModel {
-  id:   number;
+  id: number;
+  nome: string;
+}
+export interface categoriaModel {
+  id: number;
   nome: string;
 }
 
 export interface HistoricoModel {
-  usuario:   string;
+  cliente: string;
   historico: string;
-  data:      Date;
+  data: Date;
 }
 
 export interface ProdutoModel {
-  id:    string;
-  nome:  string;
-  preco: number;
-  tipo:  string;
+  id: number;
+  nome: string;
+  precoVenda: number;
+  precoCusto: number;
+  tipo: string;
+  qtdVendas: number;
+  status: boolean;
+  categoria: categoriaModel;
 }
 
 export interface SocioModel {
-  nome:             string;
-  grau:             string;
-  credito:          number;
-  whatsapp:         string;
+  id: number;
+  nome: string;
+  telefone: string;
+  nucleo: string;
+  saldo: number;
+  grau: GrauModel[];
   produtosEmAberto: ProdutoModel[];
 }

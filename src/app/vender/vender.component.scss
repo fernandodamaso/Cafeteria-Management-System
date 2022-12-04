@@ -1,21 +1,85 @@
 :host {
   display: flex;
+
   .box {
     flex: 1;
     margin: 0 10px;
   }
+
   .tituloBox {
-    h2 {
-    }
-    a {
-    }
+    h2 {}
+
+    a {}
   }
+
   .filtros {
     margin-bottom: 24px;
   }
 }
 
 .tableScroll {
-  height: calc(80vh - 105px);
-  overflow-y: scroll;
+  height: calc(80vh - 145px);
+  overflow-y: auto;
+
+  table {
+
+    &.socios {
+      tr {
+
+        td,
+        th {
+          &:nth-child(1) {
+            flex-basis: 10%;
+
+          }
+
+          &:nth-child(2) {
+            flex-basis: 70%;
+
+          }
+
+          &:nth-child(3) {}
+        }
+      }
+    }
+
+    &.produtos {
+      tr {
+
+        td,
+        th {
+          &:nth-child(1) {
+            flex-basis: 13%;
+
+          }
+
+          &:nth-child(2) {
+            flex-basis: 68%;
+
+          }
+
+          &:nth-child(3) {}
+        }
+      }
+    }
+
+    tr {
+      display: flex;
+
+      td,
+      th {
+        display: flex;
+        align-items: center;
+
+        &:nth-child(1) {}
+
+        &:nth-child(2) {}
+
+        &:nth-child(3) {
+          flex-basis: 20%;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
 }

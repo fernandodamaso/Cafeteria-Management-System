@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { SocioModel } from "../_models/data.model";
+import { SocioModel } from "src/app/_models/data.model";
 
 @Pipe({
   name: "buscaGrau",

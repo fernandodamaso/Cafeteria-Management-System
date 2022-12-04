@@ -1,15 +1,12 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-
 import { VenderRoutingModule } from "./vender-routing.module";
 import { VenderComponent } from "./vender.component";
-import { BuscaPalavrasPipe } from "../buscaPalavrasPipe/busca-palavras.pipe";
 import { FormsModule } from "@angular/forms";
-import { BuscaGrauPipe } from "../buscaGrauPipe/busca-grau.pipe";
-import { buscaTipoPipe } from "../buscaTipoProdutoPipe/busca-tipo-produto.pipe";
+import { SharedModule } from "../_shared/shared.module";
 
 @NgModule({
-  declarations: [VenderComponent, BuscaPalavrasPipe, BuscaGrauPipe, buscaTipoPipe],
-  imports: [CommonModule, VenderRoutingModule, FormsModule],
+  declarations: [VenderComponent],
+  imports: [CommonModule, VenderRoutingModule, FormsModule, SharedModule],
 })
 export class VenderModule {}

@@ -1,7 +1,31 @@
-<ul>
-  <li *ngFor="let socio of dataSocios">
-    {{ socio.nome }}
-    {{ socio.grau }}
-    {{ socio.whatsapp }}
-  </li>
-</ul>
+<div class="box">
+  <div class="tituloBox">
+    <h2>Lista de Sócios</h2>
+  </div>
+
+  <div class="filtros">
+    <input type="text" placeholder="Busca por nome" [(ngModel)]="filterSocios" />
+    <select name="grau" title="Filtro por Grau" [(ngModel)]="filterGrau">
+      <option value="">Filtro por Grau</option>
+      <option value="VI">Visitante</option>
+      <option value="QS">Quadro de Sócio</option>
+      <option value="CI">Corpo Instrutivo</option>
+      <option value="CDC">Corpo do Conselho</option>
+      <option value="QM">Quadro de Mestre</option>
+    </select>
+    <select name="grau" title="Filtro por debito">
+      <option value="#">Sócios com valor em aberto</option>
+      <option value="#">Todos os sócios</option>
+    </select>
+  </div>
+
+  <div class="receberWrap">
+    <ul>
+      <div *ngFor="let socio of dataSocios | buscaPalavras: filterSocios">
+        {{ socio.nome }}
+        {{ socio.grau }}
+        {{ socio.whatsapp }}
+      </div>
+    </ul>
+  </div>
+</div>

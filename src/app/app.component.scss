@@ -4,38 +4,54 @@ header {
   color: #3498DB;
   margin-bottom: 35px;
   box-shadow: 0px 4px 24px #22292F12;
+
   .layout {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     h2 {
       span {
         color: #3498DB;
         font-size: 17px;
+
         &:before {
           height: 23px;
           width: 1px;
           display: inline-block;
           content: " ";
+          background-color: #C4C4C4;
+          margin-left: 8px;
+          margin-right: 15px;
+          position: relative;
+          top: 5px;
         }
       }
     }
+
     nav {
       ul {
         li {
           padding: 0 5px;
           display: inline-block;
+
           a {
             padding: 8px 20px;
             border-radius: 5px;
-            transition: all;
+            transition: all ease-in-out 0.15s;
+            background: rgb(255, 255, 255);
+            box-shadow: 0px 1px 6px #3498db00;
+
             &.active {
               color: #fff;
-              background: rgb(52,152,219);
-              background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgba(81,176,241,1) 100%);
+              background: rgb(52, 152, 219);
+              box-shadow: 0px 1px 6px #3498DB47;
             }
+
             &:hover {
-              background-color: #F4F5F7;;
+              color: #fff;
+              background: rgb(52, 152, 219);
+              box-shadow: 0px 1px 6px #3498DB47;
             }
           }
         }

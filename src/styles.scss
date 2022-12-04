@@ -15,6 +15,15 @@ body {
   background-color: #f4f5f7;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  outline: none;
+}
+
 p,
 li,
 a {
@@ -49,6 +58,7 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
 }
@@ -70,8 +80,8 @@ select {
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 10px;
-  &[type="text"] {
-  }
+
+  &[type="text"] {}
 }
 
 a {
@@ -84,18 +94,22 @@ a {
   border-radius: 10px;
   box-shadow: 0px 4px 24px #22292f12;
   overflow: hidden;
+
   .filtros {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+
     input,
     select {
       flex: 1;
       margin: 0 7px;
+
       &:first-child {
         margin-left: 0;
       }
+
       &:last-child {
         margin-right: 0;
       }
@@ -109,10 +123,10 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    h2 {
-    }
-    a {
-    }
+
+    h2 {}
+
+    a {}
   }
 }
 
@@ -127,6 +141,7 @@ a {
 table {
   width: 100%;
   border-collapse: collapse;
+
   tr {
     th {
       padding: 12px 0;
@@ -138,9 +153,11 @@ table {
       text-align: left;
       padding: 12px 20px;
     }
+
     &:nth-child(odd) {
       background-color: #f8f9fa;
     }
+
     td {
       cursor: pointer;
       padding: 12px 20px;
@@ -148,6 +165,7 @@ table {
       color: $corTexto;
       transition: all ease-in-out 0.1s;
     }
+
     &:hover {
       td {
         background-color: $azul;
@@ -163,43 +181,220 @@ table {
   border-radius: 5px;
   border-radius: 5px;
   padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .fechar {
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-left: 10px;
+    line-height: 12px;
+    cursor: pointer;
+    transition: background ease-in-out 0.15s;
+  }
 
   &.tipoAcai {
     background-color: #e1defe;
     color: #776bf1;
+
+    &:hover {
+      .fechar {
+        color: #e1defe;
+        background-color: #776bf1;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
   }
 
   &.tipoDoce {
     background-color: #efe5d7;
     color: #806551;
+
+    &:hover {
+      .fechar {
+        color: #efe5d7;
+        background-color: #806551;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
   }
+
   &.tipoBebida {
     background-color: #ddeef9;
     color: #3498db;
+
+    &:hover {
+      .fechar {
+        color: #ddeef9;
+        background-color: #3498db;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
   }
+
   &.tipoSalgado {
     background-color: #ffeddb;
     color: #ff9f43;
+
+    &:hover {
+      .fechar {
+        color: #ffeddb;
+        background-color: #ff9f43;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
   }
 
   &.grauQM {
     background-color: #e5f8ed;
     color: #3abf75;
+
+    &:hover {
+      .fechar {
+        color: #e5f8ed;
+        background-color: #3abf75;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
   }
+
   &.grauCDC {
     background-color: #ddeef9;
     color: #3498db;
+
+    &:hover {
+      .fechar {
+        color: #ddeef9;
+        background-color: #3498db;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
   }
+
   &.grauCI {
     background-color: #ffeddb;
     color: #ff9f43;
+
+    &:hover {
+      .fechar {
+        color: #ffeddb;
+        background-color: #ff9f43;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
   }
+
   &.grauQS {
     background-color: #f4eafd;
     color: #996fc2;
+
+    &:hover {
+      .fechar {
+        color: #f4eafd;
+        background-color: #996fc2;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
   }
+
   &.grauVI {
     background-color: #eef2f6;
     color: #5e5873;
+
+    &:hover {
+      .fechar {
+        color: #eef2f6;
+        background-color: #5e5873;
+      }
+    }
+
+    .fechar {
+      border: 1px solid #776bf1;
+
+
+    }
+  }
+}
+
+.botao,
+.btn {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+
+  &.solid,
+  &.azul {
+    background-color: #3498DB;
+    color: #fff;
+    transition: all ease-in-out 0.25s;
+
+    &:hover {
+      background-color: darken(#3498DB, 10%);
+    }
+  }
+
+  &.border,
+  &.borda {
+    background-color: #fff;
+    border: 2px solid #3498DB;
+    color: #3498DB;
+    transition: all ease-in-out 0.25s;
+
+    &:hover {
+      background-color: #3498DB;
+      color: #fff;
+    }
   }
 }

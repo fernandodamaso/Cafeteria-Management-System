@@ -13,6 +13,10 @@ export class ReceberComponent implements OnInit {
   constructor(private GetDataService: GetDataService, private matDialog: MatDialog) {}
 
   dataSocios: SocioModel[] = [];
+  filterSocios = "";
+  filterProdutos = "";
+  filterGrau = "";
+  filterTipo = "";
 
   ngOnInit(): void {
     this.getData();
