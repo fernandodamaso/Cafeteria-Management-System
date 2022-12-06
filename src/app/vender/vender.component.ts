@@ -18,10 +18,9 @@ export class VenderComponent implements OnInit {
   filterGrau = "";
   filterTipo = "";
   socioSelecionado: SocioModel;
-  produtoSelecionado: ProdutoModel;
   jsonDataResult: any;
 
-  eventsSubject2: Subject<ProdutoModel> = new Subject();
+  produtoSelecionado: Subject<ProdutoModel> = new Subject();
 
 
   ngOnInit(): void {
@@ -49,8 +48,7 @@ export class VenderComponent implements OnInit {
   }
 
   pegarProduto(produto: ProdutoModel) {
-    this.produtoSelecionado = produto;
-    this.eventsSubject2.next(produto);
+    this.produtoSelecionado.next(produto);
   }
 
 

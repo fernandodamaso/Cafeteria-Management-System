@@ -17,7 +17,7 @@ export class BarraVendaComponent implements OnInit {
   }
 
   @Input()
-  set events(val: Subject<ProdutoModel>) {
+  set produtoSelecionado(val: Subject<ProdutoModel>) {
     this._val = val;
   }
 
