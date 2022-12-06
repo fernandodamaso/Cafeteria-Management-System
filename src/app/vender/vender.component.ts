@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Subject } from 'rxjs';
 import { ProdutoModel, SocioModel } from "../_models/data.model";
 import { GetDataService } from "../_services/get-data.service";
 
@@ -18,8 +19,10 @@ export class VenderComponent implements OnInit {
   filterTipo = "";
   socioSelecionado: SocioModel;
   produtoSelecionado: ProdutoModel;
-
   jsonDataResult: any;
+
+  eventsSubject2: Subject<ProdutoModel> = new Subject();
+
 
   ngOnInit(): void {
     this.getData();
@@ -45,9 +48,9 @@ export class VenderComponent implements OnInit {
     this.socioSelecionado = socio;
   }
 
-
   pegarProduto(produto: ProdutoModel) {
     this.produtoSelecionado = produto;
+    this.eventsSubject2.next(produto);
   }
 
 

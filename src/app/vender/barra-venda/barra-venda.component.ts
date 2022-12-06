@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, SimpleChanges } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { Subject, Subscription } from 'rxjs';
 import { ProdutoModel, SocioModel } from "src/app/_models/data.model";
 
 @Component({
@@ -14,12 +15,10 @@ export class BarraVendaComponent implements OnInit {
   set socioSelecionado(value: SocioModel) {
     this.socioSelecionadoInterno = value;
   }
+
   @Input()
-  set produtoSelecionado(value: ProdutoModel) {
-    if (value) {
-      console.log("tem");
-      this.produtosSelecionadosInterno.push(value);
-    }
+  set events(val: Subject<ProdutoModel>) {
+    this._val = val;
   }
 
   constructor() {}
@@ -27,17 +26,14 @@ export class BarraVendaComponent implements OnInit {
   nenhumProdutoSelecionado = false;
   socioSelecionadoInterno: SocioModel;
   produtosSelecionadosInterno: ProdutoModel[] = [];
+  _val: Subject<ProdutoModel> = new Subject();
 
-  // ngOnChanges() {
-  //   this.socioSelecionadoInterno = this.socioSelecionado;
-  //   this.produtosSelecionados = this.produtoSelecionado;
-  // }
-
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log(changes["socioSelecionado"])
-  // }
-
-  ngOnInit(): void {}
+  eventsSubscription: Subscription;
+  ngOnInit() {
+    this.eventsSubscription = this._val.subscribe((x) => {
+      console.log("event received", x);
+    });
+  }
 
   anotar() {
     this.socioSelecionadoInterno = undefined!;
@@ -46,6 +42,6 @@ export class BarraVendaComponent implements OnInit {
 
   deletarProduto(produto: any) {
     console.log(produto);
-    this.produtosSelecionadosInterno.splice(produto, 1)
+    this.produtosSelecionadosInterno.splice(produto, 1);
   }
 }
