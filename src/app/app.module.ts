@@ -8,20 +8,13 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { PagarComponent } from "./pagar/pagar.component";
-import { SharedModule } from './_shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, HistoricoComponent, PagarComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MatPaginatorModule,
-    MatDialogModule,
-    BrowserAnimationsModule,
-    SharedModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule],
+
   providers: [],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -23,21 +23,25 @@
     </ul>
     <p class="campoVazio" *ngIf="produtosSelecionadosInterno.length == 0">Nenhum Produto Selecionado</p>
   </div>
-  <div class="data coluna" *ngIf="socioSelecionadoInterno">
+  <div class="data coluna" *ngIf="socioSelecionadoInterno ||  produtosSelecionadosInterno.length > 0">
     <label for="data">Data da compra</label>
-    <input id="data" type="date" />
+    <mat-form-field appearance="outline" color="#3498db">
+      <input [formControl]="date" matInput [matDatepicker]="picker" (dateInput)="addEvent($event)">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
   </div>
-  <div class="valores coluna" *ngIf="socioSelecionadoInterno">
+  <div class="valores coluna" *ngIf="socioSelecionadoInterno || produtosSelecionadosInterno.length > 0">
     <div class="col">
       <p class="titulo">Saldo Atual</p>
-      <p class="valor azul">R$ 5,00</p>
+      <p class="valor azul">R$ 0,00</p>
     </div>
     <div class="col">
       <p class="titulo">Valor Total</p>
-      <p class="valor verde">R$ 35,00</p>
+      <p class="valor verde">R$ 0,00</p>
     </div>
   </div>
-  <div class="coluna botoes" *ngIf="socioSelecionadoInterno">
+  <div class="coluna botoes" *ngIf="socioSelecionadoInterno || produtosSelecionadosInterno.length > 0">
     <button class="botao azul">Pagar Agora</button>
     <button class="botao borda" (click)="anotar()">Anotar</button>
   </div>

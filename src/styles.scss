@@ -394,3 +394,65 @@ table {
     }
   }
 }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-infix {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  border: 0 !important;
+}
+
+.mat-form-field-flex {
+
+  padding-top: 4px !important;
+  background-color: #fff !important;
+  // border: 1px solid #d5d9e1;
+  color: #5e5873;
+  border-radius: 5px;
+}
+
+.mat-form-field-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.mat-form-field {
+  padding-top: 0;
+
+  input {}
+
+  mat-datepicker-toggle {
+    position: absolute;
+    top: -2px;
+    right: -10px;
+  }
+
+  mat-datepicker {}
+}
+
+.mat-icon-button {
+  width: 30px;
+  height: 30px;
+}
+
+.mat-ripple,
+.mat-button-focus-overlay {
+  display: none !important;
+}
+
+.mat-body, .mat-body-1, .mat-typography .mat-body, .mat-typography .mat-body-1, .mat-typography {
+  font-family: "Montserrat", sans-serif!important;
+  color: #5e5873!important;
+  font-size: 14px!important;
+  font-weight: 400!important;
+}

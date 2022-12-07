@@ -21,7 +21,7 @@
 
   <div class="receberWrap">
     <ul>
-      <div *ngFor="let socio of dataSocios | buscaPalavras: filterSocios">
+      <div *ngFor="let socio of dataSocios | buscaPalavras : filterSocios">
         {{ socio.nome }}
         {{ socio.grau }}
         {{ socio.whatsapp }}

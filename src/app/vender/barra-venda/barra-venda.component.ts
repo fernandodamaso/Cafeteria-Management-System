@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Subject, Subscription } from 'rxjs';
+import { FormControl } from "@angular/forms";
+import { MatDatepickerInputEvent } from "@angular/material/datepicker";
+import { Subject, Subscription } from "rxjs";
 import { ProdutoModel, SocioModel } from "src/app/_models/data.model";
 
 @Component({
@@ -27,11 +29,13 @@ export class BarraVendaComponent implements OnInit {
   socioSelecionadoInterno: SocioModel;
   produtosSelecionadosInterno: ProdutoModel[] = [];
   _val: Subject<ProdutoModel> = new Subject();
-
+  date = new FormControl(new Date());
   eventsSubscription: Subscription;
+
   ngOnInit() {
-    this.eventsSubscription = this._val.subscribe((x) => {
-      console.log("event received", x);
+    this.eventsSubscription = this._val.subscribe((produto) => {
+      console.log(produto);
+      this.produtosSelecionadosInterno.push(produto);
     });
   }
 
@@ -43,5 +47,9 @@ export class BarraVendaComponent implements OnInit {
   deletarProduto(produto: any) {
     console.log(produto);
     this.produtosSelecionadosInterno.splice(produto, 1);
+  }
+
+  addEvent(event: MatDatepickerInputEvent<Date>) {
+    console.log(event.value);
   }
 }
