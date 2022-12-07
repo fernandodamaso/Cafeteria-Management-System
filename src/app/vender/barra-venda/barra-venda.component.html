@@ -7,7 +7,7 @@
   <div class="produtos coluna">
     <p class="titulo">Produtos</p>
     <ul>
-      <li (click)="deletarProduto(produto)" *ngFor="let produto of produtosSelecionadosInterno">
+      <li (click)="deletarProduto(produto)" *ngFor="let produto of listaProdutos">
         <span
           class="tag"
           [ngClass]="{
@@ -21,27 +21,27 @@
         </span>
       </li>
     </ul>
-    <p class="campoVazio" *ngIf="produtosSelecionadosInterno.length == 0">Nenhum Produto Selecionado</p>
+    <p class="campoVazio" *ngIf="listaProdutos.length == 0">Nenhum Produto Selecionado</p>
   </div>
-  <div class="data coluna" *ngIf="socioSelecionadoInterno ||  produtosSelecionadosInterno.length > 0">
+  <div class="data coluna" *ngIf="socioSelecionadoInterno ||  listaProdutos.length > 0">
     <label for="data">Data da compra</label>
-    <mat-form-field appearance="outline" color="#3498db">
+    <mat-form-field appearance="outline">
       <input [formControl]="date" matInput [matDatepicker]="picker" (dateInput)="addEvent($event)">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
-  <div class="valores coluna" *ngIf="socioSelecionadoInterno || produtosSelecionadosInterno.length > 0">
+  <div class="valores coluna" *ngIf="socioSelecionadoInterno || listaProdutos.length > 0">
     <div class="col">
       <p class="titulo">Saldo Atual</p>
-      <p class="valor azul">R$ 0,00</p>
+      <p class="valor azul">{{socioSelecionadoInterno?.saldo | currency }}</p>
     </div>
     <div class="col">
       <p class="titulo">Valor Total</p>
-      <p class="valor verde">R$ 0,00</p>
+      <p class="valor verde">R$ {{valorTotal | currency }}</p>
     </div>
   </div>
-  <div class="coluna botoes" *ngIf="socioSelecionadoInterno || produtosSelecionadosInterno.length > 0">
+  <div class="coluna botoes" *ngIf="socioSelecionadoInterno || listaProdutos.length > 0">
     <button class="botao azul">Pagar Agora</button>
     <button class="botao borda" (click)="anotar()">Anotar</button>
   </div>

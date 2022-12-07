@@ -40,10 +40,10 @@
     }
   ],
   "produtos": [
-    { "id": 1, "nome": "Açai", "preco": 1000, "tipo": "Açai" },
-    { "id": 2, "nome": "Paçoca", "preco": 1000, "tipo": "Doce" },
-    { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-    { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+    { "id": 1, "nome": "Açai", "precoVenda": 12.0, "precoCusto": 4.5, "tipo": "Açai" },
+    { "id": 2, "nome": "Paçoca", "precoVenda": 0.5, "precoCusto": 0.1, "tipo": "Doce" },
+    { "id": 3, "nome": "Agua com Gás", "precoVenda":  4.0, "precoCusto": 2.0, "tipo": "Bebida" },
+    { "id": 4, "nome": "Pão de queijo", "precoVenda": 7.0, "precoCusto": 2.5, "tipo": "Salgado" }
   ],
   "socios": [
     {
@@ -51,7 +51,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 4000,
+      "saldo": 4.0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -63,7 +63,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -75,7 +75,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -88,7 +88,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -100,7 +100,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -112,7 +112,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -124,7 +124,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -137,7 +137,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -149,7 +149,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -162,7 +162,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -174,7 +174,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -186,7 +186,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -199,7 +199,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -211,7 +211,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -223,7 +223,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 4000,
+      "saldo": 4.0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -235,7 +235,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -247,7 +247,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -260,7 +260,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -272,7 +272,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -284,7 +284,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -296,7 +296,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -309,7 +309,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -321,7 +321,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -334,7 +334,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -346,7 +346,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -358,7 +358,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -371,7 +371,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -383,7 +383,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -395,7 +395,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 4000,
+      "saldo": 4.0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -407,7 +407,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -419,7 +419,7 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -432,7 +432,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -444,7 +444,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -456,7 +456,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -468,7 +468,7 @@
       "grau": [
         {"id":1, "nome":"CDC"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -481,7 +481,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -493,7 +493,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -506,7 +506,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -518,7 +518,7 @@
       "grau": [
         {"id":1, "nome":"CI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -530,7 +530,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -543,7 +543,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -555,7 +555,7 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
@@ -568,7 +568,7 @@
       "grau": [
         {"id":1, "nome":"VI"}
       ],
-      "credito": 0,
+      "saldo": 0,
       "whatsapp": "27995066670",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },

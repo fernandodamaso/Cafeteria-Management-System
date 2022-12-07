@@ -42,7 +42,7 @@
           <td>
             <span class="nome">{{ socio.nome }}</span>
           </td>
-          <td class="alignRight"><span class="debito">R$ 4,00</span></td>
+          <td class="alignRight"><span class="debito">{{socio?.saldo | currency : 'R$' }}</span></td>
         </tr>
       </tbody>
     </table>
@@ -84,7 +84,7 @@
           <span class="nome">{{ produto.nome }}</span>
         </td>
         <td class="alignRight">
-          <span class="debito">{{ produto.precoVenda }}</span>
+          <span class="debito">{{ produto.precoVenda | currency : 'R$' }}</span>
         </td>
       </tr>
     </table>

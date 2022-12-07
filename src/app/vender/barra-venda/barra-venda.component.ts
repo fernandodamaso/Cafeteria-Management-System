@@ -10,8 +10,6 @@ import { ProdutoModel, SocioModel } from "src/app/_models/data.model";
   styleUrls: ["./barra-venda.component.scss"],
 })
 export class BarraVendaComponent implements OnInit {
-  // @Input() socioSelecionado: any;
-  // @Input() produtoSelecionado: any;
 
   @Input()
   set socioSelecionado(value: SocioModel) {
@@ -27,7 +25,9 @@ export class BarraVendaComponent implements OnInit {
 
   nenhumProdutoSelecionado = false;
   socioSelecionadoInterno: SocioModel;
-  produtosSelecionadosInterno: ProdutoModel[] = [];
+  valorTotal = 0;
+  saldoCliente = 0;
+  listaProdutos: ProdutoModel[] = [];
   _val: Subject<ProdutoModel> = new Subject();
   date = new FormControl(new Date());
   eventsSubscription: Subscription;
@@ -35,18 +35,28 @@ export class BarraVendaComponent implements OnInit {
   ngOnInit() {
     this.eventsSubscription = this._val.subscribe((produto) => {
       console.log(produto);
-      this.produtosSelecionadosInterno.push(produto);
+      this.listaProdutos.push(produto);
+      this.calcularValorTotal();
     });
+  }
+
+  calcularValorTotal() {
+    let sum: number = this.listaProdutos
+      .map((el) => el.precoVenda)
+      .reduce(function (el, el2) {
+        return el + el2;
+      });
+      this.valorTotal = sum;
   }
 
   anotar() {
     this.socioSelecionadoInterno = undefined!;
-    this.produtosSelecionadosInterno = [];
+    this.listaProdutos = [];
   }
 
   deletarProduto(produto: any) {
-    console.log(produto);
-    this.produtosSelecionadosInterno.splice(produto, 1);
+    this.listaProdutos.splice(produto, 1);
+    this.calcularValorTotal();
   }
 
   addEvent(event: MatDatepickerInputEvent<Date>) {

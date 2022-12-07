@@ -38,6 +38,7 @@ export interface SocioModel {
   telefone: string;
   nucleo: string;
   saldo: number;
+  credito: number;
   grau: GrauModel[];
   produtosEmAberto: ProdutoModel[];
 }
