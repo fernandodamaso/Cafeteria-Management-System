@@ -3,29 +3,62 @@
     <h2>Lista de Sócios</h2>
   </div>
 
-  <div class="filtros">
-    <input type="text" placeholder="Busca por nome" [(ngModel)]="filterSocios" />
-    <select name="grau" title="Filtro por Grau" [(ngModel)]="filterGrau">
-      <option value="">Filtro por Grau</option>
-      <option value="VI">Visitante</option>
-      <option value="QS">Quadro de Sócio</option>
-      <option value="CI">Corpo Instrutivo</option>
-      <option value="CDC">Corpo do Conselho</option>
-      <option value="QM">Quadro de Mestre</option>
-    </select>
-    <select name="grau" title="Filtro por debito">
-      <option value="#">Sócios com valor em aberto</option>
-      <option value="#">Todos os sócios</option>
-    </select>
+  <div class="filtrosWrap">
+    <div class="filtros">
+      <input type="text" placeholder="Busca por nome" [(ngModel)]="filterSocios" />
+      <select name="grau" title="Filtro por Grau" [(ngModel)]="filterGrau">
+        <option value="">Filtro por Grau</option>
+        <option value="VI">Visitante</option>
+        <option value="QS">Quadro de Sócio</option>
+        <option value="CI">Corpo Instrutivo</option>
+        <option value="CDC">Corpo do Conselho</option>
+        <option value="QM">Quadro de Mestre</option>
+      </select>
+      <select name="grau" title="Filtro por debito">
+        <option value="#">Sócios com valor em aberto</option>
+        <option value="#">Todos os sócios</option>
+      </select>
+    </div>
+    <div class="botoes">
+      <button class="botao azul" (click)="adicionarNovoSocio()">Adicionar novo Sócio</button>
+    </div>
   </div>
 
   <div class="receberWrap">
-    <ul>
-      <div *ngFor="let socio of dataSocios | buscaPalavras : filterSocios">
-        {{ socio.nome }}
-        {{ socio.grau }}
-        {{ socio.whatsapp }}
-      </div>
-    </ul>
+      <table class="socios">
+        <thead>
+          <tr>
+            <th>GRAU</th>
+            <th>NOME</th>
+            <th>TELEFONE</th>
+            <th>NUCLEO</th>
+            <th class="alignRight">SALDO ATUAL</th>
+            <th class="alignRight">AÇÕES</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr (click)="pegarSocio(socio)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
+            <td>
+              <span
+                [ngClass]="{
+                  grauQM: socio.grau[0].nome === 'QM',
+                  grauCDC: socio.grau[0].nome === 'CDC',
+                  grauCI: socio.grau[0].nome === 'CI',
+                  grauQS: socio.grau[0].nome === 'QS',
+                  grauVI: socio.grau[0].nome === 'VI'
+                }"
+                class="tag">
+                {{ socio.grau[0].nome }}
+              </span>
+            </td>
+            <td><span class="nome">{{ socio.nome }}</span></td>
+            <td>{{ socio.telefone }}</td>
+            <td>{{ socio.nucleo }}</td>
+            <td class="alignRight saldo" [ngClass]="{ saldoNegativo: socio.saldo < 0, saldoPositivo: socio.saldo > 0 }"><span class="debito">{{socio?.saldo | currency : 'R$' }}</span></td>
+            <td class="alignRight">ação</td>
+          </tr>
+        </tbody>
+      </table>
   </div>
 </div>

@@ -8,10 +8,11 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { PagarComponent } from "./pagar/pagar.component";
+import { NovoSocioComponent } from './novo-socio/novo-socio.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HistoricoComponent, PagarComponent],
+  declarations: [AppComponent, HistoricoComponent, PagarComponent, NovoSocioComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule],
 
   providers: [

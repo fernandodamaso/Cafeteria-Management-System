@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
@@ -20,13 +19,10 @@ $ng-cantina-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$ng-cantina-theme: mat.define-light-theme((
-  color: (
-    primary: $ng-cantina-primary,
-    accent: $ng-cantina-accent,
-    warn: $ng-cantina-warn,
-  )
-));
+$ng-cantina-theme: mat.define-light-theme((color: (primary: $ng-cantina-primary,
+        accent: $ng-cantina-accent,
+        warn: $ng-cantina-warn,
+      )));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -36,7 +32,9 @@ $ng-cantina-theme: mat.define-light-theme((
 @import "assets/normalize.css";
 
 * {
-  font-family: Montserrat /* Replace with your custom font */, sans-serif !important;
+  font-family: Montserrat
+    /* Replace with your custom font */
+    , sans-serif !important;
 }
 
 $azul: #3498db;
@@ -199,7 +197,7 @@ table {
 
     td {
       cursor: pointer;
-      padding: 12px 20px;
+      padding: 7px 20px;
       font-family: "Montserrat", sans-serif;
       color: $corTexto;
       transition: all ease-in-out 0.1s;
@@ -400,39 +398,7 @@ table {
   }
 }
 
-.botao,
-.btn {
-  font-size: 15px;
-  font-weight: 500;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border: 0;
-  cursor: pointer;
 
-  &.solid,
-  &.azul {
-    background-color: #3498DB;
-    color: #fff;
-    transition: all ease-in-out 0.25s;
-
-    &:hover {
-      background-color: darken(#3498DB, 10%);
-    }
-  }
-
-  &.border,
-  &.borda {
-    background-color: #fff;
-    border: 2px solid #3498DB;
-    color: #3498DB;
-    transition: all ease-in-out 0.25s;
-
-    &:hover {
-      background-color: #3498DB;
-      color: #fff;
-    }
-  }
-}
 
 html,
 body {
@@ -489,12 +455,156 @@ body {
   display: none !important;
 }
 
-.mat-body, .mat-body-1, .mat-typography .mat-body, .mat-typography .mat-body-1, .mat-typography {
-  font-family: "Montserrat", sans-serif!important;
-  color: #5e5873!important;
-  font-size: 14px!important;
-  font-weight: 400!important;
+.mat-body,
+.mat-body-1,
+.mat-typography .mat-body,
+.mat-typography .mat-body-1,
+.mat-typography {
+  font-family: "Montserrat", sans-serif !important;
+  color: #5e5873 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.alignRight {
+  justify-content: flex-end;
+  text-align: right !important;
+}
+
+.mat-h2,
+.mat-title,
+.mat-typography .mat-h2,
+.mat-typography .mat-title,
+.mat-typography h2 {
+  margin: 0;
+}
+
+form {
+
+  .linha,
+  .row {
+    display: flex;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .col {
+      padding: 0 5px;
+
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.NovoSocioComponent {
+  width: 100%;
+  max-width: 515px !important;
+}
+
+
+.botoes {
+
+  .botao,
+  .btn {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 13px 15px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all ease-in-out 0.25s;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.vermelho {
+      background-color: #E74C3C;
+      color: #fff;
+
+      &:hover {
+        background-color: darken(#E74C3C, 15%);
+      }
+    }
+
+    &.cinza {
+      background-color: #E7E6EC;
+      color: #828C93;
+
+      &:hover {
+        background-color: darken(#E7E6EC, 7%);
+      }
+    }
+
+    &.solid,
+    &.azul {
+      background-color: #3498DB;
+      color: #fff;
+
+
+      &:hover {
+        background-color: darken(#3498DB, 10%);
+      }
+    }
+
+    &.border,
+    &.borda {
+      background-color: #fff;
+      border: 2px solid #3498DB;
+      color: #3498DB;
+
+      &:hover {
+        background-color: #3498DB;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.mat-dialog-container {
+  padding: 0 !important;
+
+  .topo {
+    padding: 15px;
+    padding-bottom: 0;
+  }
+
+  .corpo {
+    padding: 15px;
+  }
+
+  .base {
+    margin-top: 15px;
+
+    .botoes {
+      border-top: #E0DFE5 solid 1px;
+      padding: 15px;
+      display: flex;
+
+      .botao {
+        flex: 1;
+      }
+    }
+  }
+}

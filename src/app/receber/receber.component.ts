@@ -3,6 +3,7 @@ import { SocioModel } from "../_models/data.model";
 import { GetDataService } from "../_services/get-data.service";
 import { MatDialog } from "@angular/material/dialog";
 import { VenderComponent } from "../vender/vender.component";
+import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
 
 @Component({
   selector: "app-receber",
@@ -10,6 +11,7 @@ import { VenderComponent } from "../vender/vender.component";
   styleUrls: ["./receber.component.scss"],
 })
 export class ReceberComponent implements OnInit {
+  socioSelecionado: SocioModel;
   constructor(private GetDataService: GetDataService, private matDialog: MatDialog) {}
 
   dataSocios: SocioModel[] = [];
@@ -22,6 +24,10 @@ export class ReceberComponent implements OnInit {
     this.getData();
   }
 
+  pegarSocio(socio: SocioModel) {
+    this.socioSelecionado = socio;
+  }
+
   getData() {
     this.GetDataService.getSocios().subscribe({
       next: (data) => (this.dataSocios = data),
@@ -30,7 +36,12 @@ export class ReceberComponent implements OnInit {
     });
   }
 
-  // openDialog() {
-  //   this.matDialog.open(VenderComponent);
-  // }
+  adicionarNovoSocio() {
+    this.matDialog.open(NovoSocioComponent, {
+      panelClass: "NovoSocioComponent",
+      data: {
+        animal: "panda",
+      },
+    });
+  }
 }

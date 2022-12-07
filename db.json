@@ -52,7 +52,8 @@
         {"id":1, "nome":"QM"}
       ],
       "saldo": 4.0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -63,8 +64,9 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 10.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -75,8 +77,9 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": -25,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -89,7 +92,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -101,7 +105,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -113,7 +118,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -125,7 +131,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -138,7 +145,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -149,8 +157,9 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 5.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -163,7 +172,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -175,7 +185,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -186,8 +197,9 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 5.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -200,7 +212,8 @@
         {"id":1, "nome":"QS"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -212,7 +225,8 @@
         {"id":1, "nome":"QS"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -224,7 +238,8 @@
         {"id":1, "nome":"QM"}
       ],
       "saldo": 4.0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -235,8 +250,9 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 10.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -247,8 +263,9 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": -25,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -261,7 +278,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -273,7 +291,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -285,7 +304,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -297,7 +317,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -310,7 +331,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -321,8 +343,9 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 5.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -335,7 +358,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -347,7 +371,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -358,8 +383,9 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 5.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -372,7 +398,8 @@
         {"id":1, "nome":"QS"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -384,7 +411,8 @@
         {"id":1, "nome":"QS"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -396,7 +424,8 @@
         {"id":1, "nome":"QM"}
       ],
       "saldo": 4.0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -407,8 +436,9 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 10.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -419,8 +449,9 @@
       "grau": [
         {"id":1, "nome":"QM"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": -25,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -433,7 +464,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -445,7 +477,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -457,7 +490,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -469,7 +503,8 @@
         {"id":1, "nome":"CDC"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -482,7 +517,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -493,8 +529,9 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 5.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -507,7 +544,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -519,7 +557,8 @@
         {"id":1, "nome":"CI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -530,8 +569,9 @@
       "grau": [
         {"id":1, "nome":"QS"}
       ],
-      "saldo": 0,
-      "whatsapp": "27995066670",
+      "saldo": 5.0,
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -544,7 +584,8 @@
         {"id":1, "nome":"QS"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -556,7 +597,8 @@
         {"id":1, "nome":"QS"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
@@ -569,7 +611,8 @@
         {"id":1, "nome":"VI"}
       ],
       "saldo": 0,
-      "whatsapp": "27995066670",
+      "telefone": "27995066670",
+      "nucleo": "Gaspar",
       "produtosEmAberto": [
         { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
         { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }

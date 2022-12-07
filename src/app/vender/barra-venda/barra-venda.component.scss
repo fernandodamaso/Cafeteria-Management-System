@@ -65,7 +65,8 @@
 
     &.data {
       flex-basis: 11%;
-padding-left: 20px;
+      padding-left: 20px;
+
       label {
         display: block;
         margin-bottom: 5px;
@@ -109,7 +110,11 @@ padding-left: 20px;
           font-weight: 600;
           font-size: 20px;
 
-          &.azul {
+          &.saldoNegativo {
+            color: #cc2424;
+          }
+
+          &.saldoPositivo {
             color: #3498DB;
           }
 

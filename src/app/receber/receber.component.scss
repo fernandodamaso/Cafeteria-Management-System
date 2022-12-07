@@ -1,17 +1,64 @@
 :host {
   display: flex;
-  .box {
-    flex: 1;
-    margin: 0 10px;
-  }
-  .tituloBox {
-    h2 {
-    }
-    a {
-    }
-  }
+}
+
+.box {
+  flex: 1;
+  margin: 0 10px;
+  margin-bottom: 50px;
+
+}
+
+.filtrosWrap {
+  margin-bottom: 24px;
+  display: flex;
+
   .filtros {
-    margin-bottom: 24px;
-    max-width: 900px;
+    flex: 1.5;
+  }
+
+  .botoes {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+}
+
+.saldo {
+  &.saldoNegativo {
+    color: #ff0909;
+  }
+
+  &.saldoPositivo {
+    color: #3498DB;
+  }
+}
+
+table {
+  position: relative;
+
+  tr {
+    display: flex;
+
+    td,
+    th {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    td,
+    th {
+      &:nth-child(1) {
+        flex-basis: 10%;
+        max-width: 50px;
+      }
+
+      &:nth-child(6) {
+        max-width: 50px;
+      }
+    }
   }
 }
