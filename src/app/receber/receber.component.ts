@@ -39,8 +39,17 @@ export class ReceberComponent implements OnInit {
   adicionarNovoSocio() {
     this.matDialog.open(NovoSocioComponent, {
       panelClass: "NovoSocioComponent",
+      // data: {
+      //   animal: "panda",
+      // },
+    });
+  }
+
+  editarSocio(socio: SocioModel) {
+    this.matDialog.open(NovoSocioComponent, {
+      panelClass: "NovoSocioComponent",
       data: {
-        animal: "panda",
+        socioData: socio,
       },
     });
   }

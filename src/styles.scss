@@ -206,7 +206,7 @@ table {
     &:hover {
       td {
         background-color: $azul;
-        color: #fff;
+        color: #fff !important;
       }
     }
   }
@@ -606,5 +606,14 @@ form {
         flex: 1;
       }
     }
+  }
+}
+
+.mat-menu-content {
+  padding: 0 !important;
+
+  button {
+    line-height: 38px !important;
+    height: 38px !important;
   }
 }

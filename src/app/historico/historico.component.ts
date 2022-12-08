@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HistoricoModel } from '../_models/data.model';
 import { GetDataService } from '../_services/get-data.service';
 

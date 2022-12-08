@@ -6,26 +6,31 @@
   <form action="">
     <div class="linha">
       <div class="col">
-        <label for="">Nome</label>
-        <input type="text" />
+        <label for="Nome">Nome</label>
+        <input [(ngModel)]="nome" id="Nome" name="Nome" title="Nome" type="text" />
       </div>
       <div class="col">
-        <label for="">Telefone</label>
-        <input type="tel" />
-      </div>
-    </div>
-    <div class="linha">
-      <div class="col">
-        <label for="">Núcleo</label>
-        <input type="text" />
+        <label for="Telefone">Telefone</label>
+        <input [(ngModel)]="telefone" id="Telefone" name="Telefone" title="Telefone" type="tel" />
       </div>
     </div>
     <div class="linha">
       <div class="col">
-        <label for="">Núcleo</label>
-        <select name="" id="">
-          <option value="">Escolher</option>
+        <label for="Grau">grau</label>
+        <select name="grau" title="Grau" [(ngModel)]="grau">
+          <option value="">Grau</option>
+          <option value="VI">Visitante</option>
+          <option value="QS">Quadro de Sócio</option>
+          <option value="CI">Corpo Instrutivo</option>
+          <option value="CDC">Corpo do Conselho</option>
+          <option value="QM">Quadro de Mestre</option>
         </select>
+      </div>
+    </div>
+    <div class="linha">
+      <div class="col">
+        <label for="nucleo">Núcleo</label>
+        <input [(ngModel)]="nucleo" id="nucleo" name="nucleo" title="nucleo" type="tel" />
       </div>
     </div>
   </form>
@@ -33,7 +38,7 @@
 <div class="base">
   <div class="botoes">
     <button class="botao cinza">Cancelar</button>
-    <button class="botao vermelho">Deletar</button>
+    <button *ngIf="editar" class="botao vermelho">Deletar</button>
     <button class="botao azul">Salvar</button>
   </div>
 </div>

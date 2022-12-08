@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
+import { HistoricoComponent } from "./historico/historico.component";
 import { VenderComponent } from "./vender/vender.component";
 import { SocioModel } from "./_models/data.model";
 
@@ -9,22 +10,8 @@ import { SocioModel } from "./_models/data.model";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor() {}
 
   ngOnInit() {}
 
-  animal = "panda";
-
-  openDialog() {
-    this.dialog.open(VenderComponent, {
-      data: {
-        animal: "panda",
-      },
-    });
-  }
-
-  recebeuSocio(event: any) {
-    console.log("bateu")
-    console.log(event);
-  }
 }

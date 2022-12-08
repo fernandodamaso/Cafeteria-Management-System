@@ -25,40 +25,52 @@
   </div>
 
   <div class="receberWrap">
-      <table class="socios">
-        <thead>
-          <tr>
-            <th>GRAU</th>
-            <th>NOME</th>
-            <th>TELEFONE</th>
-            <th>NUCLEO</th>
-            <th class="alignRight">SALDO ATUAL</th>
-            <th class="alignRight">AÇÕES</th>
-          </tr>
-        </thead>
+    <table class="socios">
+      <thead>
+        <tr>
+          <th>GRAU</th>
+          <th>NOME</th>
+          <th>TELEFONE</th>
+          <th>NUCLEO</th>
+          <th class="alignRight">SALDO ATUAL</th>
+          <th class="alignRight">AÇÕES</th>
+        </tr>
+      </thead>
 
-        <tbody>
-          <tr (click)="pegarSocio(socio)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
-            <td>
-              <span
-                [ngClass]="{
-                  grauQM: socio.grau[0].nome === 'QM',
-                  grauCDC: socio.grau[0].nome === 'CDC',
-                  grauCI: socio.grau[0].nome === 'CI',
-                  grauQS: socio.grau[0].nome === 'QS',
-                  grauVI: socio.grau[0].nome === 'VI'
-                }"
-                class="tag">
-                {{ socio.grau[0].nome }}
-              </span>
-            </td>
-            <td><span class="nome">{{ socio.nome }}</span></td>
-            <td>{{ socio.telefone }}</td>
-            <td>{{ socio.nucleo }}</td>
-            <td class="alignRight saldo" [ngClass]="{ saldoNegativo: socio.saldo < 0, saldoPositivo: socio.saldo > 0 }"><span class="debito">{{socio?.saldo | currency : 'R$' }}</span></td>
-            <td class="alignRight">ação</td>
-          </tr>
-        </tbody>
-      </table>
+      <tbody>
+        <tr (click)="pegarSocio(socio)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
+          <td>
+            <span
+              [ngClass]="{
+                grauQM: socio.grau[0].nome === 'QM',
+                grauCDC: socio.grau[0].nome === 'CDC',
+                grauCI: socio.grau[0].nome === 'CI',
+                grauQS: socio.grau[0].nome === 'QS',
+                grauVI: socio.grau[0].nome === 'VI'
+              }"
+              class="tag">
+              {{ socio.grau[0].nome }}
+            </span>
+          </td>
+          <td>
+            <span class="nome">{{ socio.nome }}</span>
+          </td>
+          <td>{{ socio.telefone }}</td>
+          <td>{{ socio.nucleo }}</td>
+          <td class="alignRight saldo" [ngClass]="{ saldoNegativo: socio.saldo < 0, saldoPositivo: socio.saldo > 0 }">
+            <span class="debito">{{ socio?.saldo | currency : "R$" }}</span>
+          </td>
+          <td class="center">
+            <button title="Ações" mat-button [matMenuTriggerFor]="menu"> <img src="..\assets\acoes.png" alt="" /></button>
+            <mat-menu #menu="matMenu">
+              <button (click)="editarSocio(socio)" mat-menu-item >Editar</button>
+              <button mat-menu-item>Receber</button>
+              <button mat-menu-item>Ver Histórico</button>
+              <button mat-menu-item>Mandar Cobrança</button>
+            </mat-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
