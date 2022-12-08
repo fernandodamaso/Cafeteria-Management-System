@@ -37,12 +37,20 @@ export class ReceberComponent implements OnInit {
   }
 
   adicionarNovoSocio() {
-    this.matDialog.open(NovoSocioComponent, {
+    // this.matDialog.open(NovoSocioComponent, {
+    //   panelClass: "NovoSocioComponent",
+    // });
+
+
+    const dialogRef = this.matDialog.open(NovoSocioComponent, {
       panelClass: "NovoSocioComponent",
-      // data: {
-      //   animal: "panda",
-      // },
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.getData();
+    });
+
   }
 
   editarSocio(socio: SocioModel) {

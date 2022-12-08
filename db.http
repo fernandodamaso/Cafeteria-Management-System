@@ -1,0 +1,17 @@
+
+
+POST http://localhost:3000/socios HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "teste",
+    "grau": [
+      {
+        "nome": "QM"
+      }
+    ],
+    "saldo": 4,
+    "telefone": "27995066670",
+    "nucleo": "teste",
+    "produtosEmAberto": []
+}

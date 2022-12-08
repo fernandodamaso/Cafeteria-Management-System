@@ -6,8 +6,8 @@ export interface DataModel {
   categoria: categoriaModel[];
 }
 
-export interface GrauModel {
-  id: number;
+export class GrauModel {
+  id?: number;
   nome: string;
 }
 export interface categoriaModel {
@@ -32,7 +32,7 @@ export interface ProdutoModel {
   categoria: categoriaModel;
 }
 
-export interface SocioModel {
+export class SocioModel {
   id: number;
   nome: string;
   telefone: string;

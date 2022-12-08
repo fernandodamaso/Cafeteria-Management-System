@@ -21,7 +21,6 @@
       "nome": "VI"
     }
   ],
-
   "historico": [
     {
       "usuario": "Fernando Dâmaso",
@@ -40,583 +39,110 @@
     }
   ],
   "produtos": [
-    { "id": 1, "nome": "Açai", "precoVenda": 12.0, "precoCusto": 4.5, "tipo": "Açai" },
-    { "id": 2, "nome": "Paçoca", "precoVenda": 0.5, "precoCusto": 0.1, "tipo": "Doce" },
-    { "id": 3, "nome": "Agua com Gás", "precoVenda":  4.0, "precoCusto": 2.0, "tipo": "Bebida" },
-    { "id": 4, "nome": "Pão de queijo", "precoVenda": 7.0, "precoCusto": 2.5, "tipo": "Salgado" }
+    {
+      "id": 1,
+      "nome": "Açai",
+      "precoVenda": 12,
+      "precoCusto": 4.5,
+      "tipo": "Açai"
+    },
+    {
+      "id": 2,
+      "nome": "Paçoca",
+      "precoVenda": 0.5,
+      "precoCusto": 0.1,
+      "tipo": "Doce"
+    },
+    {
+      "id": 3,
+      "nome": "Agua com Gás",
+      "precoVenda": 4,
+      "precoCusto": 2,
+      "tipo": "Bebida"
+    },
+    {
+      "id": 4,
+      "nome": "Pão de queijo",
+      "precoVenda": 7,
+      "precoCusto": 2.5,
+      "tipo": "Salgado"
+    }
   ],
   "socios": [
     {
+      "id": 0,
       "nome": "Romualdo Francisco",
       "grau": [
-        {"id":1, "nome":"QM"}
+        {
+          "id": 1,
+          "nome": "QM"
+        }
       ],
-      "saldo": 4.0,
+      "saldo": 4,
       "telefone": "27995066670",
       "nucleo": "Gaspar",
       "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "preco": 2000,
+          "tipo": "Bebida"
+        },
+        {
+          "id": 4,
+          "nome": "Pão de queijo",
+          "preco": 30000,
+          "tipo": "Salgado"
+        }
       ]
     },
     {
-      "nome": "Murilo Fresco",
-      "grau": [
-        {"id":1, "nome":"QM"}
-      ],
-      "saldo": 10.0,
+      "nome": "Fernando Dâmaso",
+      "saldo": 4,
       "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
+      "nucleo": "dasdas",
+      "grau": [
+        {
+          "nome": "CI"
+        }
+      ],
+      "id": 1
     },
     {
-      "nome": "Paulo Rocha",
-      "grau": [
-        {"id":1, "nome":"QM"}
-      ],
-      "saldo": -25,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
+      "nome": "Viviane Rodrigues",
       "saldo": 0,
       "telefone": "27995066670",
       "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
+      "grau": [
+        {
+          "nome": "QS"
+        }
+      ],
+      "id": 2
     },
     {
-      "nome": "Plinio Ribeiro Mauro Filho",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
+      "nome": "Marina Silva",
       "saldo": 0,
-      "telefone": "27995066670",
+      "telefone": "43423432",
       "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
+      "grau": [
+        {
+          "nome": "CDC"
+        }
+      ],
+      "id": 3
     },
     {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
+      "nome": "Maurilio Souza",
+      "telefone": "34343",
+      "nucleo": "Gaspar",
       "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
       "grau": [
-        {"id":1, "nome":"CDC"}
+        {
+          "nome": "QS"
+        }
       ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Maurilio Ricardo",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Jorge Peixoto",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 5.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Jorge Peixoto",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 5.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Romualdo Francisco",
-      "grau": [
-        {"id":1, "nome":"QM"}
-      ],
-      "saldo": 4.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Murilo Fresco",
-      "grau": [
-        {"id":1, "nome":"QM"}
-      ],
-      "saldo": 10.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Paulo Rocha",
-      "grau": [
-        {"id":1, "nome":"QM"}
-      ],
-      "saldo": -25,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Plinio Ribeiro Mauro Filho",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Maurilio Ricardo",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Jorge Peixoto",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 5.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Jorge Peixoto",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 5.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Romualdo Francisco",
-      "grau": [
-        {"id":1, "nome":"QM"}
-      ],
-      "saldo": 4.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Murilo Fresco",
-      "grau": [
-        {"id":1, "nome":"QM"}
-      ],
-      "saldo": 10.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Paulo Rocha",
-      "grau": [
-        {"id":1, "nome":"QM"}
-      ],
-      "saldo": -25,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Plinio Ribeiro Mauro Filho",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"CDC"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Maurilio Ricardo",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Jorge Peixoto",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 5.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"CI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Jorge Peixoto",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 5.0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Patrick Junior",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-    {
-      "nome": "Arthur Cunha",
-      "grau": [
-        {"id":1, "nome":"QS"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
-    },
-
-    {
-      "nome": "Mario Neto",
-      "grau": [
-        {"id":1, "nome":"VI"}
-      ],
-      "saldo": 0,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        { "id": 3, "nome": "Agua com Gás", "preco": 2000, "tipo": "Bebida" },
-        { "id": 4, "nome": "Pão de queijo", "preco": 30000, "tipo": "Salgado" }
-      ]
+      "id": 4
     }
   ]
 }
