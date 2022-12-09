@@ -37,7 +37,7 @@
 </div>
 <div class="base">
   <div class="botoes">
-    <button class="botao cinza">Cancelar</button>
+    <button class="botao cinza" (click)="this.dialogRef.close()">Cancelar</button>
     <button (click)="deletarSocio()" *ngIf="editar" class="botao vermelho">Deletar</button>
     <button (click)="postData()" class="botao azul">Salvar</button>
   </div>
