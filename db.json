@@ -75,7 +75,7 @@
       "grau": [
         {
           "id": 1,
-          "nome": "QM"
+          "nome": "CDC"
         }
       ],
       "saldo": 4,
@@ -115,7 +115,7 @@
       "nucleo": "Gaspar",
       "grau": [
         {
-          "nome": "QS"
+          "nome": "CI"
         }
       ],
       "id": 2
@@ -133,8 +133,8 @@
       "id": 3
     },
     {
-      "nome": "Maurilio Souza",
-      "telefone": "34343",
+      "nome": "Samantha Medeiros",
+      "telefone": "2799950654",
       "nucleo": "Gaspar",
       "saldo": 0,
       "grau": [

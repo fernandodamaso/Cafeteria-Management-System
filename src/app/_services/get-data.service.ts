@@ -16,6 +16,14 @@ export class GetDataService {
     return this.http.post<SocioModel>("http://localhost:3000/socios", socio);
   }
 
+  editarSocio(socio: SocioModel, id: number): Observable<Object> {
+    return this.http.put<SocioModel>("http://localhost:3000/socios/" + id, socio);
+  }
+
+  deletarSocio(id: number): Observable<Object> {
+    return this.http.delete<SocioModel>("http://localhost:3000/socios/" + id);
+  }
+
   getGraus() {
     return this.http.get<GrauModel[]>("http://localhost:3000/graus");
   }

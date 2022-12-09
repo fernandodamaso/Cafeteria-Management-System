@@ -32,7 +32,6 @@ export class NovoSocioComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.socioData) {
-      this.id = this.informacoesSocio.id;
       this.nome = this.informacoesSocio.nome;
       this.telefone = this.informacoesSocio.telefone;
       this.nucleo = this.informacoesSocio.nucleo;
@@ -40,24 +39,45 @@ export class NovoSocioComponent implements OnInit {
     }
   }
 
-  postData() {
-    let novoSocio: SocioModel;
-    novoSocio = new SocioModel();
-    novoSocio.nome = this.nome;
-    novoSocio.telefone = this.telefone;
-    novoSocio.nucleo = this.nucleo;
-    novoSocio.saldo = 0;
-    novoSocio.grau = [];
-    let novoGrau: GrauModel;
-    novoGrau = {
-      nome: this.grau,
-    };
-    novoSocio.grau.push(novoGrau);
-
-    this.GetDataService.adicionarSocio(novoSocio).subscribe({
+  deletarSocio() {
+    this.GetDataService.deletarSocio(this.id).subscribe({
       next: (data) => data,
       error: (e) => console.error(e),
-      complete: () => this.dialogRef.close('Pizza!'),
+      complete: () => this.dialogRef.close("Pizza!"),
     });
+  }
+
+  postData() {
+    if (this.socioData) {
+      this.informacoesSocio.nome = this.nome;
+      this.informacoesSocio.telefone = this.telefone;
+      this.informacoesSocio.nucleo = this.nucleo;
+      this.informacoesSocio.grau[0].nome = this.grau;
+
+      this.GetDataService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
+        next: (data) => data,
+        error: (e) => console.error(e),
+        complete: () => this.dialogRef.close(),
+      });
+    } else {
+      let novoSocio: SocioModel;
+      novoSocio = new SocioModel();
+      novoSocio.nome = this.nome;
+      novoSocio.telefone = this.telefone;
+      novoSocio.nucleo = this.nucleo;
+      novoSocio.saldo = 0;
+      novoSocio.grau = [];
+      let novoGrau: GrauModel;
+      novoGrau = {
+        nome: this.grau,
+      };
+      novoSocio.grau.push(novoGrau);
+
+      this.GetDataService.adicionarSocio(novoSocio).subscribe({
+        next: (data) => data,
+        error: (e) => console.error(e),
+        complete: () => this.dialogRef.close(),
+      });
+    }
   }
 }

@@ -38,7 +38,7 @@
 <div class="base">
   <div class="botoes">
     <button class="botao cinza">Cancelar</button>
-    <button *ngIf="editar" class="botao vermelho">Deletar</button>
+    <button (click)="deletarSocio()" *ngIf="editar" class="botao vermelho">Deletar</button>
     <button (click)="postData()" class="botao azul">Salvar</button>
   </div>
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SocioModel } from "../_models/data.model";
 import { GetDataService } from "../_services/get-data.service";
-import { MatDialog } from "@angular/material/dialog";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { VenderComponent } from "../vender/vender.component";
 import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
 
@@ -37,28 +37,25 @@ export class ReceberComponent implements OnInit {
   }
 
   adicionarNovoSocio() {
-    // this.matDialog.open(NovoSocioComponent, {
-    //   panelClass: "NovoSocioComponent",
-    // });
-
-
     const dialogRef = this.matDialog.open(NovoSocioComponent, {
       panelClass: "NovoSocioComponent",
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe((result) => {
       this.getData();
     });
-
   }
 
   editarSocio(socio: SocioModel) {
-    this.matDialog.open(NovoSocioComponent, {
+    const dialogRef = this.matDialog.open(NovoSocioComponent, {
       panelClass: "NovoSocioComponent",
       data: {
         socioData: socio,
       },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getData();
     });
   }
 }
