@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { SocioModel } from "../_models/data.model";
 import { sociosService } from "../_services/socios.service";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
+import { SocioModel } from "../_models/socio.model";
 
 @Component({
   selector: "app-receber",

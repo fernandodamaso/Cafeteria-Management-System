@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Subject } from 'rxjs';
-import { ProdutoModel, SocioModel } from "../_models/data.model";
-import { GetDataService } from "../_services/get-data.service";
+import { SocioModel } from "../_models/socio.model";
+import { ProdutoModel } from "../_models/produto.model";
 import { produtosService } from "../_services/produtos.service";
 import { sociosService } from "../_services/socios.service";
 

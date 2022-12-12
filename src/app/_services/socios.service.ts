@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { SocioModel } from "../_models/data.model";
+import { SocioModel } from "../_models/socio.model";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 @Injectable({

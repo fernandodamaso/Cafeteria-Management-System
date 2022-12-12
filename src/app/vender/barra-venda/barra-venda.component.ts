@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { MatDatepickerInputEvent } from "@angular/material/datepicker";
 import { Subject, Subscription } from "rxjs";
-import { ProdutoModel, SocioModel } from "src/app/_models/data.model";
+import { SocioModel } from "src/app/_models/socio.model";
+import { ProdutoModel } from "src/app/_models/produto.model";
 
 @Component({
   selector: "app-barra-venda",

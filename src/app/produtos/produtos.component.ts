@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { Subject } from "rxjs";
 import { NovoProdutoComponent } from "../novo-produto/novo-produto.component";
-import { ProdutoModel } from "../_models/data.model";
+import { ProdutoModel } from "../_models/produto.model";
 import { produtosService } from "../_services/produtos.service";
 
 @Component({

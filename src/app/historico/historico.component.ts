@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HistoricoModel } from '../_models/data.model';
+import { HistoricoModel } from '../_models/historico.model';
 import { GetDataService } from '../_services/get-data.service';
 
 @Component({

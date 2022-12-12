@@ -35,7 +35,7 @@
     <div class="col">
       <p class="titulo">Saldo Atual</p>
       <p class="valor" [ngClass]="{ saldoNegativo: socioSelecionadoInterno.saldo < 0, saldoPositivo: socioSelecionadoInterno.saldo >= 0 }">
-        {{ socioSelecionadoInterno?.saldo | currency }}
+        {{ socioSelecionadoInterno.saldo | currency }}
       </p>
     </div>
     <div class="col">

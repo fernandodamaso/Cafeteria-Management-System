@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { GrauModel, SocioModel } from "../_models/data.model";
+import { GrauModel } from "../_models/grau.model";
+import { SocioModel } from "../_models/socio.model";
 import { sociosService } from "../_services/socios.service";
 
 export interface dialogData {
