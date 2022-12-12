@@ -1,0 +1,77 @@
+:host {
+  display: flex;
+}
+
+.box {
+  flex: 1;
+  margin: 0 10px;
+  margin-bottom: 50px;
+
+}
+
+.filtrosWrap {
+  margin-bottom: 24px;
+  display: flex;
+
+  .filtros {
+    flex: 1.5;
+  }
+
+  .botoes {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+}
+
+table {
+  position: relative;
+
+  tr {
+    display: flex;
+
+    td,
+    th {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    td,
+    th {
+      &:nth-child(1) {
+        flex-basis: 10%;
+        max-width: 50px;
+      }
+      &:last-child {
+        max-width: 50px;
+    }
+    }
+
+    .center {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      flex-direction: column;
+    }
+
+    button {
+      width: 27px;
+      height: 27px;
+      border-radius: 27px;
+      background-color: #fff;
+      border: 0;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      cursor: pointer;
+
+      img {
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+}

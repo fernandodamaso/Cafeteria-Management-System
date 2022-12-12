@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SocioModel } from "../_models/data.model";
-import { GetDataService } from "../_services/get-data.service";
+import { sociosService } from "../_services/socios.service";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
-import { VenderComponent } from "../vender/vender.component";
 import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
 
 @Component({
@@ -12,7 +11,7 @@ import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
 })
 export class ReceberComponent implements OnInit {
   socioSelecionado: SocioModel;
-  constructor(private GetDataService: GetDataService, private matDialog: MatDialog) {}
+  constructor(private sociosService: sociosService, private matDialog: MatDialog) {}
 
   dataSocios: SocioModel[] = [];
   filterSocios = "";
@@ -29,7 +28,7 @@ export class ReceberComponent implements OnInit {
   }
 
   getData() {
-    this.GetDataService.getSocios().subscribe({
+    this.sociosService.getSocios().subscribe({
       next: (data) => (this.dataSocios = data),
       error: (e) => console.error(e),
       complete: () => console.log(this.dataSocios),

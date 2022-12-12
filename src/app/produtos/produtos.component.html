@@ -1,0 +1,63 @@
+<div class="box">
+  <div class="tituloBox">
+    <h2>Lista de Produtos</h2>
+  </div>
+
+  <div class="filtrosWrap">
+    <div class="filtros">
+      <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
+      <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
+        <option value="">Filtro por Tipo</option>
+        <option value="{{ produto.tipo }}" *ngFor="let produto of dataProdutos">{{ produto.tipo }}</option>
+      </select>
+    </div>
+    <div class="botoes">
+      <button class="botao azul" (click)="adicionarProduto()">Adicionar Novo Produto</button>
+    </div>
+  </div>
+  <div class="produtosWrap">
+    <table class="produtos">
+      <tr>
+        <th>Tipo</th>
+        <th>NOME</th>
+        <th>Qtd de vendas Totais</th>
+        <th class="center">Preço de Custo</th>
+        <th class="center">Preço de venda</th>
+        <th>Ativo/Inativo</th>
+        <th>Ações</th>
+      </tr>
+      <tr (click)="pegarProduto(produto)" *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo">
+        <td>
+          <span
+            [ngClass]="{
+              tipoAcai: produto.tipo === 'Açai',
+              tipoDoce: produto.tipo === 'Doce',
+              tipoBebida: produto.tipo === 'Bebida',
+              tipoSalgado: produto.tipo === 'Salgado'
+            }"
+            class="tag"
+            >{{ produto.tipo }}</span
+          >
+        </td>
+        <td>
+          <span class="nome">{{ produto.nome }}</span>
+        </td>
+        <td>Vendas Totais</td>
+        <td class="center">{{ produto.precoCusto | currency : "R$" }}</td>
+        <td class="center">
+          <span class="debito">{{ produto.precoVenda | currency : "R$" }}</span>
+        </td>
+        <td>Ativo/Inativo</td>
+        <td>
+          <button title="Ações" mat-button [matMenuTriggerFor]="menu"> <img src="..\assets\acoes.png" alt="" /></button>
+          <mat-menu #menu="matMenu">
+            <button (click)="editarProduto(produto)" mat-menu-item >Editar</button>
+            <button mat-menu-item>Receber</button>
+            <button mat-menu-item>Ver Histórico</button>
+            <button mat-menu-item>Mandar Cobrança</button>
+          </mat-menu>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

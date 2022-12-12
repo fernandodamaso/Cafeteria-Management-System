@@ -1,8 +1,7 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { subscriptionLogsToBeFn } from "rxjs/internal/testing/TestScheduler";
 import { GrauModel, SocioModel } from "../_models/data.model";
-import { GetDataService } from "../_services/get-data.service";
+import { sociosService } from "../_services/socios.service";
 
 export interface dialogData {
   editar: boolean;
@@ -15,7 +14,7 @@ export interface dialogData {
   styleUrls: ["./novo-socio.component.scss"],
 })
 export class NovoSocioComponent implements OnInit {
-  constructor(public dialogRef: MatDialogRef<NovoSocioComponent>, private GetDataService: GetDataService, @Inject(MAT_DIALOG_DATA) public socioData: dialogData) {
+  constructor(public dialogRef: MatDialogRef<NovoSocioComponent>, private sociosService: sociosService, @Inject(MAT_DIALOG_DATA) public socioData: dialogData) {
     if (socioData) {
       this.informacoesSocio = socioData.socioData;
       this.editar = true;
@@ -40,7 +39,7 @@ export class NovoSocioComponent implements OnInit {
   }
 
   deletarSocio() {
-    this.GetDataService.deletarSocio(this.id).subscribe({
+    this.sociosService.deletarSocio(this.id).subscribe({
       next: (data) => data,
       error: (e) => console.error(e),
       complete: () => this.dialogRef.close("Pizza!"),
@@ -54,7 +53,7 @@ export class NovoSocioComponent implements OnInit {
       this.informacoesSocio.nucleo = this.nucleo;
       this.informacoesSocio.grau[0].nome = this.grau;
 
-      this.GetDataService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
+      this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
         next: (data) => data,
         error: (e) => console.error(e),
         complete: () => this.dialogRef.close(),
@@ -73,7 +72,7 @@ export class NovoSocioComponent implements OnInit {
       };
       novoSocio.grau.push(novoGrau);
 
-      this.GetDataService.adicionarSocio(novoSocio).subscribe({
+      this.sociosService.adicionarSocio(novoSocio).subscribe({
         next: (data) => data,
         error: (e) => console.error(e),
         complete: () => this.dialogRef.close(),

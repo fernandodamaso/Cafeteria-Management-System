@@ -44,6 +44,7 @@
       "nome": "Açai",
       "precoVenda": 12,
       "precoCusto": 4.5,
+      "status": true,
       "tipo": "Açai"
     },
     {
@@ -51,6 +52,7 @@
       "nome": "Paçoca",
       "precoVenda": 0.5,
       "precoCusto": 0.1,
+      "status": true,
       "tipo": "Doce"
     },
     {
@@ -58,6 +60,7 @@
       "nome": "Agua com Gás",
       "precoVenda": 4,
       "precoCusto": 2,
+      "status": true,
       "tipo": "Bebida"
     },
     {
@@ -65,6 +68,7 @@
       "nome": "Pão de queijo",
       "precoVenda": 7,
       "precoCusto": 2.5,
+      "status": true,
       "tipo": "Salgado"
     }
   ],

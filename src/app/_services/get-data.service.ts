@@ -8,29 +8,12 @@ import { Observable } from "rxjs";
 export class GetDataService {
   constructor(private http: HttpClient) {}
 
-  getSocios() {
-    return this.http.get<SocioModel[]>("http://localhost:3000/socios");
-  }
-
-  adicionarSocio(socio: SocioModel): Observable<Object> {
-    return this.http.post<SocioModel>("http://localhost:3000/socios", socio);
-  }
-
-  editarSocio(socio: SocioModel, id: number): Observable<Object> {
-    return this.http.put<SocioModel>("http://localhost:3000/socios/" + id, socio);
-  }
-
-  deletarSocio(id: number): Observable<Object> {
-    return this.http.delete<SocioModel>("http://localhost:3000/socios/" + id);
-  }
-
   getGraus() {
     return this.http.get<GrauModel[]>("http://localhost:3000/graus");
   }
+
   getHistorico() {
     return this.http.get<HistoricoModel[]>("http://localhost:3000/historico");
   }
-  getProdutos() {
-    return this.http.get<ProdutoModel[]>("http://localhost:3000/produtos");
-  }
+
 }

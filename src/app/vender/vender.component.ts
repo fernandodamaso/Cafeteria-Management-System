@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Subject } from 'rxjs';
 import { ProdutoModel, SocioModel } from "../_models/data.model";
 import { GetDataService } from "../_services/get-data.service";
+import { produtosService } from "../_services/produtos.service";
+import { sociosService } from "../_services/socios.service";
 
 @Component({
   selector: "app-vender",
@@ -9,7 +11,7 @@ import { GetDataService } from "../_services/get-data.service";
   styleUrls: ["./vender.component.scss"],
 })
 export class VenderComponent implements OnInit {
-  constructor(private GetDataService: GetDataService) {}
+  constructor(private sociosService: sociosService, private produtosService: produtosService) {}
 
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
@@ -28,7 +30,7 @@ export class VenderComponent implements OnInit {
   }
 
   getData() {
-    this.GetDataService.getSocios().subscribe({
+    this.sociosService.getSocios().subscribe({
       next: (data) => (this.dataSocios = data),
       error: (e) => console.error(e),
       complete: () => {
@@ -36,7 +38,7 @@ export class VenderComponent implements OnInit {
       },
     });
 
-    this.GetDataService.getProdutos().subscribe({
+    this.produtosService.getProdutos().subscribe({
       next: (data) => (this.dataProdutos = data),
       error: (e) => console.error(e),
       complete: () => console.log(this.dataProdutos),
@@ -50,6 +52,5 @@ export class VenderComponent implements OnInit {
   pegarProduto(produto: ProdutoModel) {
     this.produtoSelecionado.next(produto);
   }
-
 
 }
