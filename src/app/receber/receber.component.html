@@ -58,7 +58,7 @@
           <td>{{ socio.telefone }}</td>
           <td>{{ socio.nucleo }}</td>
           <td class="alignRight saldo" [ngClass]="{ saldoNegativo: socio.saldo < 0, saldoPositivo: socio.saldo > 0 }">
-            <span class="debito">{{ socio?.saldo | currency : "R$" }}</span>
+            <span class="debito">{{ socio.saldo | currency : "R$" }}</span>
           </td>
           <td class="center">
             <button title="Ações" mat-button [matMenuTriggerFor]="menu"> <img src="..\assets\acoes.png" alt="" /></button>
