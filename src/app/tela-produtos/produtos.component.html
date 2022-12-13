@@ -18,7 +18,7 @@
   <div class="produtosWrap">
     <table class="produtos">
       <tr>
-        <th>Tipo</th>
+        <th class="center">Tipo</th>
         <th>NOME</th>
         <th class="center">Qtd de vendas Totais</th>
         <th class="center">Preço de Custo</th>
@@ -27,7 +27,7 @@
         <th>Ações</th>
       </tr>
       <tr (click)="pegarProduto(produto)" *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo">
-        <td>
+        <td class="center">
           <span
             [ngClass]="{
               tipoAcai: produto.tipo === 'Açai',
