@@ -14,9 +14,16 @@ export class produtosService {
     return this.http.get<ProdutoModel[]>("http://localhost:3000/produtos");
   }
 
-  deletarProduto(id: number) {
-    console.log(id)
-    return this.http.get<ProdutoModel[]>("http://localhost:3000/produtos");
+  adicionarProduto(produto: ProdutoModel): Observable<Object> {
+    return this.http.post<ProdutoModel>("http://localhost:3000/produtos", produto);
+  }
+
+  editarProduto(produto: ProdutoModel, id: number): Observable<Object> {
+    return this.http.put<ProdutoModel>("http://localhost:3000/produtos/" + id, produto);
+  }
+
+  deletarProduto(id: number): Observable<Object> {
+    return this.http.delete<ProdutoModel>("http://localhost:3000/produtos/" + id);
   }
 
 }

@@ -10,7 +10,6 @@ import { produtosService } from "../_services/produtos.service";
   styleUrls: ["./produtos.component.scss"],
 })
 export class ProdutosComponent implements OnInit {
-
   constructor(private produtosService: produtosService, private matDialog: MatDialog) {}
 
   dataProdutos: ProdutoModel[] = [];
@@ -34,7 +33,6 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
-
   editarProduto(produto: ProdutoModel) {
     const dialogRef = this.matDialog.open(NovoProdutoComponent, {
       panelClass: "NovoProdutoComponent",
@@ -48,5 +46,13 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
-  adicionarProduto() {}
+  adicionarProduto() {
+    const dialogRef = this.matDialog.open(NovoProdutoComponent, {
+      panelClass: "NovoProdutoComponent",
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.getData();
+    });
+  }
 }

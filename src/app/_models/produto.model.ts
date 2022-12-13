@@ -1,6 +1,6 @@
 import { categoriaModel } from "./categoria.model";
 
-export interface ProdutoModel {
+export class ProdutoModel {
     id: number;
     nome: string;
     precoVenda: number;

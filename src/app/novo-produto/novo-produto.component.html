@@ -14,17 +14,18 @@
     <div class="linha">
       <div class="col">
         <label for="Nome">Preço de Custo</label>
-        <input [(ngModel)]="precoCusto" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" id="Preço de Custo" name="Preço de Custo" title="Preço de Custo" type="text" />
+        <input [(ngModel)]="precoCusto" id="Preço de Custo" name="Preço de Custo" title="Preço de Custo" type="text" />
       </div>
       <div class="col">
         <label for="Nome">Preço de Venda</label>
-        <input [(ngModel)]="precoVenda" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" id="Preço de Venda" name="Preço de Venda" title="Preço de Venda" type="text" />
+        <input [(ngModel)]="precoVenda" id="Preço de Venda" name="Preço de Venda" title="Preço de Venda" type="text" />
       </div>
     </div>
 
     <div class="linha">
       <div class="col">
-        <select name="grau" title="Grau" [(ngModel)]="categoriaProduto">
+        <label for="Nome">Categoria do Produto</label>
+        <select name="categoria" title="categoria" [(ngModel)]="categoriaProduto">
           <option value="">Categoria de Produto</option>
           <option value="Açai">Açai</option>
           <option value="Doce">Doce</option>
