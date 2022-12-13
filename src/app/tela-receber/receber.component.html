@@ -64,7 +64,7 @@
             <button title="Ações" mat-button [matMenuTriggerFor]="menu"> <img src="..\assets\acoes.png" alt="" /></button>
             <mat-menu #menu="matMenu">
               <button (click)="editarSocio(socio)" mat-menu-item >Editar</button>
-              <button mat-menu-item>Receber</button>
+              <button (click)="deletarSocio(socio.id)" mat-menu-item>Deletar</button>
               <button mat-menu-item>Ver Histórico</button>
               <button mat-menu-item>Mandar Cobrança</button>
             </mat-menu>

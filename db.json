@@ -70,14 +70,6 @@
       "precoCusto": 2.5,
       "status": true,
       "tipo": "Salgado"
-    },
-    {
-      "nome": "Refri Promoção",
-      "precoCusto": "2",
-      "precoVenda": "4",
-      "status": false,
-      "tipo": "Bebida",
-      "id": 6
     }
   ],
   "socios": [

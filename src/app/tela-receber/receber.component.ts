@@ -45,6 +45,17 @@ export class ReceberComponent implements OnInit {
     });
   }
 
+  deletarSocio(id: number) {
+    this.sociosService.deletarSocio(id).subscribe({
+      next: (data) => data,
+      error: (e) => console.error(e),
+      complete: () => {
+        console.log("Sócio deletado");
+        this.getData();
+      },
+    });
+  }
+
   editarSocio(socio: SocioModel) {
     const dialogRef = this.matDialog.open(NovoSocioComponent, {
       panelClass: "NovoSocioComponent",

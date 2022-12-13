@@ -33,6 +33,17 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
+  deletarProduto(id: number) {
+    this.produtosService.deletarProduto(id).subscribe({
+      next: (data) => data,
+      error: (e) => console.error(e),
+      complete: () => {
+        console.log("produto deletado");
+        this.getData();
+      },
+    });
+  }
+
   editarProduto(produto: ProdutoModel) {
     const dialogRef = this.matDialog.open(NovoProdutoComponent, {
       panelClass: "NovoProdutoComponent",
