@@ -3,7 +3,7 @@
 </div>
 
 <div class="corpo">
-  <form action="">
+  <div class="form">
     <div class="linha">
       <div class="col">
         <label for="Nome">Nome</label>
@@ -34,7 +34,17 @@
         </select>
       </div>
     </div>
-  </form>
+
+    <div class="linha">
+      <div class="col">
+        <label>Status de produto</label>
+        <mat-slide-toggle [(ngModel)]="status">
+          <span *ngIf="status == true">Ativo</span>
+          <span *ngIf="status == false">Inativo</span>
+        </mat-slide-toggle>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="base">
   <div class="botoes">

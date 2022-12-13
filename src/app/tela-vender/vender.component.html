@@ -67,7 +67,7 @@
         <th>NOME</th>
         <th class="alignRight">PREÇO</th>
       </tr>
-      <tr (click)="pegarProduto(produto)" *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo">
+      <tr (click)="pegarProduto(produto)" *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo; let i = index" [class.inativo]="produto.status == false">
         <td>
           <span
             [ngClass]="{

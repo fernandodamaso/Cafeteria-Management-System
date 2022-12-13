@@ -6,8 +6,7 @@
     margin: 0 10px;
   }
 
-  .tituloBox {
-  }
+  .tituloBox {}
 
   .filtros {
     margin-bottom: 24px;
@@ -42,6 +41,9 @@
 
     &.produtos {
       tr {
+        &.inativo {
+          display: none;
+        }
 
         td,
         th {

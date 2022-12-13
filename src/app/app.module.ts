@@ -9,10 +9,11 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NovoSocioComponent } from './novo-socio/novo-socio.component';
 import { FormsModule } from "@angular/forms";
 import { NovoProdutoComponent } from './novo-produto/novo-produto.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [AppComponent,  NovoSocioComponent, NovoProdutoComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule, MatSlideToggleModule],
 
   providers: [],
 

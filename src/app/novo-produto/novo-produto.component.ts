@@ -28,10 +28,12 @@ export class NovoProdutoComponent implements OnInit {
   precoVenda: number;
   categoriaProduto = "";
   editar: boolean;
+  status = true;
   informacoesProduto: ProdutoModel;
 
   ngOnInit() {
     if (this.produtoData) {
+      this.status = this.informacoesProduto.status;
       this.nome = this.informacoesProduto.nome;
       this.precoCusto = this.informacoesProduto.precoCusto;
       this.precoVenda = this.informacoesProduto.precoVenda;
@@ -50,6 +52,7 @@ export class NovoProdutoComponent implements OnInit {
   postData() {
     if (this.produtoData) {
       this.informacoesProduto.nome = this.nome;
+      this.informacoesProduto.status = this.status;
       this.informacoesProduto.precoCusto = this.precoCusto;
       this.informacoesProduto.precoVenda = this.precoVenda;
       this.informacoesProduto.tipo = this.categoriaProduto;
@@ -62,6 +65,7 @@ export class NovoProdutoComponent implements OnInit {
     } else {
       let novoSocio: ProdutoModel;
       novoSocio = new ProdutoModel();
+      novoSocio.status = this.status;
       novoSocio.nome = this.nome;
       novoSocio.precoCusto = this.precoCusto;
       novoSocio.precoVenda = this.precoVenda;

@@ -490,7 +490,7 @@ body {
   margin: 0;
 }
 
-form {
+form, .form {
 
   .linha,
   .row {
@@ -511,7 +511,8 @@ form {
   }
 }
 
-.NovoSocioComponent, .NovoProdutoComponent {
+.NovoSocioComponent,
+.NovoProdutoComponent {
   width: 100%;
   max-width: 515px !important;
 }
@@ -616,4 +617,14 @@ form {
     line-height: 38px !important;
     height: 38px !important;
   }
+}
+
+
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: #3498DB;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #1a6699;
 }
