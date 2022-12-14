@@ -34,6 +34,16 @@
 
           }
 
+          span {
+            &.saldoPositivo {
+              color: #3498DB;
+
+            }
+
+            &.saldoNegativo {
+              color: #ff4c4c;
+            }
+          }
 
         }
       }

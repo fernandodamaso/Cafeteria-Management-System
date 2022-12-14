@@ -101,7 +101,44 @@
       "saldo": 4,
       "telefone": "27995066670",
       "nucleo": "Gaspar",
-      "produtosEmAberto": []
+      "produtosEmAberto": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2022-12-08T03:00:00.000Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2022-12-08T03:00:00.000Z"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2022-12-08T03:00:00.000Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2022-12-08T03:00:00.000Z"
+        }
+      ]
     },
     {
       "nome": "Fernando Dâmaso",
@@ -123,12 +160,21 @@
           "status": true,
           "tipo": "Salgado",
           "dataCompra": "2022-12-14T13:19:02.553Z"
+        },
+        {
+          "id": 4,
+          "nome": "Pão de queijo",
+          "precoVenda": 7,
+          "precoCusto": 2.5,
+          "status": true,
+          "tipo": "Salgado",
+          "dataCompra": "2022-12-14T13:19:02.553Z"
         }
       ]
     },
     {
       "nome": "Viviane Rodrigues",
-      "saldo": 0,
+      "saldo": 50,
       "telefone": "27995066670",
       "nucleo": "Gaspar",
       "grau": [
@@ -136,11 +182,12 @@
           "nome": "CI"
         }
       ],
-      "id": 2
+      "id": 2,
+      "produtosEmAberto": []
     },
     {
       "nome": "Marina Silva",
-      "saldo": 0,
+      "saldo": 3,
       "telefone": "43423432",
       "nucleo": "Gaspar",
       "grau": [
@@ -148,7 +195,18 @@
           "nome": "CDC"
         }
       ],
-      "id": 3
+      "id": 3,
+      "produtosEmAberto": [
+        {
+          "status": true,
+          "nome": "dasdasdas",
+          "precoCusto": "43",
+          "precoVenda": "43",
+          "tipo": "Bebida",
+          "id": 6,
+          "dataCompra": "2022-12-14T18:10:53.718Z"
+        }
+      ]
     },
     {
       "nome": "Samantha Medeiros",
@@ -160,7 +218,8 @@
           "nome": "QS"
         }
       ],
-      "id": 4
+      "id": 4,
+      "produtosEmAberto": []
     }
   ]
 }

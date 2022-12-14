@@ -42,7 +42,17 @@
           <td>
             <span class="nome">{{ socio.nome }}</span>
           </td>
-          <td class="alignRight"><span class="debito">{{socio?.saldo | currency : 'R$' }}</span></td>
+          <td class="alignRight">
+            <span
+              class="debito"
+              [ngClass]="{
+                saldoPositivo: (socio | calculoDebito ) > 0,
+                saldoNegativo: (socio | calculoDebito ) < 0
+              }"
+
+              >{{ socio | calculoDebito | currency : "R$" }}</span
+            >
+          </td>
         </tr>
       </tbody>
     </table>
@@ -84,7 +94,7 @@
           <span class="nome">{{ produto.nome }}</span>
         </td>
         <td class="alignRight">
-          <span class="debito">{{ produto.precoVenda | currency : 'R$' }}</span>
+          <span class="debito">{{ produto.precoVenda | currency : "R$" }}</span>
         </td>
       </tr>
     </table>
