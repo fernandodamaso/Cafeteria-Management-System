@@ -490,7 +490,8 @@ body {
   margin: 0;
 }
 
-form, .form {
+form,
+.form {
 
   .linha,
   .row {
@@ -512,6 +513,7 @@ form, .form {
 }
 
 .NovoSocioComponent,
+.PagarComponent,
 .NovoProdutoComponent {
   width: 100%;
   max-width: 515px !important;

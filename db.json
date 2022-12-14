@@ -78,6 +78,14 @@
       "precoVenda": "5.5",
       "tipo": "Açai",
       "id": 5
+    },
+    {
+      "status": true,
+      "nome": "dasdasdas",
+      "precoCusto": "43",
+      "precoVenda": "43",
+      "tipo": "Bebida",
+      "id": 6
     }
   ],
   "socios": [
@@ -93,20 +101,7 @@
       "saldo": 4,
       "telefone": "27995066670",
       "nucleo": "Gaspar",
-      "produtosEmAberto": [
-        {
-          "id": 3,
-          "nome": "Agua com Gás",
-          "preco": 2000,
-          "tipo": "Bebida"
-        },
-        {
-          "id": 4,
-          "nome": "Pão de queijo",
-          "preco": 30000,
-          "tipo": "Salgado"
-        }
-      ]
+      "produtosEmAberto": []
     },
     {
       "nome": "Fernando Dâmaso",
@@ -118,7 +113,18 @@
           "nome": "CI"
         }
       ],
-      "id": 1
+      "id": 1,
+      "produtosEmAberto": [
+        {
+          "id": 4,
+          "nome": "Pão de queijo",
+          "precoVenda": 7,
+          "precoCusto": 2.5,
+          "status": true,
+          "tipo": "Salgado",
+          "dataCompra": "2022-12-14T13:19:02.553Z"
+        }
+      ]
     },
     {
       "nome": "Viviane Rodrigues",

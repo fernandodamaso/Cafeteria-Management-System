@@ -9,4 +9,5 @@ export class ProdutoModel {
     qtdVendas: number;
     status: boolean;
     categoria: categoriaModel;
+    dataCompra?: Date;
   }

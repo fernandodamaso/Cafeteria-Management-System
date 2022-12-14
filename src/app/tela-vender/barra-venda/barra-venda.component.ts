@@ -3,7 +3,10 @@ import { FormControl } from "@angular/forms";
 import { MatDatepickerInputEvent } from "@angular/material/datepicker";
 import { Subject, Subscription } from "rxjs";
 import { SocioModel } from "src/app/_models/socio.model";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { ProdutoModel } from "src/app/_models/produto.model";
+import { PagarComponent } from "src/app/_shared/pagar/pagar.component";
+import { sociosService } from "src/app/_services/socios.service";
 
 @Component({
   selector: "app-barra-venda",
@@ -11,7 +14,6 @@ import { ProdutoModel } from "src/app/_models/produto.model";
   styleUrls: ["./barra-venda.component.scss"],
 })
 export class BarraVendaComponent implements OnInit {
-
   @Input()
   set socioSelecionado(value: SocioModel) {
     this.socioSelecionadoInterno = value;
@@ -22,7 +24,7 @@ export class BarraVendaComponent implements OnInit {
     this._val = val;
   }
 
-  constructor() {}
+  constructor(private matDialog: MatDialog, private sociosService: sociosService) {}
 
   nenhumProdutoSelecionado = false;
   socioSelecionadoInterno: SocioModel;
@@ -31,11 +33,15 @@ export class BarraVendaComponent implements OnInit {
   listaProdutos: ProdutoModel[] = [];
   _val: Subject<ProdutoModel> = new Subject();
   date = new FormControl(new Date());
+  dataCompra: Date;
   eventsSubscription: Subscription;
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
     this.eventsSubscription = this._val.subscribe((produto) => {
-      console.log(produto);
       this.listaProdutos.push(produto);
       this.calcularValorTotal();
     });
@@ -47,12 +53,7 @@ export class BarraVendaComponent implements OnInit {
       .reduce(function (el, el2) {
         return el + el2;
       });
-      this.valorTotal = sum;
-  }
-
-  anotar() {
-    this.socioSelecionadoInterno = undefined!;
-    this.listaProdutos = [];
+    this.valorTotal = sum;
   }
 
   deletarProduto(produto: any) {
@@ -62,5 +63,47 @@ export class BarraVendaComponent implements OnInit {
 
   addEvent(event: MatDatepickerInputEvent<Date>) {
     console.log(event.value);
+    // this.dataCompra = event;
+  }
+
+  pagar() {
+    // this.socioSelecionadoInterno = undefined!;
+    // this.listaProdutos = [];
+    const dialogRef = this.matDialog.open(PagarComponent, {
+      panelClass: "PagarComponent",
+      // data: {
+      //   socioData: socio,
+      // },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getData();
+    });
+  }
+
+  anotar() {
+    this.listaProdutos.forEach((el) => {
+      el.dataCompra = this.date.value;
+    });
+
+    this.socioSelecionadoInterno.produtosEmAberto = [...this.socioSelecionadoInterno.produtosEmAberto, ...this.listaProdutos];
+
+    this.sociosService.editarSocio(this.socioSelecionadoInterno, this.socioSelecionadoInterno.id).subscribe({
+      next: (data) => data,
+      error: (e) => console.error(e),
+      complete: () => {
+
+        let listaNomes = [];
+
+        for (let i = 0; i < this.listaProdutos.length; i++) {
+          listaNomes.push(this.listaProdutos[i].nome);
+
+        }
+
+        alert("anotado os produtos: " + JSON.stringify(listaNomes) + " para o sócio: " + this.socioSelecionadoInterno.nome);
+        this.socioSelecionadoInterno = undefined!;
+        this.listaProdutos = [];
+      },
+    });
   }
 }
