@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { MatDatepickerInputEvent } from "@angular/material/datepicker";
 import { Subject, Subscription } from "rxjs";
 import { SocioModel } from "src/app/_models/socio.model";
-import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { MatDialog } from "@angular/material/dialog";
 import { ProdutoModel } from "src/app/_models/produto.model";
 import { PagarComponent } from "src/app/_shared/pagar/pagar.component";
 import { sociosService } from "src/app/_services/socios.service";
@@ -14,6 +14,8 @@ import { sociosService } from "src/app/_services/socios.service";
   styleUrls: ["./barra-venda.component.scss"],
 })
 export class BarraVendaComponent implements OnInit {
+  @Output() terminouCompra = new EventEmitter<boolean>();
+
   @Input()
   set socioSelecionado(value: SocioModel) {
     this.socioSelecionadoInterno = value;
@@ -92,17 +94,17 @@ export class BarraVendaComponent implements OnInit {
       next: (data) => data,
       error: (e) => console.error(e),
       complete: () => {
-
         let listaNomes = [];
 
         for (let i = 0; i < this.listaProdutos.length; i++) {
           listaNomes.push(this.listaProdutos[i].nome);
-
         }
 
         alert("anotado os produtos: " + JSON.stringify(listaNomes) + " para o sócio: " + this.socioSelecionadoInterno.nome);
         this.socioSelecionadoInterno = undefined!;
         this.listaProdutos = [];
+
+        this.terminouCompra.emit(true);
       },
     });
   }

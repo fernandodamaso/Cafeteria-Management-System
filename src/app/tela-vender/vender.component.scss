@@ -22,6 +22,13 @@
     &.socios {
       tr {
 
+        &.active {
+          background-color: #3498DB;
+          color: #fff!important;
+          .debito, .nome {
+            color: #fff!important;
+          }
+        }
         td,
         th {
           &:nth-child(1) {
@@ -35,13 +42,14 @@
           }
 
           span {
+            transition: color ease-in-out 0.1s;
             &.saldoPositivo {
               color: #3498DB;
 
             }
 
             &.saldoNegativo {
-              color: #ff4c4c;
+              // color: #ff4c4c;
             }
           }
 

@@ -207,6 +207,9 @@ table {
       td {
         background-color: $azul;
         color: #fff !important;
+        .debito {
+          color: #fff !important;
+        }
       }
     }
   }

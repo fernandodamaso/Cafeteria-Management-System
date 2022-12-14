@@ -25,7 +25,7 @@
       </thead>
 
       <tbody>
-        <tr (click)="pegarSocio(socio)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
+        <tr  (click)="setIndex(i)" [class.active]="socioSelecionadoIndex === i" (click)="pegarSocio(socio)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau ; let i = index">
           <td>
             <span
               [ngClass]="{
@@ -101,4 +101,4 @@
   </div>
 </div>
 
-<app-barra-venda [produtoSelecionado]="produtoSelecionado" [socioSelecionado]="socioSelecionado"></app-barra-venda>
+<app-barra-venda (terminouCompra)="terminouCompra($event)" [produtoSelecionado]="produtoSelecionado" [socioSelecionado]="socioSelecionado"></app-barra-venda>

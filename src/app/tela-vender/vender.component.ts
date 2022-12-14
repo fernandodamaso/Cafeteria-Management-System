@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Subject } from 'rxjs';
+import { Subject } from "rxjs";
 import { SocioModel } from "../_models/socio.model";
 import { ProdutoModel } from "../_models/produto.model";
 import { produtosService } from "../_services/produtos.service";
@@ -21,9 +21,8 @@ export class VenderComponent implements OnInit {
   filterTipo = "";
   socioSelecionado: SocioModel;
   jsonDataResult: any;
-
   produtoSelecionado: Subject<ProdutoModel> = new Subject();
-
+  socioSelecionadoIndex: number;
 
   ngOnInit(): void {
     this.getData();
@@ -53,4 +52,14 @@ export class VenderComponent implements OnInit {
     this.produtoSelecionado.next(produto);
   }
 
+  setIndex(index: number) {
+    this.socioSelecionadoIndex = index;
+  }
+
+  terminouCompra(terminouCompraIndex: boolean) {
+    if (terminouCompraIndex == true) {
+      this.socioSelecionadoIndex = undefined!;
+      this.getData();
+    }
+  }
 }

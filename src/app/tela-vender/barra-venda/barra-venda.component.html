@@ -34,13 +34,11 @@
   <div class="valores coluna" *ngIf="socioSelecionadoInterno || listaProdutos.length > 0">
     <div class="col">
       <p class="titulo">Saldo Atual</p>
-      <p class="valor" [ngClass]="{ saldoNegativo: socioSelecionadoInterno.saldo < 0, saldoPositivo: socioSelecionadoInterno.saldo >= 0 }">
-        {{ socioSelecionadoInterno.saldo | currency }}
-      </p>
+      <p class="valor" [ngClass]="{ saldoNegativo: socioSelecionadoInterno.saldo < 0, saldoPositivo: socioSelecionadoInterno.saldo >= 0 }">{{ socioSelecionadoInterno.saldo | currency : "R$" }}</p>
     </div>
     <div class="col">
       <p class="titulo">Valor Total</p>
-      <p class="valor verde">R$ {{ valorTotal | currency }}</p>
+      <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
     </div>
   </div>
   <div class="coluna botoes" *ngIf="socioSelecionadoInterno || listaProdutos.length > 0">
