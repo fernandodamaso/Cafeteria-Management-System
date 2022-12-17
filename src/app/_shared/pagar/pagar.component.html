@@ -1,3 +1,50 @@
-<p>pagar works!</p>
+<div class="box">
+  <div class="tituloBox">
+    <h2>
+      Receber de <span class="nome">{{ informacoesSocio.nome }}</span>
+    </h2>
+  </div>
 
-
+  <ul class="listaProdutos">
+    <li *ngFor="let produto of informacoesSocio.produtosEmAberto">
+      <span
+        [ngClass]="{
+          tipoAcai: produto.tipo === 'Açai',
+          tipoDoce: produto.tipo === 'Doce',
+          tipoBebida: produto.tipo === 'Bebida',
+          tipoSalgado: produto.tipo === 'Salgado'
+        }"
+        class="tag"
+        >{{ produto.nome }}
+      </span>
+    </li>
+  </ul>
+  <div class="valores coluna">
+    <div class="col">
+      <p class="titulo">Saldo atual Total</p>
+      <p class="valor">{{ informacoesSocio.saldo | currency : "R$" }}</p>
+    </div>
+    <div class="col">
+      <p class="titulo">Valor Total</p>
+      <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
+    </div>
+  </div>
+  <div class="linhaForm">
+    <div class="col">
+      <label for="">Valor a receber</label>
+      <input type="number" [(ngModel)]="valorRecebel" id="valorRecebel" name="valorRecebel">
+    </div>
+    <div class="col">
+      <label for="">Desconto</label>
+      <input type="number" [(ngModel)]="desconto" id="desconto" name="desconto">
+    </div>
+    <div class="col">
+      <label for="data">Data de recebimento</label>
+      <mat-form-field appearance="outline">
+        <input title="Data de Compra" [formControl]="date" matInput [matDatepicker]="picker" (dateInput)="addEvent($event)" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

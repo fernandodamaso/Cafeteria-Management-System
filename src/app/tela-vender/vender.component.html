@@ -25,7 +25,7 @@
       </thead>
 
       <tbody>
-        <tr  (click)="setIndex(i)" [class.active]="socioSelecionadoIndex === i" (click)="pegarSocio(socio)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau ; let i = index">
+        <tr [class.active]="socioSelecionadoIndex === i" (click)="pegarSocio(socio, i)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau ; let i = index">
           <td>
             <span
               [ngClass]="{

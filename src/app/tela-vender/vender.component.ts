@@ -44,16 +44,18 @@ export class VenderComponent implements OnInit {
     });
   }
 
-  pegarSocio(socio: SocioModel) {
-    this.socioSelecionado = socio;
+  pegarSocio(socio: SocioModel, index: number) {
+    if (this.socioSelecionado == socio) {
+      this.socioSelecionadoIndex = undefined!;
+      this.socioSelecionado = undefined!;
+    } else {
+      this.socioSelecionadoIndex = index;
+      this.socioSelecionado = socio;
+    }
   }
 
   pegarProduto(produto: ProdutoModel) {
     this.produtoSelecionado.next(produto);
-  }
-
-  setIndex(index: number) {
-    this.socioSelecionadoIndex = index;
   }
 
   terminouCompra(terminouCompraIndex: boolean) {

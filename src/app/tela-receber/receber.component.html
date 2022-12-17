@@ -38,8 +38,8 @@
       </thead>
 
       <tbody>
-        <tr (click)="pegarSocio(socio)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
-          <td>
+        <tr *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
+          <td (click)="abrirPagar(socio)">
             <span
               [ngClass]="{
                 grauQM: socio.grau[0].nome === 'QM',
@@ -52,12 +52,12 @@
               {{ socio.grau[0].nome }}
             </span>
           </td>
-          <td>
+          <td (click)="abrirPagar(socio)">
             <span class="nome">{{ socio.nome }}</span>
           </td>
-          <td>{{ socio.telefone }}</td>
-          <td>{{ socio.nucleo }}</td>
-          <td class="alignRight saldo" [ngClass]="{ saldoNegativo: socio.saldo < 0, saldoPositivo: socio.saldo > 0 }">
+          <td (click)="abrirPagar(socio)">{{ socio.telefone }}</td>
+          <td (click)="abrirPagar(socio)">{{ socio.nucleo }}</td>
+          <td (click)="abrirPagar(socio)" class="alignRight saldo" [ngClass]="{ saldoNegativo: socio.saldo < 0, saldoPositivo: socio.saldo > 0 }">
             <span class="debito">{{ socio.saldo | currency : "R$" }}</span>
           </td>
           <td class="center">

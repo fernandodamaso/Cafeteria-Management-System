@@ -3,6 +3,7 @@ import { sociosService } from "../_services/socios.service";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
 import { SocioModel } from "../_models/socio.model";
+import { PagarComponent } from "../_shared/pagar/pagar.component";
 
 @Component({
   selector: "app-receber",
@@ -23,15 +24,14 @@ export class ReceberComponent implements OnInit {
     this.getData();
   }
 
-  pegarSocio(socio: SocioModel) {
-    this.socioSelecionado = socio;
-  }
-
   getData() {
     this.sociosService.getSocios().subscribe({
       next: (data) => (this.dataSocios = data),
       error: (e) => console.error(e),
-      complete: () => console.log(this.dataSocios),
+      complete: () => {
+        console.log(this.dataSocios);
+        this.abrirPagar(this.dataSocios[0]);
+      },
     });
   }
 
@@ -53,6 +53,19 @@ export class ReceberComponent implements OnInit {
         console.log("Sócio deletado");
         this.getData();
       },
+    });
+  }
+
+  abrirPagar(socio: SocioModel) {
+    const dialogRef = this.matDialog.open(PagarComponent, {
+      panelClass: "PagarComponent",
+      data: {
+        socioData: socio,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getData();
     });
   }
 
