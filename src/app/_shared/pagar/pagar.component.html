@@ -5,46 +5,104 @@
     </h2>
   </div>
 
-  <ul class="listaProdutos">
-    <li *ngFor="let produto of informacoesSocio.produtosEmAberto">
-      <span
-        [ngClass]="{
-          tipoAcai: produto.tipo === 'Açai',
-          tipoDoce: produto.tipo === 'Doce',
-          tipoBebida: produto.tipo === 'Bebida',
-          tipoSalgado: produto.tipo === 'Salgado'
-        }"
-        class="tag"
-        >{{ produto.nome }}
-      </span>
-    </li>
-  </ul>
-  <div class="valores coluna">
+  <div class="linhaForm">
+    <ul class="listaProdutos">
+      <li *ngFor="let produto of informacoesSocio.produtosEmAberto">
+        <span
+          [ngClass]="{
+            tipoAcai: produto.tipo === 'Açai',
+            tipoDoce: produto.tipo === 'Doce',
+            tipoBebida: produto.tipo === 'Bebida',
+            tipoSalgado: produto.tipo === 'Salgado'
+          }"
+          class="tag"
+          >{{ produto.nome }}
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="valores linhaForm">
     <div class="col">
-      <p class="titulo">Saldo atual Total</p>
-      <p class="valor">{{ informacoesSocio.saldo | currency : "R$" }}</p>
+      <label class="titulo">Crédito</label>
+      <p
+        class="valor"
+        [ngClass]="{
+          saldoNegativo: informacoesSocio.saldo < 0,
+          saldoPositivo: informacoesSocio.saldo >= 0
+        }"
+      >
+        {{ informacoesSocio.saldo | currency : "R$" }}
+      </p>
     </div>
     <div class="col">
-      <p class="titulo">Valor Total</p>
+      <label class="titulo">Valor Total</label>
       <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
     </div>
   </div>
-  <div class="linhaForm">
+  <div class="linhaForm receber">
     <div class="col">
       <label for="">Valor a receber</label>
-      <input type="number" [(ngModel)]="valorRecebel" id="valorRecebel" name="valorRecebel">
+      <input
+        type="number"
+        [(ngModel)]="valorRecebel"
+        id="valorRecebel"
+        name="valorRecebel"
+      />
     </div>
     <div class="col">
       <label for="">Desconto</label>
-      <input type="number" [(ngModel)]="desconto" id="desconto" name="desconto">
+      <input
+        type="number"
+        [(ngModel)]="desconto"
+        id="desconto"
+        name="desconto"
+      />
     </div>
-    <div class="col">
+    <div class="col data">
       <label for="data">Data de recebimento</label>
       <mat-form-field appearance="outline">
-        <input title="Data de Compra" [formControl]="date" matInput [matDatepicker]="picker" (dateInput)="addEvent($event)" />
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <input
+          title="Data de Compra"
+          [formControl]="date"
+          matInput
+          [matDatepicker]="picker"
+          (dateInput)="addEvent($event)"
+        />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
+  </div>
+  <div class="linhaForm formaPagamento">
+    <div class="col">
+      <label for="data">Forma de pagamento</label>
+      <div class="radioWrap">
+        <label class="radio">
+          <input type="radio" name="formaPagamento" id="pix" />
+          Pix
+        </label>
+        <label class="radio">
+          <input type="radio" name="formaPagamento" id="cartao" />
+          Cartão
+        </label>
+        <label class="radio">
+          <input type="radio" name="formaPagamento" id="dinheiro" />
+          Dinheiro
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="base">
+  <div class="botoes">
+    <button class="botao cinza" (click)="this.dialogRef.close()">
+      Cancelar
+    </button>
+    <button (click)="salvar()" class="botao azul">Salvar</button>
   </div>
 </div>

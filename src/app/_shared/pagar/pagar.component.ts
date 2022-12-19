@@ -29,7 +29,7 @@ export class PagarComponent implements OnInit {
   informacoesSocio: SocioModel;
   valorTotal: number;
   valorRecebel: number;
-  desconto: number;
+  desconto = 0;
 
   date = new FormControl(new Date());
   dataCompra: Date;
@@ -55,10 +55,12 @@ export class PagarComponent implements OnInit {
 
     somaTotal = somaTotal * -1;
     this.valorTotal = somaTotal + this.informacoesSocio.saldo;
+    this.valorRecebel = this.valorTotal;
   }
 
-  
   addEvent(event: MatDatepickerInputEvent<Date>) {
     console.log(event.value);
   }
+
+  salvar() {}
 }
