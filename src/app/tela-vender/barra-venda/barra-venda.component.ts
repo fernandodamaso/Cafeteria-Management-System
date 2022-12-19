@@ -65,7 +65,6 @@ export class BarraVendaComponent implements OnInit {
 
   addEvent(event: MatDatepickerInputEvent<Date>) {
     console.log(event.value);
-    // this.dataCompra = event;
   }
 
   pagar() {

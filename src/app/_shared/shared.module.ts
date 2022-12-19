@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // Modulo para ser compartilhado com toda a aplicação, aqui estão declaradas e exportados os pipes
 
@@ -31,11 +32,8 @@ import { MatInputModule } from '@angular/material/input';
     // Caso os pipes tenham alguma dependencia especifica, devem ser importados para funcionar
     CommonModule,
     FormsModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule
-
   ]
 })
 export class SharedModule { }
