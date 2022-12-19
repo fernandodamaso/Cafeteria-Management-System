@@ -7,7 +7,13 @@
 
   <div class="linhaForm">
     <ul class="listaProdutos">
-      <li *ngFor="let produto of informacoesSocio.produtosEmAberto">
+      <li
+        [ngClass]="{ ativo: verificaProduto(produto) }"
+        (click)="toggleProduto(produto, i)"
+        *ngFor="
+          let produto of this.informacoesSocio.produtosEmAberto;
+          let i = index
+        ">
         <span
           [ngClass]="{
             tipoAcai: produto.tipo === 'Açai',
@@ -36,22 +42,28 @@
       </p>
     </div>
     <div class="col">
+      <label class="titulo">Débito</label>
+      <p class="valor saldoNegativo">{{ debito | currency : "R$" }}</p>
+    </div>
+
+    <div class="col">
       <label class="titulo">Valor Total</label>
       <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
     </div>
   </div>
+
   <div class="linhaForm receber">
     <div class="col">
-      <label for="">Valor a receber</label>
+      <label for="valorReceber">Valor a receber</label>
       <input
         type="number"
-        [(ngModel)]="valorRecebel"
-        id="valorRecebel"
-        name="valorRecebel"
+        [(ngModel)]="valorReceber"
+        id="valorReceber"
+        name="valorReceber"
       />
     </div>
     <div class="col">
-      <label for="">Desconto</label>
+      <label for="desconto">Desconto</label>
       <input
         type="number"
         [(ngModel)]="desconto"
@@ -82,15 +94,33 @@
       <label for="data">Forma de pagamento</label>
       <div class="radioWrap">
         <label class="radio">
-          <input type="radio" name="formaPagamento" id="pix" />
+          <input
+            [(ngModel)]="formaPagamento"
+            value="pix"
+            type="radio"
+            name="formaPagamento"
+            id="pix"
+          />
           Pix
         </label>
         <label class="radio">
-          <input type="radio" name="formaPagamento" id="cartao" />
+          <input
+            [(ngModel)]="formaPagamento"
+            value="cartao"
+            type="radio"
+            name="formaPagamento"
+            id="cartao"
+          />
           Cartão
         </label>
         <label class="radio">
-          <input type="radio" name="formaPagamento" id="dinheiro" />
+          <input
+            [(ngModel)]="formaPagamento"
+            value="dinheiro"
+            type="radio"
+            name="formaPagamento"
+            id="dinheiro"
+          />
           Dinheiro
         </label>
       </div>

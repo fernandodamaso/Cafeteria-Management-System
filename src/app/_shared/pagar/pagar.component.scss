@@ -101,7 +101,10 @@
         display: inline-block;
         margin-right: 5px;
         margin-bottom: 5px;
-
+        opacity: 0.5;
+        &.ativo {
+          opacity: 1;
+        }
         &:last-child {
           margin-right: 0;
         }
