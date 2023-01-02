@@ -34,11 +34,11 @@
       <p
         class="valor"
         [ngClass]="{
-          saldoNegativo: informacoesSocio.saldo < 0,
-          saldoPositivo: informacoesSocio.saldo >= 0
+          saldoNegativo: informacoesSocio.credito < 0,
+          saldoPositivo: informacoesSocio.credito >= 0
         }"
       >
-        {{ informacoesSocio.saldo | currency : "R$" }}
+        {{ informacoesSocio.credito | currency : "R$" }}
       </p>
     </div>
     <div class="col">
@@ -54,19 +54,22 @@
 
   <div class="linhaForm receber">
     <div class="col">
-      <label for="valorReceber">Valor a receber</label>
+      <label for="valorPago">Valor pago</label>
       <input
+      min="0"
         type="number"
-        [(ngModel)]="valorReceber"
-        id="valorReceber"
-        name="valorReceber"
+        [(ngModel)]="valorPago"
+        id="valorPago"
+        name="valorPago"
       />
     </div>
     <div class="col">
       <label for="desconto">Desconto</label>
       <input
+      min="0"
         type="number"
         [(ngModel)]="desconto"
+        (ngModelChange)="calcularValorTotal()"
         id="desconto"
         name="desconto"
       />

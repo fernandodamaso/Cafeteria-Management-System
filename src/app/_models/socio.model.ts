@@ -8,6 +8,7 @@ export class SocioModel {
     nucleo: string;
     saldo: number;
     credito: number;
+    historicoValorTotal: number;
     grau: GrauModel[];
     produtosEmAberto: ProdutoModel[];
   }

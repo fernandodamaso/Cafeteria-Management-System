@@ -99,7 +99,6 @@ export class BarraVendaComponent implements OnInit {
           listaNomes.push(this.listaProdutos[i].nome);
         }
 
-        alert("anotado os produtos: " + JSON.stringify(listaNomes) + " para o sócio: " + this.socioSelecionadoInterno.nome);
         this.socioSelecionadoInterno = undefined!;
         this.listaProdutos = [];
 

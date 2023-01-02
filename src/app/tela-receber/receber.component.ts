@@ -28,10 +28,7 @@ export class ReceberComponent implements OnInit {
     this.sociosService.getSocios().subscribe({
       next: (data) => (this.dataSocios = data),
       error: (e) => console.error(e),
-      complete: () => {
-        console.log(this.dataSocios);
-        this.abrirPagar(this.dataSocios[0]);
-      },
+      complete: () => {},
     });
   }
 
@@ -51,7 +48,6 @@ export class ReceberComponent implements OnInit {
       error: (e) => console.error(e),
       complete: () => {
         console.log("Sócio deletado");
-        this.getData();
       },
     });
   }

@@ -4,7 +4,9 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProdutoModel } from 'src/app/_models/produto.model';
 import { SocioModel } from 'src/app/_models/socio.model';
+import { vendaModel } from 'src/app/_models/venda.model';
 import { sociosService } from 'src/app/_services/socios.service';
+import { VendasService } from 'src/app/_services/vendas.service';
 
 export interface dialogData {
   editar: boolean;
@@ -19,17 +21,17 @@ export class PagarComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<PagarComponent>,
     private sociosService: sociosService,
+    private VendasService: VendasService,
     @Inject(MAT_DIALOG_DATA) public socioData: dialogData
   ) {
     if (socioData) {
       this.informacoesSocio = socioData.socioData;
-      console.log(socioData);
     }
   }
 
   informacoesSocio: SocioModel;
   valorTotal = 0;
-  valorReceber = 0;
+  valorPago = 0;
   desconto = 0;
   debito = 0;
   formaPagamento = 'pix';
@@ -60,19 +62,68 @@ export class PagarComponent implements OnInit {
         });
       somaTotal = somaTotal * -1;
       this.debito = somaTotal;
-      this.valorTotal = somaTotal + this.informacoesSocio.saldo;
+      this.valorTotal = somaTotal + this.informacoesSocio.saldo + this.desconto;
     } else {
       this.valorTotal = 0;
       this.debito = 0;
     }
-    this.valorReceber = this.valorTotal;
+    this.valorPago = this.valorTotal;
+    this.valorPago = this.valorPago * -1;
   }
 
   addEvent(event: MatDatepickerInputEvent<Date>) {
     console.log(event.value);
   }
 
-  salvar() {}
+  salvar() {
+    let novaVenda: vendaModel;
+    novaVenda = new vendaModel();
+
+    novaVenda.cliente = this.informacoesSocio;
+    novaVenda.dataVenda = this.date.value;
+    novaVenda.desconto = this.desconto;
+    novaVenda.produtosVendidos = this.produtosAtivos;
+    novaVenda.valorRecebido = this.valorPago;
+    this.adicionarVenda(novaVenda);
+  }
+
+  adicionarVenda(venda: vendaModel) {
+    this.VendasService.adicionarVenda(venda).subscribe({
+      next: (data) => {
+        console.log('venda feita com sucesso');
+        this.atualizarSocio(venda);
+      },
+      error: (e) => console.error(e),
+      complete: () => this.dialogRef.close(),
+    });
+  }
+
+  atualizarSocio(venda: vendaModel) {
+    const produtosADeletar = new Set(venda.produtosVendidos);
+    const calculoCredito = this.valorPago + this.valorTotal;
+
+    console.log(calculoCredito)
+
+    if (calculoCredito > 0) {
+      this.informacoesSocio.credito = calculoCredito;
+    } else {
+      this.informacoesSocio.credito = 0;
+    }
+
+    this.informacoesSocio.produtosEmAberto =
+      this.informacoesSocio.produtosEmAberto.filter((produto) => {
+        return !produtosADeletar.has(produto);
+      });
+
+
+    this.sociosService
+      .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
+      .subscribe({
+        next: (data) => console.log(data),
+        error: (e) => console.error(e),
+        complete: () => this.dialogRef.close(),
+      });
+  }
 
   toggleProduto(produto: ProdutoModel, i: number) {
     const index = this.produtosAtivos.findIndex((index) => {
