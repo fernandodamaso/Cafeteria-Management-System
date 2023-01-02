@@ -23,7 +23,7 @@
     </ul>
     <p class="campoVazio" *ngIf="listaProdutos.length == 0">Nenhum Produto Selecionado</p>
   </div>
-  <div class="data coluna" *ngIf="socioSelecionadoInterno || listaProdutos.length > 0">
+  <div class="data coluna" *ngIf="socioSelecionadoInterno && listaProdutos.length > 0">
     <label for="data">Data da compra</label>
     <mat-form-field appearance="outline">
       <input title="Data de Compra" [formControl]="date" matInput [matDatepicker]="picker" (dateInput)="addEvent($event)" />
@@ -31,7 +31,7 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
-  <div class="valores coluna" *ngIf="socioSelecionadoInterno || listaProdutos.length > 0">
+  <div class="valores coluna" *ngIf="socioSelecionadoInterno && listaProdutos.length > 0">
     <div class="col">
       <p class="titulo">Saldo Atual</p>
       <p class="valor" [ngClass]="{ saldoNegativo: socioSelecionadoInterno.saldo < 0, saldoPositivo: socioSelecionadoInterno.saldo >= 0 }">{{ socioSelecionadoInterno.saldo | currency : "R$" }}</p>
@@ -41,7 +41,7 @@
       <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
     </div>
   </div>
-  <div class="coluna botoes" *ngIf="socioSelecionadoInterno || listaProdutos.length > 0">
+  <div class="coluna botoes" *ngIf="socioSelecionadoInterno && listaProdutos.length > 0">
     <button class="botao azul" (click)="pagar()">Pagar Agora</button>
     <button class="botao borda" (click)="anotar()">Anotar</button>
   </div>
