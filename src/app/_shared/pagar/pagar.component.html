@@ -13,7 +13,8 @@
         *ngFor="
           let produto of this.informacoesSocio.produtosEmAberto;
           let i = index
-        ">
+        "
+      >
         <span
           [ngClass]="{
             tipoAcai: produto.tipo === 'Açai',
@@ -42,7 +43,7 @@
       </p>
     </div>
     <div class="col">
-      <label class="titulo">Débito</label>
+      <label class="titulo">Valor dos Produtos</label>
       <p class="valor saldoNegativo">{{ debito | currency : "R$" }}</p>
     </div>
 
@@ -56,7 +57,7 @@
     <div class="col">
       <label for="valorPago">Valor pago</label>
       <input
-      min="0"
+        min="0"
         type="number"
         [(ngModel)]="valorPago"
         id="valorPago"
@@ -66,7 +67,7 @@
     <div class="col">
       <label for="desconto">Desconto</label>
       <input
-      min="0"
+        min="0"
         type="number"
         [(ngModel)]="desconto"
         (ngModelChange)="calcularValorTotal()"

@@ -22,11 +22,11 @@ export class calculoDebito implements PipeTransform {
 
       somaTotal = somaTotal * -1;
 
-      return somaTotal + socio.saldo;
+      return somaTotal + socio.credito;
 
     } else {
-      if (socio.saldo >= 1) {
-        return socio.saldo;
+      if (socio.credito >= 1) {
+        return socio.credito;
       } else {
         return "0"
       }

@@ -65,7 +65,7 @@ export class NovoSocioComponent implements OnInit {
       novoSocio.nome = this.nome;
       novoSocio.telefone = this.telefone;
       novoSocio.nucleo = this.nucleo;
-      novoSocio.saldo = 0;
+      novoSocio.credito = 0;
       novoSocio.grau = [];
       let novoGrau: GrauModel;
       novoGrau = {

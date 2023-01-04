@@ -98,101 +98,10 @@
           "nome": "CDC"
         }
       ],
-      "saldo": 4,
       "telefone": "27995066670",
       "nucleo": "Gaspar",
       "produtosEmAberto": [],
       "credito": 0
-    },
-    {
-      "nome": "Fernando Dâmaso",
-      "saldo": 4,
-      "telefone": "27995066670",
-      "nucleo": "dasdas",
-      "grau": [
-        {
-          "nome": "CI"
-        }
-      ],
-      "id": 1,
-      "produtosEmAberto": [
-        {
-          "id": 4,
-          "nome": "Pão de queijo",
-          "precoVenda": 7,
-          "precoCusto": 2.5,
-          "status": true,
-          "tipo": "Salgado",
-          "dataCompra": "2022-12-14T13:19:02.553Z"
-        },
-        {
-          "id": 4,
-          "nome": "Pão de queijo",
-          "precoVenda": 7,
-          "precoCusto": 2.5,
-          "status": true,
-          "tipo": "Salgado",
-          "dataCompra": "2022-12-14T13:19:02.553Z"
-        },
-        {
-          "id": 1,
-          "nome": "Açai",
-          "precoVenda": 12,
-          "precoCusto": 4.5,
-          "status": true,
-          "tipo": "Açai",
-          "dataCompra": "2022-12-14T21:51:59.474Z"
-        }
-      ]
-    },
-    {
-      "nome": "Viviane Rodrigues",
-      "saldo": 50,
-      "telefone": "27995066670",
-      "nucleo": "Gaspar",
-      "grau": [
-        {
-          "nome": "CI"
-        }
-      ],
-      "id": 2,
-      "produtosEmAberto": []
-    },
-    {
-      "nome": "Marina Silva",
-      "saldo": 3,
-      "telefone": "43423432",
-      "nucleo": "Gaspar",
-      "grau": [
-        {
-          "nome": "CDC"
-        }
-      ],
-      "id": 3,
-      "produtosEmAberto": [
-        {
-          "status": true,
-          "nome": "dasdasdas",
-          "precoCusto": "43",
-          "precoVenda": "43",
-          "tipo": "Bebida",
-          "id": 6,
-          "dataCompra": "2022-12-14T18:10:53.718Z"
-        }
-      ]
-    },
-    {
-      "nome": "Samantha Medeiros",
-      "telefone": "2799950654",
-      "nucleo": "Gaspar",
-      "saldo": 0,
-      "grau": [
-        {
-          "nome": "QS"
-        }
-      ],
-      "id": 4,
-      "produtosEmAberto": []
     }
   ],
   "vendas": [
@@ -206,7 +115,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -355,7 +263,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -504,7 +411,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -653,7 +559,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -802,7 +707,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -942,7 +846,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1082,7 +985,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1222,7 +1124,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1371,7 +1272,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1511,7 +1411,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1542,7 +1441,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1583,7 +1481,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1669,7 +1566,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1747,7 +1643,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1816,7 +1711,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1876,7 +1770,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -1971,7 +1864,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -2085,7 +1977,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -2172,7 +2063,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -2286,7 +2176,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [],
@@ -2308,7 +2197,6 @@
             "nome": "CDC"
           }
         ],
-        "saldo": 4,
         "telefone": "27995066670",
         "nucleo": "Gaspar",
         "produtosEmAberto": [
@@ -2339,6 +2227,1987 @@
       ],
       "valorRecebido": 8,
       "id": 21
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:06:34.775Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:06:45.500Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:06:34.775Z"
+        }
+      ],
+      "valorRecebido": 12,
+      "id": 22
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:06:52.730Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:06:57.638Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:06:52.730Z"
+        }
+      ],
+      "valorRecebido": 14,
+      "id": 23
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 2
+      },
+      "dataVenda": "2023-01-02T21:07:07.766Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 5,
+      "id": 24
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 5
+      },
+      "dataVenda": "2023-01-02T21:07:13.865Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 5,
+      "id": 25
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 5
+      },
+      "dataVenda": "2023-01-02T21:07:18.567Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 10,
+      "id": 26
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 10
+      },
+      "dataVenda": "2023-01-02T21:08:37.810Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 15,
+      "id": 27
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 15
+      },
+      "dataVenda": "2023-01-02T21:12:57.221Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 1,
+      "id": 28
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 16
+      },
+      "dataVenda": "2023-01-02T21:12:59.580Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 4,
+      "id": 29
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:13:49.223Z"
+          },
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:13:49.223Z"
+          }
+        ],
+        "credito": 20
+      },
+      "dataVenda": "2023-01-02T21:15:40.658Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:13:49.223Z"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:13:49.223Z"
+        }
+      ],
+      "valorRecebido": 4,
+      "id": 30
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:15:54.010Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:15:54.010Z"
+          }
+        ],
+        "credito": 8
+      },
+      "dataVenda": "2023-01-02T21:19:00.672Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:15:54.010Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:15:54.010Z"
+        }
+      ],
+      "valorRecebido": 4.5,
+      "id": 31
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:19:41.683Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:19:47.723Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:19:41.683Z"
+        }
+      ],
+      "valorRecebido": 4,
+      "id": 32
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:19:53.761Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:19:59.578Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:19:53.761Z"
+        }
+      ],
+      "valorRecebido": 5,
+      "id": 33
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:20:11.151Z"
+          }
+        ],
+        "credito": 1
+      },
+      "dataVenda": "2023-01-02T21:20:19.717Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:20:11.151Z"
+        }
+      ],
+      "valorRecebido": 3,
+      "id": 34
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:20:28.592Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 5,
+      "id": 35
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:20:33.018Z"
+          }
+        ],
+        "credito": 5
+      },
+      "dataVenda": "2023-01-02T21:20:39.612Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:20:33.018Z"
+        }
+      ],
+      "valorRecebido": 1,
+      "id": 36
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:20:50.282Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:20:50.282Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:20:50.282Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:20:50.282Z"
+          }
+        ],
+        "credito": 2
+      },
+      "dataVenda": "2023-01-02T21:20:56.333Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:20:50.282Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:20:50.282Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:20:50.282Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:20:50.282Z"
+        }
+      ],
+      "valorRecebido": 0,
+      "id": 37
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:21:01.575Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:21:08.036Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:21:01.575Z"
+        }
+      ],
+      "valorRecebido": 4,
+      "id": 38
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:21:31.384Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 5,
+      "id": 39
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:21:36.590Z"
+          }
+        ],
+        "credito": 5
+      },
+      "dataVenda": "2023-01-02T21:29:22.869Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:21:36.590Z"
+        }
+      ],
+      "valorRecebido": 0,
+      "id": 40
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:30:17.898Z"
+          }
+        ],
+        "credito": 1
+      },
+      "dataVenda": "2023-01-02T21:30:24.555Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:30:17.898Z"
+        }
+      ],
+      "valorRecebido": 0,
+      "id": 41
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:30:32.950Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 5,
+      "id": 42
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:30:38.446Z"
+          }
+        ],
+        "credito": 5
+      },
+      "dataVenda": "2023-01-02T21:31:06.219Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:30:38.446Z"
+        }
+      ],
+      "valorRecebido": 0,
+      "id": 43
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:31:28.001Z"
+          }
+        ],
+        "credito": 1
+      },
+      "dataVenda": "2023-01-02T21:31:36.811Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:31:28.001Z"
+        }
+      ],
+      "valorRecebido": 0,
+      "id": 44
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 0.5
+      },
+      "dataVenda": "2023-01-02T21:32:28.843Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 1,
+      "id": 45
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:32:38.880Z"
+          }
+        ],
+        "credito": 1.5
+      },
+      "dataVenda": "2023-01-02T21:33:09.981Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:32:38.880Z"
+        }
+      ],
+      "valorRecebido": 0,
+      "id": 46
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 1
+      },
+      "dataVenda": "2023-01-02T21:33:12.254Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 0,
+      "id": 47
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:33:14.965Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 1,
+      "id": 48
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-02T21:33:34.611Z"
+          }
+        ],
+        "credito": 1
+      },
+      "dataVenda": "2023-01-02T21:40:11.771Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-02T21:33:34.611Z"
+        }
+      ],
+      "valorRecebido": -3,
+      "id": 49
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:40:39.067Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:40:45.345Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:40:39.067Z"
+        }
+      ],
+      "valorRecebido": 12,
+      "id": 50
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:41:19.467Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-02T21:41:23.789Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:41:19.467Z"
+        }
+      ],
+      "valorRecebido": 15,
+      "id": 51
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:41:40.923Z"
+          }
+        ],
+        "credito": 3
+      },
+      "dataVenda": "2023-01-02T21:41:47.156Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:41:40.923Z"
+        }
+      ],
+      "valorRecebido": 0,
+      "id": 52
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:42:54.034Z"
+          }
+        ],
+        "credito": 2.5
+      },
+      "dataVenda": "2023-01-02T21:43:47.319Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:42:54.034Z"
+        }
+      ],
+      "valorRecebido": 0,
+      "id": 53
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:42:54.034Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:44:03.749Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          }
+        ],
+        "credito": 2.5
+      },
+      "dataVenda": "2023-01-02T21:47:42.525Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:42:54.034Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:44:03.749Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        }
+      ],
+      "valorRecebido": 46,
+      "id": 54
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:42:54.034Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:44:03.749Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          }
+        ],
+        "credito": 2.5
+      },
+      "dataVenda": "2023-01-03T20:04:44.969Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:42:54.034Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:44:03.749Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        }
+      ],
+      "valorRecebido": 46,
+      "id": 55
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:42:54.034Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:44:03.749Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          }
+        ],
+        "credito": 2.5
+      },
+      "dataVenda": "2023-01-03T20:06:27.593Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:42:54.034Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:44:03.749Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        }
+      ],
+      "valorRecebido": 46,
+      "id": 56
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:42:54.034Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:44:03.749Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          }
+        ],
+        "credito": 2.5
+      },
+      "dataVenda": "2023-01-03T20:06:39.248Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:42:54.034Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:44:03.749Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        }
+      ],
+      "valorRecebido": 48,
+      "id": 57
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:42:54.034Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:44:03.749Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          }
+        ],
+        "credito": 2.5
+      },
+      "dataVenda": "2023-01-03T20:06:44.781Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:42:54.034Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:44:03.749Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        }
+      ],
+      "valorRecebido": 44,
+      "id": 58
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-02T21:42:54.034Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:44:03.749Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-02T21:47:19.115Z"
+          }
+        ],
+        "credito": 2.5
+      },
+      "dataVenda": "2023-01-03T20:07:15.114Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-02T21:42:54.034Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:44:03.749Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-02T21:47:19.115Z"
+        }
+      ],
+      "valorRecebido": 46,
+      "id": 59
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-03T20:07:23.207Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-03T20:07:52.488Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-03T20:07:23.207Z"
+        }
+      ],
+      "valorRecebido": 12,
+      "id": 60
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-03T20:08:14.026Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-03T20:08:14.026Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-03T20:08:47.622Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-03T20:08:14.026Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-03T20:08:14.026Z"
+        }
+      ],
+      "valorRecebido": 12.5,
+      "id": 61
+    },
+    {
+      "cliente": {
+        "id": 0,
+        "nome": "Romualdo Francisco",
+        "grau": [
+          {
+            "id": 1,
+            "nome": "CDC"
+          }
+        ],
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "produtosEmAberto": [
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-03T20:33:31.301Z"
+          }
+        ],
+        "credito": 0
+      },
+      "dataVenda": "2023-01-03T20:33:35.290Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-03T20:33:31.301Z"
+        }
+      ],
+      "valorRecebido": 0.5,
+      "id": 62
     }
   ]
 }

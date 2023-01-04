@@ -62,13 +62,16 @@ export class PagarComponent implements OnInit {
         });
       somaTotal = somaTotal * -1;
       this.debito = somaTotal;
-      this.valorTotal = somaTotal + this.informacoesSocio.saldo + this.desconto;
-    } else {
-      this.valorTotal = 0;
-      this.debito = 0;
+      this.valorTotal =
+        somaTotal + this.informacoesSocio.credito + this.desconto;
+      this.valorPago = this.valorTotal * -1;
+      // if (this.valorTotal < 0) {
+      //     this.valorPago = this.valorTotal * -1;
+      // }
     }
-    this.valorPago = this.valorTotal;
-    this.valorPago = this.valorPago * -1;
+    if (this.valorPago <= 0) {
+      this.valorPago = this.valorPago * -1;
+    }
   }
 
   addEvent(event: MatDatepickerInputEvent<Date>) {
@@ -102,10 +105,15 @@ export class PagarComponent implements OnInit {
     const produtosADeletar = new Set(venda.produtosVendidos);
     const calculoCredito = this.valorPago + this.valorTotal;
 
-    console.log(calculoCredito)
+    console.log(calculoCredito);
 
     if (calculoCredito > 0) {
-      this.informacoesSocio.credito = calculoCredito;
+      if (venda.produtosVendidos.length > 0) {
+        this.informacoesSocio.credito = calculoCredito;
+      } else {
+        this.informacoesSocio.credito =
+          this.informacoesSocio.credito + calculoCredito;
+      }
     } else {
       this.informacoesSocio.credito = 0;
     }
@@ -115,6 +123,7 @@ export class PagarComponent implements OnInit {
         return !produtosADeletar.has(produto);
       });
 
+    console.log(this.informacoesSocio);
 
     this.sociosService
       .editarSocio(this.informacoesSocio, this.informacoesSocio.id)

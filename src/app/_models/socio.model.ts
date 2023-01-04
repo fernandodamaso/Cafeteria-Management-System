@@ -6,7 +6,6 @@ export class SocioModel {
     nome: string;
     telefone: string;
     nucleo: string;
-    saldo: number;
     credito: number;
     historicoValorTotal: number;
     grau: GrauModel[];

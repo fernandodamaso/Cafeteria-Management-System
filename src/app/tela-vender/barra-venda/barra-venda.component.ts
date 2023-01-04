@@ -68,13 +68,12 @@ export class BarraVendaComponent implements OnInit {
   }
 
   pagar() {
-    // this.socioSelecionadoInterno = undefined!;
-    // this.listaProdutos = [];
+    this.anotar();
     const dialogRef = this.matDialog.open(PagarComponent, {
       panelClass: "PagarComponent",
-      // data: {
-      //   socioData: socio,
-      // },
+      data: {
+        socioData: this.socioSelecionadoInterno,
+      },
     });
 
     dialogRef.afterClosed().subscribe(() => {
