@@ -5,10 +5,9 @@
         Receber de <span class="nome">{{ informacoesSocio.nome }}</span>
       </h2>
     </div>
-
-    <div class="valores linhaForm">
+    <div class="valores linhaForm ">
       <div class="col">
-        <label class="titulo">Crédito</label>
+        <label class="titulo">Credito</label>
         <p
           class="valor"
           [ngClass]="{
@@ -19,7 +18,7 @@
           {{ informacoesSocio.credito | currency : "R$" }}
         </p>
       </div>
-      <!-- <div class="col">
+       <!-- <div class="col">
         <label class="titulo">Valor dos Produtos</label>
         <p class="valor saldoNegativo">{{ debito | currency : "R$" }}</p>
       </div> -->
@@ -128,9 +127,9 @@
             let i = index
           "
         >
-        <td>
-          <span class="checkbox"></span>
-        </td>
+          <td>
+            <span class="checkbox" [ngClass]="{ ativo: verificaProduto(produto) }"></span>
+          </td>
           <td>
             <span
               [ngClass]="{
@@ -152,6 +151,7 @@
         </tr>
       </tbody>
     </table>
+
   </div>
 </div>
 

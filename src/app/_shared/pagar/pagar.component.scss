@@ -2,10 +2,25 @@
   display: flex;
 
   .esquerda {
-    flex-basis: 37%;
+    flex-basis: 50%;
     margin-bottom: 30px;
+    position: relative;
+    max-width: 320px;
+
+    &:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 0;
+      height: 100%;
+      background-color: #e7e3ef;
+      width: 1px;
+    }
 
     .tituloBox {
+      margin-bottom: 0px;
+
       h2 {
         font-size: 14px;
 
@@ -75,38 +90,8 @@
         }
       }
 
-      &.valores {
-        display: flex;
-        flex-basis: 16%;
-        margin-top: 10px;
-
-        .col {
-          flex: 1;
-          max-width: 105px;
-
-          .titulo {}
-
-          .valor {
-            font-weight: 600;
-            font-size: 20px;
-
-            &.saldoNegativo {
-              color: #cc2424;
-            }
-
-            &.saldoPositivo {
-              color: #3498db;
-            }
-
-            &.verde {
-              color: #27ae60;
-            }
-          }
-        }
-      }
-
       .col {
-        flex: 1;
+        // flex: 1;
 
         #valorRecebel {}
       }
@@ -134,17 +119,28 @@
   }
 
   .direita {
-    flex-basis: 62%;
+    flex-basis: 63%;
 
     table {
       width: 100%;
 
       tr {
+        background-color: #fff;
+
+        &:nth-child(odd) {
+          background-color: #f8f9fa !important;
+
+          &:hover {
+            background-color: #f8f9fa !important;
+          }
+        }
+
         &:hover {
+          background-color: #fff;
+
           td {
-            .checkbox {
-              border: 2px solid #fff;
-            }
+            background-color: #fff;
+            color: #5e5873 !important;
           }
         }
 
@@ -156,13 +152,31 @@
           .checkbox {
             width: 20px;
             height: 20px;
-            border: 2px solid #3498DB;
+            border: 2px solid #c1d2dd;
             border-radius: 5px;
             display: inline-block;
             transition: all ease-in-out 0.20s;
             position: relative;
             top: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:after {
+              transition: all ease-in-out 0.15s;
+              content: url(../../../assets/check.png);
+              color: #3498DB;
+              opacity: 0;
+            }
+
+            &.ativo {
+              border: 2px solid #3498DB;
+              &:after {
+                opacity: 1;
+              }
+            }
           }
+
           .tag {
             display: inline-block;
           }
@@ -180,6 +194,44 @@
     }
   }
 
+
+  .valores {
+    display: flex;
+    flex-basis: 16%;
+    margin-top: 10px;
+
+    .col {
+      padding-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      label {
+        color: #5e5873;
+        font-weight: 500;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .valor {
+        font-weight: 600;
+        font-size: 20px;
+
+        &.saldoNegativo {
+          color: #cc2424;
+        }
+
+        &.saldoPositivo {
+          color: #3498db;
+        }
+
+        &.verde {
+          color: #27ae60;
+        }
+      }
+    }
+  }
 
 }
 

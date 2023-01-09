@@ -85,7 +85,7 @@
       "nome": "Fernando Dâmaso",
       "telefone": "27995066670",
       "nucleo": "Gaspar",
-      "credito": 0,
+      "credito": 15,
       "grau": [
         {
           "nome": "CI"
@@ -99,7 +99,7 @@
           "precoCusto": 4.5,
           "status": true,
           "tipo": "Açai",
-          "dataCompra": "2023-01-06T19:57:34.353Z"
+          "dataCompra": "2023-01-09T14:32:02.165Z"
         },
         {
           "id": 2,
@@ -108,34 +108,43 @@
           "precoCusto": 0.1,
           "status": true,
           "tipo": "Doce",
-          "dataCompra": "2023-01-06T19:57:34.353Z"
+          "dataCompra": "2023-01-09T17:12:41.081Z"
         },
         {
-          "id": 3,
-          "nome": "Agua com Gás",
-          "precoVenda": 4,
-          "precoCusto": 2,
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
           "status": true,
-          "tipo": "Bebida",
-          "dataCompra": "2023-01-06T19:57:34.353Z"
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
         },
         {
-          "id": 4,
-          "nome": "Pão de queijo",
-          "precoVenda": 7,
-          "precoCusto": 2.5,
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
           "status": true,
-          "tipo": "Salgado",
-          "dataCompra": "2023-01-06T19:57:34.353Z"
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
         },
         {
-          "id": 3,
-          "nome": "Agua com Gás",
-          "precoVenda": 4,
-          "precoCusto": 2,
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
           "status": true,
-          "tipo": "Bebida",
-          "dataCompra": "2023-01-06T19:57:34.353Z"
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
         }
       ],
       "id": 1
@@ -4780,6 +4789,178 @@
       ],
       "valorRecebido": 84,
       "id": 69
+    },
+    {
+      "cliente": {
+        "nome": "Fernando Dâmaso",
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "credito": 0,
+        "grau": [
+          {
+            "nome": "CI"
+          }
+        ],
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-06T19:57:34.353Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-06T19:57:34.353Z"
+          },
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-06T19:57:34.353Z"
+          },
+          {
+            "id": 4,
+            "nome": "Pão de queijo",
+            "precoVenda": 7,
+            "precoCusto": 2.5,
+            "status": true,
+            "tipo": "Salgado",
+            "dataCompra": "2023-01-06T19:57:34.353Z"
+          },
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-06T19:57:34.353Z"
+          }
+        ],
+        "id": 1
+      },
+      "dataVenda": "2023-01-09T14:30:34.320Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-06T19:57:34.353Z"
+        },
+        {
+          "id": 4,
+          "nome": "Pão de queijo",
+          "precoVenda": 7,
+          "precoCusto": 2.5,
+          "status": true,
+          "tipo": "Salgado",
+          "dataCompra": "2023-01-06T19:57:34.353Z"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-06T19:57:34.353Z"
+        }
+      ],
+      "valorRecebido": 15,
+      "id": 70
+    },
+    {
+      "cliente": {
+        "nome": "Fernando Dâmaso",
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "credito": 0,
+        "grau": [
+          {
+            "nome": "CI"
+          }
+        ],
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-06T19:57:34.353Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-06T19:57:34.353Z"
+          }
+        ],
+        "id": 1
+      },
+      "dataVenda": "2023-01-09T14:31:43.832Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-06T19:57:34.353Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-06T19:57:34.353Z"
+        }
+      ],
+      "valorRecebido": 12.5,
+      "id": 71
+    },
+    {
+      "cliente": {
+        "nome": "Fernando Dâmaso",
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "credito": 0,
+        "grau": [
+          {
+            "nome": "CI"
+          }
+        ],
+        "produtosEmAberto": [],
+        "id": 1
+      },
+      "dataVenda": "2023-01-09T14:31:54.653Z",
+      "desconto": 0,
+      "produtosVendidos": [],
+      "valorRecebido": 15,
+      "id": 72
     }
   ]
 }
