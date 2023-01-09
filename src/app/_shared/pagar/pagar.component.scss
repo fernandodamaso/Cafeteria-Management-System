@@ -1,11 +1,25 @@
 .box {
   display: flex;
+  max-height: 750px;
+  overflow: auto;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+
+  }
 
   .esquerda {
     flex-basis: 50%;
     margin-bottom: 30px;
     position: relative;
     max-width: 320px;
+
+    @media (max-width: 750px) {
+      margin-bottom: 5px;
+      flex-basis: 100%;
+      max-width: initial;
+      order: 2;
+    }
 
     &:after {
       content: " ";
@@ -121,6 +135,11 @@
   .direita {
     flex-basis: 63%;
 
+    @media (max-width: 750px) {
+      flex-basis: 100%;
+      order: 1;
+    }
+
     table {
       width: 100%;
 
@@ -171,6 +190,7 @@
 
             &.ativo {
               border: 2px solid #3498DB;
+
               &:after {
                 opacity: 1;
               }

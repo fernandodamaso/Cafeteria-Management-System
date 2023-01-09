@@ -12,7 +12,9 @@
 .filtrosWrap {
   margin-bottom: 24px;
   display: flex;
-
+@media (max-width: 850px) {
+  flex-direction: column;
+}
   .filtros {
     flex: 1.5;
   }
@@ -22,6 +24,11 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 20px;
+    @media (max-width: 850px) {
+      justify-content: flex-start;
+      padding-left: 20px;
+      flex-direction: column;
+    }
   }
 }
 

@@ -1,9 +1,18 @@
 :host {
   display: flex;
 
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+
   .box {
     flex: 1;
     margin: 0 10px;
+
+    @media (max-width: 850px) {
+      margin: 0;
+      margin-bottom: 20px;
+    }
   }
 
   .tituloBox {}
@@ -17,6 +26,10 @@
   height: calc(80vh - 195px);
   overflow-y: auto;
 
+  @media (max-width: 850px) {
+    height: initial;
+  }
+
   table {
 
     &.socios {
@@ -24,11 +37,14 @@
 
         &.active {
           background-color: #3498DB;
-          color: #fff!important;
-          .debito, .nome {
-            color: #fff!important;
+          color: #fff !important;
+
+          .debito,
+          .nome {
+            color: #fff !important;
           }
         }
+
         td,
         th {
           &:nth-child(1) {
@@ -43,6 +59,7 @@
 
           span {
             transition: color ease-in-out 0.1s;
+
             &.saldoPositivo {
               color: #3498DB;
 
