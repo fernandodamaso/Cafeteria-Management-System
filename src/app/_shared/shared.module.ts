@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReciboComponent } from './recibo/recibo.component';
+import { receberRoutingModule } from '../tela-receber/receber-routing.module';
 
 // Modulo para ser compartilhado com toda a aplicação, aqui estão declaradas e exportados os pipes
 
@@ -20,14 +22,16 @@ import { MatDialogModule } from '@angular/material/dialog';
     buscaTipoPipe,
     BuscaPalavrasPipe,
     calculoDebito,
-    PagarComponent
+    PagarComponent,
+    ReciboComponent
   ],
   exports: [
     BuscaGrauPipe,
     buscaTipoPipe,
     BuscaPalavrasPipe,
     calculoDebito,
-    PagarComponent
+    PagarComponent,
+    ReciboComponent
   ],
   imports: [
     // Caso os pipes tenham alguma dependencia especifica, devem ser importados para funcionar

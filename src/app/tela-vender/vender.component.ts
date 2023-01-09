@@ -33,14 +33,14 @@ export class VenderComponent implements OnInit {
       next: (data) => (this.dataSocios = data),
       error: (e) => console.error(e),
       complete: () => {
-        console.log(this.dataSocios);
+        // console.log(this.dataSocios);
       },
     });
 
     this.produtosService.getProdutos().subscribe({
       next: (data) => (this.dataProdutos = data),
       error: (e) => console.error(e),
-      complete: () => console.log(this.dataProdutos),
+      // complete: () => console.log(this.dataProdutos),
     });
   }
 

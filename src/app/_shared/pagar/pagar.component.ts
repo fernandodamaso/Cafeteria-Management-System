@@ -18,12 +18,12 @@ export interface dialogData {
   styleUrls: ['./pagar.component.scss'],
 })
 export class PagarComponent implements OnInit {
+
   constructor(
     public dialogRef: MatDialogRef<PagarComponent>,
     private sociosService: sociosService,
     private VendasService: VendasService,
-    @Inject(MAT_DIALOG_DATA) public socioData: dialogData
-  ) {
+    @Inject(MAT_DIALOG_DATA) public socioData: dialogData) {
     if (socioData) {
       this.informacoesSocio = socioData.socioData;
     }

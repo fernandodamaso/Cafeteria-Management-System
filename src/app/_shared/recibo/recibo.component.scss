@@ -1,0 +1,105 @@
+.content {
+  background-color: #3498DB;
+  padding: 15px;
+
+  header {
+    display: flex;
+    padding-bottom: 15px;
+    padding-top: 10px;
+
+    img {
+      margin-right: 20px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #ffffff;
+
+      span {
+        font-family: Montserrat;
+        font-size: 31px;
+        font-weight: 700;
+        display: block;
+      }
+    }
+  }
+
+  .boxBranco {
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+
+    .texto {
+
+      p {
+
+        .nome {
+          color: #3498DB;
+
+        }
+      }
+    }
+
+    .tabelaWrap {
+
+      table {
+
+        thead {
+
+          tr {
+            background-color: #fff;
+
+            th {
+              font-weight: 600;
+              font-size: 12px;
+              background-color: #fff;
+              color: #5e5873;
+              text-transform: uppercase;
+
+              &:last-child {
+                text-align: right;
+              }
+            }
+
+          }
+        }
+
+        tbody {
+
+          tr {
+
+            td {
+              &:last-child {
+                text-align: right;
+              }
+
+              .tag {
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .valorTotal {
+      text-align: right;
+      margin-top: 20px;
+
+      .cinza {
+        color: #5e5873;
+        font-family: Montserrat;
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      .verde {
+        color: #27ae60;
+        font-family: Montserrat;
+        font-size: 26px;
+        font-weight: 600;
+      }
+    }
+  }
+}

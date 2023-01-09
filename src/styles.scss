@@ -515,11 +515,16 @@ form,
   }
 }
 
+
 .NovoSocioComponent,
-.PagarComponent,
 .NovoProdutoComponent {
   width: 100%;
   max-width: 515px !important;
+}
+
+.PagarComponent {
+  width: 100%;
+  max-width: 850px !important;
 }
 
 

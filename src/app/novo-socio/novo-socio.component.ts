@@ -28,7 +28,7 @@ export class NovoSocioComponent implements OnInit {
   id: number;
   telefone: string;
   nucleo: string;
-  grau: string;
+  grau = "";
 
   ngOnInit(): void {
     if (this.socioData) {
@@ -67,6 +67,7 @@ export class NovoSocioComponent implements OnInit {
       novoSocio.nucleo = this.nucleo;
       novoSocio.credito = 0;
       novoSocio.grau = [];
+      novoSocio.produtosEmAberto = [];
       let novoGrau: GrauModel;
       novoGrau = {
         nome: this.grau,

@@ -1,134 +1,157 @@
 <div class="box">
-  <div class="tituloBox">
-    <h2>
-      Receber de <span class="nome">{{ informacoesSocio.nome }}</span>
-    </h2>
-  </div>
+  <div class="esquerda">
+    <div class="tituloBox">
+      <h2>
+        Receber de <span class="nome">{{ informacoesSocio.nome }}</span>
+      </h2>
+    </div>
 
-  <div class="linhaForm">
-    <ul class="listaProdutos">
-      <li
-        [ngClass]="{ ativo: verificaProduto(produto) }"
-        (click)="toggleProduto(produto, i)"
-        *ngFor="
-          let produto of this.informacoesSocio.produtosEmAberto;
-          let i = index
-        "
-      >
-        <span
+    <div class="valores linhaForm">
+      <div class="col">
+        <label class="titulo">Crédito</label>
+        <p
+          class="valor"
           [ngClass]="{
-            tipoAcai: produto.tipo === 'Açai',
-            tipoDoce: produto.tipo === 'Doce',
-            tipoBebida: produto.tipo === 'Bebida',
-            tipoSalgado: produto.tipo === 'Salgado'
+            saldoNegativo: informacoesSocio.credito < 0,
+            saldoPositivo: informacoesSocio.credito >= 0
           }"
-          class="tag"
-          >{{ produto.nome }}
-        </span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="valores linhaForm">
-    <div class="col">
-      <label class="titulo">Crédito</label>
-      <p
-        class="valor"
-        [ngClass]="{
-          saldoNegativo: informacoesSocio.credito < 0,
-          saldoPositivo: informacoesSocio.credito >= 0
-        }"
-      >
-        {{ informacoesSocio.credito | currency : "R$" }}
-      </p>
-    </div>
-    <div class="col">
-      <label class="titulo">Valor dos Produtos</label>
-      <p class="valor saldoNegativo">{{ debito | currency : "R$" }}</p>
-    </div>
-
-    <div class="col">
-      <label class="titulo">Valor Total</label>
-      <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
-    </div>
-  </div>
-
-  <div class="linhaForm receber">
-    <div class="col">
-      <label for="valorPago">Valor pago</label>
-      <input
-        min="0"
-        type="number"
-        [(ngModel)]="valorPago"
-        id="valorPago"
-        name="valorPago"
-      />
-    </div>
-    <div class="col">
-      <label for="desconto">Desconto</label>
-      <input
-        min="0"
-        type="number"
-        [(ngModel)]="desconto"
-        (ngModelChange)="calcularValorTotal()"
-        id="desconto"
-        name="desconto"
-      />
-    </div>
-    <div class="col data">
-      <label for="data">Data de recebimento</label>
-      <mat-form-field appearance="outline">
-        <input
-          title="Data de Compra"
-          [formControl]="date"
-          matInput
-          [matDatepicker]="picker"
-          (dateInput)="addEvent($event)"
-        />
-        <mat-datepicker-toggle
-          matIconSuffix
-          [for]="picker"
-        ></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="linhaForm formaPagamento">
-    <div class="col">
-      <label for="data">Forma de pagamento</label>
-      <div class="radioWrap">
-        <label class="radio">
-          <input
-            [(ngModel)]="formaPagamento"
-            value="pix"
-            type="radio"
-            name="formaPagamento"
-            id="pix"
-          />
-          Pix
-        </label>
-        <label class="radio">
-          <input
-            [(ngModel)]="formaPagamento"
-            value="cartao"
-            type="radio"
-            name="formaPagamento"
-            id="cartao"
-          />
-          Cartão
-        </label>
-        <label class="radio">
-          <input
-            [(ngModel)]="formaPagamento"
-            value="dinheiro"
-            type="radio"
-            name="formaPagamento"
-            id="dinheiro"
-          />
-          Dinheiro
-        </label>
+        >
+          {{ informacoesSocio.credito | currency : "R$" }}
+        </p>
+      </div>
+      <!-- <div class="col">
+        <label class="titulo">Valor dos Produtos</label>
+        <p class="valor saldoNegativo">{{ debito | currency : "R$" }}</p>
+      </div> -->
+      <div class="col">
+        <label class="titulo">Valor Total</label>
+        <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
       </div>
     </div>
+
+    <div class="linhaForm receber">
+      <div class="col">
+        <label for="valorPago">Valor pago</label>
+        <input
+          min="0"
+          type="number"
+          [(ngModel)]="valorPago"
+          id="valorPago"
+          name="valorPago"
+        />
+      </div>
+      <div class="col">
+        <label for="desconto">Desconto</label>
+        <input
+          min="0"
+          type="number"
+          [(ngModel)]="desconto"
+          (ngModelChange)="calcularValorTotal()"
+          id="desconto"
+          name="desconto"
+        />
+      </div>
+    </div>
+    <div class="linhaForm formaPagamento">
+      <div class="col">
+        <label for="data">Forma de pagamento</label>
+        <div class="radioWrap">
+          <label class="radio">
+            <input
+              [(ngModel)]="formaPagamento"
+              value="pix"
+              type="radio"
+              name="formaPagamento"
+              id="pix"
+            />
+            Pix
+          </label>
+          <label class="radio">
+            <input
+              [(ngModel)]="formaPagamento"
+              value="cartao"
+              type="radio"
+              name="formaPagamento"
+              id="cartao"
+            />
+            Cartão
+          </label>
+          <label class="radio">
+            <input
+              [(ngModel)]="formaPagamento"
+              value="dinheiro"
+              type="radio"
+              name="formaPagamento"
+              id="dinheiro"
+            />
+            Dinheiro
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="linhaForm">
+      <div class="col data">
+        <label for="data">Data de recebimento</label>
+        <mat-form-field appearance="outline">
+          <input
+            title="Data de Compra"
+            [formControl]="date"
+            matInput
+            [matDatepicker]="picker"
+            (dateInput)="addEvent($event)"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="direita">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Produtos a dar baixa</th>
+          <th>Valor</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          [ngClass]="{ ativo: verificaProduto(produto) }"
+          (click)="toggleProduto(produto, i)"
+          *ngFor="
+            let produto of this.informacoesSocio.produtosEmAberto;
+            let i = index
+          "
+        >
+        <td>
+          <span class="checkbox"></span>
+        </td>
+          <td>
+            <span
+              [ngClass]="{
+                tipoAcai: produto.tipo === 'Açai',
+                tipoDoce: produto.tipo === 'Doce',
+                tipoBebida: produto.tipo === 'Bebida',
+                tipoSalgado: produto.tipo === 'Salgado'
+              }"
+              class="tag"
+              >{{ produto.nome }}
+            </span>
+          </td>
+          <td>
+            {{ produto.precoVenda | currency : "R$" }}
+          </td>
+          <td>
+            {{ produto.dataCompra | date }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
