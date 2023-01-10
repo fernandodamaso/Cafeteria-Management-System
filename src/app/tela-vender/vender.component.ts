@@ -26,6 +26,7 @@ export class VenderComponent implements OnInit {
   socioSelecionado: SocioModel;
   jsonDataResult: any;
   produtoSelecionado: Subject<ProdutoModel> = new Subject();
+  produtoRemovido: Subject<ProdutoModel> = new Subject();
   socioSelecionadoIndex: number;
 
   ngOnInit(): void {
@@ -58,31 +59,36 @@ export class VenderComponent implements OnInit {
     }
   }
 
-  pegarProduto(produto: ProdutoModel) {
+  adicionarProduto(produto: ProdutoModel) {
+    console.log(produto);
     this.produtoSelecionado.next(produto);
 
-    this.listaProdutosSelecionados.push(produto);
+    // this.listaProdutosSelecionados.push(produto);
 
-    let listaAgrupada = this.agrupa(this.listaProdutosSelecionados, "id");
-
-    console.log(listaAgrupada);
-
-    for (let index = 0; index < listaAgrupada.length; index++) {
-      const element = listaAgrupada[index];
-      console.log(element);
-    };
+    // let listaAgrupada = this.agrupa(this.listaProdutosSelecionados, "id");
+    // console.log(listaAgrupada);
   }
 
-  agrupa(arr: any, chave: any) {
-    return arr.reduce(function (acc: any, item: any) {
-      if (!acc[item[chave]]) {
-        acc[item[chave]] = [];
-      }
-      acc[item[chave]].push(item);
 
-      return acc;
-    }, {});
+  removerProduto(produto: ProdutoModel) {
+    this.produtoRemovido.next(produto);
+
+    // let listaAgrupada = this.agrupa(this.listaProdutosSelecionados, "id");
+    // console.log(listaAgrupada);
   }
+
+
+
+  // agrupa(arr: any, chave: any) {
+  //   return arr.reduce(function (acc: any, item: any) {
+  //     if (!acc[item[chave]]) {
+  //       acc[item[chave]] = [];
+  //     }
+  //     acc[item[chave]].push(item);
+
+  //     return acc;
+  //   }, {});
+  // }
 
   terminouCompra(terminouCompraIndex: boolean) {
     if (terminouCompraIndex == true) {

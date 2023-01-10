@@ -23,7 +23,18 @@ export class BarraVendaComponent implements OnInit {
 
   @Input()
   set produtoSelecionado(val: Subject<ProdutoModel>) {
-    this._val = val;
+    this.eventsSubscription = val.subscribe((produto) => {
+      this.listaProdutos.push(produto);
+      this.calcularValorTotal();
+    });
+  }
+
+  @Input()
+  set produtoRemovido(val: Subject<any>) {
+    this.eventsSubscription = val.subscribe((produto) => {
+      this.listaProdutos.splice(produto, 1);
+      this.calcularValorTotal();
+    });
   }
 
   constructor(private matDialog: MatDialog, private sociosService: sociosService) {}

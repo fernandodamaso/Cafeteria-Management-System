@@ -94,9 +94,9 @@
         </td>
         <td class="center">
           <span class="acoes" >
-            <button class="removerProduto">-</button>
+            <button (click)="removerProduto(produto)" class="removerProduto">-</button>
             <button class="qtdProduto">0</button>
-            <button (click)="pegarProduto(produto)" class="AdicionarProduto">+</button>
+            <button (click)="adicionarProduto(produto)" class="AdicionarProduto">+</button>
           </span>
         </td>
         <td class="alignRight">
@@ -107,4 +107,4 @@
   </div>
 </div>
 
-<app-barra-venda (terminouCompra)="terminouCompra($event)" [produtoSelecionado]="produtoSelecionado" [socioSelecionado]="socioSelecionado"></app-barra-venda>
+<app-barra-venda (terminouCompra)="terminouCompra($event)" [produtoRemovido]="produtoRemovido" [produtoSelecionado]="produtoSelecionado" [socioSelecionado]="socioSelecionado"></app-barra-venda>
