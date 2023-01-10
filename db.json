@@ -85,7 +85,7 @@
       "nome": "Fernando Dâmaso",
       "telefone": "27995066670",
       "nucleo": "Gaspar",
-      "credito": 15,
+      "credito": 0,
       "grau": [
         {
           "nome": "CI"
@@ -99,7 +99,7 @@
           "precoCusto": 4.5,
           "status": true,
           "tipo": "Açai",
-          "dataCompra": "2023-01-09T14:32:02.165Z"
+          "dataCompra": "2023-01-10T14:06:11.283Z"
         },
         {
           "id": 2,
@@ -108,70 +108,16 @@
           "precoCusto": 0.1,
           "status": true,
           "tipo": "Doce",
-          "dataCompra": "2023-01-09T17:12:41.081Z"
+          "dataCompra": "2023-01-10T14:06:11.283Z"
         },
         {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.1,
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
           "status": true,
-          "tipo": "Doce",
-          "dataCompra": "2023-01-09T17:12:41.081Z"
-        },
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.1,
-          "status": true,
-          "tipo": "Doce",
-          "dataCompra": "2023-01-09T17:12:41.081Z"
-        },
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.1,
-          "status": true,
-          "tipo": "Doce",
-          "dataCompra": "2023-01-09T17:12:41.081Z"
-        },
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.1,
-          "status": true,
-          "tipo": "Doce",
-          "dataCompra": "2023-01-09T17:12:41.081Z"
-        },
-        {
-          "id": 1,
-          "nome": "Açai",
-          "precoVenda": 12,
-          "precoCusto": 4.5,
-          "status": true,
-          "tipo": "Açai",
-          "dataCompra": "2023-01-09T20:36:58.340Z"
-        },
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.1,
-          "status": true,
-          "tipo": "Doce",
-          "dataCompra": "2023-01-09T20:36:58.340Z"
-        },
-        {
-          "id": 1,
-          "nome": "Açai",
-          "precoVenda": 12,
-          "precoCusto": 4.5,
-          "status": true,
-          "tipo": "Açai",
-          "dataCompra": "2023-01-09T20:36:58.340Z"
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-10T14:06:11.283Z"
         }
       ],
       "id": 1
@@ -4988,6 +4934,262 @@
       "produtosVendidos": [],
       "valorRecebido": 15,
       "id": 72
+    },
+    {
+      "cliente": {
+        "nome": "Fernando Dâmaso",
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "credito": 15,
+        "grau": [
+          {
+            "nome": "CI"
+          }
+        ],
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-09T14:32:02.165Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-09T17:12:41.081Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-09T17:12:41.081Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-09T17:12:41.081Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-09T17:12:41.081Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-09T17:12:41.081Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-09T20:36:58.340Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-09T20:36:58.340Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-09T20:36:58.340Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-10T14:04:46.274Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-10T14:04:46.274Z"
+          },
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-10T14:04:46.274Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-10T14:04:46.274Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-10T14:04:46.274Z"
+          }
+        ],
+        "id": 1
+      },
+      "dataVenda": "2023-01-10T14:05:11.195Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-09T14:32:02.165Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T17:12:41.081Z"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-10T14:04:46.274Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-09T20:36:58.340Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-09T20:36:58.340Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-09T20:36:58.340Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-10T14:04:46.274Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-10T14:04:46.274Z"
+        }
+      ],
+      "valorRecebido": 40.5,
+      "id": 73
     }
   ]
 }

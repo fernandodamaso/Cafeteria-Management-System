@@ -156,8 +156,9 @@ a {
     select {
       flex: 1;
       margin: 0 7px;
+
       @media (max-width: 1024px) {
-        margin-right: 10px!important;
+        margin-right: 10px !important;
       }
 
       @media (max-width: 850px) {
@@ -204,6 +205,16 @@ table {
   border-collapse: collapse;
 
   tr {
+
+    &:hover {
+      td {
+        .acoes {
+          opacity: 1;
+        }
+      }
+    }
+
+
     th {
       padding: 12px 0;
       background: #f4f5f7;
@@ -213,6 +224,11 @@ table {
       font-weight: 600;
       text-align: left;
       padding: 12px 20px;
+
+      &.center {
+        text-align: center !important;
+        justify-content: center !important;
+      }
     }
 
     &:nth-child(odd) {
@@ -225,18 +241,54 @@ table {
       font-family: "Montserrat", sans-serif;
       color: $corTexto;
       transition: all ease-in-out 0.1s;
-    }
 
-    &:hover {
-      td {
-        background-color: $azul;
-        color: #fff !important;
+      &.center {
+        text-align: center !important;
+        justify-content: center !important;
+      }
 
-        .debito {
-          color: #fff !important;
+      .acoes {
+        display: flex;
+        opacity: 0;
+
+        button {
+          background: none;
+
+          cursor: pointer;
+
+          &.removerProduto,
+          &.AdicionarProduto {
+            height: 20px;
+            width: 20px;
+            border: 2px solid #5E5873;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5E5873;
+          }
+
+          &.qtdProduto {
+            margin: 0 3px;
+            font-size: 14px;
+            border: 0;
+          }
         }
       }
     }
+
+    // &:hover {
+    //   td {
+    //     background-color: $azul;
+    //     color: #fff !important;
+
+    //     .debito {
+    //       color: #fff !important;
+    //     }
+    //   }
+    // }
   }
 }
 

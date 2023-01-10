@@ -11,10 +11,14 @@ import { sociosService } from "../_services/socios.service";
   styleUrls: ["./vender.component.scss"],
 })
 export class VenderComponent implements OnInit {
-  constructor(private sociosService: sociosService, private produtosService: produtosService) {}
+  constructor(
+    private sociosService: sociosService,
+    private produtosService: produtosService
+  ) {}
 
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
+  listaProdutosSelecionados: ProdutoModel[] = [];
   filterSocios = "";
   filterProdutos = "";
   filterGrau = "";
@@ -56,6 +60,28 @@ export class VenderComponent implements OnInit {
 
   pegarProduto(produto: ProdutoModel) {
     this.produtoSelecionado.next(produto);
+
+    this.listaProdutosSelecionados.push(produto);
+
+    let listaAgrupada = this.agrupa(this.listaProdutosSelecionados, "id");
+
+    console.log(listaAgrupada);
+
+    for (let index = 0; index < listaAgrupada.length; index++) {
+      const element = listaAgrupada[index];
+      console.log(element);
+    };
+  }
+
+  agrupa(arr: any, chave: any) {
+    return arr.reduce(function (acc: any, item: any) {
+      if (!acc[item[chave]]) {
+        acc[item[chave]] = [];
+      }
+      acc[item[chave]].push(item);
+
+      return acc;
+    }, {});
   }
 
   terminouCompra(terminouCompraIndex: boolean) {

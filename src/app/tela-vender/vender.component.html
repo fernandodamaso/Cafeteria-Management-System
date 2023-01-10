@@ -73,11 +73,11 @@
   <div class="tableScroll">
     <table class="produtos">
       <tr>
-        <th>Tipo</th>
+        <th>TIPO</th>
         <th>NOME</th>
         <th class="alignRight">PREÇO</th>
       </tr>
-      <tr (click)="pegarProduto(produto)" *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo; let i = index" [class.inativo]="produto.status == false">
+      <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo; let i = index" [class.inativo]="produto.status == false">
         <td>
           <span
             [ngClass]="{
@@ -87,11 +87,17 @@
               tipoSalgado: produto.tipo === 'Salgado'
             }"
             class="tag"
-            >{{ produto.tipo }}</span
-          >
+            >{{ produto.tipo }}</span>
         </td>
         <td>
           <span class="nome">{{ produto.nome }}</span>
+        </td>
+        <td class="center">
+          <span class="acoes" >
+            <button class="removerProduto">-</button>
+            <button class="qtdProduto">0</button>
+            <button (click)="pegarProduto(produto)" class="AdicionarProduto">+</button>
+          </span>
         </td>
         <td class="alignRight">
           <span class="debito">{{ produto.precoVenda | currency : "R$" }}</span>

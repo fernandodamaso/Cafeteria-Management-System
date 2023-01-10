@@ -84,14 +84,12 @@
         th {
           &:nth-child(1) {
             flex-basis: 13%;
-
+            min-width: 60px;
           }
 
           &:nth-child(2) {
             flex-basis: 68%;
-
           }
-
 
         }
       }
