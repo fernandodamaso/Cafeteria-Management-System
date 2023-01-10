@@ -69,7 +69,7 @@ export class PagarComponent implements OnInit {
       //     this.valorPago = this.valorTotal * -1;
       // }
     } else {
-      this.valorTotal= 0;
+      this.valorTotal = 0;
     }
     if (this.valorPago <= 0) {
       this.valorPago = this.valorPago * -1;
