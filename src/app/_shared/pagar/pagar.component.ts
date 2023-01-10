@@ -1,29 +1,29 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ProdutoModel } from 'src/app/_models/produto.model';
-import { SocioModel } from 'src/app/_models/socio.model';
-import { vendaModel } from 'src/app/_models/venda.model';
-import { sociosService } from 'src/app/_services/socios.service';
-import { VendasService } from 'src/app/_services/vendas.service';
+import { Component, Inject, OnInit } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { MatDatepickerInputEvent } from "@angular/material/datepicker";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { ProdutoModel } from "src/app/_models/produto.model";
+import { SocioModel } from "src/app/_models/socio.model";
+import { vendaModel } from "src/app/_models/venda.model";
+import { sociosService } from "src/app/_services/socios.service";
+import { VendasService } from "src/app/_services/vendas.service";
 
 export interface dialogData {
   editar: boolean;
   socioData: SocioModel;
 }
 @Component({
-  selector: 'app-pagar',
-  templateUrl: './pagar.component.html',
-  styleUrls: ['./pagar.component.scss'],
+  selector: "app-pagar",
+  templateUrl: "./pagar.component.html",
+  styleUrls: ["./pagar.component.scss"],
 })
 export class PagarComponent implements OnInit {
-
   constructor(
     public dialogRef: MatDialogRef<PagarComponent>,
     private sociosService: sociosService,
     private VendasService: VendasService,
-    @Inject(MAT_DIALOG_DATA) public socioData: dialogData) {
+    @Inject(MAT_DIALOG_DATA) public socioData: dialogData
+  ) {
     if (socioData) {
       this.informacoesSocio = socioData.socioData;
     }
@@ -34,7 +34,7 @@ export class PagarComponent implements OnInit {
   valorPago = 0;
   desconto = 0;
   debito = 0;
-  formaPagamento = 'pix';
+  formaPagamento = "pix";
   date = new FormControl(new Date());
   dataCompra: Date;
   produtosAtivos: ProdutoModel[] = [];
@@ -68,6 +68,8 @@ export class PagarComponent implements OnInit {
       // if (this.valorTotal < 0) {
       //     this.valorPago = this.valorTotal * -1;
       // }
+    } else {
+      this.valorTotal= 0;
     }
     if (this.valorPago <= 0) {
       this.valorPago = this.valorPago * -1;
@@ -93,7 +95,7 @@ export class PagarComponent implements OnInit {
   adicionarVenda(venda: vendaModel) {
     this.VendasService.adicionarVenda(venda).subscribe({
       next: (data) => {
-        console.log('venda feita com sucesso');
+        console.log("venda feita com sucesso");
         this.atualizarSocio(venda);
       },
       error: (e) => console.error(e),
@@ -139,6 +141,8 @@ export class PagarComponent implements OnInit {
       return index === produto;
     });
 
+    console.log(index);
+
     if (index > -1) {
       this.produtosAtivos.splice(index, 1);
     } else {
@@ -146,6 +150,7 @@ export class PagarComponent implements OnInit {
     }
 
     this.calcularValorTotal();
+    console.log(this.produtosAtivos);
   }
 
   verificaProduto(produto: ProdutoModel) {
