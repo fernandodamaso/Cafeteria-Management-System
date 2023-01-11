@@ -85,41 +85,13 @@
       "nome": "Fernando Dâmaso",
       "telefone": "27995066670",
       "nucleo": "Gaspar",
-      "credito": 0,
+      "credito": 2,
       "grau": [
         {
           "nome": "CI"
         }
       ],
-      "produtosEmAberto": [
-        {
-          "id": 1,
-          "nome": "Açai",
-          "precoVenda": 12,
-          "precoCusto": 4.5,
-          "status": true,
-          "tipo": "Açai",
-          "dataCompra": "2023-01-10T14:06:11.283Z"
-        },
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.1,
-          "status": true,
-          "tipo": "Doce",
-          "dataCompra": "2023-01-10T14:06:11.283Z"
-        },
-        {
-          "id": 3,
-          "nome": "Agua com Gás",
-          "precoVenda": 4,
-          "precoCusto": 2,
-          "status": true,
-          "tipo": "Bebida",
-          "dataCompra": "2023-01-10T14:06:11.283Z"
-        }
-      ],
+      "produtosEmAberto": [],
       "id": 1
     }
   ],
@@ -5190,6 +5162,293 @@
       ],
       "valorRecebido": 40.5,
       "id": 73
+    },
+    {
+      "cliente": {
+        "nome": "Fernando Dâmaso",
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "credito": 0,
+        "grau": [
+          {
+            "nome": "CI"
+          }
+        ],
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-10T14:06:11.283Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-10T14:06:11.283Z"
+          },
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-10T14:06:11.283Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          },
+          {
+            "id": 2,
+            "nome": "Paçoca",
+            "precoVenda": 0.5,
+            "precoCusto": 0.1,
+            "status": true,
+            "tipo": "Doce",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          },
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          },
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          },
+          {
+            "id": 3,
+            "nome": "Agua com Gás",
+            "precoVenda": 4,
+            "precoCusto": 2,
+            "status": true,
+            "tipo": "Bebida",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-11T10:38:09.538Z"
+          },
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-11T10:38:09.538Z"
+          }
+        ],
+        "id": 1
+      },
+      "dataVenda": "2023-01-11T11:02:04.282Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-10T14:06:11.283Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-10T14:06:11.283Z"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-10T14:06:11.283Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-11T00:40:55.549Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-11T00:40:55.549Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-11T00:40:55.549Z"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "status": true,
+          "tipo": "Doce",
+          "dataCompra": "2023-01-11T00:40:55.549Z"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-11T00:40:55.549Z"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-11T00:40:55.549Z"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com Gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "status": true,
+          "tipo": "Bebida",
+          "dataCompra": "2023-01-11T00:40:55.549Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-11T10:38:09.538Z"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-11T10:38:09.538Z"
+        }
+      ],
+      "valorRecebido": 77.5,
+      "id": 74
+    },
+    {
+      "cliente": {
+        "nome": "Fernando Dâmaso",
+        "telefone": "27995066670",
+        "nucleo": "Gaspar",
+        "credito": 0,
+        "grau": [
+          {
+            "nome": "CI"
+          }
+        ],
+        "produtosEmAberto": [
+          {
+            "id": 1,
+            "nome": "Açai",
+            "precoVenda": 12,
+            "precoCusto": 4.5,
+            "status": true,
+            "tipo": "Açai",
+            "dataCompra": "2023-01-11T00:40:55.549Z"
+          }
+        ],
+        "id": 1
+      },
+      "dataVenda": "2023-01-11T11:02:11.190Z",
+      "desconto": 0,
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 4.5,
+          "status": true,
+          "tipo": "Açai",
+          "dataCompra": "2023-01-11T00:40:55.549Z"
+        }
+      ],
+      "valorRecebido": 14,
+      "id": 75
     }
   ]
 }

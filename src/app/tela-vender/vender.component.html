@@ -78,7 +78,7 @@
         <th class="alignRight">PREÇO</th>
       </tr>
       <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo; let i = index" [class.inativo]="produto.status == false">
-        <td>
+        <td (click)="adicionarProduto(produto)">
           <span
             [ngClass]="{
               tipoAcai: produto.tipo === 'Açai',
@@ -89,13 +89,13 @@
             class="tag"
             >{{ produto.tipo }}</span>
         </td>
-        <td>
+        <td (click)="adicionarProduto(produto)">
           <span class="nome">{{ produto.nome }}</span>
         </td>
         <td class="center">
           <span class="acoes" >
             <button (click)="removerProduto(produto)" class="removerProduto">-</button>
-            <button class="qtdProduto">0</button>
+            <!-- <button class="qtdProduto">0</button> -->
             <button (click)="adicionarProduto(produto)" class="AdicionarProduto">+</button>
           </span>
         </td>
