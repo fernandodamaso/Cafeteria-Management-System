@@ -98,6 +98,22 @@
         }
       ],
       "id": 1
+    },
+    {
+      "nome": "Viviane",
+      "telefone": "233232",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": [
+        {
+          "nome": "CI"
+        }
+      ],
+      "produtosEmAberto": [],
+      "id": 2
     }
   ],
   "nucleos": [

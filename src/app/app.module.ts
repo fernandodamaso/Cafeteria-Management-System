@@ -11,9 +11,10 @@ import { FormsModule } from "@angular/forms";
 import { NovoProdutoComponent } from './novo-produto/novo-produto.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from "@angular/material/core";
+import { NovoNucleoComponent } from './novo-nucleo/novo-nucleo.component';
 
 @NgModule({
-  declarations: [AppComponent,  NovoSocioComponent, NovoProdutoComponent],
+  declarations: [AppComponent,  NovoSocioComponent, NovoProdutoComponent, NovoNucleoComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule, MatSlideToggleModule, MatNativeDateModule],
 
   providers: [],

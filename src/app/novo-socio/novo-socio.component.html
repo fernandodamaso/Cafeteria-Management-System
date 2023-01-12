@@ -29,8 +29,11 @@
     </div>
     <div class="linha">
       <div class="col">
-        <label for="nucleo">Núcleo <button>Adicionar novo</button></label>
-        <input [(ngModel)]="nucleo" id="nucleo" name="nucleo" title="nucleo" type="tel" />
+        <label for="nucleo">Núcleo <button (click)="adicionarNovoNucleo()">Adicionar novo</button></label>
+        <select name="nucleo" title="nucleo" [(ngModel)]="nucleo">
+          <option [ngValue]="undefined">Categoria de Produto</option>
+          <option *ngFor="let nucleo of nucleos" [ngValue]="nucleo">{{nucleo.nome}}</option>
+        </select>
       </div>
     </div>
   </form>
