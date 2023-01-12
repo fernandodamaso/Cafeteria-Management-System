@@ -21,13 +21,7 @@ export class BarraVendaComponent implements OnInit {
     this.socioSelecionadoInterno = value;
   }
 
-  @Input()
-  set produtoSelecionado(val: Subject<ProdutoModel>) {
-    this.eventsSubscription = val.subscribe((produto) => {
-      this.listaProdutos.push(produto);
-      this.calcularValorTotal();
-    });
-  }
+  @Input() listaProdutosInput: any[];
 
   @Input()
   set produtoRemovido(val: Subject<any>) {

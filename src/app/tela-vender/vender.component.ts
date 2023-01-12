@@ -19,6 +19,7 @@ export class VenderComponent implements OnInit {
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
   listaProdutosSelecionados: ProdutoModel[] = [];
+  listaAgrupada: ProdutoModel[] = [];
   filterSocios = "";
   filterProdutos = "";
   filterGrau = "";
@@ -60,35 +61,27 @@ export class VenderComponent implements OnInit {
   }
 
   adicionarProduto(produto: ProdutoModel) {
-    console.log(produto);
-    this.produtoSelecionado.next(produto);
-
-    // this.listaProdutosSelecionados.push(produto);
-
-    // let listaAgrupada = this.agrupa(this.listaProdutosSelecionados, "id");
-    // console.log(listaAgrupada);
+    this.listaProdutosSelecionados.push(produto);
+    const resultAgrupado = this.agrupa(this.listaProdutosSelecionados, "nome");
+     this.listaAgrupada = Object.entries(resultAgrupado);
   }
-
 
   removerProduto(produto: ProdutoModel) {
-    this.produtoRemovido.next(produto);
-
+    console.log(this.listaAgrupada)
     // let listaAgrupada = this.agrupa(this.listaProdutosSelecionados, "id");
     // console.log(listaAgrupada);
   }
 
+  agrupa(arr: any, chave: any) {
+    return arr.reduce(function (acc: any, item: any) {
+      if (!acc[item[chave]]) {
+        acc[item[chave]] = [];
+      }
+      acc[item[chave]].push(item);
 
-
-  // agrupa(arr: any, chave: any) {
-  //   return arr.reduce(function (acc: any, item: any) {
-  //     if (!acc[item[chave]]) {
-  //       acc[item[chave]] = [];
-  //     }
-  //     acc[item[chave]].push(item);
-
-  //     return acc;
-  //   }, {});
-  // }
+      return acc;
+    }, {});
+  }
 
   terminouCompra(terminouCompraIndex: boolean) {
     if (terminouCompraIndex == true) {
