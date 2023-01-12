@@ -1,4 +1,5 @@
-export class GrauModel {
+export class nucleoModel {
   id?: number;
   nome: string;
 }
+

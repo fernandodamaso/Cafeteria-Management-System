@@ -8,7 +8,7 @@
     <p class="titulo">Produtos</p>
     <ul>
       <li (click)="deletarProduto(produto)" *ngFor="let produto of listaProdutos">
-        <span
+        <!-- <span
           class="tag"
           [ngClass]="{
             tipoAcai: produto.tipo === 'Açai',
@@ -18,7 +18,7 @@
           }">
           {{ produto.nome }}
           <span class="fechar">x</span>
-        </span>
+        </span> -->
       </li>
     </ul>
     <p class="campoVazio" *ngIf="listaProdutos.length == 0">Nenhum Produto Selecionado</p>

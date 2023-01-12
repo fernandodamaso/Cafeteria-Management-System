@@ -3,8 +3,9 @@ import { SocioModel } from "./socio.model";
 
 export class vendaModel {
     id: number;
-    cliente: SocioModel;
+    idCliente: number;
     produtosVendidos: ProdutoModel[];
+    status: string;
     desconto: number;
     dataVenda: Date;
     valorRecebido: number;

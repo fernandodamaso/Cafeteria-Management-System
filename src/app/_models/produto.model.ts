@@ -1,13 +1,13 @@
-import { categoriaModel } from "./categoria.model";
+import { tipoModel } from "./tipo.model";
 
 export class ProdutoModel {
     id: number;
     nome: string;
     precoVenda: number;
     precoCusto: number;
-    tipo: string;
     qtdVendas: number;
-    status: boolean;
-    categoria: categoriaModel;
+    ativo: boolean;
+    tipo: tipoModel;
     dataCompra?: Date;
+    status?: string;
   }

@@ -24,13 +24,10 @@
 
     <div class="linha">
       <div class="col">
-        <label for="Nome">Categoria do Produto</label>
-        <select name="categoria" title="categoria" [(ngModel)]="categoriaProduto">
-          <option value="">Categoria de Produto</option>
-          <option value="Açai">Açai</option>
-          <option value="Doce">Doce</option>
-          <option value="Bebida">Bebida</option>
-          <option value="Salgado">Salgado</option>
+        <label for="Nome">Tipo do Produto</label>
+        <select name="tipo" title="tipo" [(ngModel)]="tipoProduto">
+          <option [ngValue]="undefined">Categoria de Produto</option>
+          <option *ngFor="let tipo of dataTipo" [ngValue]="tipo">{{tipo.nome}}</option>
         </select>
       </div>
     </div>
@@ -38,9 +35,9 @@
     <div class="linha">
       <div class="col">
         <label>Status de produto</label>
-        <mat-slide-toggle [(ngModel)]="status">
-          <span *ngIf="status == true">Ativo</span>
-          <span *ngIf="status == false">Inativo</span>
+        <mat-slide-toggle [(ngModel)]="ativo">
+          <span *ngIf="ativo == true">Ativo</span>
+          <span *ngIf="ativo == false">Inativo</span>
         </mat-slide-toggle>
       </div>
     </div>

@@ -67,7 +67,7 @@
     <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
     <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
       <option value="">Filtro por Tipo</option>
-      <option value="{{ produto.tipo }}" *ngFor="let produto of dataProdutos">{{ produto.tipo }}</option>
+      <!-- <option value="{{ produto.tipo }}" *ngFor="let produto of dataProdutos">{{ produto.tipo }}</option> -->
     </select>
   </div>
   <div class="tableScroll">
@@ -77,7 +77,7 @@
         <th>NOME</th>
         <th class="alignRight">PREÇO</th>
       </tr>
-      <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo; let i = index" [class.inativo]="produto.status == false">
+      <!-- <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo; let i = index" [class.inativo]="produto.status == false">
         <td (click)="adicionarProduto(produto)">
           <span
             [ngClass]="{
@@ -95,14 +95,14 @@
         <td class="center">
           <span class="acoes" >
             <button (click)="removerProduto(produto)" class="removerProduto">-</button>
-            <!-- <button class="qtdProduto">0</button> -->
+             <button class="qtdProduto">0</button>
             <button (click)="adicionarProduto(produto)" class="AdicionarProduto">+</button>
           </span>
         </td>
         <td class="alignRight">
           <span class="debito">{{ produto.precoVenda | currency : "R$" }}</span>
         </td>
-      </tr>
+      </tr> -->
     </table>
   </div>
 </div>

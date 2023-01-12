@@ -29,7 +29,9 @@ export class ProdutosComponent implements OnInit {
     this.produtosService.getProdutos().subscribe({
       next: (data) => (this.dataProdutos = data),
       error: (e) => console.error(e),
-      complete: () => console.log(this.dataProdutos),
+      complete: () => {
+        console.log(this.dataProdutos)
+      },
     });
   }
 

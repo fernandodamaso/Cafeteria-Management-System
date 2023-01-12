@@ -84,7 +84,7 @@ export class PagarComponent implements OnInit {
     let novaVenda: vendaModel;
     novaVenda = new vendaModel();
 
-    novaVenda.cliente = this.informacoesSocio;
+    // novaVenda.cliente = this.informacoesSocio;
     novaVenda.dataVenda = this.date.value;
     novaVenda.desconto = this.desconto;
     novaVenda.produtosVendidos = this.produtosAtivos;

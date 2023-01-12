@@ -1,4 +1,4 @@
-export class GrauModel {
+export interface tipoModel {
   id?: number;
   nome: string;
 }
