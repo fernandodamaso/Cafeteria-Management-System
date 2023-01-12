@@ -65,23 +65,7 @@
       "id": 2
     }
   ],
-  "vendas": {
-    "id": 1,
-    "dataVenda": "2023-01-10T14:06:11.283Z",
-    "idCliente": 1,
-    "desconto": 0,
-    "status": "Fechado",
-    "produtos": [
-      {
-        "id": 1,
-        "nome": "Açai",
-        "precoVenda": 12,
-        "precoCusto": 4.5,
-        "tipo": "Açai",
-        "status": "pago"
-      }
-    ]
-  },
+  "vendas": [],
   "socios": [
     {
       "nome": "Fernando Dâmaso",

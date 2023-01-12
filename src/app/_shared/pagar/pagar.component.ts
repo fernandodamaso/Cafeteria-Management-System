@@ -40,11 +40,25 @@ export class PagarComponent implements OnInit {
   produtosAtivos: ProdutoModel[] = [];
 
   ngOnInit(): void {
-    for (let x = 0; x < this.informacoesSocio.produtosEmAberto.length; x++) {
-      const element = this.informacoesSocio.produtosEmAberto[x];
-      this.produtosAtivos.push(element);
-    }
-    this.calcularValorTotal();
+
+
+
+    // for (let x = 0; x < this.informacoesSocio.produtosEmAberto.length; x++) {
+    //   const element = this.informacoesSocio.produtosEmAberto[x];
+    //   this.produtosAtivos.push(element);
+    // }
+    this.getVendas();
+    // this.calcularValorTotal();
+  }
+
+  getVendas() {
+    this.VendasService.getVendas().subscribe({
+      next: (data) => {
+          console.log(data)
+      },
+      error: (e) => console.error(e),
+      complete: () => {},
+    });
   }
 
   calcularValorTotal() {

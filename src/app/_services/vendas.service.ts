@@ -10,9 +10,9 @@ export class VendasService {
 
   constructor(private http: HttpClient) { }
 
-  // getSocios() {
-  //   return this.http.get<SocioModel[]>("http://localhost:3000/socios");
-  // }
+  getVendas() {
+    return this.http.get<vendaModel[]>("http://localhost:3000/vendas");
+  }
 
   adicionarVenda(venda: vendaModel): Observable<Object> {
     return this.http.post<vendaModel>("http://localhost:3000/vendas", venda);
