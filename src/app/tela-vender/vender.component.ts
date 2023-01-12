@@ -19,7 +19,7 @@ export class VenderComponent implements OnInit {
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
   listaProdutosSelecionados: ProdutoModel[] = [];
-  listaAgrupada: ProdutoModel[] = [];
+  listaAgrupada: any[] = [];
   filterSocios = "";
   filterProdutos = "";
   filterGrau = "";
@@ -64,6 +64,7 @@ export class VenderComponent implements OnInit {
     this.listaProdutosSelecionados.push(produto);
     const resultAgrupado = this.agrupa(this.listaProdutosSelecionados, "nome");
      this.listaAgrupada = Object.entries(resultAgrupado);
+     console.log(this.listaAgrupada)
   }
 
   removerProduto(produto: ProdutoModel) {

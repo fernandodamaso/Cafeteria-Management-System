@@ -7,18 +7,18 @@
   <div class="produtos coluna">
     <p class="titulo">Produtos</p>
     <ul>
-      <li (click)="deletarProduto(produto)" *ngFor="let produto of listaProdutos">
-        <!-- <span
+      <li (click)="deletarProduto(produto)" *ngFor="let produto of listaProdutosInput">
+        <span
           class="tag"
           [ngClass]="{
-            tipoAcai: produto.tipo === 'Açai',
-            tipoDoce: produto.tipo === 'Doce',
-            tipoBebida: produto.tipo === 'Bebida',
-            tipoSalgado: produto.tipo === 'Salgado'
+            tipoAcai: produto.tipo.nome === 'Açai',
+            tipoDoce: produto.tipo.nome === 'Doce',
+            tipoBebida: produto.tipo.nome === 'Bebida',
+            tipoSalgado: produto.tipo.nome === 'Salgado'
           }">
           {{ produto.nome }}
           <span class="fechar">x</span>
-        </span> -->
+        </span>
       </li>
     </ul>
     <p class="campoVazio" *ngIf="listaProdutos.length == 0">Nenhum Produto Selecionado</p>
