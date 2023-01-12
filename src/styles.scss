@@ -708,8 +708,6 @@ form,
   }
 }
 
-
-
 .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
   background-color: #3498DB;
 }
@@ -721,5 +719,19 @@ form,
 .mat-dialog-container {
   @media (max-width: 750px) {
     overflow: auto;
+  }
+}
+
+label {
+  position: relative;
+  margin-bottom: 5px;
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: 0;
+    color: #3498db;
+    cursor: pointer;
   }
 }

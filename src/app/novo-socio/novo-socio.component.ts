@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { GrauModel } from "../_models/grau.model";
+import { nucleoModel } from "../_models/nucleo.model";
 import { SocioModel } from "../_models/socio.model";
 import { sociosService } from "../_services/socios.service";
 
@@ -27,7 +28,7 @@ export class NovoSocioComponent implements OnInit {
   nome: string;
   id: number;
   telefone: string;
-  nucleo: string;
+  nucleo: nucleoModel;
   grau = "";
 
   ngOnInit(): void {

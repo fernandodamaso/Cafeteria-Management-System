@@ -30,7 +30,7 @@ export class ReceberComponent implements OnInit {
       next: (data) => (this.dataSocios = data),
       error: (e) => console.error(e),
       complete: () => {
-        // this.abrirPagar(this.dataSocios[0]);
+        console.log( this.dataSocios);
       },
     });
   }
