@@ -2,12 +2,17 @@
   <div class="nomeSocio coluna">
     <p class="titulo">Vender Para:</p>
     <span class="nome">{{ socioSelecionadoInterno?.nome }}</span>
-    <span class="campoVazio" *ngIf="!socioSelecionadoInterno">Nenhum Sócio Selecionado</span>
+    <span class="campoVazio" *ngIf="!socioSelecionadoInterno"
+      >Nenhum Sócio Selecionado</span
+    >
   </div>
   <div class="produtos coluna">
     <p class="titulo">Produtos</p>
     <ul>
-      <li (click)="deletarProduto(produto)" *ngFor="let produto of listaProdutosInput">
+      <li
+        (click)="deletarProduto(produto)"
+        *ngFor="let produto of listaProdutosInput"
+      >
         <span
           class="tag"
           [ngClass]="{
@@ -15,35 +20,52 @@
             tipoDoce: produto.tipo.nome === 'Doce',
             tipoBebida: produto.tipo.nome === 'Bebida',
             tipoSalgado: produto.tipo.nome === 'Salgado'
-          }">
+          }"
+        >
+          ({{ produto.qtd }})
           {{ produto.nome }}
-          <span class="fechar">x</span>
         </span>
       </li>
     </ul>
-    <p class="campoVazio" *ngIf="listaProdutos.length == 0">Nenhum Produto Selecionado</p>
+    <p class="campoVazio" *ngIf="listaProdutosSelecionados.length == 0">
+      Nenhum Produto Selecionado
+    </p>
   </div>
-  <div class="data coluna" *ngIf="socioSelecionadoInterno && listaProdutos.length > 0">
+  <div
+    class="data coluna"
+    *ngIf="socioSelecionadoInterno && listaProdutosSelecionados.length > 0"
+  >
     <label for="data">Data da compra</label>
     <mat-form-field appearance="outline">
-      <input title="Data de Compra" [formControl]="date" matInput [matDatepicker]="picker" (dateInput)="addEvent($event)" />
-      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <input
+        title="Data de Compra"
+        [formControl]="date"
+        matInput
+        [matDatepicker]="picker"
+        (dateInput)="addEvent($event)"
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
-  <div class="valores coluna" *ngIf="socioSelecionadoInterno && listaProdutos.length > 0">
+  <div
+    class="valores coluna"
+    *ngIf="socioSelecionadoInterno && listaProdutosSelecionados.length > 0"
+  >
     <div class="col">
       <p class="titulo">Saldo Atual</p>
       <p class="valor">
         <span
-        class="debito"
-        [ngClass]="{
-          saldoPositivo: (socioSelecionadoInterno | calculoDebito ) > 0,
-          saldoNegativo: (socioSelecionadoInterno | calculoDebito ) < 0
-        }"
-
-        >{{ socioSelecionadoInterno | calculoDebito | currency : "R$" }}</span
-      >
+          class="debito"
+          [ngClass]="{
+            saldoPositivo: (socioSelecionadoInterno | calculoDebito) > 0,
+            saldoNegativo: (socioSelecionadoInterno | calculoDebito) < 0
+          }"
+          >{{ socioSelecionadoInterno | calculoDebito | currency : "R$" }}</span
+        >
       </p>
     </div>
     <div class="col">
@@ -51,7 +73,10 @@
       <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
     </div>
   </div>
-  <div class="coluna botoes" *ngIf="socioSelecionadoInterno && listaProdutos.length > 0">
+  <div
+    class="coluna botoes"
+    *ngIf="socioSelecionadoInterno && listaProdutosSelecionados.length > 0"
+  >
     <button class="botao azul" (click)="pagar()">Pagar Agora</button>
     <button class="botao borda" (click)="anotar()">Anotar</button>
   </div>

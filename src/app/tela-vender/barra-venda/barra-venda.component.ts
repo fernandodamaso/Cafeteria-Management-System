@@ -7,6 +7,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { ProdutoModel } from "src/app/_models/produto.model";
 import { PagarComponent } from "src/app/_shared/pagar/pagar.component";
 import { sociosService } from "src/app/_services/socios.service";
+import { produtosAgrupados } from "../vender.component";
 
 @Component({
   selector: "app-barra-venda",
@@ -21,7 +22,8 @@ export class BarraVendaComponent implements OnInit {
     this.socioSelecionadoInterno = value;
   }
 
-  @Input() listaProdutosInput: any[];
+  @Input() listaProdutosInput: produtosAgrupados[];
+  @Input() listaProdutosSelecionados: ProdutoModel[];
 
   @Input()
   set produtoRemovido(val: Subject<any>) {

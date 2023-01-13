@@ -4,6 +4,15 @@ import { SocioModel } from "../_models/socio.model";
 import { ProdutoModel } from "../_models/produto.model";
 import { produtosService } from "../_services/produtos.service";
 import { sociosService } from "../_services/socios.service";
+import { tipoModel } from "../_models/tipo.model";
+
+export class produtosAgrupados {
+  nome: string;
+  id: number;
+  qtd: number;
+  tipo: tipoModel;
+  listaProdutos: ProdutoModel[];
+}
 
 @Component({
   selector: "app-vender",
@@ -62,26 +71,51 @@ export class VenderComponent implements OnInit {
 
   adicionarProduto(produto: ProdutoModel) {
     this.listaProdutosSelecionados.push(produto);
-    const resultAgrupado = this.agrupa(this.listaProdutosSelecionados, "nome");
-     this.listaAgrupada = Object.entries(resultAgrupado);
-     console.log(this.listaAgrupada)
+    this.listaAgrupada = this.agrupaProdutos();
   }
 
   removerProduto(produto: ProdutoModel) {
-    console.log(this.listaAgrupada)
-    // let listaAgrupada = this.agrupa(this.listaProdutosSelecionados, "id");
-    // console.log(listaAgrupada);
+    console.log(this.listaProdutosSelecionados);
+
+    const indexProduto = this.listaProdutosSelecionados.indexOf(produto);
+
+    if (this.listaProdutosSelecionados.indexOf(produto) > -1) {
+      this.listaProdutosSelecionados.splice(indexProduto, 1);
+    }
+    this.listaAgrupada = this.agrupaProdutos();
+    // this.listaProdutosSelecionados.splice()
+    // console.log(this.listaAgrupada);
   }
 
-  agrupa(arr: any, chave: any) {
-    return arr.reduce(function (acc: any, item: any) {
-      if (!acc[item[chave]]) {
-        acc[item[chave]] = [];
-      }
-      acc[item[chave]].push(item);
+  /**
+   * Retorna um array agrupado de acordo com id a lista de produtos selecionados
+   * @returns lista de produtos agrupados
+   */
 
-      return acc;
-    }, {});
+  agrupaProdutos(): produtosAgrupados[] {
+    const arrAgrupado: produtosAgrupados[] = [];
+
+    for (const item of this.listaProdutosSelecionados) {
+      const produtoDentroArray = arrAgrupado.some((el) => el.id === item.id);
+
+      if (!produtoDentroArray) {
+        // Filter Retorna um array filtrado por ID
+        const arrFiltrado = this.listaProdutosSelecionados.filter(
+          (el) => el.id === item.id
+        );
+
+        const obj = {
+          nome: item.nome,
+          tipo: item.tipo,
+          id: item.id,
+          qtd: arrFiltrado.length,
+          listaProdutos: arrFiltrado,
+        };
+        arrAgrupado.push(obj);
+      }
+    }
+
+    return arrAgrupado;
   }
 
   terminouCompra(terminouCompraIndex: boolean) {
