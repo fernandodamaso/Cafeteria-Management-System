@@ -5,6 +5,10 @@ import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
 import { SocioModel } from "../_models/socio.model";
 import { PagarComponent } from "../_shared/pagar/pagar.component";
 import { ReciboComponent } from "../_shared/recibo/recibo.component";
+import { vendasService } from "../_services/vendas.service";
+import { produtosService } from "../_services/produtos.service";
+import { ProdutoModel } from "../_models/produto.model";
+import { vendaModel } from "../_models/venda.model";
 
 @Component({
   selector: "app-receber",
@@ -13,26 +17,33 @@ import { ReciboComponent } from "../_shared/recibo/recibo.component";
 })
 export class ReceberComponent implements OnInit {
   socioSelecionado: SocioModel;
-  constructor(private sociosService: sociosService, private matDialog: MatDialog) {}
+  constructor(
+    private sociosService: sociosService,
+    private vendasService: vendasService,
+    private produtosService: produtosService,
 
-  dataSocios: SocioModel[] = [];
+    private matDialog: MatDialog
+  ) {}
+
   filterSocios = "";
   filterProdutos = "";
   filterGrau = "";
   filterTipo = "";
+  dataVendas: vendaModel[] = [];
+  dataSocios: SocioModel[] = [];
+  dataProdutos: ProdutoModel[] = [];
 
   ngOnInit(): void {
     this.getData();
   }
 
-  getData() {
-    this.sociosService.getSocios().subscribe({
-      next: (data) => (this.dataSocios = data),
-      error: (e) => console.error(e),
-      complete: () => {
-        // this.abrirPagar(this.dataSocios[0]);
-      },
-    });
+  async getData(): Promise<void> {
+    this.dataSocios = await this.sociosService.getSociosArray();
+    this.dataVendas = await this.vendasService.getVendasArray();
+    this.dataProdutos = await this.produtosService.getProdutosArray();
+
+    console.log(this.dataVendas);
+    console.log(this.dataSocios);
   }
 
   adicionarNovoSocio() {

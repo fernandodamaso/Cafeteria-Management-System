@@ -56,7 +56,6 @@ export class VenderComponent implements OnInit {
 
     console.log(this.dataVendas)
     console.log(this.dataSocios)
-
   }
 
   pegarSocio(socio: SocioModel, index: number) {

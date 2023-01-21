@@ -58,18 +58,6 @@
 
           }
 
-          span {
-            transition: color ease-in-out 0.1s;
-
-            &.saldoPositivo {
-              color: #3498DB;
-
-            }
-
-            &.saldoNegativo {
-              color: #d12323;
-            }
-          }
 
         }
       }

@@ -58,15 +58,15 @@
           <td (click)="abrirPagar(socio)">{{ socio.telefone }}</td>
           <td (click)="abrirPagar(socio)">{{ socio.nucleo.nome }}</td>
           <td (click)="abrirPagar(socio)" class="alignRight saldo">
-            <!-- <span
-            class="debito"
-            [ngClass]="{
-              saldoPositivo: (socio | calculoDebito ) > 0,
-              saldoNegativo: (socio | calculoDebito ) < 0
-            }"
+            <span
+              class="debito"
+              [ngClass]="{
+                saldoPositivo: (socio | calculoDebito: dataVendas ) > 0,
+                saldoNegativo: (socio | calculoDebito: dataVendas ) < 0
+              }"
 
-            >{{ socio | calculoDebito | currency : "R$" }}</span
-          > -->
+              >{{ socio | calculoDebito: dataVendas | currency : "R$" }}</span
+            >
           </td>
           <td class="center">
             <button title="Ações" mat-button [matMenuTriggerFor]="menu"> <img src="..\assets\acoes.png" alt="" /></button>
