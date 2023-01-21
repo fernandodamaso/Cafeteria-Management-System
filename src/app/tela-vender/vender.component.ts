@@ -128,7 +128,9 @@ export class VenderComponent implements OnInit {
   }
 
   terminouCompra(terminouCompraIndex: boolean) {
+    console.log("rodou")
     if (terminouCompraIndex == true) {
+      this.listaProdutosSelecionados = [];
       this.socioSelecionadoIndex = undefined!;
       this.getData();
     }

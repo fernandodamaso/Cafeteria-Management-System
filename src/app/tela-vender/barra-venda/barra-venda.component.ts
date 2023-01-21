@@ -83,6 +83,8 @@ export class BarraVendaComponent implements OnInit {
       complete: () => {
         this.socioSelecionadoInterno = undefined!;
         this.listaProdutos = [];
+        this.listaProdutosSelecionados = [];
+        this.produtosAgrupados = [];
         this.terminouCompra.emit(true);
       },
     });
