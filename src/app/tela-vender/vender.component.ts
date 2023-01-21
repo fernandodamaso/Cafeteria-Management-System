@@ -5,6 +5,8 @@ import { ProdutoModel } from "../_models/produto.model";
 import { produtosService } from "../_services/produtos.service";
 import { sociosService } from "../_services/socios.service";
 import { tipoModel } from "../_models/tipo.model";
+import { vendasService } from "../_services/vendas.service";
+import { vendaModel } from "../_models/venda.model";
 
 export class produtosAgrupados {
   nome: string;
@@ -22,13 +24,16 @@ export class produtosAgrupados {
 export class VenderComponent implements OnInit {
   constructor(
     private sociosService: sociosService,
+    private vendasService: vendasService,
     private produtosService: produtosService
   ) {}
 
+  dataVendas: vendaModel[] = [];
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
   listaProdutosSelecionados: ProdutoModel[] = [];
   listaAgrupada: any[] = [];
+  listaSociosDebito: { nome: string; total: number }[] = [];
   filterSocios = "";
   filterProdutos = "";
   filterGrau = "";
@@ -38,25 +43,71 @@ export class VenderComponent implements OnInit {
   produtoSelecionado: Subject<ProdutoModel> = new Subject();
   produtoRemovido: Subject<ProdutoModel> = new Subject();
   socioSelecionadoIndex: number;
+  valorTotal: number;
 
   ngOnInit(): void {
     this.getData();
   }
 
-  getData() {
-    this.sociosService.getSocios().subscribe({
-      next: (data) => (this.dataSocios = data),
-      error: (e) => console.error(e),
-      complete: () => {
-        // console.log(this.dataSocios);
-      },
-    });
+  calculaDebitosClientes(): void {
+    for (const x of this.dataSocios) {
+      const valorVenda = {
+        nome: x.nome,
+        total: this.calculaTotalVendas(x.id),
+      };
 
-    this.produtosService.getProdutos().subscribe({
-      next: (data) => (this.dataProdutos = data),
-      error: (e) => console.error(e),
-      // complete: () => console.log(this.dataProdutos),
-    });
+      this.listaSociosDebito.push(valorVenda);
+    }
+  }
+
+  calculaTotalVendas(idSocio: number): number {
+    let valorTotalVenda = 0;
+    const vendasFiltradas = this.dataVendas.filter(
+      (el) => el.idCliente === idSocio && el.status === "aberto"
+    );
+
+    for (const x of vendasFiltradas) {
+      const listaPrecoVenda = x.produtosVendidos.map((el) => {
+        return el.precoVenda;
+      });
+      const total = listaPrecoVenda.reduce((a, b) => {
+        return a + b;
+      });
+      valorTotalVenda += total;
+    }
+    console.log(valorTotalVenda);
+    return valorTotalVenda;
+  }
+
+  async getData(): Promise<void> {
+    this.dataSocios = await this.sociosService.getSociosArray();
+    this.dataVendas = await this.vendasService.getVendasArray();
+    this.dataProdutos = await this.produtosService.getProdutosArray();
+
+    console.log(this.dataSocios);
+    console.log(this.dataVendas);
+
+    this.calculaDebitosClientes();
+
+    // this.sociosService.getSocios().subscribe({
+    //   next: (data) => (this.dataSocios = data),
+    //   error: (e) => console.error(e),
+    //   complete: () => {
+    //     console.log(this.dataSocios);
+    //   },
+    // });
+
+    // this.produtosService.getProdutos().subscribe({
+    //   next: (data) => (this.dataProdutos = data),
+    //   error: (e) => console.error(e),
+    //   // complete: () => console.log(this.dataProdutos),
+    // });
+
+    // this.vendasService.getVendas().subscribe({
+    //   next: (data) => (this.dataVendas = data),
+    //   error: (e) => console.error(e),
+    //   complete: () => console.log(this.dataVendas),
+    // });
   }
 
   pegarSocio(socio: SocioModel, index: number) {
@@ -72,6 +123,7 @@ export class VenderComponent implements OnInit {
   adicionarProduto(produto: ProdutoModel) {
     this.listaProdutosSelecionados.push(produto);
     this.listaAgrupada = this.agrupaProdutos();
+    this.calcularValorTotal();
   }
 
   removerProduto(produto: ProdutoModel) {
@@ -83,8 +135,17 @@ export class VenderComponent implements OnInit {
       this.listaProdutosSelecionados.splice(indexProduto, 1);
     }
     this.listaAgrupada = this.agrupaProdutos();
-    // this.listaProdutosSelecionados.splice()
-    // console.log(this.listaAgrupada);
+    this.calcularValorTotal();
+  }
+
+  calcularValorTotal() {
+    console.log(this.listaProdutosSelecionados);
+    let sum: number = this.listaProdutosSelecionados
+      .map((el) => el.precoVenda)
+      .reduce(function (el, el2) {
+        return el + el2;
+      });
+    this.valorTotal = sum;
   }
 
   /**

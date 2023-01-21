@@ -6,7 +6,7 @@ import { ProdutoModel } from "src/app/_models/produto.model";
 import { SocioModel } from "src/app/_models/socio.model";
 import { vendaModel } from "src/app/_models/venda.model";
 import { sociosService } from "src/app/_services/socios.service";
-import { VendasService } from "src/app/_services/vendas.service";
+import { vendasService } from "src/app/_services/vendas.service";
 
 export interface dialogData {
   editar: boolean;
@@ -21,7 +21,7 @@ export class PagarComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<PagarComponent>,
     private sociosService: sociosService,
-    private VendasService: VendasService,
+    private vendasService: vendasService,
     @Inject(MAT_DIALOG_DATA) public socioData: dialogData
   ) {
     if (socioData) {
@@ -52,7 +52,7 @@ export class PagarComponent implements OnInit {
   }
 
   getVendas() {
-    this.VendasService.getVendas().subscribe({
+    this.vendasService.getVendas().subscribe({
       next: (data) => {
           console.log(data)
       },
@@ -107,7 +107,7 @@ export class PagarComponent implements OnInit {
   }
 
   adicionarVenda(venda: vendaModel) {
-    this.VendasService.adicionarVenda(venda).subscribe({
+    this.vendasService.adicionarVenda(venda).subscribe({
       next: (data) => {
         console.log("venda feita com sucesso");
         this.atualizarSocio(venda);

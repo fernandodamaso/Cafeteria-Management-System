@@ -34,6 +34,7 @@
 
     &.socios {
       tr {
+        cursor: pointer;
 
         &.active {
           background-color: #3498DB;
@@ -83,11 +84,13 @@
         td,
         th {
           &:nth-child(1) {
+              cursor: pointer;
             flex-basis: 13%;
             min-width: 60px;
           }
 
           &:nth-child(2) {
+              cursor: pointer;
             flex-basis: 68%;
           }
 

@@ -25,9 +25,9 @@
       </thead>
 
       <tbody>
-        <tr [class.active]="socioSelecionadoIndex === i" (click)="pegarSocio(socio, i)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau ; let i = index">
+        <tr [class.active]="socioSelecionadoIndex === i" (click)="pegarSocio(socio, i)" *ngFor="let socio of listaSociosDebito | buscaPalavras : filterSocios | buscaGrau : filterGrau ; let i = index">
           <td>
-            <span
+            <!-- <span
               [ngClass]="{
                 grauQM: socio.grau[0].nome === 'QM',
                 grauCDC: socio.grau[0].nome === 'CDC',
@@ -37,12 +37,15 @@
               }"
               class="tag">
               {{ socio.grau[0].nome }}
-            </span>
+            </span> -->
           </td>
           <td>
             <span class="nome">{{ socio.nome }}</span>
           </td>
           <td class="alignRight">
+            <span class="debito" *ngIf="dataVendas">
+              {{socio.total}}
+            </span>
             <!-- <span
               class="debito"
               [ngClass]="{
@@ -95,7 +98,7 @@
         <td class="center">
           <span class="acoes" >
             <button (click)="removerProduto(produto)" class="removerProduto">-</button>
-             <button class="qtdProduto">0</button>
+             <!-- <button class="qtdProduto">0</button> -->
             <button (click)="adicionarProduto(produto)" class="AdicionarProduto">+</button>
           </span>
         </td>
@@ -107,4 +110,4 @@
   </div>
 </div>
 
-<app-barra-venda (terminouCompra)="terminouCompra($event)" [listaProdutosSelecionados]="listaProdutosSelecionados" [listaProdutosInput]="listaAgrupada" [socioSelecionado]="socioSelecionado"></app-barra-venda>
+<app-barra-venda [valorTotal]="valorTotal" (terminouCompra)="terminouCompra($event)" [listaProdutosSelecionados]="listaProdutosSelecionados" [produtosAgrupados]="listaAgrupada" [socioSelecionado]="socioSelecionado"></app-barra-venda>

@@ -5,7 +5,7 @@ import { SocioModel } from "src/app/_models/socio.model";
   name: "buscaGrau",
 })
 export class BuscaGrauPipe implements PipeTransform {
-  transform(listItems: SocioModel[], grau: string) {
+  transform(listItems: any[], grau: string) {
     if (grau) {
       return listItems.filter((item: any) => item.grau[0].nome.includes(grau));
     } else {

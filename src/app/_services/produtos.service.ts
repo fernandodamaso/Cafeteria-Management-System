@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ProdutoModel } from "../_models/produto.model";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { first, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -12,6 +12,22 @@ export class produtosService {
 
   getProdutos() {
     return this.http.get<ProdutoModel[]>("http://localhost:3000/produtos");
+  }
+
+  getProdutosArray(): Promise<ProdutoModel[]> {
+    return new Promise((resolve, reject) => {
+      this.http
+        .get<ProdutoModel[]>("http://localhost:3000/produtos")
+        .pipe(first())
+        .subscribe(
+          (result) => {
+            resolve(result);
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+    });
   }
 
   adicionarProduto(produto: ProdutoModel): Observable<Object> {

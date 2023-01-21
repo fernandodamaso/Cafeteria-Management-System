@@ -23,7 +23,7 @@ import { receberRoutingModule } from '../tela-receber/receber-routing.module';
     BuscaPalavrasPipe,
     calculoDebito,
     PagarComponent,
-    ReciboComponent
+    ReciboComponent,
   ],
   exports: [
     BuscaGrauPipe,

@@ -8,6 +8,8 @@ import { ProdutoModel } from "src/app/_models/produto.model";
 import { PagarComponent } from "src/app/_shared/pagar/pagar.component";
 import { sociosService } from "src/app/_services/socios.service";
 import { produtosAgrupados } from "../vender.component";
+import { vendaModel } from "src/app/_models/venda.model";
+import { vendasService } from "src/app/_services/vendas.service";
 
 @Component({
   selector: "app-barra-venda",
@@ -22,22 +24,17 @@ export class BarraVendaComponent implements OnInit {
     this.socioSelecionadoInterno = value;
   }
 
-  @Input() listaProdutosInput: produtosAgrupados[];
+  @Input() valorTotal: number;
+  @Input() produtosAgrupados: produtosAgrupados[];
   @Input() listaProdutosSelecionados: ProdutoModel[];
 
-  @Input()
-  set produtoRemovido(val: Subject<any>) {
-    this.eventsSubscription = val.subscribe((produto) => {
-      this.listaProdutos.splice(produto, 1);
-      this.calcularValorTotal();
-    });
-  }
-
-  constructor(private matDialog: MatDialog, private sociosService: sociosService) {}
+  constructor(
+    private matDialog: MatDialog,
+    private vendasService: vendasService
+  ) {}
 
   nenhumProdutoSelecionado = false;
   socioSelecionadoInterno: SocioModel;
-  valorTotal = 0;
   saldoCliente = 0;
   listaProdutos: ProdutoModel[] = [];
   _val: Subject<ProdutoModel> = new Subject();
@@ -45,29 +42,10 @@ export class BarraVendaComponent implements OnInit {
   dataCompra: Date;
   eventsSubscription: Subscription;
 
-  ngOnInit() {
-    this.getData();
-  }
-
-  getData() {
-    this.eventsSubscription = this._val.subscribe((produto) => {
-      this.listaProdutos.push(produto);
-      this.calcularValorTotal();
-    });
-  }
-
-  calcularValorTotal() {
-    let sum: number = this.listaProdutos
-      .map((el) => el.precoVenda)
-      .reduce(function (el, el2) {
-        return el + el2;
-      });
-    this.valorTotal = sum;
-  }
+  ngOnInit() {}
 
   deletarProduto(produto: any) {
     this.listaProdutos.splice(produto, 1);
-    this.calcularValorTotal();
   }
 
   addEvent(event: MatDatepickerInputEvent<Date>) {
@@ -82,32 +60,29 @@ export class BarraVendaComponent implements OnInit {
         socioData: this.socioSelecionadoInterno,
       },
     });
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.getData();
-    });
   }
 
   anotar() {
-    this.listaProdutos.forEach((el) => {
-      el.dataCompra = this.date.value;
-    });
+    console.log(this.listaProdutosSelecionados);
 
-    this.socioSelecionadoInterno.produtosEmAberto = [...this.socioSelecionadoInterno.produtosEmAberto, ...this.listaProdutos];
+    let venda: vendaModel;
+    venda = new vendaModel();
 
-    this.sociosService.editarSocio(this.socioSelecionadoInterno, this.socioSelecionadoInterno.id).subscribe({
+    venda.idCliente = this.socioSelecionadoInterno.id;
+    venda.produtosVendidos = this.listaProdutosSelecionados;
+    venda.status = "aberto";
+    venda.desconto = 0;
+    venda.dataVenda = this.date.value;
+    venda.valorRecebido = 0;
+
+    console.log(venda);
+
+    this.vendasService.adicionarVenda(venda).subscribe({
       next: (data) => data,
       error: (e) => console.error(e),
       complete: () => {
-        let listaNomes = [];
-
-        for (let i = 0; i < this.listaProdutos.length; i++) {
-          listaNomes.push(this.listaProdutos[i].nome);
-        }
-
         this.socioSelecionadoInterno = undefined!;
         this.listaProdutos = [];
-
         this.terminouCompra.emit(true);
       },
     });

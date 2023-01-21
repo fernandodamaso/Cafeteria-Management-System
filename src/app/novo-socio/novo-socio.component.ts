@@ -91,8 +91,10 @@ export class NovoSocioComponent implements OnInit {
           complete: () => this.dialogRef.close(),
         });
     } else {
+
       let novoSocio: SocioModel;
       novoSocio = new SocioModel();
+
       novoSocio.nome = this.nome;
       novoSocio.telefone = this.telefone;
       novoSocio.nucleo = this.nucleo;

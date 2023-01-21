@@ -85,6 +85,7 @@ export class NovoProdutoComponent implements OnInit {
       novoSocio.qtdVendas = 0;
       novoSocio.tipo = this.tipoProduto;
 
+      console.log(novoSocio);
 
       this.produtosService.adicionarProduto(novoSocio).subscribe({
         next: (data) => data,

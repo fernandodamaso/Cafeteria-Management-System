@@ -1,17 +1,33 @@
 import { Injectable } from '@angular/core';
 import { vendaModel } from '../_models/venda.model';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from 'rxjs';
+import { first, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VendasService {
+export class vendasService {
 
   constructor(private http: HttpClient) { }
 
   getVendas() {
     return this.http.get<vendaModel[]>("http://localhost:3000/vendas");
+  }
+
+  getVendasArray(): Promise<vendaModel[]> {
+    return new Promise((resolve, reject) => {
+      this.http
+        .get<vendaModel[]>("http://localhost:3000/vendas")
+        .pipe(first())
+        .subscribe(
+          (result) => {
+            resolve(result);
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+    });
   }
 
   adicionarVenda(venda: vendaModel): Observable<Object> {
