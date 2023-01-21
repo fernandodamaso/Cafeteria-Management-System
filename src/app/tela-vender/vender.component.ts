@@ -49,65 +49,11 @@ export class VenderComponent implements OnInit {
     this.getData();
   }
 
-  calculaDebitosClientes(): void {
-    for (const x of this.dataSocios) {
-      const valorVenda = {
-        nome: x.nome,
-        total: this.calculaTotalVendas(x.id),
-      };
-
-      this.listaSociosDebito.push(valorVenda);
-    }
-  }
-
-  calculaTotalVendas(idSocio: number): number {
-    let valorTotalVenda = 0;
-    const vendasFiltradas = this.dataVendas.filter(
-      (el) => el.idCliente === idSocio && el.status === "aberto"
-    );
-
-    for (const x of vendasFiltradas) {
-      const listaPrecoVenda = x.produtosVendidos.map((el) => {
-        return el.precoVenda;
-      });
-      const total = listaPrecoVenda.reduce((a, b) => {
-        return a + b;
-      });
-      valorTotalVenda += total;
-    }
-    console.log(valorTotalVenda);
-    return valorTotalVenda;
-  }
-
   async getData(): Promise<void> {
     this.dataSocios = await this.sociosService.getSociosArray();
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
 
-    console.log(this.dataSocios);
-    console.log(this.dataVendas);
-
-    this.calculaDebitosClientes();
-
-    // this.sociosService.getSocios().subscribe({
-    //   next: (data) => (this.dataSocios = data),
-    //   error: (e) => console.error(e),
-    //   complete: () => {
-    //     console.log(this.dataSocios);
-    //   },
-    // });
-
-    // this.produtosService.getProdutos().subscribe({
-    //   next: (data) => (this.dataProdutos = data),
-    //   error: (e) => console.error(e),
-    //   // complete: () => console.log(this.dataProdutos),
-    // });
-
-    // this.vendasService.getVendas().subscribe({
-    //   next: (data) => (this.dataVendas = data),
-    //   error: (e) => console.error(e),
-    //   complete: () => console.log(this.dataVendas),
-    // });
   }
 
   pegarSocio(socio: SocioModel, index: number) {
@@ -127,7 +73,7 @@ export class VenderComponent implements OnInit {
   }
 
   removerProduto(produto: ProdutoModel) {
-    console.log(this.listaProdutosSelecionados);
+    // console.log(this.listaProdutosSelecionados);
 
     const indexProduto = this.listaProdutosSelecionados.indexOf(produto);
 
@@ -139,7 +85,6 @@ export class VenderComponent implements OnInit {
   }
 
   calcularValorTotal() {
-    console.log(this.listaProdutosSelecionados);
     let sum: number = this.listaProdutosSelecionados
       .map((el) => el.precoVenda)
       .reduce(function (el, el2) {

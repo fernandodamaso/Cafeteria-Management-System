@@ -15,7 +15,7 @@
     </select>
   </div>
   <div class="tableScroll">
-    <table class="socios">
+    <table class="socios" *ngIf="dataSocios.length > 0 && dataVendas.length > 0">
       <thead>
         <tr>
           <th>GRAU</th>
@@ -25,9 +25,9 @@
       </thead>
 
       <tbody>
-        <tr [class.active]="socioSelecionadoIndex === i" (click)="pegarSocio(socio, i)" *ngFor="let socio of listaSociosDebito | buscaPalavras : filterSocios | buscaGrau : filterGrau ; let i = index">
+        <tr [class.active]="socioSelecionadoIndex === i" (click)="pegarSocio(socio, i)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau ; let i = index">
           <td>
-            <!-- <span
+             <span
               [ngClass]="{
                 grauQM: socio.grau[0].nome === 'QM',
                 grauCDC: socio.grau[0].nome === 'CDC',
@@ -37,24 +37,23 @@
               }"
               class="tag">
               {{ socio.grau[0].nome }}
-            </span> -->
+            </span>
           </td>
           <td>
             <span class="nome">{{ socio.nome }}</span>
           </td>
           <td class="alignRight">
             <span class="debito" *ngIf="dataVendas">
-              {{socio.total}}
             </span>
-            <!-- <span
+             <span
               class="debito"
               [ngClass]="{
-                saldoPositivo: (socio | calculoDebito ) > 0,
-                saldoNegativo: (socio | calculoDebito ) < 0
+                saldoPositivo: (socio.id | calculoDebito: dataVendas ) > 0,
+                saldoNegativo: (socio.id | calculoDebito: dataVendas ) < 0
               }"
 
-              >{{ socio | calculoDebito | currency : "R$" }}</span
-            > -->
+              >{{ socio.id | calculoDebito: dataVendas | currency : "R$" }}</span
+            >
           </td>
         </tr>
       </tbody>
