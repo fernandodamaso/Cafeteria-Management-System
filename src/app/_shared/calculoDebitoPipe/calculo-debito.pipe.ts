@@ -7,11 +7,11 @@ import { vendaModel } from "src/app/_models/venda.model";
   name: "calculoDebito",
 })
 export class calculoDebito implements PipeTransform {
-  transform(socioId: number, vendas: vendaModel[]) {
+  transform(socio: SocioModel, vendas: vendaModel[]) {
     let valorTotalVenda = 0;
 
     const vendasFiltradas = vendas.filter(
-      (venda: any) => venda.idCliente === socioId && venda.status === "aberto"
+      (venda: any) => venda.idCliente === socio.id && venda.status === "aberto"
     );
 
     for (const x of vendasFiltradas) {
@@ -23,6 +23,7 @@ export class calculoDebito implements PipeTransform {
       });
       valorTotalVenda += total;
     }
+    valorTotalVenda = -Math.abs(valorTotalVenda) + socio.credito;
     return valorTotalVenda;
   }
 }

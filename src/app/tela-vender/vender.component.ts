@@ -54,6 +54,9 @@ export class VenderComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
 
+    console.log(this.dataVendas)
+    console.log(this.dataSocios)
+
   }
 
   pegarSocio(socio: SocioModel, index: number) {

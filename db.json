@@ -104,7 +104,18 @@
             "nome": "Açai"
           },
           "id": 1
-        },
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-13T18:42:34.556Z",
+      "valorRecebido": 0,
+      "id": 1
+    },
+
+    {
+      "idCliente": 1,
+      "produtosVendidos": [
         {
           "ativo": true,
           "nome": "Açai",
@@ -119,39 +130,15 @@
         },
         {
           "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
+          "nome": "Açai",
+          "precoCusto": 6,
+          "precoVenda": 12,
           "qtdVendas": 0,
           "tipo": {
-            "id": 3,
-            "nome": "Doce"
+            "id": 0,
+            "nome": "Açai"
           },
-          "id": 2
-        },
-        {
-          "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "id": 2
-        },
-        {
-          "ativo": true,
-          "nome": "Café",
-          "precoCusto": 2,
-          "precoVenda": 4,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 1,
-            "nome": "Bebida"
-          },
-          "id": 3
+          "id": 1
         }
       ],
       "status": "aberto",
@@ -160,6 +147,7 @@
       "valorRecebido": 0,
       "id": 1
     },
+
     {
       "idCliente": 2,
       "produtosVendidos": [
@@ -217,40 +205,6 @@
       "dataVenda": "2023-01-13T19:10:48.404Z",
       "valorRecebido": 0,
       "id": 2
-    },
-    {
-      "idCliente": 1,
-      "produtosVendidos": [
-        {
-          "ativo": true,
-          "nome": "Açai",
-          "precoCusto": 6,
-          "precoVenda": 12,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "id": 1
-        },
-        {
-          "ativo": true,
-          "nome": "Açai",
-          "precoCusto": 6,
-          "precoVenda": 12,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "id": 1
-        }
-      ],
-      "status": "aberto",
-      "desconto": 0,
-      "dataVenda": "2023-01-13T19:12:56.294Z",
-      "valorRecebido": 0,
-      "id": 3
     }
   ],
   "socios": [
@@ -261,7 +215,7 @@
         "nome": "Gaspar",
         "id": 0
       },
-      "credito": 0,
+      "credito": 100,
       "grau": [
         {
           "id": "2",
