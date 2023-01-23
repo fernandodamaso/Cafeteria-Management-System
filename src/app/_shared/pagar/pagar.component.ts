@@ -157,25 +157,25 @@ export class PagarComponent implements OnInit {
       });
   }
 
-  toggleProduto(produto: ProdutoModel, i: number) {
-    // const index = this.produtosAtivos.findIndex((index) => {
-    //   return index === produto;
-    // });
-    // console.log(index);
-    // if (index > -1) {
-    //   this.produtosAtivos.splice(index, 1);
-    // } else {
-    //   this.produtosAtivos.push(produto);
-    // }
-    // this.calcularValorTotal();
-    // console.log(this.produtosAtivos);
+  toggleProduto(produto: any, i: number) {
+    const index = this.produtosAtivos.findIndex((index) => {
+      return index === produto;
+    });
+    console.log(index);
+    if (index > -1) {
+      this.produtosAtivos.splice(index, 1);
+    } else {
+      this.produtosAtivos.push(produto);
+    }
+    this.calcularValorTotal();
+    console.log(this.produtosAtivos);
   }
 
-  verificaProduto(produto: ProdutoModel) {
-    // const index = this.produtosAtivos.findIndex((el) => {
-    //   return el === produto;
-    // });
-    // return index > -1;
+  verificaProduto(produto: any) {
+    const index = this.produtosAtivos.findIndex((el) => {
+      return el === produto;
+    });
+    return index > -1;
   }
 
 

@@ -23,7 +23,8 @@
           [ngClass]="{
             saldoPositivo: valorTotal > 0,
             saldoNegativo: valorTotal < 0
-          }">
+          }"
+        >
           {{ valorTotal | currency : "R$" }}
         </p>
       </div>
@@ -120,9 +121,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let produto of listaProdutosAbertos; let i = index">
+        <tr
+          *ngFor="let produto of listaProdutosAbertos; let i = index"
+          [ngClass]="{ ativo: verificaProduto(produto) }"
+          (click)="toggleProduto(produto, i)"
+        >
           <td>
-            <span class="checkbox"></span>
+            <span
+              [ngClass]="{ ativo: verificaProduto(produto) }"
+              class="checkbox"
+            ></span>
           </td>
           <td>
             <span
