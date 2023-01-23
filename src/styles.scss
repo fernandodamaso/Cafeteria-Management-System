@@ -236,7 +236,6 @@ table {
     }
 
     td {
-      // cursor: pointer;
       padding: 7px 20px;
       font-family: "Montserrat", sans-serif;
       color: $corTexto;
@@ -293,17 +292,6 @@ table {
         }
       }
     }
-
-    // &:hover {
-    //   td {
-    //     background-color: $azul;
-    //     color: #fff !important;
-
-    //     .debito {
-    //       color: #fff !important;
-    //     }
-    //   }
-    // }
   }
 }
 

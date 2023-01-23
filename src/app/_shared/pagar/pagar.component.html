@@ -5,26 +5,27 @@
         Receber de <span class="nome">{{ informacoesSocio.nome }}</span>
       </h2>
     </div>
-    <div class="valores linhaForm ">
+    <div class="valores linhaForm">
       <div class="col">
         <label class="titulo">Credito</label>
-        <p
-          class="valor"
-          [ngClass]="{
-            saldoNegativo: informacoesSocio.credito < 0,
-            saldoPositivo: informacoesSocio.credito >= 0
-          }"
-        >
+        <p class="valor credito">
           {{ informacoesSocio.credito | currency : "R$" }}
         </p>
       </div>
-       <!-- <div class="col">
+      <!-- <div class="col">
         <label class="titulo">Valor dos Produtos</label>
         <p class="valor saldoNegativo">{{ debito | currency : "R$" }}</p>
       </div> -->
       <div class="col">
         <label class="titulo">Valor Total</label>
-        <p class="valor verde">{{ valorTotal | currency : "R$" }}</p>
+        <p
+          class="valor"
+          [ngClass]="{
+            saldoPositivo: valorTotal > 0,
+            saldoNegativo: valorTotal < 0
+          }">
+          {{ valorTotal | currency : "R$" }}
+        </p>
       </div>
     </div>
 
@@ -112,46 +113,38 @@
     <table>
       <thead>
         <tr>
-          <th></th>
+          <th>Tipo</th>
           <th>Produtos a dar baixa</th>
           <th>Valor</th>
           <th>Data</th>
         </tr>
       </thead>
       <tbody>
-        <!-- <tr
-          [ngClass]="{ ativo: verificaProduto(produto) }"
-          (click)="toggleProduto(produto, i)"
-          *ngFor="
-            let produto of this.informacoesSocio.produtosEmAberto;
-            let i = index
-          "
-        >
+        <tr *ngFor="let produto of listaProdutosAbertos; let i = index">
           <td>
-            <span class="checkbox" [ngClass]="{ ativo: verificaProduto(produto) }"></span>
+            <span class="checkbox"></span>
           </td>
           <td>
             <span
               [ngClass]="{
-                tipoAcai: produto.tipo === 'Açai',
-                tipoDoce: produto.tipo === 'Doce',
-                tipoBebida: produto.tipo === 'Bebida',
-                tipoSalgado: produto.tipo === 'Salgado'
+                tipoAcai: produto.tipo.nome === 'Açai',
+                tipoDoce: produto.tipo.nome === 'Doce',
+                tipoBebida: produto.tipo.nome === 'Bebida',
+                tipoSalgado: produto.tipo.nome === 'Salgado'
               }"
               class="tag"
               >{{ produto.nome }}
             </span>
           </td>
           <td>
-            {{ produto.precoVenda | currency : "R$" }}
+            {{ produto.valor | currency : "R$" }}
           </td>
           <td>
-            {{ produto.dataCompra | date }}
+            {{ produto.data | date }}
           </td>
-        </tr> -->
+        </tr>
       </tbody>
     </table>
-
   </div>
 </div>
 

@@ -234,7 +234,7 @@
         display: block;
       }
 
-      .valor {
+      .valor, {
         font-weight: 600;
         font-size: 20px;
 
@@ -243,11 +243,11 @@
         }
 
         &.saldoPositivo {
-          color: #3498db;
-        }
-
-        &.verde {
           color: #27ae60;
+          // color: #3498db;
+        }
+        &.credito {
+          color: #3498db;
         }
       }
     }

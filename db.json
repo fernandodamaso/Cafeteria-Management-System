@@ -112,7 +112,6 @@
       "valorRecebido": 0,
       "id": 1
     },
-
     {
       "idCliente": 1,
       "produtosVendidos": [
@@ -147,7 +146,6 @@
       "valorRecebido": 0,
       "id": 1
     },
-
     {
       "idCliente": 2,
       "produtosVendidos": [
@@ -205,6 +203,28 @@
       "dataVenda": "2023-01-13T19:10:48.404Z",
       "valorRecebido": 0,
       "id": 2
+    },
+    {
+      "idCliente": 1,
+      "produtosVendidos": [
+        {
+          "ativo": true,
+          "nome": "Paçoca",
+          "precoCusto": 0.1,
+          "precoVenda": 0.5,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "id": 2
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-21T14:44:59.930Z",
+      "valorRecebido": 0,
+      "id": 3
     }
   ],
   "socios": [
@@ -215,7 +235,7 @@
         "nome": "Gaspar",
         "id": 0
       },
-      "credito": 100,
+      "credito": 10,
       "grau": [
         {
           "id": "2",

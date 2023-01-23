@@ -41,9 +41,7 @@ export class ReceberComponent implements OnInit {
     this.dataSocios = await this.sociosService.getSociosArray();
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
-
-    console.log(this.dataVendas);
-    console.log(this.dataSocios);
+    this.abrirPagar(this.dataSocios[0])
   }
 
   adicionarNovoSocio() {
@@ -72,6 +70,7 @@ export class ReceberComponent implements OnInit {
       panelClass: "PagarComponent",
       data: {
         socioData: socio,
+        vendasData: this.dataVendas,
       },
     });
 
