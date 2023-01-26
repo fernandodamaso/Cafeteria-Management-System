@@ -93,7 +93,9 @@
           <span class="nome">{{ produto.nome }}</span>
         </td>
         <td class="center">
-          <span class="acoes" >
+          <span class="acoes"  [ngClass]="{
+            temProduto: calcularQuantidade(produto) > 0
+          }" >
             <button (click)="removerProduto(produto)" class="removerProduto">-</button>
              <button class="qtdProduto">{{calcularQuantidade(produto)}}</button>
             <button (click)="adicionarProduto(produto)" class="AdicionarProduto">+</button>

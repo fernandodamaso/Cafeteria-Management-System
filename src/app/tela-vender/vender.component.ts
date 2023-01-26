@@ -74,6 +74,7 @@ export class VenderComponent implements OnInit {
     this.calcularValorTotal();
   }
 
+
   removerProduto(produto: ProdutoModel) {
     // console.log(this.listaProdutosSelecionados);
 
@@ -87,9 +88,8 @@ export class VenderComponent implements OnInit {
   }
 
   calcularQuantidade(produto: ProdutoModel) {
-
     const produtoListaAgrupada = this.listaAgrupada.find((el) => {
-      return el.nome === produto.nome
+      return el.nome === produto.nome;
     });
 
     return produtoListaAgrupada?.qtd || 0;

@@ -250,6 +250,10 @@ table {
       span {
         transition: color ease-in-out 0.1s;
 
+        &.temProduto {
+          opacity: 1!important;
+        }
+
         &.saldoPositivo {
           color: #3498DB;
 
