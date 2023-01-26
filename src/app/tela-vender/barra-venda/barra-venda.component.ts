@@ -25,6 +25,7 @@ export class BarraVendaComponent implements OnInit {
     this.socioSelecionadoInterno = value;
   }
 
+  @Input() dataVendas: vendaModel[];
   @Input() valorTotal: number;
   @Input() produtosAgrupados: produtosAgrupados[];
   @Input() listaProdutosSelecionados: ProdutoModel[];
@@ -50,9 +51,7 @@ export class BarraVendaComponent implements OnInit {
     this.listaProdutos.splice(produto, 1);
   }
 
-  addEvent(event: MatDatepickerInputEvent<Date>) {
-    console.log(event.value);
-  }
+  addEvent(event: MatDatepickerInputEvent<Date>) {}
 
   pagar() {
     this.anotar();
@@ -65,8 +64,6 @@ export class BarraVendaComponent implements OnInit {
   }
 
   anotar() {
-    console.log(this.listaProdutosSelecionados);
-
     let venda: vendaModel;
     venda = new vendaModel();
 
@@ -88,7 +85,5 @@ export class BarraVendaComponent implements OnInit {
         this.terminouCompra.emit(true);
       },
     });
-
-
   }
 }

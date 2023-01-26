@@ -10,7 +10,10 @@ import { produtosService } from "../_services/produtos.service";
   styleUrls: ["./produtos.component.scss"],
 })
 export class ProdutosComponent implements OnInit {
-  constructor(private produtosService: produtosService, private matDialog: MatDialog) {}
+  constructor(
+    private produtosService: produtosService,
+    private matDialog: MatDialog
+  ) {}
 
   dataProdutos: ProdutoModel[] = [];
   filterProdutos = "";
@@ -29,9 +32,7 @@ export class ProdutosComponent implements OnInit {
     this.produtosService.getProdutos().subscribe({
       next: (data) => (this.dataProdutos = data),
       error: (e) => console.error(e),
-      complete: () => {
-        console.log(this.dataProdutos)
-      },
+      complete: () => {},
     });
   }
 
@@ -40,7 +41,6 @@ export class ProdutosComponent implements OnInit {
       next: (data) => data,
       error: (e) => console.error(e),
       complete: () => {
-        console.log("produto deletado");
         this.getData();
       },
     });

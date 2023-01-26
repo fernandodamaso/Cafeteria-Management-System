@@ -102,12 +102,14 @@
         mat-form-field {
           max-width: 116px;
         }
-      }
 
-      .col {
-        // flex: 1;
-
-        #valorRecebel {}
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          /* display: none; <- Crashes Chrome on hover */
+          -webkit-appearance: none;
+          margin: 0;
+          /* <-- Apparently some margin are still there even though it's hidden */
+        }
       }
 
       &.formaPagamento {
@@ -168,34 +170,8 @@
         }
 
         td {
-          .checkbox {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #c1d2dd;
-            border-radius: 5px;
-            display: inline-block;
-            transition: all ease-in-out 0.20s;
-            position: relative;
-            top: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          cursor: pointer;
 
-            &:after {
-              transition: all ease-in-out 0.15s;
-              content: url(../../../assets/check.png);
-              color: #3498DB;
-              opacity: 0;
-            }
-
-            &.ativo {
-              border: 2px solid #3498DB;
-
-              &:after {
-                opacity: 1;
-              }
-            }
-          }
 
           .tag {
             display: inline-block;
@@ -205,8 +181,36 @@
             padding-right: 0;
           }
 
-          &:nth-child(2) {
-            // padding-left: 10px;
+        }
+
+        .checkbox {
+          cursor: pointer;
+
+          width: 20px;
+          height: 20px;
+          border: 2px solid #c1d2dd;
+          border-radius: 5px;
+          display: inline-block;
+          transition: all ease-in-out 0.20s;
+          position: relative;
+          top: 3px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:after {
+            transition: all ease-in-out 0.15s;
+            content: url(../../../assets/check.png);
+            color: #3498DB;
+            opacity: 0;
+          }
+
+          &.ativo {
+            border: 2px solid #3498DB;
+
+            &:after {
+              opacity: 1;
+            }
           }
         }
       }
@@ -234,7 +238,7 @@
         display: block;
       }
 
-      .valor, {
+      .valor {
         font-weight: 600;
         font-size: 20px;
 
@@ -246,6 +250,7 @@
           color: #27ae60;
           // color: #3498db;
         }
+
         &.credito {
           color: #3498db;
         }

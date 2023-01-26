@@ -53,9 +53,6 @@ export class VenderComponent implements OnInit {
     this.dataSocios = await this.sociosService.getSociosArray();
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
-
-    console.log(this.dataVendas);
-    console.log(this.dataSocios);
   }
 
   pegarSocio(socio: SocioModel, index: number) {
@@ -74,10 +71,7 @@ export class VenderComponent implements OnInit {
     this.calcularValorTotal();
   }
 
-
   removerProduto(produto: ProdutoModel) {
-    // console.log(this.listaProdutosSelecionados);
-
     const indexProduto = this.listaProdutosSelecionados.indexOf(produto);
 
     if (this.listaProdutosSelecionados.indexOf(produto) > -1) {
@@ -96,12 +90,14 @@ export class VenderComponent implements OnInit {
   }
 
   calcularValorTotal() {
-    let sum: number = this.listaProdutosSelecionados
-      .map((el) => el.precoVenda)
-      .reduce(function (el, el2) {
-        return el + el2;
-      });
-    this.valorTotal = sum;
+    if (this.listaProdutosSelecionados.length > 0) {
+      let sum: number = this.listaProdutosSelecionados
+        .map((el) => el.precoVenda)
+        .reduce(function (el, el2) {
+          return el + el2;
+        });
+      this.valorTotal = sum;
+    }
   }
 
   /**
@@ -136,9 +132,9 @@ export class VenderComponent implements OnInit {
   }
 
   terminouCompra(terminouCompraIndex: boolean) {
-    console.log("rodou");
     if (terminouCompraIndex == true) {
       this.listaProdutosSelecionados = [];
+      this.listaAgrupada = [];
       this.socioSelecionadoIndex = undefined!;
       this.getData();
     }

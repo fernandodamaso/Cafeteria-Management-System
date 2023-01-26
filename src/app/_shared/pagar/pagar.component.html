@@ -37,6 +37,7 @@
           min="{{ valorTotal }}"
           type="number"
           [(ngModel)]="valorPago"
+          (focusout)="verificarValorPago()"
           id="valorPago"
           name="valorPago"
         />
@@ -118,7 +119,9 @@
     <table>
       <thead>
         <tr>
-          <th>Tipo</th>
+          <th>
+            <span class="checkbox" (click)="toggleCheckboxes()" [ngClass]="{ ativo:verificaListaProdutos() === true }"></span>
+          </th>
           <th>Produtos a dar baixa</th>
           <th>Valor</th>
           <th>Data</th>
@@ -127,12 +130,12 @@
       <tbody>
         <tr
           *ngFor="let produto of listaProdutosAbertos; let i = index"
-          [ngClass]="{ ativo: verificaProduto(produto) }"
+          [ngClass]="{ ativo:produto.selecionado === true }"
           (click)="toggleProduto(produto, i)"
         >
           <td>
             <span
-              [ngClass]="{ ativo: verificaProduto(produto) }"
+              [ngClass]="{ ativo: produto.selecionado === true }"
               class="checkbox"
             ></span>
           </td>

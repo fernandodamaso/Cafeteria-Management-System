@@ -22,6 +22,7 @@ export class produtosAbertos {
   data: Date;
   idVenda: number;
   tipo: tipoModel;
+  selecionado: boolean;
 }
 
 @Component({
@@ -57,6 +58,7 @@ export class PagarComponent implements OnInit {
             data: venda.dataVenda,
             idVenda: venda.id,
             tipo: produto.tipo,
+            selecionado: true,
           };
 
           this.listaProdutosAbertos.push(vendaObj);
@@ -75,7 +77,7 @@ export class PagarComponent implements OnInit {
   valorPago = 0;
   desconto = 0;
   debito = 0;
-  formaPagamento : "pix" | "cartão" | "dinheiro" = "pix";
+  formaPagamento: "pix" | "cartão" | "dinheiro" = "pix";
   date = new FormControl(new Date());
   dataCompra: Date;
 
@@ -112,6 +114,7 @@ export class PagarComponent implements OnInit {
       // }
     } else {
       this.valorTotal = 0;
+      this.valorPago = 0;
     }
     // if (this.valorPago <= 0) {
     // this.valorPago = this.valorPago * -1;
@@ -158,17 +161,58 @@ export class PagarComponent implements OnInit {
 
     if (index > -1) {
       this.produtosAtivos.splice(index, 1);
+      produto.selecionado = false;
     } else {
+      produto.selecionado = true;
       this.produtosAtivos.push(produto);
     }
     this.calcularValorTotal();
   }
 
-  verificaProduto(produto: any) {
-    const index = this.produtosAtivos.findIndex((el) => {
-      return el === produto;
-    });
-    return index > -1;
+  toggleCheckboxes() {
+
+    if (this.listaProdutosAbertos.every((val) => val.selecionado == true)) {
+      for (const produto of this.listaProdutosAbertos) {
+        const index = this.produtosAtivos.findIndex((index) => {
+          return index === produto;
+        });
+        this.produtosAtivos.splice(index, 1);
+      }
+      this.listaProdutosAbertos.forEach((val) => {
+        val.selecionado = false;
+      });
+    } else {
+      this.produtosAtivos = [];
+      for (const produto of this.listaProdutosAbertos) {
+        this.produtosAtivos.push(produto);
+      }
+      this.listaProdutosAbertos.forEach((val) => {
+        val.selecionado = true;
+      });
+    }
+    this.calcularValorTotal();
+    console.log(this.listaProdutosAbertos);
+    console.log(this.produtosAtivos);
+  }
+
+  verificaListaProdutos(): boolean {
+    if (this.listaProdutosAbertos.every((val) => val.selecionado == true)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  verificarValorPago() {
+    const valorTotalPositivo = this.valorTotal * -1;
+    if (this.valorPago < valorTotalPositivo) {
+      console.log("menor");
+      this.desconto = this.valorPago - valorTotalPositivo;
+      this.desconto = this.desconto * -1;
+    } else {
+      console.log("maior");
+      this.desconto = 0;
+    }
   }
 
   salvar() {
@@ -192,7 +236,8 @@ export class PagarComponent implements OnInit {
         if (this.valorPago > this.valorTotal) {
           const valorTotalConvertido = this.valorTotal * -1;
           const diferencaValor = this.valorPago - valorTotalConvertido;
-          this.informacoesSocio.credito = this.informacoesSocio.credito + diferencaValor;
+          this.informacoesSocio.credito =
+            this.informacoesSocio.credito + diferencaValor;
         }
 
         const indexProduto = venda.produtosAbertos.findIndex((el) => {

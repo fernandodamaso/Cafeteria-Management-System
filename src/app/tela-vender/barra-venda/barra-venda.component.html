@@ -58,14 +58,20 @@
     <div class="col">
       <p class="titulo">Saldo Atual</p>
       <p class="valor">
-        <!-- <span
+        <span
           class="debito"
           [ngClass]="{
-            saldoPositivo: (socioSelecionadoInterno | calculoDebito) > 0,
-            saldoNegativo: (socioSelecionadoInterno | calculoDebito) < 0
+            saldoPositivo:
+              (socioSelecionadoInterno | calculoDebito : dataVendas) > 0,
+            saldoNegativo:
+              (socioSelecionadoInterno | calculoDebito : dataVendas) < 0
           }"
-          >{{ socioSelecionadoInterno | calculoDebito | currency : "R$" }}</span
-        > -->
+          >{{
+            socioSelecionadoInterno
+              | calculoDebito : dataVendas
+              | currency : "R$"
+          }}</span
+        >
       </p>
     </div>
     <div class="col">
