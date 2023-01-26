@@ -34,13 +34,13 @@ export class PagarComponent implements OnInit {
     public dialogRef: MatDialogRef<PagarComponent>,
     private sociosService: sociosService,
     private vendasService: vendasService,
-
     @Inject(MAT_DIALOG_DATA) public el: dialogData
   ) {
     if (el) {
+      console.log("Lista inicial de vendas:");
+      console.log(el.vendasData);
+      this.listaVendas = el.vendasData;
       this.informacoesSocio = el.socioData;
-
-      let ProdutosFiltrados: ProdutoModel[] = [];
 
       const vendasFiltradas = el.vendasData.filter(
         (venda: any) =>
@@ -48,9 +48,9 @@ export class PagarComponent implements OnInit {
       );
 
       for (const venda of vendasFiltradas) {
-        console.log(venda);
+        // console.log(venda);
 
-        for (const produto of venda.produtosVendidos) {
+        for (const produto of venda.produtosAbertos) {
           const vendaObj = {
             nome: produto.nome,
             valor: produto.precoVenda,
@@ -75,7 +75,7 @@ export class PagarComponent implements OnInit {
   valorPago = 0;
   desconto = 0;
   debito = 0;
-  formaPagamento = "pix";
+  formaPagamento : "pix" | "cartão" | "dinheiro" = "pix";
   date = new FormControl(new Date());
   dataCompra: Date;
 
@@ -96,44 +96,38 @@ export class PagarComponent implements OnInit {
         .reduce(function (a, b) {
           return a + b;
         });
-        somaTotal = somaTotal * -1;
+      somaTotal = somaTotal * -1;
       this.debito = somaTotal;
-      this.valorTotal = somaTotal + this.informacoesSocio.credito + this.desconto;
-      this.valorPago = this.valorTotal * -1;
-      if (this.valorTotal < 0) {
-          this.valorPago = this.valorTotal * -1;
+      this.valorTotal =
+        somaTotal + this.informacoesSocio.credito + this.desconto;
+
+      if (this.valorTotal > 0) {
+        this.valorPago = 0;
+      } else {
+        this.valorPago = this.valorTotal * -1;
       }
+
+      // if (this.valorTotal < 0) {
+      //   this.valorPago = this.valorTotal * -1;
+      // }
     } else {
       this.valorTotal = 0;
     }
-    if (this.valorPago <= 0) {
-      this.valorPago = this.valorPago * -1;
-    }
+    // if (this.valorPago <= 0) {
+    // this.valorPago = this.valorPago * -1;
+    // }
   }
 
   addEvent(event: MatDatepickerInputEvent<Date>) {
     console.log(event.value);
   }
 
-  adicionarVenda(venda: vendaModel) {
-    this.vendasService.adicionarVenda(venda).subscribe({
-      next: (data) => {
-        console.log("venda feita com sucesso");
-        this.atualizarSocio(venda);
-      },
-      error: (e) => console.error(e),
-      complete: () => this.dialogRef.close(),
-    });
-  }
-
   atualizarSocio(venda: vendaModel) {
-    const produtosADeletar = new Set(venda.produtosVendidos);
+    const produtosADeletar = new Set(venda.produtosAbertos);
     const calculoCredito = this.valorPago + this.valorTotal;
 
-    console.log(calculoCredito);
-
     if (calculoCredito > 0) {
-      if (venda.produtosVendidos.length > 0) {
+      if (venda.produtosAbertos.length > 0) {
         this.informacoesSocio.credito = calculoCredito;
       } else {
         this.informacoesSocio.credito =
@@ -161,14 +155,13 @@ export class PagarComponent implements OnInit {
     const index = this.produtosAtivos.findIndex((index) => {
       return index === produto;
     });
-    console.log(index);
+
     if (index > -1) {
       this.produtosAtivos.splice(index, 1);
     } else {
       this.produtosAtivos.push(produto);
     }
     this.calcularValorTotal();
-    console.log(this.produtosAtivos);
   }
 
   verificaProduto(produto: any) {
@@ -178,15 +171,67 @@ export class PagarComponent implements OnInit {
     return index > -1;
   }
 
-
   salvar() {
-    // let novaVenda: vendaModel;
-    // novaVenda = new vendaModel();
-    // novaVenda.dataVenda = this.date.value;
-    // novaVenda.desconto = this.desconto;
-    // novaVenda.produtosVendidos = this.produtosAtivos;
-    // novaVenda.valorRecebido = this.valorPago;
-    // this.adicionarVenda(novaVenda);
-  }
+    for (const produto of this.produtosAtivos) {
+      for (const venda of this.listaVendas) {
+        if (produto.idVenda !== venda.id || venda.status != "aberto") {
+          continue;
+        }
 
+        const valorTotal = venda.valorRecebido + produto.valor;
+        venda.valorRecebido = valorTotal;
+
+        if (this.informacoesSocio.credito > 0) {
+          this.informacoesSocio.credito =
+            this.informacoesSocio.credito - valorTotal;
+          if (this.informacoesSocio.credito < 0) {
+            this.informacoesSocio.credito = 0;
+          }
+        }
+
+        if (this.valorPago > this.valorTotal) {
+          const valorTotalConvertido = this.valorTotal * -1;
+          const diferencaValor = this.valorPago - valorTotalConvertido;
+          this.informacoesSocio.credito = this.informacoesSocio.credito + diferencaValor;
+        }
+
+        const indexProduto = venda.produtosAbertos.findIndex((el) => {
+          return el.nome === produto.nome;
+        });
+        venda.produtosAbertos.splice(indexProduto, 1);
+        venda.formaPagamento = this.formaPagamento;
+      }
+    }
+
+    const vendasFiltradas = this.listaVendas.filter(
+      (venda: any) =>
+        venda.idCliente === this.informacoesSocio.id &&
+        venda.status === "aberto"
+    );
+
+    for (const venda of vendasFiltradas) {
+      console.log(venda);
+
+      if (venda.produtosAbertos.length === 0) {
+        venda.status = "fechado";
+      }
+
+      this.vendasService.editarVendas(venda).subscribe({
+        next: (data) => data,
+        error: (e) => console.error(e),
+        complete: () => {
+          setTimeout(() => {}, 1000);
+          this.sociosService
+            .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
+            .subscribe({
+              next: (data) => data,
+              error: (e) => console.error(e),
+              complete: () => this.dialogRef.close(),
+            });
+        },
+      });
+      setTimeout(() => {}, 2000);
+    }
+    // this.dialogRef.close();
+  }
 }

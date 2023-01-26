@@ -1,14 +1,13 @@
-import { Injectable } from '@angular/core';
-import { vendaModel } from '../_models/venda.model';
+import { Injectable } from "@angular/core";
+import { vendaModel } from "../_models/venda.model";
 import { HttpClient } from "@angular/common/http";
-import { first, Observable } from 'rxjs';
+import { first, Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class vendasService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getVendas() {
     return this.http.get<vendaModel[]>("http://localhost:3000/vendas");
@@ -30,16 +29,20 @@ export class vendasService {
     });
   }
 
-  adicionarVenda(venda: vendaModel): Observable<Object> {
-    return this.http.post<vendaModel>("http://localhost:3000/vendas", venda);
+  editarVendas(venda: vendaModel): Observable<Object> {
+    return this.http.put<vendaModel>(
+      "http://localhost:3000/vendas/" + venda.id,
+      venda
+    );
   }
 
-  // editarSocio(socio: SocioModel, id: number): Observable<Object> {
-  //   return this.http.put<SocioModel>("http://localhost:3000/socios/" + id, socio);
-  // }
+  deletarVenda(id: number): Observable<Object> {
+    return this.http.delete<vendaModel>(
+      "http://localhost:3000/vendas/" + id
+    );
+  }
 
-  // deletarSocio(id: number): Observable<Object> {
-  //   return this.http.delete<SocioModel>("http://localhost:3000/socios/" + id);
-  // }
-
+  adicionarVenda(venda: vendaModel): Observable<Object> {
+    return this.http.post<vendaModel>("http://localhost:3000/vendas/", venda);
+  }
 }

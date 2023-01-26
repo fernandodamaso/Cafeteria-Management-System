@@ -54,8 +54,8 @@ export class VenderComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
 
-    console.log(this.dataVendas)
-    console.log(this.dataSocios)
+    console.log(this.dataVendas);
+    console.log(this.dataSocios);
   }
 
   pegarSocio(socio: SocioModel, index: number) {
@@ -84,6 +84,15 @@ export class VenderComponent implements OnInit {
     }
     this.listaAgrupada = this.agrupaProdutos();
     this.calcularValorTotal();
+  }
+
+  calcularQuantidade(produto: ProdutoModel) {
+
+    const produtoListaAgrupada = this.listaAgrupada.find((el) => {
+      return el.nome === produto.nome
+    });
+
+    return produtoListaAgrupada?.qtd || 0;
   }
 
   calcularValorTotal() {
@@ -127,7 +136,7 @@ export class VenderComponent implements OnInit {
   }
 
   terminouCompra(terminouCompraIndex: boolean) {
-    console.log("rodou")
+    console.log("rodou");
     if (terminouCompraIndex == true) {
       this.listaProdutosSelecionados = [];
       this.socioSelecionadoIndex = undefined!;

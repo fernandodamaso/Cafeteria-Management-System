@@ -15,7 +15,7 @@ export class calculoDebito implements PipeTransform {
     );
 
     for (const x of vendasFiltradas) {
-      const listaPrecoVenda = x.produtosVendidos.map((el) => {
+      const listaPrecoVenda = x.produtosAbertos.map((el) => {
         return el.precoVenda;
       });
       const total = listaPrecoVenda.reduce((a, b) => {

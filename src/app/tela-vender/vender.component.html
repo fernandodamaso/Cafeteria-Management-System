@@ -95,7 +95,7 @@
         <td class="center">
           <span class="acoes" >
             <button (click)="removerProduto(produto)" class="removerProduto">-</button>
-             <!-- <button class="qtdProduto">0</button> -->
+             <button class="qtdProduto">{{calcularQuantidade(produto)}}</button>
             <button (click)="adicionarProduto(produto)" class="AdicionarProduto">+</button>
           </span>
         </td>

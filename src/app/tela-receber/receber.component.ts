@@ -41,7 +41,7 @@ export class ReceberComponent implements OnInit {
     this.dataSocios = await this.sociosService.getSociosArray();
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
-    this.abrirPagar(this.dataSocios[0])
+    // this.abrirPagar(this.dataSocios[0])
   }
 
   adicionarNovoSocio() {

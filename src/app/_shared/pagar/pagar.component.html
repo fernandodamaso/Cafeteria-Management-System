@@ -34,7 +34,7 @@
       <div class="col">
         <label for="valorPago">Valor pago</label>
         <input
-          min="0"
+          min="{{ valorTotal }}"
           type="number"
           [(ngModel)]="valorPago"
           id="valorPago"
@@ -44,6 +44,7 @@
       <div class="col">
         <label for="desconto">Desconto</label>
         <input
+          disabled
           min="0"
           type="number"
           [(ngModel)]="desconto"
@@ -59,6 +60,7 @@
         <div class="radioWrap">
           <label class="radio">
             <input
+              required
               [(ngModel)]="formaPagamento"
               value="pix"
               type="radio"
@@ -69,8 +71,9 @@
           </label>
           <label class="radio">
             <input
+              required
               [(ngModel)]="formaPagamento"
-              value="cartao"
+              value="cartão"
               type="radio"
               name="formaPagamento"
               id="cartao"
@@ -79,6 +82,7 @@
           </label>
           <label class="radio">
             <input
+              required
               [(ngModel)]="formaPagamento"
               value="dinheiro"
               type="radio"

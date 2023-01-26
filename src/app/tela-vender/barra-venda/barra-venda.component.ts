@@ -10,6 +10,7 @@ import { sociosService } from "src/app/_services/socios.service";
 import { produtosAgrupados } from "../vender.component";
 import { vendaModel } from "src/app/_models/venda.model";
 import { vendasService } from "src/app/_services/vendas.service";
+import { produtosService } from "src/app/_services/produtos.service";
 
 @Component({
   selector: "app-barra-venda",
@@ -30,7 +31,8 @@ export class BarraVendaComponent implements OnInit {
 
   constructor(
     private matDialog: MatDialog,
-    private vendasService: vendasService
+    private vendasService: vendasService,
+    private produtosService: produtosService
   ) {}
 
   nenhumProdutoSelecionado = false;
@@ -69,13 +71,11 @@ export class BarraVendaComponent implements OnInit {
     venda = new vendaModel();
 
     venda.idCliente = this.socioSelecionadoInterno.id;
-    venda.produtosVendidos = this.listaProdutosSelecionados;
+    venda.produtosAbertos = this.listaProdutosSelecionados;
     venda.status = "aberto";
     venda.desconto = 0;
     venda.dataVenda = this.date.value;
     venda.valorRecebido = 0;
-
-    console.log(venda);
 
     this.vendasService.adicionarVenda(venda).subscribe({
       next: (data) => data,
@@ -88,5 +88,7 @@ export class BarraVendaComponent implements OnInit {
         this.terminouCompra.emit(true);
       },
     });
+
+
   }
 }
