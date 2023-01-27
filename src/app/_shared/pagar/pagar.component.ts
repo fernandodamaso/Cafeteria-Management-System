@@ -166,11 +166,11 @@ export class PagarComponent implements OnInit {
       produto.selecionado = true;
       this.produtosAtivos.push(produto);
     }
+    this.desconto = 0;
     this.calcularValorTotal();
   }
 
   toggleCheckboxes() {
-
     if (this.listaProdutosAbertos.every((val) => val.selecionado == true)) {
       for (const produto of this.listaProdutosAbertos) {
         const index = this.produtosAtivos.findIndex((index) => {
@@ -190,9 +190,8 @@ export class PagarComponent implements OnInit {
         val.selecionado = true;
       });
     }
+    this.desconto = 0;
     this.calcularValorTotal();
-    console.log(this.listaProdutosAbertos);
-    console.log(this.produtosAtivos);
   }
 
   verificaListaProdutos(): boolean {

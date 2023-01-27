@@ -274,59 +274,23 @@
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [
-        {
-          "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "id": 2
-        },
-        {
-          "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "id": 2
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-26T14:35:47.004Z",
-      "valorRecebido": 0,
-      "id": 21
+      "valorRecebido": 1,
+      "id": 21,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [
-        {
-          "ativo": true,
-          "nome": "Açai",
-          "precoCusto": 6,
-          "precoVenda": 12,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "id": 1
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-26T14:37:07.512Z",
-      "valorRecebido": 0,
-      "id": 22
+      "valorRecebido": 12,
+      "id": 22,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 2,
@@ -336,6 +300,71 @@
       "dataVenda": "2023-01-26T14:37:07.512Z",
       "valorRecebido": 1,
       "id": 23,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-26T16:43:41.495Z",
+      "valorRecebido": 25,
+      "id": 24,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-26T16:44:04.694Z",
+      "valorRecebido": 24,
+      "id": 25,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 2,
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Café",
+          "precoCusto": 2,
+          "precoVenda": 4,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "id": 3
+        },
+        {
+          "ativo": true,
+          "nome": "Café",
+          "precoCusto": 2,
+          "precoVenda": 4,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "id": 3
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-26T16:45:59.405Z",
+      "valorRecebido": 1,
+      "id": 26,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-26T22:48:30.913Z",
+      "valorRecebido": 12,
+      "id": 27,
       "formaPagamento": "pix"
     },
     {
@@ -352,49 +381,13 @@
             "nome": "Açai"
           },
           "id": 1
-        },
-        {
-          "ativo": true,
-          "nome": "Açai",
-          "precoCusto": 6,
-          "precoVenda": 12,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "id": 1
-        },
-        {
-          "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "id": 2
-        },
-        {
-          "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "id": 2
         }
       ],
       "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2023-01-26T16:43:41.495Z",
+      "dataVenda": "2023-01-26T22:51:25.464Z",
       "valorRecebido": 0,
-      "id": 24
+      "id": 28
     },
     {
       "idCliente": 1,
@@ -410,7 +403,17 @@
             "nome": "Açai"
           },
           "id": 1
-        },
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-26T22:51:25.464Z",
+      "valorRecebido": 0,
+      "id": 29
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [
         {
           "ativo": true,
           "nome": "Açai",
@@ -426,67 +429,9 @@
       ],
       "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2023-01-26T16:44:04.694Z",
+      "dataVenda": "2023-01-26T22:51:25.464Z",
       "valorRecebido": 0,
-      "id": 25
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [
-        {
-          "ativo": true,
-          "nome": "Café",
-          "precoCusto": 2,
-          "precoVenda": 4,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 1,
-            "nome": "Bebida"
-          },
-          "id": 3
-        },
-        {
-          "ativo": true,
-          "nome": "Café",
-          "precoCusto": 2,
-          "precoVenda": 4,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 1,
-            "nome": "Bebida"
-          },
-          "id": 3
-        },
-        {
-          "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "id": 2
-        },
-        {
-          "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "id": 2
-        }
-      ],
-      "status": "aberto",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T16:45:59.405Z",
-      "valorRecebido": 0,
-      "id": 26
+      "id": 30
     }
   ],
   "socios": [
