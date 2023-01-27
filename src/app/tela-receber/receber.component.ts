@@ -30,6 +30,7 @@ export class ReceberComponent implements OnInit {
   filterGrau = "";
   filterTipo = "";
   dataVendas: vendaModel[] = [];
+  vendasAbertas: vendaModel[] = [];
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
 
@@ -41,7 +42,14 @@ export class ReceberComponent implements OnInit {
     this.dataSocios = await this.sociosService.getSociosArray();
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
+    this.getVendasAbertas();
     // this.abrirPagar(this.dataSocios[0])
+  }
+
+  getVendasAbertas() {
+    this.vendasAbertas = this.dataVendas.filter(
+      (venda: any) => venda.status === "aberto"
+    );
   }
 
   adicionarNovoSocio() {

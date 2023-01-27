@@ -3,7 +3,7 @@
 </div>
 
 <div class="corpo">
-  <form action="">
+  <form>
     <div class="linha">
       <div class="col">
         <label for="Nome">Nome</label>
@@ -30,9 +30,9 @@
     <div class="linha">
       <div class="col">
         <label for="nucleo">Núcleo <button (click)="adicionarNovoNucleo()">Adicionar novo</button></label>
-        <select name="nucleo" title="nucleo" [(ngModel)]="nucleo">
+        <select name="nucleo" title="nucleo" [(ngModel)]="selectedIdSocio">
           <option [ngValue]="undefined">Categoria de Produto</option>
-          <option *ngFor="let nucleo of nucleos" [ngValue]="nucleo">{{nucleo.nome}}</option>
+          <option *ngFor="let nucleo of nucleos" [ngValue]="nucleo.id">{{nucleo.nome}}</option>
         </select>
       </div>
     </div>

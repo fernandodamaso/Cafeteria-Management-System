@@ -37,24 +37,27 @@ export class NovoSocioComponent implements OnInit {
   id: number;
   telefone: string;
   nucleos: nucleoModel[];
-  nucleo: nucleoModel;
+  nucleoSocio: nucleoModel;
   grau = "";
+  selectedIdSocio?: number;
 
   ngOnInit(): void {
     this.getNucleos();
     if (this.socioData) {
       this.nome = this.informacoesSocio.nome;
       this.telefone = this.informacoesSocio.telefone;
-      this.nucleo = this.informacoesSocio.nucleo;
       this.grau = this.informacoesSocio.grau[0].nome;
     }
+    console.log(this.informacoesSocio)
   }
 
   getNucleos() {
     this.nucleosService.getNucleos().subscribe({
-      next: (data) => this.nucleos = data,
+      next: (data) => (this.nucleos = data),
       error: (e) => console.error(e),
-      complete: () => {}
+      complete: () => {
+        this.selectedIdSocio = this.informacoesSocio.nucleo.id;
+      },
     });
   }
 
@@ -77,27 +80,30 @@ export class NovoSocioComponent implements OnInit {
   }
 
   postData() {
-    if (this.socioData) {
+    if (this.informacoesSocio) {
       this.informacoesSocio.nome = this.nome;
       this.informacoesSocio.telefone = this.telefone;
-      this.informacoesSocio.nucleo = this.nucleo;
+      const nucleoSelecionado = this.nucleos.find((el) => {
+        return el.id === this.selectedIdSocio;
+      });
+      this.informacoesSocio.nucleo = nucleoSelecionado || { id: 0, nome: "" };
       this.informacoesSocio.grau[0].nome = this.grau;
 
-      this.sociosService
-        .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
-        .subscribe({
-          next: (data) => data,
-          error: (e) => console.error(e),
-          complete: () => this.dialogRef.close(),
-        });
+      this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
+        next: (data) => data,
+        error: (e) => console.error(e),
+        complete: () => this.dialogRef.close(),
+      });
     } else {
-
       let novoSocio: SocioModel;
       novoSocio = new SocioModel();
 
       novoSocio.nome = this.nome;
       novoSocio.telefone = this.telefone;
-      novoSocio.nucleo = this.nucleo;
+      const nucleoSelecionado = this.nucleos.find((el) => {
+        return el.id === this.selectedIdSocio;
+      });
+      novoSocio.nucleo = nucleoSelecionado || { id: 0, nome: "" };
       novoSocio.credito = 0;
       novoSocio.grau = [];
       novoSocio.produtosEmAberto = [];
@@ -106,7 +112,6 @@ export class NovoSocioComponent implements OnInit {
         nome: this.grau,
       };
       novoSocio.grau.push(novoGrau);
-
       this.sociosService.adicionarSocio(novoSocio).subscribe({
         next: (data) => data,
         error: (e) => console.error(e),

@@ -38,7 +38,9 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau">
+        <tr
+          *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau"
+        >
           <td (click)="abrirPagar(socio)">
             <span
               [ngClass]="{
@@ -48,7 +50,8 @@
                 grauQS: socio.grau[0].nome === 'QS',
                 grauVI: socio.grau[0].nome === 'VI'
               }"
-              class="tag">
+              class="tag"
+            >
               {{ socio.grau[0].nome }}
             </span>
           </td>
@@ -56,22 +59,23 @@
             <span class="nome">{{ socio.nome }}</span>
           </td>
           <td (click)="abrirPagar(socio)">{{ socio.telefone }}</td>
-          <td (click)="abrirPagar(socio)">{{ socio.nucleo.nome }}</td>
+          <td (click)="abrirPagar(socio)">{{ socio?.nucleo?.nome }}</td>
           <td (click)="abrirPagar(socio)" class="alignRight saldo">
             <span
               class="debito"
               [ngClass]="{
-                saldoPositivo: (socio | calculoDebito: dataVendas ) > 0,
-                saldoNegativo: (socio | calculoDebito: dataVendas ) < 0
+                saldoPositivo: (socio | calculoDebito : vendasAbertas) > 0,
+                saldoNegativo: (socio | calculoDebito : vendasAbertas) < 0
               }"
-
-              >{{ socio | calculoDebito: dataVendas | currency : "R$" }}</span
+              >{{ socio | calculoDebito : vendasAbertas | currency : "R$" }}</span
             >
           </td>
           <td class="center">
-            <button title="Ações" mat-button [matMenuTriggerFor]="menu"> <img src="..\assets\acoes.png" alt="" /></button>
+            <button title="Ações" mat-button [matMenuTriggerFor]="menu">
+              <img src="..\assets\acoes.png" alt="" />
+            </button>
             <mat-menu #menu="matMenu">
-              <button (click)="editarSocio(socio)" mat-menu-item >Editar</button>
+              <button (click)="editarSocio(socio)" mat-menu-item>Editar</button>
               <button (click)="deletarSocio(socio.id)" mat-menu-item>Deletar</button>
               <button (click)="abrirRecibo(socio)" mat-menu-item>Ver Recibo</button>
               <!-- <button mat-menu-item>Mandar Cobrança</button> -->

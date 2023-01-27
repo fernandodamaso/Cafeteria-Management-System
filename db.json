@@ -92,435 +92,43 @@
       "produtosAbertos": [],
       "status": "fechado",
       "desconto": 0,
-      "dataVenda": "2023-01-25T23:43:58.324Z",
-      "valorRecebido": 0,
-      "id": 1
+      "dataVenda": "2023-01-27T21:53:43.256Z",
+      "valorRecebido": 12,
+      "id": 1,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 1,
       "produtosAbertos": [],
       "status": "fechado",
       "desconto": 0,
-      "dataVenda": "2023-01-25T23:43:58.324Z",
-      "valorRecebido": 0,
-      "id": 2
+      "dataVenda": "2023-01-27T21:53:43.256Z",
+      "valorRecebido": 1,
+      "id": 2,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 1,
       "produtosAbertos": [],
       "status": "fechado",
       "desconto": 0,
-      "dataVenda": "2023-01-25T23:46:26.593Z",
-      "valorRecebido": 0,
-      "id": 3
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-25T23:47:46.863Z",
-      "valorRecebido": 0,
-      "id": 4
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-25T23:48:33.262Z",
-      "valorRecebido": 36,
-      "id": 5
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T11:37:08.512Z",
+      "dataVenda": "2023-01-27T21:55:56.622Z",
       "valorRecebido": 0.5,
-      "id": 6
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T11:50:29.321Z",
-      "valorRecebido": 12,
-      "id": 7
+      "id": 3,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 1,
       "produtosAbertos": [],
       "status": "fechado",
       "desconto": 0,
-      "dataVenda": "2023-01-26T12:19:43.720Z",
-      "valorRecebido": 8,
-      "id": 8
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T12:19:43.720Z",
+      "dataVenda": "2023-01-27T21:56:19.040Z",
       "valorRecebido": 1,
-      "id": 9
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T12:20:36.427Z",
-      "valorRecebido": 32,
-      "id": 10
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T12:28:27.039Z",
-      "valorRecebido": 4,
-      "id": 11
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T12:29:46.591Z",
-      "valorRecebido": 4,
-      "id": 12
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T12:30:14.093Z",
-      "valorRecebido": 24,
-      "id": 13
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T12:30:40.334Z",
-      "valorRecebido": 36,
-      "id": 14
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T12:33:09.092Z",
-      "valorRecebido": 12,
-      "id": 15,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T12:33:09.092Z",
-      "valorRecebido": 1,
-      "id": 16
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T13:34:15.887Z",
-      "valorRecebido": 12,
-      "id": 17,
-      "formaPagamento": "cartão"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T13:34:15.887Z",
-      "valorRecebido": 12,
-      "id": 18,
-      "formaPagamento": "cartão"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T13:34:22.854Z",
-      "valorRecebido": 12,
-      "id": 19,
-      "formaPagamento": "cartão"
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T14:35:47.004Z",
-      "valorRecebido": 25,
-      "id": 20,
+      "id": 4,
       "formaPagamento": "pix"
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T14:35:47.004Z",
-      "valorRecebido": 1,
-      "id": 21,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T14:37:07.512Z",
-      "valorRecebido": 12,
-      "id": 22,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T14:37:07.512Z",
-      "valorRecebido": 1,
-      "id": 23,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T16:43:41.495Z",
-      "valorRecebido": 25,
-      "id": 24,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T16:44:04.694Z",
-      "valorRecebido": 24,
-      "id": 25,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [
-        {
-          "ativo": true,
-          "nome": "Café",
-          "precoCusto": 2,
-          "precoVenda": 4,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 1,
-            "nome": "Bebida"
-          },
-          "id": 3
-        },
-        {
-          "ativo": true,
-          "nome": "Café",
-          "precoCusto": 2,
-          "precoVenda": 4,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 1,
-            "nome": "Bebida"
-          },
-          "id": 3
-        }
-      ],
-      "status": "aberto",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T16:45:59.405Z",
-      "valorRecebido": 1,
-      "id": 26,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T22:48:30.913Z",
-      "valorRecebido": 12,
-      "id": 27,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T22:51:25.464Z",
-      "valorRecebido": 12,
-      "id": 28,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T22:51:25.464Z",
-      "valorRecebido": 12,
-      "id": 29,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-26T22:51:25.464Z",
-      "valorRecebido": 12,
-      "id": 30,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:11:44.483Z",
-      "valorRecebido": 12,
-      "id": 31,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:11:58.081Z",
-      "valorRecebido": 4,
-      "id": 32,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:17:21.672Z",
-      "valorRecebido": 2.5,
-      "id": 33,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:17:39.059Z",
-      "valorRecebido": 1.5,
-      "id": 34,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:17:39.059Z",
-      "valorRecebido": 12,
-      "id": 35,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:20:48.956Z",
-      "valorRecebido": 12.5,
-      "id": 36,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:26:43.894Z",
-      "valorRecebido": 12,
-      "id": 37,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:27:58.831Z",
-      "valorRecebido": 12,
-      "id": 38,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 2,
-      "produtosAbertos": [
-        {
-          "ativo": true,
-          "nome": "Paçoca",
-          "precoCusto": 0.1,
-          "precoVenda": 0.5,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "id": 2
-        }
-      ],
-      "status": "aberto",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:27:58.831Z",
-      "valorRecebido": 0,
-      "id": 39
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:27:58.831Z",
-      "valorRecebido": 4,
-      "id": 40,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T13:27:58.831Z",
-      "valorRecebido": 4,
-      "id": 41,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 2,
       "produtosAbertos": [
         {
           "ativo": true,
@@ -537,179 +145,179 @@
       ],
       "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2023-01-27T18:07:28.744Z",
+      "dataVenda": "2023-01-27T21:58:14.222Z",
       "valorRecebido": 0,
-      "id": 42
+      "id": 5
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Café",
+          "precoCusto": 2,
+          "precoVenda": 4,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "id": 3
+        }
+      ],
+      "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2023-01-27T18:21:49.151Z",
-      "valorRecebido": 6,
-      "id": 43,
-      "formaPagamento": "pix"
+      "dataVenda": "2023-01-27T21:58:22.664Z",
+      "valorRecebido": 0,
+      "id": 6
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Açai",
+          "precoCusto": 6,
+          "precoVenda": 12,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "id": 1
+        },
+        {
+          "ativo": true,
+          "nome": "Açai",
+          "precoCusto": 6,
+          "precoVenda": 12,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "id": 1
+        },
+        {
+          "ativo": true,
+          "nome": "Paçoca",
+          "precoCusto": 0.1,
+          "precoVenda": 0.5,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "id": 2
+        }
+      ],
+      "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2023-01-27T18:47:54.081Z",
-      "valorRecebido": 12,
-      "id": 44,
-      "formaPagamento": "pix"
+      "dataVenda": "2023-01-27T21:59:04.267Z",
+      "valorRecebido": 0,
+      "id": 7
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Açai",
+          "precoCusto": 6,
+          "precoVenda": 12,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "id": 1
+        }
+      ],
+      "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2023-01-27T18:50:45.043Z",
-      "valorRecebido": 0.5,
-      "id": 45,
-      "formaPagamento": "pix"
+      "dataVenda": "2023-01-27T22:03:41.618Z",
+      "valorRecebido": 0,
+      "id": 8
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Açai",
+          "precoCusto": 6,
+          "precoVenda": 12,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "id": 1
+        }
+      ],
+      "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2023-01-27T18:50:53.320Z",
-      "valorRecebido": 0.5,
-      "id": 46,
-      "formaPagamento": "pix"
+      "dataVenda": "2023-01-27T22:03:41.618Z",
+      "valorRecebido": 0,
+      "id": 9
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Açai",
+          "precoCusto": 6,
+          "precoVenda": 12,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "id": 1
+        },
+        {
+          "ativo": true,
+          "nome": "Açai",
+          "precoCusto": 6,
+          "precoVenda": 12,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "id": 1
+        },
+        {
+          "ativo": true,
+          "nome": "Paçoca",
+          "precoCusto": 0.1,
+          "precoVenda": 0.5,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "id": 2
+        },
+        {
+          "ativo": true,
+          "nome": "Paçoca",
+          "precoCusto": 0.1,
+          "precoVenda": 0.5,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "id": 2
+        }
+      ],
+      "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2023-01-27T19:00:17.674Z",
-      "valorRecebido": 0.5,
-      "id": 47,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:00:35.938Z",
-      "valorRecebido": 0.5,
-      "id": 48,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:01:21.726Z",
-      "valorRecebido": 0.5,
-      "id": 49,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:01:21.726Z",
-      "valorRecebido": 0.5,
-      "id": 50,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:01:21.726Z",
-      "valorRecebido": 0.5,
-      "id": 51,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:01:21.726Z",
-      "valorRecebido": 0.5,
-      "id": 52,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:02:05.871Z",
-      "valorRecebido": 0.5,
-      "id": 53,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:07:01.442Z",
-      "valorRecebido": 0.5,
-      "id": 54,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:08:29.224Z",
-      "valorRecebido": 6,
-      "id": 55,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:12:27.998Z",
-      "valorRecebido": 12,
-      "id": 56,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:12:34.414Z",
-      "valorRecebido": 12,
-      "id": 57,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:13:11.478Z",
-      "valorRecebido": 0.5,
-      "id": 58,
-      "formaPagamento": "pix"
-    },
-    {
-      "idCliente": 1,
-      "produtosAbertos": [],
-      "status": "fechado",
-      "desconto": 0,
-      "dataVenda": "2023-01-27T19:17:33.586Z",
-      "valorRecebido": 4,
-      "id": 59,
-      "formaPagamento": "pix"
+      "dataVenda": "2023-01-27T22:03:41.618Z",
+      "valorRecebido": 0,
+      "id": 10
     }
   ],
   "socios": [
@@ -720,7 +328,7 @@
         "nome": "Gaspar",
         "id": 0
       },
-      "credito": 1,
+      "credito": 15,
       "grau": [
         {
           "id": "2",
@@ -744,6 +352,21 @@
       ],
       "produtosEmAberto": [],
       "id": 2
+    },
+    {
+      "nome": "Saulo da Rós",
+      "credito": 0,
+      "grau": [
+        {
+          "nome": "QM"
+        }
+      ],
+      "produtosEmAberto": [],
+      "id": 3,
+      "nucleo": {
+        "nome": "Pupura Manta",
+        "id": 2
+      }
     }
   ],
   "nucleos": [
@@ -754,6 +377,10 @@
     {
       "nome": "Rei Divino",
       "id": 1
+    },
+    {
+      "nome": "Pupura Manta",
+      "id": 2
     }
   ]
 }

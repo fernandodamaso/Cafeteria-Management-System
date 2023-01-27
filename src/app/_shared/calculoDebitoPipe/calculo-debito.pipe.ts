@@ -8,6 +8,7 @@ import { vendaModel } from "src/app/_models/venda.model";
 })
 export class calculoDebito implements PipeTransform {
   transform(socio: SocioModel, vendas: vendaModel[]) {
+    console.log(vendas)
     let valorTotalVenda = 0;
 
     const vendasFiltradas = vendas.filter(

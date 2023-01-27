@@ -46,11 +46,11 @@
              <span
               class="debito"
               [ngClass]="{
-                saldoPositivo: (socio | calculoDebito: dataVendas ) > 0,
-                saldoNegativo: (socio | calculoDebito: dataVendas ) < 0
+                saldoPositivo: (socio | calculoDebito: vendasAbertas ) > 0,
+                saldoNegativo: (socio | calculoDebito: vendasAbertas ) < 0
               }"
 
-              >{{ socio | calculoDebito: dataVendas | currency : "R$" }}</span
+              >{{ socio | calculoDebito: vendasAbertas | currency : "R$" }}</span
             >
           </td>
         </tr>

@@ -29,6 +29,7 @@ export class VenderComponent implements OnInit {
   ) {}
 
   dataVendas: vendaModel[] = [];
+  vendasAbertas: vendaModel[] = [];
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
   listaProdutosSelecionados: ProdutoModel[] = [];
@@ -53,6 +54,13 @@ export class VenderComponent implements OnInit {
     this.dataSocios = await this.sociosService.getSociosArray();
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
+    this.getVendasAbertas();
+  }
+
+  getVendasAbertas() {
+    this.vendasAbertas = this.dataVendas.filter(
+      (venda: any) => venda.status === "aberto"
+    );
   }
 
   pegarSocio(socio: SocioModel, index: number) {
