@@ -456,6 +456,92 @@
       "valorRecebido": 12.5,
       "id": 36,
       "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:26:43.894Z",
+      "valorRecebido": 12,
+      "id": 37,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:27:58.831Z",
+      "valorRecebido": 12,
+      "id": 38,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 2,
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Paçoca",
+          "precoCusto": 0.1,
+          "precoVenda": 0.5,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "id": 2
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:27:58.831Z",
+      "valorRecebido": 0,
+      "id": 39
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Café",
+          "precoCusto": 2,
+          "precoVenda": 4,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "id": 3
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:27:58.831Z",
+      "valorRecebido": 0,
+      "id": 40
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [
+        {
+          "ativo": true,
+          "nome": "Café",
+          "precoCusto": 2,
+          "precoVenda": 4,
+          "qtdVendas": 0,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "id": 3
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:27:58.831Z",
+      "valorRecebido": 0,
+      "id": 41
     }
   ],
   "socios": [
@@ -466,7 +552,7 @@
         "nome": "Gaspar",
         "id": 0
       },
-      "credito": 38,
+      "credito": 14,
       "grau": [
         {
           "id": "2",

@@ -59,6 +59,7 @@ export class BarraVendaComponent implements OnInit {
       panelClass: "PagarComponent",
       data: {
         socioData: this.socioSelecionadoInterno,
+        vendasData: this.dataVendas,
       },
     });
   }
