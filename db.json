@@ -369,69 +369,93 @@
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [
-        {
-          "ativo": true,
-          "nome": "Açai",
-          "precoCusto": 6,
-          "precoVenda": 12,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "id": 1
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-26T22:51:25.464Z",
-      "valorRecebido": 0,
-      "id": 28
+      "valorRecebido": 12,
+      "id": 28,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [
-        {
-          "ativo": true,
-          "nome": "Açai",
-          "precoCusto": 6,
-          "precoVenda": 12,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "id": 1
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-26T22:51:25.464Z",
-      "valorRecebido": 0,
-      "id": 29
+      "valorRecebido": 12,
+      "id": 29,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [
-        {
-          "ativo": true,
-          "nome": "Açai",
-          "precoCusto": 6,
-          "precoVenda": 12,
-          "qtdVendas": 0,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "id": 1
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-26T22:51:25.464Z",
-      "valorRecebido": 0,
-      "id": 30
+      "valorRecebido": 12,
+      "id": 30,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:11:44.483Z",
+      "valorRecebido": 12,
+      "id": 31,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:11:58.081Z",
+      "valorRecebido": 4,
+      "id": 32,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:17:21.672Z",
+      "valorRecebido": 2.5,
+      "id": 33,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:17:39.059Z",
+      "valorRecebido": 1.5,
+      "id": 34,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:17:39.059Z",
+      "valorRecebido": 12,
+      "id": 35,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-27T13:20:48.956Z",
+      "valorRecebido": 12.5,
+      "id": 36,
+      "formaPagamento": "pix"
     }
   ],
   "socios": [
@@ -442,7 +466,7 @@
         "nome": "Gaspar",
         "id": 0
       },
-      "credito": 0,
+      "credito": 38,
       "grau": [
         {
           "id": "2",

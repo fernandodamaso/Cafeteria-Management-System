@@ -214,36 +214,47 @@ export class PagarComponent implements OnInit {
     }
   }
 
+  calculaCredito(venda: vendaModel, produto: produtosAbertos) {
+    const valorTotal = venda.valorRecebido + produto.valor;
+    venda.valorRecebido = valorTotal;
+
+    if (this.informacoesSocio.credito > 0) {
+      this.informacoesSocio.credito =
+        this.informacoesSocio.credito - valorTotal;
+      if (this.informacoesSocio.credito < 0) {
+        this.informacoesSocio.credito = 0;
+      }
+    }
+    if (this.valorPago > this.valorTotal) {
+      const valorTotalConvertido = this.valorTotal * -1;
+      const diferencaValor = this.valorPago - valorTotalConvertido;
+      this.informacoesSocio.credito =
+        this.informacoesSocio.credito + diferencaValor;
+    }
+  }
+
+  deletaProdutosAbertos(
+    venda: vendaModel,
+    produto: produtosAbertos
+  ): vendaModel {
+    const indexProduto = venda.produtosAbertos.findIndex((el) => {
+      return el.nome === produto.nome;
+    });
+    venda.produtosAbertos.splice(indexProduto, 1);
+    venda.formaPagamento = this.formaPagamento;
+    return venda;
+  }
+
   salvar() {
     for (const produto of this.produtosAtivos) {
-      for (const venda of this.listaVendas) {
+      for (let venda of this.listaVendas) {
         if (produto.idVenda !== venda.id || venda.status != "aberto") {
           continue;
         }
 
-        const valorTotal = venda.valorRecebido + produto.valor;
-        venda.valorRecebido = valorTotal;
+        this.calculaCredito(venda, produto);
 
-        if (this.informacoesSocio.credito > 0) {
-          this.informacoesSocio.credito =
-            this.informacoesSocio.credito - valorTotal;
-          if (this.informacoesSocio.credito < 0) {
-            this.informacoesSocio.credito = 0;
-          }
-        }
-
-        if (this.valorPago > this.valorTotal) {
-          const valorTotalConvertido = this.valorTotal * -1;
-          const diferencaValor = this.valorPago - valorTotalConvertido;
-          this.informacoesSocio.credito =
-            this.informacoesSocio.credito + diferencaValor;
-        }
-
-        const indexProduto = venda.produtosAbertos.findIndex((el) => {
-          return el.nome === produto.nome;
-        });
-        venda.produtosAbertos.splice(indexProduto, 1);
-        venda.formaPagamento = this.formaPagamento;
+        venda = this.deletaProdutosAbertos(venda, produto);
       }
     }
 
@@ -276,6 +287,5 @@ export class PagarComponent implements OnInit {
       });
       setTimeout(() => {}, 2000);
     }
-    // this.dialogRef.close();
   }
 }
