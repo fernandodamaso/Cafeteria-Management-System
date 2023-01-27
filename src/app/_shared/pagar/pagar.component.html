@@ -16,7 +16,7 @@
         <label class="titulo">Valor dos Produtos</label>
         <p class="valor saldoNegativo">{{ debito | currency : "R$" }}</p>
       </div> -->
-      <div class="col">
+      <div class="col" *ngIf="semCompras === false">
         <label class="titulo">Valor Total</label>
         <p
           class="valor"
@@ -42,7 +42,7 @@
           name="valorPago"
         />
       </div>
-      <div class="col">
+      <div class="col" *ngIf="semCompras === false">
         <label for="desconto">Desconto</label>
         <input
           disabled
@@ -168,6 +168,7 @@
     <button class="botao cinza" (click)="this.dialogRef.close()">
       Cancelar
     </button>
-    <button (click)="salvar()" class="botao azul">Salvar</button>
+    <button *ngIf="semCompras === false" (click)="salvar()" class="botao azul">Salvar</button>
+    <button *ngIf="semCompras === true" (click)="salvar()" class="botao azul">Adicionar Crédito</button>
   </div>
 </div>

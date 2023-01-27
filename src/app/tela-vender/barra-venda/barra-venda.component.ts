@@ -53,18 +53,7 @@ export class BarraVendaComponent implements OnInit {
 
   addEvent(event: MatDatepickerInputEvent<Date>) {}
 
-  pagar() {
-    this.anotar();
-    const dialogRef = this.matDialog.open(PagarComponent, {
-      panelClass: "PagarComponent",
-      data: {
-        socioData: this.socioSelecionadoInterno,
-        vendasData: this.dataVendas,
-      },
-    });
-  }
-
-  anotar() {
+  anotar(pagarAgora: boolean) {
     let venda: vendaModel;
     venda = new vendaModel();
 
@@ -79,6 +68,15 @@ export class BarraVendaComponent implements OnInit {
       next: (data) => data,
       error: (e) => console.error(e),
       complete: () => {
+        if (pagarAgora === true) {
+          const dialogRef = this.matDialog.open(PagarComponent, {
+            panelClass: "PagarComponent",
+            data: {
+              socioData: this.socioSelecionadoInterno,
+              // vendasData: this.dataVendas,
+            },
+          });
+        }
         this.socioSelecionadoInterno = undefined!;
         this.listaProdutos = [];
         this.listaProdutosSelecionados = [];

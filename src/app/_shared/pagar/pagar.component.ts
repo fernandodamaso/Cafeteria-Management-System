@@ -38,33 +38,40 @@ export class PagarComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public el: dialogData
   ) {
     if (el) {
-      console.log("Lista inicial de vendas:");
-      console.log(el.vendasData);
-      this.listaVendas = el.vendasData;
       this.informacoesSocio = el.socioData;
 
-      const vendasFiltradas = el.vendasData.filter(
-        (venda: any) =>
-          venda.idCliente === el.socioData.id && venda.status === "aberto"
-      );
+      this.vendasService.getVendas().subscribe({
+        next: (data) => {
+          this.listaVendas = data;
 
-      for (const venda of vendasFiltradas) {
-        // console.log(venda);
+          const vendasFiltradas = this.listaVendas.filter(
+            (venda: any) => venda.idCliente === el.socioData.id && venda.status === "aberto"
+          );
+          console.log(vendasFiltradas);
 
-        for (const produto of venda.produtosAbertos) {
-          const vendaObj = {
-            nome: produto.nome,
-            valor: produto.precoVenda,
-            data: venda.dataVenda,
-            idVenda: venda.id,
-            tipo: produto.tipo,
-            selecionado: true,
-          };
+          if (vendasFiltradas.length === 0) {
+            this.semCompras = true;
+          }
 
-          this.listaProdutosAbertos.push(vendaObj);
-          this.produtosAtivos.push(vendaObj);
-        }
-      }
+          for (const venda of vendasFiltradas) {
+
+            for (const produto of venda.produtosAbertos) {
+              const vendaObj = {
+                nome: produto.nome,
+                valor: produto.precoVenda,
+                data: venda.dataVenda,
+                idVenda: venda.id,
+                tipo: produto.tipo,
+                selecionado: true,
+              };
+
+              this.listaProdutosAbertos.push(vendaObj);
+              this.produtosAtivos.push(vendaObj);
+            }
+          }
+          this.calcularValorTotal();
+        },
+      });
     }
   }
 
@@ -80,9 +87,10 @@ export class PagarComponent implements OnInit {
   formaPagamento: "pix" | "cartão" | "dinheiro" = "pix";
   date = new FormControl(new Date());
   dataCompra: Date;
+  semCompras = false;
 
   ngOnInit(): void {
-    this.calcularValorTotal();
+    // this.calcularValorTotal();
   }
 
   calcularValorTotal() {
@@ -100,8 +108,7 @@ export class PagarComponent implements OnInit {
         });
       somaTotal = somaTotal * -1;
       this.debito = somaTotal;
-      this.valorTotal =
-        somaTotal + this.informacoesSocio.credito + this.desconto;
+      this.valorTotal = somaTotal + this.informacoesSocio.credito + this.desconto;
 
       if (this.valorTotal > 0) {
         this.valorPago = 0;
@@ -133,25 +140,23 @@ export class PagarComponent implements OnInit {
       if (venda.produtosAbertos.length > 0) {
         this.informacoesSocio.credito = calculoCredito;
       } else {
-        this.informacoesSocio.credito =
-          this.informacoesSocio.credito + calculoCredito;
+        this.informacoesSocio.credito = this.informacoesSocio.credito + calculoCredito;
       }
     } else {
       this.informacoesSocio.credito = 0;
     }
 
-    this.informacoesSocio.produtosEmAberto =
-      this.informacoesSocio.produtosEmAberto.filter((produto) => {
+    this.informacoesSocio.produtosEmAberto = this.informacoesSocio.produtosEmAberto.filter(
+      (produto) => {
         return !produtosADeletar.has(produto);
-      });
+      }
+    );
 
-    this.sociosService
-      .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
-      .subscribe({
-        next: (data) => console.log(data),
-        error: (e) => console.error(e),
-        complete: () => this.dialogRef.close(),
-      });
+    this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
+      next: (data) => console.log(data),
+      error: (e) => console.error(e),
+      complete: () => this.dialogRef.close(),
+    });
   }
 
   toggleProduto(produto: any, i: number) {
@@ -205,11 +210,9 @@ export class PagarComponent implements OnInit {
   verificarValorPago() {
     const valorTotalPositivo = this.valorTotal * -1;
     if (this.valorPago < valorTotalPositivo) {
-      console.log("menor");
       this.desconto = this.valorPago - valorTotalPositivo;
       this.desconto = this.desconto * -1;
     } else {
-      console.log("maior");
       this.desconto = 0;
     }
   }
@@ -219,8 +222,7 @@ export class PagarComponent implements OnInit {
     venda.valorRecebido = valorTotal;
 
     if (this.informacoesSocio.credito > 0) {
-      this.informacoesSocio.credito =
-        this.informacoesSocio.credito - valorTotal;
+      this.informacoesSocio.credito = this.informacoesSocio.credito - valorTotal;
       if (this.informacoesSocio.credito < 0) {
         this.informacoesSocio.credito = 0;
       }
@@ -228,15 +230,11 @@ export class PagarComponent implements OnInit {
     if (this.valorPago > this.valorTotal) {
       const valorTotalConvertido = this.valorTotal * -1;
       const diferencaValor = this.valorPago - valorTotalConvertido;
-      this.informacoesSocio.credito =
-        this.informacoesSocio.credito + diferencaValor;
+      this.informacoesSocio.credito = this.informacoesSocio.credito + diferencaValor;
     }
   }
 
-  deletaProdutosAbertos(
-    venda: vendaModel,
-    produto: produtosAbertos
-  ): vendaModel {
+  deletaProdutosAbertos(venda: vendaModel, produto: produtosAbertos): vendaModel {
     const indexProduto = venda.produtosAbertos.findIndex((el) => {
       return el.nome === produto.nome;
     });
@@ -246,46 +244,55 @@ export class PagarComponent implements OnInit {
   }
 
   salvar() {
-    for (const produto of this.produtosAtivos) {
-      for (let venda of this.listaVendas) {
-        if (produto.idVenda !== venda.id || venda.status != "aberto") {
-          continue;
+    if (this.listaProdutosAbertos.length > 0) {
+      for (const produto of this.produtosAtivos) {
+        for (let venda of this.listaVendas) {
+          if (produto.idVenda !== venda.id || venda.status != "aberto") {
+            continue;
+          }
+
+          this.calculaCredito(venda, produto);
+
+          venda = this.deletaProdutosAbertos(venda, produto);
+        }
+      }
+
+      const vendasFiltradas = this.listaVendas.filter(
+        (venda: any) => venda.idCliente === this.informacoesSocio.id && venda.status === "aberto"
+      );
+
+      for (const venda of vendasFiltradas) {
+        console.log(venda);
+
+        if (venda.produtosAbertos.length === 0) {
+          venda.status = "fechado";
         }
 
-        this.calculaCredito(venda, produto);
-
-        venda = this.deletaProdutosAbertos(venda, produto);
+        this.vendasService.editarVendas(venda).subscribe({
+          next: (data) => data,
+          error: (e) => console.error(e),
+          complete: () => {
+            setTimeout(() => {}, 1000);
+            this.sociosService
+              .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
+              .subscribe({
+                next: (data) => data,
+                error: (e) => console.error(e),
+                complete: () => this.dialogRef.close(),
+              });
+          },
+        });
+        setTimeout(() => {}, 2000);
       }
-    }
-
-    const vendasFiltradas = this.listaVendas.filter(
-      (venda: any) =>
-        venda.idCliente === this.informacoesSocio.id &&
-        venda.status === "aberto"
-    );
-
-    for (const venda of vendasFiltradas) {
-      console.log(venda);
-
-      if (venda.produtosAbertos.length === 0) {
-        venda.status = "fechado";
-      }
-
-      this.vendasService.editarVendas(venda).subscribe({
+    } else {
+      // const valorTotalConvertido = this.valorTotal * -1;
+      // const diferencaValor = this.valorPago - valorTotalConvertido;
+      this.informacoesSocio.credito = this.informacoesSocio.credito + this.valorPago;
+      this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
         next: (data) => data,
         error: (e) => console.error(e),
-        complete: () => {
-          setTimeout(() => {}, 1000);
-          this.sociosService
-            .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
-            .subscribe({
-              next: (data) => data,
-              error: (e) => console.error(e),
-              complete: () => this.dialogRef.close(),
-            });
-        },
+        complete: () => this.dialogRef.close(),
       });
-      setTimeout(() => {}, 2000);
     }
   }
 }

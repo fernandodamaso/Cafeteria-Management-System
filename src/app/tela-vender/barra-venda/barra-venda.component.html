@@ -83,7 +83,7 @@
     class="coluna botoes"
     *ngIf="socioSelecionadoInterno && listaProdutosSelecionados.length > 0"
   >
-    <button class="botao azul" (click)="pagar()">Pagar Agora</button>
-    <button class="botao borda" (click)="anotar()">Anotar</button>
+    <button class="botao azul" (click)="anotar(true)">Pagar Agora</button>
+    <button class="botao borda" (click)="anotar(false)">Anotar</button>
   </div>
 </div>
