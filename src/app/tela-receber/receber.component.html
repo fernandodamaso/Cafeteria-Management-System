@@ -44,15 +44,15 @@
           <td (click)="abrirPagar(socio)">
             <span
               [ngClass]="{
-                grauQM: socio.grau[0].nome === 'QM',
-                grauCDC: socio.grau[0].nome === 'CDC',
-                grauCI: socio.grau[0].nome === 'CI',
-                grauQS: socio.grau[0].nome === 'QS',
-                grauVI: socio.grau[0].nome === 'VI'
+                grauQM: socio.grau === 'QM',
+                grauCDC: socio.grau === 'CDC',
+                grauCI: socio.grau === 'CI',
+                grauQS: socio.grau === 'QS',
+                grauVI: socio.grau === 'VI'
               }"
               class="tag"
             >
-              {{ socio.grau[0].nome }}
+              {{ socio.grau }}
             </span>
           </td>
           <td (click)="abrirPagar(socio)">

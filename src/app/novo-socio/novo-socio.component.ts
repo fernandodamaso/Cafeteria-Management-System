@@ -7,6 +7,7 @@ import { nucleoModel } from "../_models/nucleo.model";
 import { SocioModel } from "../_models/socio.model";
 import { nucleosService } from "../_services/nucleos.service";
 import { sociosService } from "../_services/socios.service";
+import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
 
 export interface dialogData {
   editar: boolean;
@@ -23,6 +24,7 @@ export class NovoSocioComponent implements OnInit {
   public formGroup: FormGroup;
 
   constructor(
+    private snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<NovoSocioComponent>,
     private sociosService: sociosService,
     private nucleosService: nucleosService,
@@ -80,8 +82,20 @@ export class NovoSocioComponent implements OnInit {
   deletarSocio() {
     this.sociosService.deletarSocio(this.id).subscribe({
       next: (data) => data,
-      error: (e) => console.error(e),
-      complete: () => this.dialogRef.close("Pizza!"),
+      error: (e) => {
+        console.error(e);
+        this.snackBar.open("Erro ao deletar sócio", "fechar", {
+          duration: 3000,
+          panelClass: "alertaErro",
+        });
+      },
+      complete: () => {
+        this.snackBar.open(this.informacoesSocio.nome + "  deletado", "fechar", {
+          duration: 3000,
+          panelClass: "alertaSucesso",
+        });
+        this.dialogRef.close();
+      },
     });
   }
 
@@ -92,6 +106,13 @@ export class NovoSocioComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(() => {
       this.getNucleos();
+    });
+  }
+
+  abrirSnack(mensagem: string, classe: string, tempo: number) {
+    this.snackBar.open(mensagem, "fechar", {
+      duration: tempo,
+      panelClass: classe,
     });
   }
 
@@ -107,14 +128,26 @@ export class NovoSocioComponent implements OnInit {
     if (this.informacoesSocio) {
       this.sociosService.editarSocio(valoresForms, valoresForms.id).subscribe({
         next: (data) => data,
-        error: (e) => console.error(e),
-        complete: () => this.dialogRef.close(),
+        error: (e) => {
+          console.error(e);
+          this.abrirSnack("Erro ao editar sócio", "alertaErro", 3000);
+        },
+        complete: () => {
+          this.abrirSnack("Sócio editado com sucesso", "alertaSucesso", 3000);
+          this.dialogRef.close();
+        },
       });
     } else {
       this.sociosService.adicionarSocio(valoresForms).subscribe({
         next: (data) => data,
-        error: (e) => console.error(e),
-        complete: () => this.dialogRef.close(),
+        error: (e) => {
+          console.error(e);
+          this.abrirSnack("Erro ao adicionar sócio", "alertaErro", 3000);
+        },
+        complete: () => {
+          this.abrirSnack("Sócio adicionado com sucesso", "alertaSucesso", 3000);
+          this.dialogRef.close();
+        },
       });
     }
   }

@@ -251,7 +251,7 @@ table {
         transition: color ease-in-out 0.1s;
 
         &.temProduto {
-          opacity: 1!important;
+          opacity: 1 !important;
         }
 
         &.saldoPositivo {
@@ -742,3 +742,42 @@ label {
     cursor: pointer;
   }
 }
+
+.alertaSucesso {
+  background: #2ecc71;
+  color: #fff;
+  width: 100%;
+  max-width: 100%!important;
+  min-width: 450px!important;
+  box-shadow: none;
+
+  button,
+  .mat-button-wrapper {
+    line-height: initial;
+    background: #ffffff;
+    color: #2ecc71;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+}
+
+.alertaErro {
+  background: #e74c3c;
+  color: #fff;
+  width: 100%;
+  max-width: 100%!important;
+  min-width: 450px!important;
+  box-shadow: none;
+
+  button,
+  .mat-button-wrapper {
+    line-height: initial;
+    background: #ffffff;
+    color: #e74c3c;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+}
+

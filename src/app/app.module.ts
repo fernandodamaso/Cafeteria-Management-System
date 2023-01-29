@@ -12,10 +12,12 @@ import { NovoProdutoComponent } from './novo-produto/novo-produto.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from "@angular/material/core";
 import { NovoNucleoComponent } from './novo-nucleo/novo-nucleo.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
-  declarations: [AppComponent,  NovoSocioComponent, NovoProdutoComponent, NovoNucleoComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule, MatSlideToggleModule, MatNativeDateModule, ReactiveFormsModule],
+  declarations: [AppComponent, NovoSocioComponent, NovoProdutoComponent, NovoNucleoComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule, MatSlideToggleModule, MatNativeDateModule, ReactiveFormsModule, MatSnackBarModule ],
 
   providers: [],
 

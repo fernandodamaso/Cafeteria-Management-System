@@ -55,6 +55,7 @@ export class VenderComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
+    console.log(this.dataSocios)
   }
 
   getVendasAbertas() {

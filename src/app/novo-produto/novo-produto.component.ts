@@ -5,6 +5,7 @@ import { tipoModel } from "../_models/tipo.model";
 import { tipoService } from "../_services/tipos.service";
 import { produtosService } from "../_services/produtos.service";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
 
 export interface dialogData {
   editar: boolean;
@@ -21,6 +22,7 @@ export class NovoProdutoComponent implements OnInit {
   public formGroup: FormGroup;
 
   constructor(
+    private snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<NovoProdutoComponent>,
     private produtosService: produtosService,
@@ -37,7 +39,7 @@ export class NovoProdutoComponent implements OnInit {
     }
     this.formGroup.addControl(
       "tipoProduto",
-      new FormControl(this.informacoesProduto?.tipo?.id || 99)
+      new FormControl(this.informacoesProduto?.tipo?.id || 0)
     );
   }
 
@@ -87,24 +89,43 @@ export class NovoProdutoComponent implements OnInit {
     });
   }
 
+  abrirSnack(mensagem: string, classe: string, tempo: number) {
+    this.snackBar.open(mensagem, "fechar", {
+      duration: tempo,
+      panelClass: classe,
+    });
+  }
+
   postData() {
     const valoresForms = this.formGroup.value;
     valoresForms.tipo = this.dataTipo.find((el) => {
       return el.id === valoresForms.tipoProduto;
     });
     delete valoresForms.tipoProduto;
-    console.log(valoresForms)
+    console.log(valoresForms);
     if (this.produtoData) {
       this.produtosService.editarProduto(valoresForms, valoresForms.id).subscribe({
         next: (data) => data,
-        error: (e) => console.error(e),
-        complete: () => this.dialogRef.close(),
+        error: (e) => {
+          console.error(e);
+          this.abrirSnack("Erro ao editar produto", "alertaErro", 3000);
+        },
+        complete: () => {
+          this.abrirSnack("Produto editado com sucesso", "alertaSucesso", 3000);
+          this.dialogRef.close();
+        },
       });
     } else {
       this.produtosService.adicionarProduto(valoresForms).subscribe({
         next: (data) => data,
-        error: (e) => console.error(e),
-        complete: () => this.dialogRef.close(),
+        error: (e) => {
+          console.error(e);
+          this.abrirSnack("Erro ao adicionar Produto", "alertaErro", 3000);
+        },
+        complete: () => {
+          this.abrirSnack("Produto adicionado com sucesso", "alertaSucesso", 3000);
+          this.dialogRef.close();
+        },
       });
     }
   }

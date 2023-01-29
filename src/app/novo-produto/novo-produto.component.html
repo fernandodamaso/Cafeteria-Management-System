@@ -27,7 +27,7 @@
       <div class="col">
         <label for="Nome">Tipo do Produto</label>
         <select name="tipo" title="tipo" formControlName="tipoProduto">
-          <option [ngValue]="99">Categoria de Produto</option>
+          <option value="99">Categoria de Produto</option>
           <option *ngFor="let tipo of dataTipo" [ngValue]="tipo.id">{{tipo.nome}}</option>
         </select>
       </div>
