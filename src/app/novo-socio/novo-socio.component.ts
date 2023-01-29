@@ -86,13 +86,13 @@ export class NovoSocioComponent implements OnInit {
         console.error(e);
         this.snackBar.open("Erro ao deletar sócio", "fechar", {
           duration: 3000,
-          panelClass: "alertaErro",
+          panelClass: "erro",
         });
       },
       complete: () => {
         this.snackBar.open(this.informacoesSocio.nome + "  deletado", "fechar", {
           duration: 3000,
-          panelClass: "alertaSucesso",
+          panelClass: "sucesso",
         });
         this.dialogRef.close();
       },
@@ -130,10 +130,10 @@ export class NovoSocioComponent implements OnInit {
         next: (data) => data,
         error: (e) => {
           console.error(e);
-          this.abrirSnack("Erro ao editar sócio", "alertaErro", 3000);
+          this.abrirSnack("Erro ao editar sócio", "erro", 3000);
         },
         complete: () => {
-          this.abrirSnack("Sócio editado com sucesso", "alertaSucesso", 3000);
+          this.abrirSnack("Sócio editado com sucesso", "sucesso", 3000);
           this.dialogRef.close();
         },
       });
@@ -142,10 +142,10 @@ export class NovoSocioComponent implements OnInit {
         next: (data) => data,
         error: (e) => {
           console.error(e);
-          this.abrirSnack("Erro ao adicionar sócio", "alertaErro", 3000);
+          this.abrirSnack("Erro ao adicionar sócio", "erro", 3000);
         },
         complete: () => {
-          this.abrirSnack("Sócio adicionado com sucesso", "alertaSucesso", 3000);
+          this.abrirSnack("Sócio adicionado com sucesso", "sucesso", 3000);
           this.dialogRef.close();
         },
       });

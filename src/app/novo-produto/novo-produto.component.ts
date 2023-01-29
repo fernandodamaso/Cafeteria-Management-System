@@ -108,10 +108,10 @@ export class NovoProdutoComponent implements OnInit {
         next: (data) => data,
         error: (e) => {
           console.error(e);
-          this.abrirSnack("Erro ao editar produto", "alertaErro", 3000);
+          this.abrirSnack("Erro ao editar produto", "erro", 3000);
         },
         complete: () => {
-          this.abrirSnack("Produto editado com sucesso", "alertaSucesso", 3000);
+          this.abrirSnack("Produto editado com sucesso", "sucesso", 3000);
           this.dialogRef.close();
         },
       });
@@ -120,10 +120,10 @@ export class NovoProdutoComponent implements OnInit {
         next: (data) => data,
         error: (e) => {
           console.error(e);
-          this.abrirSnack("Erro ao adicionar Produto", "alertaErro", 3000);
+          this.abrirSnack("Erro ao adicionar Produto", "erro", 3000);
         },
         complete: () => {
-          this.abrirSnack("Produto adicionado com sucesso", "alertaSucesso", 3000);
+          this.abrirSnack("Produto adicionado com sucesso", "sucesso", 3000);
           this.dialogRef.close();
         },
       });

@@ -205,6 +205,102 @@
       "valorRecebido": 25,
       "id": 10,
       "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 0,
+      "produtosAbertos": [
+        {
+          "id": 0,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 6,
+          "qtdVendas": 0,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-29T18:19:49.793Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-29T20:32:41.918Z",
+      "valorRecebido": 0,
+      "id": 11
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.1,
+          "qtdVendas": 0,
+          "ativo": true,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "dataCompra": "2023-01-29T18:19:46.242Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-29T20:32:41.918Z",
+      "valorRecebido": 0,
+      "id": 12
+    },
+    {
+      "idCliente": 0,
+      "produtosAbertos": [
+        {
+          "id": 0,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 6,
+          "qtdVendas": 0,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-29T18:19:49.793Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-29T20:38:05.789Z",
+      "valorRecebido": 0,
+      "id": 13
+    },
+    {
+      "idCliente": 0,
+      "produtosAbertos": [
+        {
+          "id": 2,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 0,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-29T18:19:40.998Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-29T20:38:05.789Z",
+      "valorRecebido": 0,
+      "id": 14
     }
   ],
   "socios": [

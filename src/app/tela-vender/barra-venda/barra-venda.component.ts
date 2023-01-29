@@ -11,6 +11,7 @@ import { produtosAgrupados } from "../vender.component";
 import { vendaModel } from "src/app/_models/venda.model";
 import { vendasService } from "src/app/_services/vendas.service";
 import { produtosService } from "src/app/_services/produtos.service";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
   selector: "app-barra-venda",
@@ -31,6 +32,7 @@ export class BarraVendaComponent implements OnInit {
   @Input() listaProdutosSelecionados: ProdutoModel[];
 
   constructor(
+    private snackBar: MatSnackBar,
     private matDialog: MatDialog,
     private vendasService: vendasService,
     private produtosService: produtosService
@@ -51,8 +53,6 @@ export class BarraVendaComponent implements OnInit {
     this.listaProdutos.splice(produto, 1);
   }
 
-  addEvent(event: MatDatepickerInputEvent<Date>) {}
-
   anotar(pagarAgora: boolean) {
     let venda: vendaModel;
     venda = new vendaModel();
@@ -66,14 +66,16 @@ export class BarraVendaComponent implements OnInit {
 
     this.vendasService.adicionarVenda(venda).subscribe({
       next: (data) => data,
-      error: (e) => console.error(e),
+      error: (e) => {
+        console.error(e);
+        this.abrirSnack("Erro ao efetuar compra", "erro", 3000);
+      },
       complete: () => {
         if (pagarAgora === true) {
           const dialogRef = this.matDialog.open(PagarComponent, {
             panelClass: "PagarComponent",
             data: {
               socioData: this.socioSelecionadoInterno,
-              // vendasData: this.dataVendas,
             },
           });
         }
@@ -82,7 +84,14 @@ export class BarraVendaComponent implements OnInit {
         this.listaProdutosSelecionados = [];
         this.produtosAgrupados = [];
         this.terminouCompra.emit(true);
+        this.abrirSnack("Compra feita com sucesso", "sucesso", 3000);
       },
+    });
+  }
+  abrirSnack(mensagem: string, classe: string, tempo: number) {
+    this.snackBar.open(mensagem, "fechar", {
+      duration: tempo,
+      panelClass: classe,
     });
   }
 }
