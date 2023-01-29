@@ -7,7 +7,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NovoSocioComponent } from './novo-socio/novo-socio.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NovoProdutoComponent } from './novo-produto/novo-produto.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from "@angular/material/core";
@@ -15,7 +15,7 @@ import { NovoNucleoComponent } from './novo-nucleo/novo-nucleo.component';
 
 @NgModule({
   declarations: [AppComponent,  NovoSocioComponent, NovoProdutoComponent, NovoNucleoComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule, MatSlideToggleModule, MatNativeDateModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule, MatSlideToggleModule, MatNativeDateModule, ReactiveFormsModule],
 
   providers: [],
 

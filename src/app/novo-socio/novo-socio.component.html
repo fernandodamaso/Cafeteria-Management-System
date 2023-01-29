@@ -3,21 +3,21 @@
 </div>
 
 <div class="corpo">
-  <form>
+  <form [formGroup]="formGroup">
     <div class="linha">
       <div class="col">
         <label for="Nome">Nome</label>
-        <input [(ngModel)]="nome" id="Nome" name="Nome" title="Nome" type="text" />
+        <input id="Nome" name="Nome" title="Nome" type="text" formControlName="nome" />
       </div>
       <div class="col">
         <label for="Telefone">Telefone</label>
-        <input [(ngModel)]="telefone" id="Telefone" name="Telefone" title="Telefone" type="tel" />
+        <input id="Telefone" name="Telefone" title="Telefone" type="tel" formControlName="telefone" />
       </div>
     </div>
     <div class="linha">
       <div class="col">
         <label for="Grau">grau</label>
-        <select name="grau" title="Grau" [(ngModel)]="grau">
+        <select name="grau" title="Grau" formControlName="grau">
           <option value="">Grau</option>
           <option value="VI">Visitante</option>
           <option value="QS">Quadro de Sócio</option>
@@ -30,7 +30,7 @@
     <div class="linha">
       <div class="col">
         <label for="nucleo">Núcleo <button (click)="adicionarNovoNucleo()">Adicionar novo</button></label>
-        <select name="nucleo" title="nucleo" [(ngModel)]="selectedIdSocio">
+        <select name="nucleo" title="nucleo" formControlName="idNucleo">
           <option [ngValue]="undefined">Categoria de Produto</option>
           <option *ngFor="let nucleo of nucleos" [ngValue]="nucleo.id">{{nucleo.nome}}</option>
         </select>

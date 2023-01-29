@@ -1,33 +1,34 @@
 <div class="topo">
-  <h2>Adicionar Novo Sócio</h2>
+  <h2>Adicionar Novo Produto</h2>
 </div>
 
 <div class="corpo">
-  <div class="form">
+  <form [formGroup]="formGroup" class="form">
+
     <div class="linha">
       <div class="col">
         <label for="Nome">Nome</label>
-        <input [(ngModel)]="nome" id="Nome" name="Nome" title="Nome" type="text" />
+        <input id="Nome" name="Nome" title="Nome" type="text" formControlName="nome" />
       </div>
     </div>
 
     <div class="linha">
       <div class="col">
         <label for="Nome">Preço de Custo</label>
-        <input [(ngModel)]="precoCusto" id="Preço de Custo" name="Preço de Custo" title="Preço de Custo" type="number" />
+        <input id="Preço de Custo" name="Preço de Custo" title="Preço de Custo" type="number" formControlName="precoCusto" />
       </div>
       <div class="col">
         <label for="Nome">Preço de Venda</label>
-        <input [(ngModel)]="precoVenda" id="Preço de Venda" name="Preço de Venda" title="Preço de Venda" type="number" />
+        <input id="Preço de Venda" name="Preço de Venda" title="Preço de Venda" type="number" formControlName="precoVenda" />
       </div>
     </div>
 
     <div class="linha">
       <div class="col">
         <label for="Nome">Tipo do Produto</label>
-        <select name="tipo" title="tipo" [(ngModel)]="tipoProduto">
-          <option [ngValue]="undefined">Categoria de Produto</option>
-          <option *ngFor="let tipo of dataTipo" [ngValue]="tipo">{{tipo.nome}}</option>
+        <select name="tipo" title="tipo" formControlName="tipoProduto">
+          <option [ngValue]="99">Categoria de Produto</option>
+          <option *ngFor="let tipo of dataTipo" [ngValue]="tipo.id">{{tipo.nome}}</option>
         </select>
       </div>
     </div>
@@ -35,13 +36,13 @@
     <div class="linha">
       <div class="col">
         <label>Status de produto</label>
-        <mat-slide-toggle [(ngModel)]="ativo">
+        <mat-slide-toggle formControlName="ativo">
           <span *ngIf="ativo == true">Ativo</span>
           <span *ngIf="ativo == false">Inativo</span>
         </mat-slide-toggle>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 <div class="base">
   <div class="botoes">

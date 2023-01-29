@@ -1,4 +1,4 @@
-export interface tipoModel {
+export class tipoModel {
   id?: number;
   nome: string;
 }
