@@ -92,7 +92,6 @@ export class ReceberComponent implements OnInit {
       panelClass: "reciboComponent",
       data: {
         socioData: socio,
-        vendas: this.dataVendas,
       },
     });
 

@@ -55,7 +55,6 @@ export class VenderComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
-    console.log(this.dataSocios)
   }
 
   getVendasAbertas() {
@@ -140,11 +139,23 @@ export class VenderComponent implements OnInit {
     return arrAgrupado;
   }
 
+  getSocios(){
+    this.sociosService.getSocios().subscribe({
+      next: (data) => this.dataSocios = data,
+      error: (e) => console.error(e),
+      complete: () => {
+        console.log(this.dataVendas)
+      },
+    });
+  }
+
+
   terminouCompra(terminouCompraIndex: boolean) {
     if (terminouCompraIndex == true) {
       this.listaProdutosSelecionados = [];
       this.listaAgrupada = [];
       this.socioSelecionadoIndex = undefined!;
+      this.getSocios();
       this.getData();
     }
   }

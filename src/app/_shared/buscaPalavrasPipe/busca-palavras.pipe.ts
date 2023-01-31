@@ -21,7 +21,6 @@ export class BuscaPalavrasPipe implements PipeTransform {
       }
 
       let buscaFiltrada = replaceSpecialChars(busca)
-      console.log(buscaFiltrada);
 
       return listItems.filter(function(item){
         let nomeFiltrado = replaceSpecialChars(item.nome);
