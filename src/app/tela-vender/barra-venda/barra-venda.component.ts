@@ -78,13 +78,22 @@ export class BarraVendaComponent implements OnInit {
               socioData: this.socioSelecionadoInterno,
             },
           });
+          dialogRef.afterClosed().subscribe(() => {
+            this.socioSelecionadoInterno = undefined!;
+            this.listaProdutos = [];
+            this.listaProdutosSelecionados = [];
+            this.produtosAgrupados = [];
+            this.terminouCompra.emit(true);
+            this.abrirSnack("Compra feita com sucesso", "sucesso", 3000);
+          });
+        } else {
+          this.socioSelecionadoInterno = undefined!;
+          this.listaProdutos = [];
+          this.listaProdutosSelecionados = [];
+          this.produtosAgrupados = [];
+          this.terminouCompra.emit(true);
+          this.abrirSnack("Compra feita com sucesso", "sucesso", 3000);
         }
-        this.socioSelecionadoInterno = undefined!;
-        this.listaProdutos = [];
-        this.listaProdutosSelecionados = [];
-        this.produtosAgrupados = [];
-        this.terminouCompra.emit(true);
-        this.abrirSnack("Compra feita com sucesso", "sucesso", 3000);
       },
     });
   }

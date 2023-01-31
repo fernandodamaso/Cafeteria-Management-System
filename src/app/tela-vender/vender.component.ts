@@ -58,6 +58,7 @@ export class VenderComponent implements OnInit {
   }
 
   getVendasAbertas() {
+    this.getVendas();
     this.vendasAbertas = this.dataVendas.filter(
       (venda: any) => venda.status === "aberto"
     );
@@ -144,8 +145,6 @@ export class VenderComponent implements OnInit {
       next: (data) => this.dataVendas = data,
       error: (e) => console.error(e),
       complete: () => {
-        console.log(this.dataVendas);
-        this.getVendasAbertas()
       },
     });
   }
@@ -156,7 +155,7 @@ export class VenderComponent implements OnInit {
       this.listaProdutosSelecionados = [];
       this.listaAgrupada = [];
       this.socioSelecionadoIndex = undefined!;
-      this.getVendas();
+      this.getData();
     }
   }
 }
