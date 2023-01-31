@@ -43,7 +43,7 @@ export class ReceberComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
-    // this.abrirPagar(this.dataSocios[0])
+    this.abrirRecibo(this.dataSocios[0])
   }
 
   getVendasAbertas() {
@@ -92,6 +92,7 @@ export class ReceberComponent implements OnInit {
       panelClass: "reciboComponent",
       data: {
         socioData: socio,
+        vendas: this.dataVendas,
       },
     });
 

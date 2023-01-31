@@ -6,9 +6,7 @@
   <div class="boxBranco">
     <div class="texto">
       <p>Olá <span class="nome">Fernando Dâmaso 😁</span></p>
-      <p>
-        Encaminho a planilha detalhada com seu consumo na cantina do N. Gaspar.
-      </p>
+      <p>Encaminho a planilha detalhada com seu consumo na cantina do N. Gaspar.</p>
     </div>
     <div class="tabelaWrap">
       <table>
@@ -20,26 +18,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            *ngFor="
-              let produto of this.informacoesSocio.produtosEmAberto;
-              let i = index
-            "
-          >
+          <tr *ngFor="let produto of this.listaProdutosAbertos; let i = index">
             <td>
-              <!-- <span
+              <span
                 [ngClass]="{
-                  tipoAcai: produto.tipo === 'Açai',
-                  tipoDoce: produto.tipo === 'Doce',
-                  tipoBebida: produto.tipo === 'Bebida',
-                  tipoSalgado: produto.tipo === 'Salgado'
+                  tipoAcai: produto.tipo.nome === 'Açai',
+                  tipoDoce: produto.tipo.nome === 'Doce',
+                  tipoBebida: produto.tipo.nome === 'Bebida',
+                  tipoSalgado: produto.tipo.nome === 'Salgado'
                 }"
                 class="tag"
-                >{{ produto.tipo }}</span
-              > -->
+                >{{ produto.tipo.nome }}</span
+              >
             </td>
-            <td>{{ produto.precoVenda | currency : "R$" }}</td>
-            <td>{{ produto.dataCompra | date }}</td>
+            <td>{{ produto.valor | currency : "R$" }}</td>
+            <td>{{ produto.data | date }}</td>
           </tr>
         </tbody>
       </table>

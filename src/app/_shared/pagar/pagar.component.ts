@@ -47,7 +47,6 @@ export class PagarComponent implements OnInit {
           const vendasFiltradas = this.listaVendas.filter(
             (venda: any) => venda.idCliente === el.socioData.id && venda.status === "aberto"
           );
-          console.log(vendasFiltradas);
 
           if (vendasFiltradas.length === 0) {
             this.semCompras = true;
