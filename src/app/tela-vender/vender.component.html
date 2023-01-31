@@ -25,9 +25,16 @@
       </thead>
 
       <tbody>
-        <tr [class.active]="socioSelecionadoIndex === i" (click)="pegarSocio(socio, i)" *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau ; let i = index">
+        <tr
+          [class.active]="socioSelecionadoIndex === i"
+          (click)="pegarSocio(socio, i)"
+          *ngFor="
+            let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau;
+            let i = index
+          "
+        >
           <td>
-             <span
+            <span
               [ngClass]="{
                 grauQM: socio.grau === 'QM',
                 grauCDC: socio.grau === 'CDC',
@@ -35,7 +42,8 @@
                 grauQS: socio.grau === 'QS',
                 grauVI: socio.grau === 'VI'
               }"
-              class="tag">
+              class="tag"
+            >
               {{ socio.grau }}
             </span>
           </td>
@@ -43,14 +51,13 @@
             <span class="nome">{{ socio.nome }}</span>
           </td>
           <td class="alignRight">
-             <span
+            <span
               class="debito"
               [ngClass]="{
-                saldoPositivo: (socio | calculoDebito: vendasAbertas ) > 0,
-                saldoNegativo: (socio | calculoDebito: vendasAbertas ) < 0
+                saldoPositivo: (socio | calculoDebito : vendasAbertas) > 0,
+                saldoNegativo: (socio | calculoDebito : vendasAbertas) < 0
               }"
-
-              >{{ socio | calculoDebito: vendasAbertas | currency : "R$" }}</span
+              >{{ socio | calculoDebito : vendasAbertas | currency : "R$" }}</span
             >
           </td>
         </tr>
@@ -66,8 +73,9 @@
   <div class="filtros">
     <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
     <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
-      <option value="">Filtro por Tipo</option>
-      <!-- <option value="{{ produto.tipo }}" *ngFor="let produto of dataProdutos">{{ produto.tipo }}</option> -->
+      <option value="{{ produto.tipo.nome }}" *ngFor="let produto of dataProdutos">
+        {{ produto.tipo.nome }}
+      </option>
     </select>
   </div>
   <div class="tableScroll">
@@ -77,7 +85,13 @@
         <th>NOME</th>
         <th class="alignRight">PREÇO</th>
       </tr>
-      <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo; let i = index" [class.inativo]="produto.ativo == false">
+      <tr
+        *ngFor="
+          let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo;
+          let i = index
+        "
+        [class.inativo]="produto.ativo == false"
+      >
         <td (click)="adicionarProduto(produto)">
           <span
             [ngClass]="{
@@ -87,17 +101,21 @@
               tipoSalgado: produto.tipo.nome === 'Salgado'
             }"
             class="tag"
-            >{{ produto.tipo.nome }}</span>
+            >{{ produto.tipo.nome }}</span
+          >
         </td>
         <td (click)="adicionarProduto(produto)">
           <span class="nome">{{ produto.nome }}</span>
         </td>
         <td class="center">
-          <span class="acoes"  [ngClass]="{
-            temProduto: calcularQuantidade(produto) > 0
-          }" >
+          <span
+            class="acoes"
+            [ngClass]="{
+              temProduto: calcularQuantidade(produto) > 0
+            }"
+          >
             <button (click)="removerProduto(produto)" class="removerProduto">-</button>
-             <button class="qtdProduto">{{calcularQuantidade(produto)}}</button>
+            <button class="qtdProduto">{{ calcularQuantidade(produto) }}</button>
             <button (click)="adicionarProduto(produto)" class="AdicionarProduto">+</button>
           </span>
         </td>
@@ -109,4 +127,11 @@
   </div>
 </div>
 
-<app-barra-venda [dataVendas]="dataVendas" [valorTotal]="valorTotal" (terminouCompra)="terminouCompra($event)" [listaProdutosSelecionados]="listaProdutosSelecionados" [produtosAgrupados]="listaAgrupada" [socioSelecionado]="socioSelecionado"></app-barra-venda>
+<app-barra-venda
+  [dataVendas]="dataVendas"
+  [valorTotal]="valorTotal"
+  (terminouCompra)="terminouCompra($event)"
+  [listaProdutosSelecionados]="listaProdutosSelecionados"
+  [produtosAgrupados]="listaAgrupada"
+  [socioSelecionado]="socioSelecionado"
+></app-barra-venda>
