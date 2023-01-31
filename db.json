@@ -100,69 +100,13 @@
   "vendas": [
     {
       "idCliente": 1,
-      "produtosAbertos": [
-        {
-          "id": 1,
-          "nome": "Açai",
-          "precoVenda": 12,
-          "precoCusto": 7,
-          "qtdVendas": 0,
-          "ativo": true,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "dataCompra": "2023-01-31T12:56:37.025Z",
-          "status": "ativo"
-        },
-        {
-          "id": 1,
-          "nome": "Açai",
-          "precoVenda": 12,
-          "precoCusto": 7,
-          "qtdVendas": 0,
-          "ativo": true,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "dataCompra": "2023-01-31T12:56:37.025Z",
-          "status": "ativo"
-        },
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.25,
-          "qtdVendas": 0,
-          "ativo": true,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "dataCompra": "2023-01-31T12:56:45.054Z",
-          "status": "ativo"
-        },
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.25,
-          "qtdVendas": 0,
-          "ativo": true,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "dataCompra": "2023-01-31T12:56:45.054Z",
-          "status": "ativo"
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-31T12:59:15.106Z",
-      "valorRecebido": 0,
-      "id": 1
+      "valorRecebido": 25,
+      "id": 1,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 2,
@@ -436,27 +380,13 @@
     },
     {
       "idCliente": 1,
-      "produtosAbertos": [
-        {
-          "id": 1,
-          "nome": "Açai",
-          "precoVenda": 12,
-          "precoCusto": 7,
-          "qtdVendas": 0,
-          "ativo": true,
-          "tipo": {
-            "id": 0,
-            "nome": "Açai"
-          },
-          "dataCompra": "2023-01-31T12:56:37.025Z",
-          "status": "ativo"
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-31T14:02:15.777Z",
-      "valorRecebido": 0,
-      "id": 29
+      "valorRecebido": 12,
+      "id": 29,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 2,
@@ -695,6 +625,50 @@
       "valorRecebido": 0.5,
       "id": 50,
       "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-31T19:03:17.814Z",
+      "valorRecebido": 12,
+      "id": 51,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-01-31T19:03:17.814Z",
+      "valorRecebido": 0.5,
+      "id": 52,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 1,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 0,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-01-31T19:03:17.814Z",
+      "valorRecebido": 0,
+      "id": 53
     }
   ],
   "socios": [
@@ -706,7 +680,7 @@
         "nome": "Gaspar",
         "id": 0
       },
-      "credito": 0,
+      "credito": 20.5,
       "grau": "CI",
       "produtosEmAberto": null
     },
