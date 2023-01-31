@@ -139,12 +139,13 @@ export class VenderComponent implements OnInit {
     return arrAgrupado;
   }
 
-  getSocios(){
-    this.sociosService.getSocios().subscribe({
-      next: (data) => this.dataSocios = data,
+  getVendas(){
+    this.vendasService.getVendas().subscribe({
+      next: (data) => this.dataVendas = data,
       error: (e) => console.error(e),
       complete: () => {
-        console.log(this.dataVendas)
+        console.log(this.dataVendas);
+        this.getVendasAbertas()
       },
     });
   }
@@ -155,8 +156,7 @@ export class VenderComponent implements OnInit {
       this.listaProdutosSelecionados = [];
       this.listaAgrupada = [];
       this.socioSelecionadoIndex = undefined!;
-      this.getSocios();
-      this.getData();
+      this.getVendas();
     }
   }
 }
