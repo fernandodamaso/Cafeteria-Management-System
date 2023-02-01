@@ -9,6 +9,7 @@ import { vendasService } from "../_services/vendas.service";
 import { produtosService } from "../_services/produtos.service";
 import { ProdutoModel } from "../_models/produto.model";
 import { vendaModel } from "../_models/venda.model";
+import { OrdenarSociosPipe } from "../_shared/ordernarSociosPipe/ordenar-socios.pipe";
 
 @Component({
   selector: "app-receber",

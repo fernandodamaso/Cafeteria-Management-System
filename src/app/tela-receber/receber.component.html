@@ -39,7 +39,7 @@
 
       <tbody>
         <tr
-          *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau"
+          *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau | ordenarSocios"
         >
           <td (click)="abrirPagar(socio)">
             <span

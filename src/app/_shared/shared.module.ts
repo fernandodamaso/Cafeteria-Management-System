@@ -34,6 +34,7 @@ import { OrdernarProdutosPipe } from './ordenarProdutosPipe/ordernar-produtos.pi
     BuscaPalavrasPipe,
     calculoDebito,
     OrdenarSociosPipe,
+    OrdernarProdutosPipe,
     PagarComponent,
     ReciboComponent
   ],

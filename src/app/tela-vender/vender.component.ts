@@ -53,12 +53,6 @@ export class VenderComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
-
-    const ordenacaoSocios = new OrdenarSociosPipe();
-    this.dataSocios = ordenacaoSocios.transform(this.dataSocios);
-
-    const ordenacaoProdutos = new OrdernarProdutosPipe();
-    this.dataProdutos = ordenacaoProdutos.transform(this.dataProdutos);
   }
 
   getVendasAbertas() {
