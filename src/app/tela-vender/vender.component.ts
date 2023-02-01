@@ -7,6 +7,8 @@ import { sociosService } from "../_services/socios.service";
 import { tipoModel } from "../_models/tipo.model";
 import { vendasService } from "../_services/vendas.service";
 import { vendaModel } from "../_models/venda.model";
+import { OrdenarSociosPipe } from "../_shared/ordernarSociosPipe/ordenar-socios.pipe";
+import { OrdernarProdutosPipe } from "../_shared/ordenarProdutosPipe/ordernar-produtos.pipe";
 
 export class produtosAgrupados {
   nome: string;
@@ -51,74 +53,12 @@ export class VenderComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
-    this.ordenarSocios();
-    this.orderProdutos();
-  }
 
-  ordenarSocios() {
-    this.dataSocios.sort(function (a, b) {
-      if (a.grau === "QM" && b.grau !== "QM") {
-        return -1;
-      }
-      if (a.grau !== "QM" && b.grau === "QM") {
-        return 1;
-      }
+    const ordenacaoSocios = new OrdenarSociosPipe();
+    this.dataSocios = ordenacaoSocios.transform(this.dataSocios);
 
-      if (a.grau === "CDC" && b.grau !== "CDC") {
-        return -1;
-      }
-      if (a.grau !== "CDC" && b.grau === "CDC") {
-        return 1;
-      }
-
-      if (a.grau === "CI" && b.grau !== "CI") {
-        return -1;
-      }
-      if (a.grau !== "CI" && b.grau === "CI") {
-        return 1;
-      }
-
-      if (a.grau === "QS" && b.grau !== "QS") {
-        return -1;
-      }
-      if (a.grau !== "QS" && b.grau === "QS") {
-        return 1;
-      }
-
-      if (a.grau === "VI" && b.grau !== "VI") {
-        return -1;
-      }
-      if (a.grau !== "VI" && b.grau === "VI") {
-        return 1;
-      }
-
-      if (a.nome < b.nome) {
-        return -1;
-      }
-      if (a.nome > b.nome) {
-        return 1;
-      }
-      return 0;
-    });
-  }
-
-  orderProdutos() {
-    this.dataProdutos.sort(function (a, b) {
-      if (a.tipo.nome < b.tipo.nome) {
-        return -1;
-      }
-      if (a.tipo.nome > b.tipo.nome) {
-        return 1;
-      }
-
-      if (a.nome < b.nome) {
-        return -1;
-      }
-      if (a.nome > b.nome) {
-        return 1;
-      }
-      return 0;
-    });
+    const ordenacaoProdutos = new OrdernarProdutosPipe();
+    this.dataProdutos = ordenacaoProdutos.transform(this.dataProdutos);
   }
 
   getVendasAbertas() {

@@ -12,7 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReciboComponent } from './recibo/recibo.component';
-import { receberRoutingModule } from '../tela-receber/receber-routing.module';
+import { OrdenarSociosPipe } from './ordernarSociosPipe/ordenar-socios.pipe';
+import { OrdernarProdutosPipe } from './ordenarProdutosPipe/ordernar-produtos.pipe';
 
 // Modulo para ser compartilhado com toda a aplicação, aqui estão declaradas e exportados os pipes
 
@@ -24,12 +25,15 @@ import { receberRoutingModule } from '../tela-receber/receber-routing.module';
     calculoDebito,
     PagarComponent,
     ReciboComponent,
+    OrdenarSociosPipe,
+    OrdernarProdutosPipe,
   ],
   exports: [
     BuscaGrauPipe,
     buscaTipoPipe,
     BuscaPalavrasPipe,
     calculoDebito,
+    OrdenarSociosPipe,
     PagarComponent,
     ReciboComponent
   ],

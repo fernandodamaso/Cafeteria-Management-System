@@ -151,6 +151,20 @@
       },
       "dataCompra": "2023-02-01T13:49:42.954Z",
       "status": "ativo"
+    },
+    {
+      "id": 8,
+      "nome": "Café",
+      "precoVenda": 4,
+      "precoCusto": 2,
+      "qtdVendas": 0,
+      "ativo": true,
+      "tipo": {
+        "id": 1,
+        "nome": "Bebida"
+      },
+      "dataCompra": "2023-02-01T13:58:37.227Z",
+      "status": "ativo"
     }
   ],
   "vendas": [
