@@ -10,6 +10,7 @@ import { vendaModel } from "src/app/_models/venda.model";
 import { produtosService } from "src/app/_services/produtos.service";
 import { sociosService } from "src/app/_services/socios.service";
 import { vendasService } from "src/app/_services/vendas.service";
+import { DatePipe } from '@angular/common';
 
 export interface dialogData {
   editar: boolean;
@@ -277,6 +278,7 @@ export class PagarComponent implements OnInit {
       for (const venda of vendasFiltradas) {
         if (venda.produtosAbertos.length === 0) {
           venda.status = "fechado";
+          venda.dataQuitacao = new Date();
         }
 
         this.vendasService.editarVendas(venda).subscribe({

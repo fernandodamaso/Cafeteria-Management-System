@@ -9,5 +9,6 @@ export class vendaModel {
     formaPagamento: 'pix'|'cartão'|'dinheiro';
     desconto: number;
     dataVenda: Date;
+    dataQuitacao?: Date;
     valorRecebido: number;
   }
