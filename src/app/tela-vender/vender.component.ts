@@ -22,11 +22,7 @@ export class produtosAgrupados {
   styleUrls: ["./vender.component.scss"],
 })
 export class VenderComponent implements OnInit {
-  constructor(
-    private sociosService: sociosService,
-    private vendasService: vendasService,
-    private produtosService: produtosService
-  ) {}
+  constructor(private sociosService: sociosService, private vendasService: vendasService, private produtosService: produtosService) {}
 
   dataVendas: vendaModel[] = [];
   vendasAbertas: vendaModel[] = [];
@@ -55,13 +51,59 @@ export class VenderComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
+    this.ordenarSocios();
+  }
+
+  ordenarSocios() {
+    this.dataSocios.sort(function (a, b) {
+      if (a.grau === "QM" && b.grau !== "QM") {
+        return -1;
+      }
+      if (a.grau !== "QM" && b.grau === "QM") {
+        return 1;
+      }
+
+      if (a.grau === "CDC" && b.grau !== "CDC") {
+        return -1;
+      }
+      if (a.grau !== "CDC" && b.grau === "CDC") {
+        return 1;
+      }
+
+      if (a.grau === "CI" && b.grau !== "CI") {
+        return -1;
+      }
+      if (a.grau !== "CI" && b.grau === "CI") {
+        return 1;
+      }
+
+      if (a.grau === "QS" && b.grau !== "QS") {
+        return -1;
+      }
+      if (a.grau !== "QS" && b.grau === "QS") {
+        return 1;
+      }
+
+      if (a.grau === "VI" && b.grau !== "VI") {
+        return -1;
+      }
+      if (a.grau !== "VI" && b.grau === "VI") {
+        return 1;
+      }
+
+      if (a.nome < b.nome) {
+        return -1;
+      }
+      if (a.nome > b.nome) {
+        return 1;
+      }
+      return 0;
+    });
   }
 
   getVendasAbertas() {
     this.getVendas();
-    this.vendasAbertas = this.dataVendas.filter(
-      (venda: any) => venda.status === "aberto"
-    );
+    this.vendasAbertas = this.dataVendas.filter((venda: any) => venda.status === "aberto");
   }
 
   pegarSocio(socio: SocioModel, index: number) {
@@ -122,9 +164,7 @@ export class VenderComponent implements OnInit {
 
       if (!produtoDentroArray) {
         // Filter Retorna um array filtrado por ID
-        const arrFiltrado = this.listaProdutosSelecionados.filter(
-          (el) => el.id === item.id
-        );
+        const arrFiltrado = this.listaProdutosSelecionados.filter((el) => el.id === item.id);
 
         const obj = {
           nome: item.nome,
@@ -140,15 +180,13 @@ export class VenderComponent implements OnInit {
     return arrAgrupado;
   }
 
-  getVendas(){
+  getVendas() {
     this.vendasService.getVendas().subscribe({
-      next: (data) => this.dataVendas = data,
+      next: (data) => (this.dataVendas = data),
       error: (e) => console.error(e),
-      complete: () => {
-      },
+      complete: () => {},
     });
   }
-
 
   terminouCompra(terminouCompraIndex: boolean) {
     if (terminouCompraIndex == true) {

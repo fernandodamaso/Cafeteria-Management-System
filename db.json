@@ -707,6 +707,126 @@
       "credito": 0,
       "grau": "QM",
       "produtosEmAberto": null
+    },
+    {
+      "id": 4,
+      "nome": "Lucas Fernandes",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "QS",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 5,
+      "nome": "Maria Gabriela",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "QS",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 6,
+      "nome": "Roberto Jeff",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "VI",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 7,
+      "nome": "Carlos Marilio",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "VI",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 8,
+      "nome": "Carlos Martins",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "QM",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 9,
+      "nome": "Alvaro",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "CDC",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 10,
+      "nome": "Morena",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "CDC",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 11,
+      "nome": "José Márcio",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "QM",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 12,
+      "nome": "Regina",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "CDC",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 13,
+      "nome": "Artur Paranayba",
+      "telefone": "27995066670",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "CI",
+      "produtosEmAberto": null
     }
   ]
 }
