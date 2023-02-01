@@ -7,6 +7,7 @@ import { ProdutoModel } from "src/app/_models/produto.model";
 import { SocioModel } from "src/app/_models/socio.model";
 import { tipoModel } from "src/app/_models/tipo.model";
 import { vendaModel } from "src/app/_models/venda.model";
+import { produtosService } from "src/app/_services/produtos.service";
 import { sociosService } from "src/app/_services/socios.service";
 import { vendasService } from "src/app/_services/vendas.service";
 
@@ -17,6 +18,7 @@ export interface dialogData {
 }
 
 export class produtosAbertos {
+  idProduto: number;
   nome: string;
   valor: number;
   data: Date;
@@ -31,31 +33,25 @@ export class produtosAbertos {
   styleUrls: ["./pagar.component.scss"],
 })
 export class PagarComponent implements OnInit {
-  constructor(
-    public dialogRef: MatDialogRef<PagarComponent>,
-    private sociosService: sociosService,
-    private vendasService: vendasService,
-    @Inject(MAT_DIALOG_DATA) public el: dialogData
-  ) {
+  constructor(public dialogRef: MatDialogRef<PagarComponent>, private produtosService: produtosService, private sociosService: sociosService, private vendasService: vendasService, @Inject(MAT_DIALOG_DATA) public el: dialogData) {
     if (el) {
       this.informacoesSocio = el.socioData;
+      this.getProdutos();
 
       this.vendasService.getVendas().subscribe({
         next: (data) => {
           this.listaVendas = data;
 
-          const vendasFiltradas = this.listaVendas.filter(
-            (venda: any) => venda.idCliente === el.socioData.id && venda.status === "aberto"
-          );
+          const vendasFiltradas = this.listaVendas.filter((venda: any) => venda.idCliente === el.socioData.id && venda.status === "aberto");
 
           if (vendasFiltradas.length === 0) {
             this.semCompras = true;
           }
 
           for (const venda of vendasFiltradas) {
-
             for (const produto of venda.produtosAbertos) {
               const vendaObj = {
+                idProduto: produto.id,
                 nome: produto.nome,
                 valor: produto.precoVenda,
                 data: venda.dataVenda,
@@ -76,6 +72,7 @@ export class PagarComponent implements OnInit {
 
   listaProdutosAbertos: produtosAbertos[] = [];
   produtosAtivos: produtosAbertos[] = [];
+  dataProdutos: ProdutoModel[] = [];
 
   informacoesSocio: SocioModel;
   listaVendas: vendaModel[];
@@ -145,11 +142,9 @@ export class PagarComponent implements OnInit {
       this.informacoesSocio.credito = 0;
     }
 
-    this.informacoesSocio.produtosEmAberto = this.informacoesSocio.produtosEmAberto.filter(
-      (produto) => {
-        return !produtosADeletar.has(produto);
-      }
-    );
+    this.informacoesSocio.produtosEmAberto = this.informacoesSocio.produtosEmAberto.filter((produto) => {
+      return !produtosADeletar.has(produto);
+    });
 
     this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
       next: (data) => console.log(data),
@@ -237,9 +232,32 @@ export class PagarComponent implements OnInit {
     const indexProduto = venda.produtosAbertos.findIndex((el) => {
       return el.nome === produto.nome;
     });
+    // venda.produtosVendidos.push(produto);
     venda.produtosAbertos.splice(indexProduto, 1);
     venda.formaPagamento = this.formaPagamento;
     return venda;
+  }
+
+  async getProdutos(): Promise<void> {
+    this.dataProdutos = await this.produtosService.getProdutosArray();
+  }
+
+  adicionarVendaProduto(venda: vendaModel, produto: produtosAbertos) {
+    console.log(this.dataProdutos);
+
+    const produtoMesmaId: any = this.dataProdutos.find((el) => {
+      return el.id === produto.idProduto;
+    });
+
+    produtoMesmaId.qtdVendas = produtoMesmaId.qtdVendas + 1;
+
+    console.log(produtoMesmaId);
+
+    this.produtosService.editarProduto(produtoMesmaId, produtoMesmaId.id).subscribe({
+      next: (data) => data,
+      error: (e) => console.error(e),
+      complete: () => {},
+    });
   }
 
   salvar() {
@@ -251,14 +269,12 @@ export class PagarComponent implements OnInit {
           }
 
           this.calculaCredito(venda, produto);
-
+          this.adicionarVendaProduto(venda, produto);
           venda = this.deletaProdutosAbertos(venda, produto);
         }
       }
 
-      const vendasFiltradas = this.listaVendas.filter(
-        (venda: any) => venda.idCliente === this.informacoesSocio.id && venda.status === "aberto"
-      );
+      const vendasFiltradas = this.listaVendas.filter((venda: any) => venda.idCliente === this.informacoesSocio.id && venda.status === "aberto");
 
       for (const venda of vendasFiltradas) {
         console.log(venda);
@@ -267,25 +283,23 @@ export class PagarComponent implements OnInit {
           venda.status = "fechado";
         }
 
+        venda.produtosVendidos = [];
+
         this.vendasService.editarVendas(venda).subscribe({
           next: (data) => data,
           error: (e) => console.error(e),
           complete: () => {
             setTimeout(() => {}, 1000);
-            this.sociosService
-              .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
-              .subscribe({
-                next: (data) => data,
-                error: (e) => console.error(e),
-                complete: () => this.dialogRef.close(),
-              });
+            this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
+              next: (data) => data,
+              error: (e) => console.error(e),
+              complete: () => this.dialogRef.close(),
+            });
           },
         });
         setTimeout(() => {}, 2000);
       }
     } else {
-      // const valorTotalConvertido = this.valorTotal * -1;
-      // const diferencaValor = this.valorPago - valorTotalConvertido;
       this.informacoesSocio.credito = this.informacoesSocio.credito + this.valorPago;
       this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
         next: (data) => data,

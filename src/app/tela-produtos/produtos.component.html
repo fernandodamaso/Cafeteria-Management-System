@@ -5,25 +5,16 @@
 
   <div class="filtrosWrap">
     <div class="filtros">
-      <input
-        [(ngModel)]="filterProdutos"
-        type="text"
-        placeholder="Busca por nome"
-      />
+      <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
       <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
         <option value="">Filtro por Tipo</option>
-        <option
-          value="{{ produto.tipo.nome }}"
-          *ngFor="let produto of dataProdutos"
-        >
+        <option value="{{ produto.tipo.nome }}" *ngFor="let produto of dataProdutos">
           {{ produto.tipo.nome }}
         </option>
       </select>
     </div>
     <div class="botoes">
-      <button class="botao azul" (click)="adicionarProduto()">
-        Adicionar Novo Produto
-      </button>
+      <button class="botao azul" (click)="adicionarProduto()">Adicionar Novo Produto</button>
     </div>
   </div>
   <div class="produtosWrap">
@@ -37,14 +28,7 @@
         <th class="center">Ativo/Inativo</th>
         <th>Ações</th>
       </tr>
-      <tr
-        (click)="pegarProduto(produto)"
-        *ngFor="
-          let produto of dataProdutos
-            | buscaPalavras : filterProdutos
-            | buscaTipo : filterTipo
-        "
-      >
+      <tr (click)="pegarProduto(produto)" *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo | ordernarProdutos">
         <td class="center">
           <span
             [ngClass]="{
@@ -67,21 +51,15 @@
         </td>
         <td class="center">
           <span class="status ativo" *ngIf="produto.ativo == true">Ativo</span>
-          <span class="status inativo" *ngIf="produto.ativo != true"
-            >Inativo</span
-          >
+          <span class="status inativo" *ngIf="produto.ativo != true">Inativo</span>
         </td>
         <td>
           <button title="Ações" mat-button [matMenuTriggerFor]="menu">
             <img src="..\assets\acoes.png" alt="" />
           </button>
           <mat-menu #menu="matMenu">
-            <button (click)="editarProduto(produto)" mat-menu-item>
-              Editar
-            </button>
-            <button (click)="deletarProduto(produto.id)" mat-menu-item>
-              Deletar
-            </button>
+            <button (click)="editarProduto(produto)" mat-menu-item>Editar</button>
+            <button (click)="deletarProduto(produto.id)" mat-menu-item>Deletar</button>
           </mat-menu>
         </td>
       </tr>
