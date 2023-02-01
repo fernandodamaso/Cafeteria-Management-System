@@ -109,5 +109,7 @@
       }
     }
   },
-  "defaultProject": "ng-cantina"
+  "cli": {
+    "analytics": "e5c1a151-005b-43be-9f3e-147561034b99"
+  }
 }

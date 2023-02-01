@@ -1,7 +1,7 @@
 <div class="layout">
   <div class="nomeSocio coluna">
     <p class="titulo">Vender Para:</p>
-    <span class="nome">{{ socioSelecionadoInterno?.nome }}</span>
+    <span class="nome" *ngIf="socioSelecionadoInterno">{{ socioSelecionadoInterno.nome }}</span>
     <span class="campoVazio" *ngIf="!socioSelecionadoInterno"
       >Nenhum Sócio Selecionado</span
     >

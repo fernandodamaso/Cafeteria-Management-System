@@ -62,7 +62,7 @@ export class BarraVendaComponent implements OnInit {
     venda.produtosVendidos = [];
     venda.status = "aberto";
     venda.desconto = 0;
-    venda.dataVenda = this.date.value;
+    venda.dataVenda = this.date.value!;
     venda.valorRecebido = 0;
 
     this.vendasService.adicionarVenda(venda).subscribe({
