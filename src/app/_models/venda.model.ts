@@ -4,6 +4,7 @@ export class vendaModel {
     id: number;
     idCliente: number;
     produtosAbertos: ProdutoModel[];
+    produtosVendidos: ProdutoModel[];
     status: 'aberto'|'fechado';
     formaPagamento: 'pix'|'cartão'|'dinheiro';
     desconto: number;

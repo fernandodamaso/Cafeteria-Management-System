@@ -59,6 +59,7 @@ export class BarraVendaComponent implements OnInit {
 
     venda.idCliente = this.socioSelecionadoInterno.id;
     venda.produtosAbertos = this.listaProdutosSelecionados;
+    venda.produtosVendidos = [];
     venda.status = "aberto";
     venda.desconto = 0;
     venda.dataVenda = this.date.value;

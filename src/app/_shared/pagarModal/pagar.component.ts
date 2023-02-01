@@ -229,12 +229,13 @@ export class PagarComponent implements OnInit {
   }
 
   deletaProdutosAbertos(venda: vendaModel, produto: produtosAbertos): vendaModel {
-    const indexProduto = venda.produtosAbertos.findIndex((el) => {
-      return el.nome === produto.nome;
-    });
-    // venda.produtosVendidos.push(produto);
-    venda.produtosAbertos.splice(indexProduto, 1);
-    venda.formaPagamento = this.formaPagamento;
+    if (venda.produtosAbertos.length > 0) {
+      const indexProduto = venda.produtosAbertos.findIndex((el) => {
+        return el.nome === produto.nome;
+      });
+      venda.produtosVendidos.push(venda.produtosAbertos[indexProduto]);
+      venda.produtosAbertos.splice(indexProduto, 1);
+    }
     return venda;
   }
 
@@ -243,15 +244,11 @@ export class PagarComponent implements OnInit {
   }
 
   adicionarVendaProduto(venda: vendaModel, produto: produtosAbertos) {
-    console.log(this.dataProdutos);
-
     const produtoMesmaId: any = this.dataProdutos.find((el) => {
       return el.id === produto.idProduto;
     });
 
     produtoMesmaId.qtdVendas = produtoMesmaId.qtdVendas + 1;
-
-    console.log(produtoMesmaId);
 
     this.produtosService.editarProduto(produtoMesmaId, produtoMesmaId.id).subscribe({
       next: (data) => data,
@@ -262,12 +259,13 @@ export class PagarComponent implements OnInit {
 
   salvar() {
     if (this.listaProdutosAbertos.length > 0) {
-      for (const produto of this.produtosAtivos) {
+      for (let produto of this.produtosAtivos) {
         for (let venda of this.listaVendas) {
           if (produto.idVenda !== venda.id || venda.status != "aberto") {
             continue;
           }
 
+          venda.formaPagamento = this.formaPagamento;
           this.calculaCredito(venda, produto);
           this.adicionarVendaProduto(venda, produto);
           venda = this.deletaProdutosAbertos(venda, produto);
@@ -277,13 +275,9 @@ export class PagarComponent implements OnInit {
       const vendasFiltradas = this.listaVendas.filter((venda: any) => venda.idCliente === this.informacoesSocio.id && venda.status === "aberto");
 
       for (const venda of vendasFiltradas) {
-        console.log(venda);
-
         if (venda.produtosAbertos.length === 0) {
           venda.status = "fechado";
         }
-
-        venda.produtosVendidos = [];
 
         this.vendasService.editarVendas(venda).subscribe({
           next: (data) => data,
