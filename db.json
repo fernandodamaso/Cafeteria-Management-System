@@ -95,6 +95,62 @@
       },
       "dataCompra": "2023-01-31T12:57:10.920Z",
       "status": "ativo"
+    },
+    {
+      "id": 4,
+      "nome": "Açai pequeno",
+      "precoVenda": 7,
+      "precoCusto": 3,
+      "qtdVendas": 0,
+      "ativo": true,
+      "tipo": {
+        "id": 0,
+        "nome": "Açai"
+      },
+      "dataCompra": "2023-02-01T13:49:04.761Z",
+      "status": "ativo"
+    },
+    {
+      "id": 5,
+      "nome": "Cola Cola",
+      "precoVenda": 4,
+      "precoCusto": 2,
+      "qtdVendas": 0,
+      "ativo": true,
+      "tipo": {
+        "id": 1,
+        "nome": "Bebida"
+      },
+      "dataCompra": "2023-02-01T13:49:15.670Z",
+      "status": "ativo"
+    },
+    {
+      "id": 6,
+      "nome": "Pão de queijo",
+      "precoVenda": 5,
+      "precoCusto": 2.5,
+      "qtdVendas": 0,
+      "ativo": true,
+      "tipo": {
+        "id": 2,
+        "nome": "Salgado"
+      },
+      "dataCompra": "2023-02-01T13:49:28.495Z",
+      "status": "ativo"
+    },
+    {
+      "id": 7,
+      "nome": "Misto Quente",
+      "precoVenda": 5,
+      "precoCusto": 2,
+      "qtdVendas": 0,
+      "ativo": true,
+      "tipo": {
+        "id": 2,
+        "nome": "Salgado"
+      },
+      "dataCompra": "2023-02-01T13:49:42.954Z",
+      "status": "ativo"
     }
   ],
   "vendas": [
@@ -460,27 +516,13 @@
     },
     {
       "idCliente": 3,
-      "produtosAbertos": [
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.25,
-          "qtdVendas": 0,
-          "ativo": true,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "dataCompra": "2023-01-31T12:56:45.054Z",
-          "status": "ativo"
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-31T19:00:40.222Z",
-      "valorRecebido": 0,
-      "id": 37
+      "valorRecebido": 0.5,
+      "id": 37,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 3,
@@ -504,27 +546,13 @@
     },
     {
       "idCliente": 3,
-      "produtosAbertos": [
-        {
-          "id": 2,
-          "nome": "Paçoca",
-          "precoVenda": 0.5,
-          "precoCusto": 0.25,
-          "qtdVendas": 0,
-          "ativo": true,
-          "tipo": {
-            "id": 3,
-            "nome": "Doce"
-          },
-          "dataCompra": "2023-01-31T12:56:45.054Z",
-          "status": "ativo"
-        }
-      ],
-      "status": "aberto",
+      "produtosAbertos": [],
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-01-31T19:01:01.156Z",
-      "valorRecebido": 0,
-      "id": 40
+      "valorRecebido": 0.5,
+      "id": 40,
+      "formaPagamento": "pix"
     },
     {
       "idCliente": 2,
@@ -669,6 +697,26 @@
       "dataVenda": "2023-01-31T19:03:17.814Z",
       "valorRecebido": 0,
       "id": 53
+    },
+    {
+      "idCliente": 3,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-01T13:45:00.177Z",
+      "valorRecebido": 0.5,
+      "id": 54,
+      "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 3,
+      "produtosAbertos": [],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-01T13:45:00.177Z",
+      "valorRecebido": 0.5,
+      "id": 55,
+      "formaPagamento": "pix"
     }
   ],
   "socios": [

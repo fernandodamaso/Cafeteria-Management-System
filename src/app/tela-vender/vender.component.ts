@@ -52,6 +52,7 @@ export class VenderComponent implements OnInit {
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
     this.ordenarSocios();
+    this.orderProdutos();
   }
 
   ordenarSocios() {
@@ -88,6 +89,25 @@ export class VenderComponent implements OnInit {
         return -1;
       }
       if (a.grau !== "VI" && b.grau === "VI") {
+        return 1;
+      }
+
+      if (a.nome < b.nome) {
+        return -1;
+      }
+      if (a.nome > b.nome) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  orderProdutos() {
+    this.dataProdutos.sort(function (a, b) {
+      if (a.tipo.nome < b.tipo.nome) {
+        return -1;
+      }
+      if (a.tipo.nome > b.tipo.nome) {
         return 1;
       }
 
