@@ -731,6 +731,30 @@
       "valorRecebido": 0.5,
       "id": 55,
       "formaPagamento": "pix"
+    },
+    {
+      "idCliente": 11,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 0,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-01T15:07:04.633Z",
+      "valorRecebido": 0,
+      "id": 56
     }
   ],
   "socios": [

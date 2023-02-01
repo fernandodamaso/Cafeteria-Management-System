@@ -26,6 +26,7 @@ export class produtosAbertos {
 export class ReciboComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public el: dialogData) {
     if (el) {
+      console.log(el)
       this.informacoesSocio = el.socioData;
       this.vendas = el.vendas;
 

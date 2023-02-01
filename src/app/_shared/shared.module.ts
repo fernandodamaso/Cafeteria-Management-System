@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { buscaTipoPipe } from './buscaTipoProdutoPipe/busca-tipo-produto.pipe';
 import { BuscaPalavrasPipe } from './buscaPalavrasPipe/busca-palavras.pipe';
 import { BuscaGrauPipe } from './buscaGrauPipe/busca-grau.pipe';
-import { PagarComponent } from './pagar/pagar.component';
+import { PagarComponent } from './pagarModal/pagar.component';
 import { calculoDebito } from './calculoDebitoPipe/calculo-debito.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -11,7 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ReciboComponent } from './recibo/recibo.component';
+import { ReciboComponent } from './reciboModal/recibo.component';
 import { OrdenarSociosPipe } from './ordernarSociosPipe/ordenar-socios.pipe';
 import { OrdernarProdutosPipe } from './ordenarProdutosPipe/ordernar-produtos.pipe';
 
