@@ -7,49 +7,24 @@ import { SocioModel } from "src/app/_models/socio.model";
 export class OrdenarSociosPipe implements PipeTransform {
   transform(socios: SocioModel[]): SocioModel[] {
 
-    const sociosOrdenados = socios.sort(function (a, b) {
-      if (a.grau === "QM" && b.grau !== "QM") {
-        return -1;
-      }
-      if (a.grau !== "QM" && b.grau === "QM") {
-        return 1;
-      }
+    const sociosOrdenados = socios.sort((a, b) => {
+      const rankPriority = ["QM", "CDC", "CI", "QS", "VI"];
+      const rankA = rankPriority.indexOf(a.grau);
+      const rankB = rankPriority.indexOf(b.grau);
 
-      if (a.grau === "CDC" && b.grau !== "CDC") {
-        return -1;
-      }
-      if (a.grau !== "CDC" && b.grau === "CDC") {
+      if (rankA > rankB) {
         return 1;
-      }
-
-      if (a.grau === "CI" && b.grau !== "CI") {
+      } else if (rankA < rankB) {
         return -1;
+      } else {
+        if (a.nome < b.nome) {
+          return -1;
+        } else if (a.nome > b.nome) {
+          return 1;
+        } else {
+          return 0;
+        }
       }
-      if (a.grau !== "CI" && b.grau === "CI") {
-        return 1;
-      }
-
-      if (a.grau === "QS" && b.grau !== "QS") {
-        return -1;
-      }
-      if (a.grau !== "QS" && b.grau === "QS") {
-        return 1;
-      }
-
-      if (a.grau === "VI" && b.grau !== "VI") {
-        return -1;
-      }
-      if (a.grau !== "VI" && b.grau === "VI") {
-        return 1;
-      }
-
-      if (a.nome < b.nome) {
-        return -1;
-      }
-      if (a.nome > b.nome) {
-        return 1;
-      }
-      return 0;
     });
 
     return sociosOrdenados;

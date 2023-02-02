@@ -31,12 +31,7 @@ export class BarraVendaComponent implements OnInit {
   @Input() produtosAgrupados: produtosAgrupados[];
   @Input() listaProdutosSelecionados: ProdutoModel[];
 
-  constructor(
-    private snackBar: MatSnackBar,
-    private matDialog: MatDialog,
-    private vendasService: vendasService,
-    private produtosService: produtosService
-  ) {}
+  constructor(private snackBar: MatSnackBar, private matDialog: MatDialog, private vendasService: vendasService, private produtosService: produtosService) {}
 
   nenhumProdutoSelecionado = false;
   socioSelecionadoInterno: SocioModel;
@@ -65,13 +60,8 @@ export class BarraVendaComponent implements OnInit {
     venda.dataVenda = this.date.value!;
     venda.valorRecebido = 0;
 
-    this.vendasService.adicionarVenda(venda).subscribe({
-      next: (data) => data,
-      error: (e) => {
-        console.error(e);
-        this.abrirSnack("Erro ao efetuar compra", "erro", 3000);
-      },
-      complete: () => {
+    this.vendasService.adicionarVenda(venda).subscribe(
+      (data) => {
         if (pagarAgora === true) {
           const dialogRef = this.matDialog.open(PagarComponent, {
             panelClass: "PagarComponent",
@@ -80,24 +70,29 @@ export class BarraVendaComponent implements OnInit {
             },
           });
           dialogRef.afterClosed().subscribe(() => {
-            this.socioSelecionadoInterno = undefined!;
-            this.listaProdutos = [];
-            this.listaProdutosSelecionados = [];
-            this.produtosAgrupados = [];
-            this.terminouCompra.emit(true);
+            this.reiniciarVenda();
             this.abrirSnack("Compra feita com sucesso", "sucesso", 3000);
           });
         } else {
-          this.socioSelecionadoInterno = undefined!;
-          this.listaProdutos = [];
-          this.listaProdutosSelecionados = [];
-          this.produtosAgrupados = [];
-          this.terminouCompra.emit(true);
+          this.reiniciarVenda();
           this.abrirSnack("Compra feita com sucesso", "sucesso", 3000);
         }
       },
-    });
+      (error) => {
+        console.error(error);
+        this.abrirSnack("Erro ao efetuar compra", "erro", 3000);
+      }
+    );
   }
+
+  private reiniciarVenda() {
+    this.socioSelecionadoInterno = undefined!;
+    this.listaProdutos = [];
+    this.listaProdutosSelecionados = [];
+    this.produtosAgrupados = [];
+    this.terminouCompra.emit(true);
+  }
+
   abrirSnack(mensagem: string, classe: string, tempo: number) {
     this.snackBar.open(mensagem, "fechar", {
       duration: tempo,

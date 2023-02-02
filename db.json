@@ -115,7 +115,7 @@
       "nome": "Cola Cola",
       "precoVenda": 4,
       "precoCusto": 2,
-      "qtdVendas": 35,
+      "qtdVendas": 36,
       "ativo": true,
       "tipo": {
         "id": 1,
@@ -208,6 +208,258 @@
       "id": 1,
       "formaPagamento": "pix",
       "dataQuitacao": "2023-02-01T22:32:40.777Z"
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 8,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:27:51.693Z",
+      "valorRecebido": 0,
+      "id": 2
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 8,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:27:51.693Z",
+      "valorRecebido": 0,
+      "id": 3
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 8,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:27:51.693Z",
+      "valorRecebido": 0,
+      "id": 4
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 8,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:28:32.157Z",
+      "valorRecebido": 0,
+      "id": 5
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 8,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:28:37.276Z",
+      "valorRecebido": 0,
+      "id": 6
+    },
+    {
+      "idCliente": 11,
+      "produtosAbertos": [
+        {
+          "id": 4,
+          "nome": "Açai pequeno",
+          "precoVenda": 7,
+          "precoCusto": 3,
+          "qtdVendas": 2,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-02-01T13:49:04.761Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:28:37.276Z",
+      "valorRecebido": 0,
+      "id": 7
+    },
+    {
+      "idCliente": 3,
+      "produtosAbertos": [
+        {
+          "id": 3,
+          "nome": "Agua com gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 42,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-31T12:57:10.920Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:33:15.726Z",
+      "valorRecebido": 0,
+      "id": 8
+    },
+    {
+      "idCliente": 9,
+      "produtosAbertos": [
+        {
+          "id": 8,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 36,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:33:15.726Z",
+      "valorRecebido": 0,
+      "id": 9
+    },
+    {
+      "idCliente": 9,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 5,
+          "nome": "Cola Cola",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 35,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:49:15.670Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:33:15.726Z",
+      "valorRecebido": 4,
+      "id": 10,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-02T13:33:30.801Z"
+    },
+    {
+      "idCliente": 9,
+      "produtosAbertos": [
+        {
+          "id": 8,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 36,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-02T13:33:34.443Z",
+      "valorRecebido": 0,
+      "id": 11
     }
   ],
   "socios": [
