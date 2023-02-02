@@ -76,6 +76,7 @@ export class VenderComponent implements OnInit {
     this.calcularValorTotal();
   }
 
+
   removerProduto(produto: ProdutoModel) {
     const indexProduto = this.listaProdutosSelecionados.indexOf(produto);
 
@@ -96,12 +97,9 @@ export class VenderComponent implements OnInit {
 
   calcularValorTotal() {
     if (this.listaProdutosSelecionados.length > 0) {
-      let sum: number = this.listaProdutosSelecionados
-        .map((el) => el.precoVenda)
-        .reduce(function (el, el2) {
-          return el + el2;
-        });
-      this.valorTotal = sum;
+      this.valorTotal = this.listaProdutosSelecionados
+        .map(el => el.precoVenda)
+        .reduce((el, el2) => el + el2);
     }
   }
 
