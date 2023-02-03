@@ -14,10 +14,14 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { NovoNucleoComponent } from './novo-nucleo/novo-nucleo.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
+
 
 @NgModule({
   declarations: [AppComponent, NovoSocioComponent, NovoProdutoComponent, NovoNucleoComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule, MatSlideToggleModule, MatNativeDateModule, ReactiveFormsModule, MatSnackBarModule ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatPaginatorModule, MatDialogModule, BrowserAnimationsModule, FormsModule, MatSlideToggleModule, MatNativeDateModule, ReactiveFormsModule, MatSnackBarModule, NgxMaskModule.forRoot(), ],
 
   providers: [],
 
