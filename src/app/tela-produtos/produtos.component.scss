@@ -30,6 +30,7 @@ table {
 
   tr {
     display: flex;
+    cursor: pointer;
 
     td,
     th {
@@ -67,9 +68,10 @@ table {
       display: flex;
       align-items: center;
       justify-content: center;
+
       &.ativo {
-            background-color: #d7f1e2;
-            color: #2ecc71;
+        background-color: #d7f1e2;
+        color: #2ecc71;
 
       }
 

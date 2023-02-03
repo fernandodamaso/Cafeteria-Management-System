@@ -28,8 +28,8 @@
         <th class="center">Ativo/Inativo</th>
         <th>Ações</th>
       </tr>
-      <tr (click)="pegarProduto(produto)" *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo | ordernarProdutos">
-        <td class="center">
+      <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo | ordernarProdutos">
+        <td (click)="editarProduto(produto)" class="center">
           <span
             [ngClass]="{
               tipoAcai: produto.tipo.nome === 'Açai',
@@ -41,15 +41,15 @@
             >{{ produto.tipo.nome }}</span
           >
         </td>
-        <td>
+        <td (click)="editarProduto(produto)">
           <span class="nome">{{ produto.nome }}</span>
         </td>
-        <td class="center">{{ produto.qtdVendas }}</td>
-        <td class="center">{{ produto.precoCusto | currency : "R$" }}</td>
-        <td class="center">
+        <td (click)="editarProduto(produto)" class="center">{{ produto.qtdVendas }}</td>
+        <td (click)="editarProduto(produto)" class="center">{{ produto.precoCusto | currency : "R$" }}</td>
+        <td (click)="editarProduto(produto)" class="center">
           <span class="debito">{{ produto.precoVenda | currency : "R$" }}</span>
         </td>
-        <td class="center">
+        <td (click)="editarProduto(produto)" class="center">
           <span class="status ativo" *ngIf="produto.ativo == true">Ativo</span>
           <span class="status inativo" *ngIf="produto.ativo != true">Inativo</span>
         </td>

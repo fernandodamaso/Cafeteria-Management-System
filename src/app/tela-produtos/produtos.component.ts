@@ -18,15 +18,15 @@ export class ProdutosComponent implements OnInit {
   dataProdutos: ProdutoModel[] = [];
   filterProdutos = "";
   filterTipo = "";
-  produtoSelecionado: Subject<ProdutoModel> = new Subject();
+  // produtoSelecionado: Subject<ProdutoModel> = new Subject();
 
   ngOnInit(): void {
     this.getData();
   }
 
-  pegarProduto(produto: ProdutoModel) {
-    this.produtoSelecionado.next(produto);
-  }
+  // pegarProduto(produto: ProdutoModel) {
+  //   this.produtoSelecionado.next(produto);
+  // }
 
   getData() {
     this.produtosService.getProdutos().subscribe({
