@@ -10,23 +10,15 @@ import { produtosService } from "../_services/produtos.service";
   styleUrls: ["./produtos.component.scss"],
 })
 export class ProdutosComponent implements OnInit {
-  constructor(
-    private produtosService: produtosService,
-    private matDialog: MatDialog
-  ) {}
+  constructor(private produtosService: produtosService, private matDialog: MatDialog) {}
 
   dataProdutos: ProdutoModel[] = [];
   filterProdutos = "";
   filterTipo = "";
-  // produtoSelecionado: Subject<ProdutoModel> = new Subject();
 
   ngOnInit(): void {
     this.getData();
   }
-
-  // pegarProduto(produto: ProdutoModel) {
-  //   this.produtoSelecionado.next(produto);
-  // }
 
   getData() {
     this.produtosService.getProdutos().subscribe({

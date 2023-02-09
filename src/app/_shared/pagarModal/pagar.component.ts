@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { MatDatepickerInputEvent } from "@angular/material/datepicker";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { of } from "rxjs";
 import { ProdutoModel } from "src/app/_models/produto.model";
 import { SocioModel } from "src/app/_models/socio.model";
 import { tipoModel } from "src/app/_models/tipo.model";
@@ -10,7 +9,8 @@ import { vendaModel } from "src/app/_models/venda.model";
 import { produtosService } from "src/app/_services/produtos.service";
 import { sociosService } from "src/app/_services/socios.service";
 import { vendasService } from "src/app/_services/vendas.service";
-import { DatePipe } from '@angular/common';
+import { DatePipe } from "@angular/common";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 export interface dialogData {
   editar: boolean;
@@ -34,40 +34,18 @@ export class produtosAbertos {
   styleUrls: ["./pagar.component.scss"],
 })
 export class PagarComponent implements OnInit {
-  constructor(public dialogRef: MatDialogRef<PagarComponent>, private produtosService: produtosService, private sociosService: sociosService, private vendasService: vendasService, @Inject(MAT_DIALOG_DATA) public el: dialogData) {
+  constructor(
+    private snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<PagarComponent>,
+    private produtosService: produtosService,
+    private sociosService: sociosService,
+    private vendasService: vendasService,
+    @Inject(MAT_DIALOG_DATA) public el: dialogData
+  ) {
     if (el) {
       this.informacoesSocio = el.socioData;
       this.getProdutos();
-
-      this.vendasService.getVendas().subscribe({
-        next: (data) => {
-          this.listaVendas = data;
-
-          const vendasFiltradas = this.listaVendas.filter((venda: any) => venda.idCliente === el.socioData.id && venda.status === "aberto");
-
-          if (vendasFiltradas.length === 0) {
-            this.semCompras = true;
-          }
-
-          for (const venda of vendasFiltradas) {
-            for (const produto of venda.produtosAbertos) {
-              const vendaObj = {
-                idProduto: produto.id,
-                nome: produto.nome,
-                valor: produto.precoVenda,
-                data: venda.dataVenda,
-                idVenda: venda.id,
-                tipo: produto.tipo,
-                selecionado: true,
-              };
-
-              this.listaProdutosAbertos.push(vendaObj);
-              this.produtosAtivos.push(vendaObj);
-            }
-          }
-          this.calcularValorTotal();
-        },
-      });
+      this.getVendas(el);
     }
   }
 
@@ -86,23 +64,49 @@ export class PagarComponent implements OnInit {
   dataCompra: Date;
   semCompras = false;
 
-  ngOnInit(): void {
-    // this.calcularValorTotal();
+  ngOnInit(): void {}
+
+  getVendas(el: dialogData) {
+    this.vendasService.getVendas().subscribe({
+      next: (data) => {
+        this.listaVendas = data;
+
+        const vendasFiltradas = this.listaVendas.filter(
+          (venda: any) => venda.idCliente === el.socioData.id && venda.status === "aberto"
+        );
+
+        console.log(vendasFiltradas);
+
+        if (vendasFiltradas.length === 0) {
+          this.semCompras = true;
+        }
+
+        for (const venda of vendasFiltradas) {
+          for (const produto of venda.produtosAbertos) {
+            const vendaObj = {
+              idProduto: produto.id,
+              nome: produto.nome,
+              valor: produto.precoVenda,
+              data: venda.dataVenda,
+              idVenda: venda.id,
+              tipo: produto.tipo,
+              selecionado: true,
+            };
+
+            this.listaProdutosAbertos.push(vendaObj);
+            this.produtosAtivos.push(vendaObj);
+          }
+        }
+        this.calcularValorTotal();
+      },
+    });
   }
 
   calcularValorTotal() {
-    let listaValores = [];
-
-    for (let i = 0; i < this.produtosAtivos.length; i++) {
-      listaValores.push(this.produtosAtivos[i].valor);
-    }
+    let listaValores = this.produtosAtivos.map((p) => p.valor);
 
     if (this.produtosAtivos.length > 0) {
-      let somaTotal: number = listaValores
-        .map((a) => a)
-        .reduce(function (a, b) {
-          return a + b;
-        });
+      let somaTotal: number = listaValores.reduce((a, b) => a + b);
       somaTotal = somaTotal * -1;
       this.debito = somaTotal;
       this.valorTotal = somaTotal + this.informacoesSocio.credito + this.desconto;
@@ -112,17 +116,10 @@ export class PagarComponent implements OnInit {
       } else {
         this.valorPago = this.valorTotal * -1;
       }
-
-      // if (this.valorTotal < 0) {
-      //   this.valorPago = this.valorTotal * -1;
-      // }
     } else {
       this.valorTotal = 0;
       this.valorPago = 0;
     }
-    // if (this.valorPago <= 0) {
-    // this.valorPago = this.valorPago * -1;
-    // }
   }
 
   addEvent(event: MatDatepickerInputEvent<Date>) {
@@ -143,9 +140,11 @@ export class PagarComponent implements OnInit {
       this.informacoesSocio.credito = 0;
     }
 
-    this.informacoesSocio.produtosEmAberto = this.informacoesSocio.produtosEmAberto.filter((produto) => {
-      return !produtosADeletar.has(produto);
-    });
+    this.informacoesSocio.produtosEmAberto = this.informacoesSocio.produtosEmAberto.filter(
+      (produto) => {
+        return !produtosADeletar.has(produto);
+      }
+    );
 
     this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
       next: (data) => console.log(data),
@@ -273,7 +272,9 @@ export class PagarComponent implements OnInit {
         }
       }
 
-      const vendasFiltradas = this.listaVendas.filter((venda: any) => venda.idCliente === this.informacoesSocio.id && venda.status === "aberto");
+      const vendasFiltradas = this.listaVendas.filter(
+        (venda: any) => venda.idCliente === this.informacoesSocio.id && venda.status === "aberto"
+      );
 
       for (const venda of vendasFiltradas) {
         if (venda.produtosAbertos.length === 0) {
@@ -286,11 +287,20 @@ export class PagarComponent implements OnInit {
           error: (e) => console.error(e),
           complete: () => {
             setTimeout(() => {}, 1000);
-            this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
-              next: (data) => data,
-              error: (e) => console.error(e),
-              complete: () => this.dialogRef.close(),
-            });
+            this.sociosService
+              .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
+              .subscribe({
+                next: (data) => data,
+                error: (e) => console.error(e),
+                complete: () => {
+                  this.snackBar.open("Venda concluida com sucesso", "fechar", {
+                    duration: 3000,
+                    panelClass: "sucesso",
+                  });
+                  this.dialogRef.close();
+                  this.dialogRef.close();
+                },
+              });
           },
         });
         setTimeout(() => {}, 2000);

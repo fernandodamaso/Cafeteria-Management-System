@@ -59,7 +59,7 @@
       "nome": "Açai",
       "precoVenda": 12,
       "precoCusto": 7,
-      "qtdVendas": 8,
+      "qtdVendas": 18,
       "ativo": true,
       "tipo": {
         "id": 0,
@@ -73,7 +73,7 @@
       "nome": "Paçoca",
       "precoVenda": 0.5,
       "precoCusto": 0.25,
-      "qtdVendas": 92,
+      "qtdVendas": 94,
       "ativo": true,
       "tipo": {
         "id": 3,
@@ -87,7 +87,7 @@
       "nome": "Agua com gás",
       "precoVenda": 4,
       "precoCusto": 2,
-      "qtdVendas": 42,
+      "qtdVendas": 45,
       "ativo": true,
       "tipo": {
         "id": 1,
@@ -101,7 +101,7 @@
       "nome": "Açai pequeno",
       "precoVenda": 7,
       "precoCusto": 3,
-      "qtdVendas": 2,
+      "qtdVendas": 5,
       "ativo": true,
       "tipo": {
         "id": 0,
@@ -143,7 +143,7 @@
       "nome": "Misto Quente",
       "precoVenda": 5,
       "precoCusto": 2,
-      "qtdVendas": 0,
+      "qtdVendas": 1,
       "ativo": true,
       "tipo": {
         "id": 2,
@@ -211,7 +211,8 @@
     },
     {
       "idCliente": 8,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 1,
           "nome": "Açai",
@@ -227,16 +228,18 @@
           "status": "ativo"
         }
       ],
-      "produtosVendidos": [],
-      "status": "aberto",
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-02-02T13:27:51.693Z",
-      "valorRecebido": 0,
-      "id": 2
+      "valorRecebido": 12,
+      "id": 2,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:15:30.441Z"
     },
     {
       "idCliente": 8,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 1,
           "nome": "Açai",
@@ -252,16 +255,18 @@
           "status": "ativo"
         }
       ],
-      "produtosVendidos": [],
-      "status": "aberto",
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-02-02T13:27:51.693Z",
-      "valorRecebido": 0,
-      "id": 3
+      "valorRecebido": 12,
+      "id": 3,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:16:03.417Z"
     },
     {
       "idCliente": 8,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 1,
           "nome": "Açai",
@@ -277,16 +282,18 @@
           "status": "ativo"
         }
       ],
-      "produtosVendidos": [],
-      "status": "aberto",
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-02-02T13:27:51.693Z",
-      "valorRecebido": 0,
-      "id": 4
+      "valorRecebido": 12,
+      "id": 4,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:15:30.441Z"
     },
     {
       "idCliente": 8,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 1,
           "nome": "Açai",
@@ -302,16 +309,18 @@
           "status": "ativo"
         }
       ],
-      "produtosVendidos": [],
-      "status": "aberto",
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-02-02T13:28:32.157Z",
-      "valorRecebido": 0,
-      "id": 5
+      "valorRecebido": 12,
+      "id": 5,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:15:30.442Z"
     },
     {
       "idCliente": 8,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 1,
           "nome": "Açai",
@@ -327,12 +336,13 @@
           "status": "ativo"
         }
       ],
-      "produtosVendidos": [],
-      "status": "aberto",
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2023-02-02T13:28:37.276Z",
-      "valorRecebido": 0,
-      "id": 6
+      "valorRecebido": 12,
+      "id": 6,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:15:30.442Z"
     },
     {
       "idCliente": 11,
@@ -460,6 +470,408 @@
       "dataVenda": "2023-02-02T13:33:34.443Z",
       "valorRecebido": 0,
       "id": 11
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 8,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:15:14.235Z",
+      "valorRecebido": 12,
+      "id": 12,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:15:30.442Z"
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 11,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 11,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        },
+        {
+          "id": 4,
+          "nome": "Açai pequeno",
+          "precoVenda": 7,
+          "precoCusto": 3,
+          "qtdVendas": 2,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-02-01T13:49:04.761Z",
+          "status": "ativo"
+        },
+        {
+          "id": 4,
+          "nome": "Açai pequeno",
+          "precoVenda": 7,
+          "precoCusto": 3,
+          "qtdVendas": 2,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-02-01T13:49:04.761Z",
+          "status": "ativo"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 42,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-31T12:57:10.920Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:15:56.081Z",
+      "valorRecebido": 42,
+      "id": 13,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:16:03.417Z"
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 14,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 14,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        },
+        {
+          "id": 4,
+          "nome": "Açai pequeno",
+          "precoVenda": 7,
+          "precoCusto": 3,
+          "qtdVendas": 3,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-02-01T13:49:04.761Z",
+          "status": "ativo"
+        },
+        {
+          "id": 4,
+          "nome": "Açai pequeno",
+          "precoVenda": 7,
+          "precoCusto": 3,
+          "qtdVendas": 3,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-02-01T13:49:04.761Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:15:56.081Z",
+      "valorRecebido": 38,
+      "id": 14,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:17:03.215Z"
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 3,
+          "nome": "Agua com gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 43,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-31T12:57:10.920Z",
+          "status": "ativo"
+        },
+        {
+          "id": 3,
+          "nome": "Agua com gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 43,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-31T12:57:10.920Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:15:56.081Z",
+      "valorRecebido": 8,
+      "id": 15,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:17:03.215Z"
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 18,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 18,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:17:13.764Z",
+      "valorRecebido": 0,
+      "id": 16
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 3,
+          "nome": "Agua com gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 45,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-31T12:57:10.920Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:17:13.764Z",
+      "valorRecebido": 0,
+      "id": 17
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.25,
+          "qtdVendas": 92,
+          "ativo": true,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "dataCompra": "2023-01-31T12:56:45.054Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:17:13.764Z",
+      "valorRecebido": 0,
+      "id": 18
+    },
+    {
+      "idCliente": 12,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.25,
+          "qtdVendas": 92,
+          "ativo": true,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "dataCompra": "2023-01-31T12:56:45.054Z",
+          "status": "ativo"
+        },
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.25,
+          "qtdVendas": 92,
+          "ativo": true,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "dataCompra": "2023-01-31T12:56:45.054Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:21:33.513Z",
+      "valorRecebido": 1,
+      "id": 19,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:21:43.328Z"
+    },
+    {
+      "idCliente": 12,
+      "produtosAbertos": [
+        {
+          "id": 2,
+          "nome": "Paçoca",
+          "precoVenda": 0.5,
+          "precoCusto": 0.25,
+          "qtdVendas": 94,
+          "ativo": true,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "dataCompra": "2023-01-31T12:56:45.054Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:21:33.513Z",
+      "valorRecebido": 0,
+      "id": 20
+    },
+    {
+      "idCliente": 2,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 7,
+          "nome": "Misto Quente",
+          "precoVenda": 5,
+          "precoCusto": 2,
+          "qtdVendas": 0,
+          "ativo": true,
+          "tipo": {
+            "id": 2,
+            "nome": "Salgado"
+          },
+          "dataCompra": "2023-02-01T13:49:42.954Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2023-02-09T20:21:33.513Z",
+      "valorRecebido": 5,
+      "id": 21,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2023-02-09T20:22:03.232Z"
     }
   ],
   "socios": [
@@ -521,18 +933,6 @@
       },
       "credito": 0,
       "grau": "QS",
-      "produtosEmAberto": null
-    },
-    {
-      "id": 6,
-      "nome": "Roberto Jeff",
-      "telefone": "27995066670",
-      "nucleo": {
-        "nome": "Gaspar",
-        "id": 0
-      },
-      "credito": 0,
-      "grau": "VI",
       "produtosEmAberto": null
     },
     {
@@ -622,6 +1022,18 @@
     {
       "id": 14,
       "nome": "das",
+      "telefone": "432432",
+      "nucleo": {
+        "nome": "Gaspar",
+        "id": 0
+      },
+      "credito": 0,
+      "grau": "QS",
+      "produtosEmAberto": null
+    },
+    {
+      "id": 15,
+      "nome": "dsadas",
       "telefone": "432432",
       "nucleo": {
         "nome": "Gaspar",

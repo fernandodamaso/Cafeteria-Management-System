@@ -24,7 +24,11 @@ export class produtosAgrupados {
   styleUrls: ["./vender.component.scss"],
 })
 export class VenderComponent implements OnInit {
-  constructor(private sociosService: sociosService, private vendasService: vendasService, private produtosService: produtosService) {}
+  constructor(
+    private sociosService: sociosService,
+    private vendasService: vendasService,
+    private produtosService: produtosService
+  ) {}
 
   dataVendas: vendaModel[] = [];
   vendasAbertas: vendaModel[] = [];
@@ -76,10 +80,8 @@ export class VenderComponent implements OnInit {
     this.calcularValorTotal();
   }
 
-
   removerProduto(produto: ProdutoModel) {
     const indexProduto = this.listaProdutosSelecionados.indexOf(produto);
-
     if (this.listaProdutosSelecionados.indexOf(produto) > -1) {
       this.listaProdutosSelecionados.splice(indexProduto, 1);
     }
@@ -98,7 +100,7 @@ export class VenderComponent implements OnInit {
   calcularValorTotal() {
     if (this.listaProdutosSelecionados.length > 0) {
       this.valorTotal = this.listaProdutosSelecionados
-        .map(el => el.precoVenda)
+        .map((el) => el.precoVenda)
         .reduce((el, el2) => el + el2);
     }
   }
@@ -115,7 +117,6 @@ export class VenderComponent implements OnInit {
       const produtoDentroArray = arrAgrupado.some((el) => el.id === item.id);
 
       if (!produtoDentroArray) {
-        // Filter Retorna um array filtrado por ID
         const arrFiltrado = this.listaProdutosSelecionados.filter((el) => el.id === item.id);
 
         const obj = {
