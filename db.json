@@ -872,6 +872,31 @@
       "id": 21,
       "formaPagamento": "pix",
       "dataQuitacao": "2023-02-09T20:22:03.232Z"
+    },
+    {
+      "idCliente": 8,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 18,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2023-02-17T18:48:23.041Z",
+      "valorRecebido": 0,
+      "id": 22
     }
   ],
   "socios": [

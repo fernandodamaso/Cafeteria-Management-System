@@ -5,7 +5,7 @@ import { Subject, Subscription } from "rxjs";
 import { SocioModel } from "src/app/_models/socio.model";
 import { MatDialog } from "@angular/material/dialog";
 import { ProdutoModel } from "src/app/_models/produto.model";
-import { PagarComponent } from "src/app/_shared/pagarModal/pagar.component";
+import { PagarComponent } from "src/app/pagarModal/pagar.component";
 import { sociosService } from "src/app/_services/socios.service";
 import { produtosAgrupados } from "../vender.component";
 import { vendaModel } from "src/app/_models/venda.model";
