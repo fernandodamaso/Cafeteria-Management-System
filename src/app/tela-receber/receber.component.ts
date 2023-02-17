@@ -4,7 +4,7 @@ import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
 import { SocioModel } from "../_models/socio.model";
 import { PagarComponent } from "../_shared/pagarModal/pagar.component";
-import { ReciboComponent } from "../_shared/reciboModal/recibo.component";
+import { ReciboComponent } from "./reciboModal/recibo.component";
 import { vendasService } from "../_services/vendas.service";
 import { produtosService } from "../_services/produtos.service";
 import { ProdutoModel } from "../_models/produto.model";
