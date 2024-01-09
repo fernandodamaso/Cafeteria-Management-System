@@ -13,6 +13,12 @@
       <option value="CDC">Corpo do Conselho</option>
       <option value="QM">Quadro de Mestre</option>
     </select>
+    <select name="nucleo" title="Filtro por Nucleo" [(ngModel)]="filterNucleo">
+      <option value="">Filtro por Nucleo</option>
+      <option [ngValue]="nucleo" *ngFor="let nucleo of listaNucleos">
+        {{ nucleo }}
+      </option>
+    </select>
   </div>
   <div class="tableScroll">
     <table class="socios">
@@ -20,6 +26,7 @@
         <tr>
           <th>GRAU</th>
           <th>NOME</th>
+          <th>Núcleo</th>
           <th class="alignRight">DÉBITO</th>
         </tr>
       </thead>
@@ -29,7 +36,11 @@
           [class.active]="socioSelecionadoIndex === i"
           (click)="pegarSocio(socio, i)"
           *ngFor="
-            let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau| ordenarSocios;
+            let socio of dataSocios
+              | buscaPalavras : filterSocios
+              | buscaGrau : filterGrau
+              | buscaNucleo : filterNucleo
+              | ordenarSocios;
             let i = index
           "
         >
@@ -49,6 +60,9 @@
           </td>
           <td>
             <span class="nome">{{ socio.nome }}</span>
+          </td>
+          <td>
+            <span class="nucleo">{{ socio.nucleo.nome }}</span>
           </td>
           <td class="alignRight">
             <span
@@ -88,7 +102,10 @@
       </tr>
       <tr
         *ngFor="
-          let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo | ordernarProdutos;
+          let produto of dataProdutos
+            | buscaPalavras : filterProdutos
+            | buscaTipo : filterTipo
+            | ordernarProdutos;
           let i = index
         "
         [class.inativo]="produto.ativo == false"

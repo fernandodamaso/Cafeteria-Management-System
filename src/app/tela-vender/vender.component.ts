@@ -9,6 +9,7 @@ import { vendasService } from "../_services/vendas.service";
 import { vendaModel } from "../_models/venda.model";
 import { OrdenarSociosPipe } from "../_shared/ordernarSociosPipe/ordenar-socios.pipe";
 import { OrdernarProdutosPipe } from "../_shared/ordenarProdutosPipe/ordernar-produtos.pipe";
+import { nucleoModel } from "../_models/nucleo.model";
 
 export class produtosAgrupados {
   nome: string;
@@ -34,6 +35,8 @@ export class VenderComponent implements OnInit {
   vendasAbertas: vendaModel[] = [];
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
+  filterNucleo: string = "";
+  listaNucleos: string[] = [];
   listaProdutosSelecionados: ProdutoModel[] = [];
   listaAgrupada: any[] = [];
   listaSociosDebito: { nome: string; total: number }[] = [];
@@ -57,6 +60,12 @@ export class VenderComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
+    this.getListaNucleos();
+  }
+
+  getListaNucleos() {
+    this.listaNucleos = Array.from(new Set(this.dataSocios.map((el) => el.nucleo.nome)));
+    console.log(this.listaNucleos)
   }
 
   getVendasAbertas() {

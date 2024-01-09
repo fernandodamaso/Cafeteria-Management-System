@@ -1,19 +1,20 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { buscaTipoPipe } from './buscaTipoProdutoPipe/busca-tipo-produto.pipe';
-import { BuscaPalavrasPipe } from './buscaPalavrasPipe/busca-palavras.pipe';
-import { BuscaGrauPipe } from './buscaGrauPipe/busca-grau.pipe';
-import { PagarComponent } from '../pagarModal/pagar.component';
-import { calculoDebito } from './calculoDebitoPipe/calculo-debito.pipe';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatDialogModule } from '@angular/material/dialog';
-import { ReciboComponent } from '../tela-receber/reciboModal/recibo.component';
-import { OrdenarSociosPipe } from './ordernarSociosPipe/ordenar-socios.pipe';
-import { OrdernarProdutosPipe } from './ordenarProdutosPipe/ordernar-produtos.pipe';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { buscaTipoPipe } from "./buscaTipoProdutoPipe/busca-tipo-produto.pipe";
+import { BuscaPalavrasPipe } from "./buscaPalavrasPipe/busca-palavras.pipe";
+import { BuscaGrauPipe } from "./buscaGrauPipe/busca-grau.pipe";
+import { PagarComponent } from "../pagarModal/pagar.component";
+import { calculoDebito } from "./calculoDebitoPipe/calculo-debito.pipe";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatNativeDateModule } from "@angular/material/core";
+import { MatDialogModule } from "@angular/material/dialog";
+import { ReciboComponent } from "../tela-receber/reciboModal/recibo.component";
+import { OrdenarSociosPipe } from "./ordernarSociosPipe/ordenar-socios.pipe";
+import { OrdernarProdutosPipe } from "./ordenarProdutosPipe/ordernar-produtos.pipe";
+import { buscaNucleoPipe } from "./filtroNucleoPipe/filtro-nucleo.pipe";
 
 // Modulo para ser compartilhado com toda a aplicação, aqui estão declaradas e exportados os pipes
 
@@ -27,6 +28,7 @@ import { OrdernarProdutosPipe } from './ordenarProdutosPipe/ordernar-produtos.pi
     ReciboComponent,
     OrdenarSociosPipe,
     OrdernarProdutosPipe,
+    buscaNucleoPipe,
   ],
   exports: [
     BuscaGrauPipe,
@@ -36,7 +38,8 @@ import { OrdernarProdutosPipe } from './ordenarProdutosPipe/ordernar-produtos.pi
     OrdenarSociosPipe,
     OrdernarProdutosPipe,
     PagarComponent,
-    ReciboComponent
+    ReciboComponent,
+    buscaNucleoPipe,
   ],
   imports: [
     // Caso os pipes tenham alguma dependencia especifica, devem ser importados para funcionar
@@ -46,7 +49,8 @@ import { OrdernarProdutosPipe } from './ordenarProdutosPipe/ordernar-produtos.pi
     MatInputModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatNativeDateModule, MatDatepickerModule
-  ]
+    MatNativeDateModule,
+    MatDatepickerModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
