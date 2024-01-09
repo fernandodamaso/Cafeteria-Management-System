@@ -10,5 +10,4 @@ export class vendaModel {
     desconto: number;
     dataVenda: Date;
     dataQuitacao?: Date;
-    valorRecebido: number;
   }

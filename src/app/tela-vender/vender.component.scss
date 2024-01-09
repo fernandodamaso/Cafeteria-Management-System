@@ -15,7 +15,8 @@
     }
   }
 
-  .tituloBox {}
+  .tituloBox {
+  }
 
   .filtros {
     margin-bottom: 24px;
@@ -31,16 +32,16 @@
   }
 
   table {
-
     &.socios {
       tr {
         cursor: pointer;
 
         &.active {
-          background-color: #3498DB;
+          background-color: #3498db;
           color: #fff !important;
 
           .debito,
+          .nucleo,
           .nome {
             color: #fff !important;
           }
@@ -50,15 +51,14 @@
         th {
           &:nth-child(1) {
             flex-basis: 10%;
-
           }
 
           &:nth-child(2) {
             flex-basis: 70%;
-
           }
-
-
+          &.alignRight {
+            min-width: 70px;
+          }
         }
       }
     }
@@ -72,16 +72,15 @@
         td,
         th {
           &:nth-child(1) {
-              cursor: pointer;
+            cursor: pointer;
             flex-basis: 13%;
             min-width: 60px;
           }
 
           &:nth-child(2) {
-              cursor: pointer;
+            cursor: pointer;
             flex-basis: 68%;
           }
-
         }
       }
     }

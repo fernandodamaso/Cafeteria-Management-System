@@ -65,7 +65,6 @@ export class VenderComponent implements OnInit {
 
   getListaNucleos() {
     this.listaNucleos = Array.from(new Set(this.dataSocios.map((el) => el.nucleo.nome)));
-    console.log(this.listaNucleos)
   }
 
   getVendasAbertas() {

@@ -12,10 +12,6 @@
           {{ informacoesSocio.credito | currency : "R$" }}
         </p>
       </div>
-      <!-- <div class="col">
-        <label class="titulo">Valor dos Produtos</label>
-        <p class="valor saldoNegativo">{{ debito | currency : "R$" }}</p>
-      </div> -->
       <div class="col" *ngIf="semCompras === false">
         <label class="titulo">Valor Total</label>
         <p
