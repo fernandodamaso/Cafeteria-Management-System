@@ -3,7 +3,7 @@ import { CommonModule } from "@angular/common";
 import { buscaTipoPipe } from "./buscaTipoProdutoPipe/busca-tipo-produto.pipe";
 import { BuscaPalavrasPipe } from "./buscaPalavrasPipe/busca-palavras.pipe";
 import { BuscaGrauPipe } from "./buscaGrauPipe/busca-grau.pipe";
-import { PagarComponent } from "../pagarModal/pagar.component";
+import { PagarComponent } from "../modal-pagar/pagar.component";
 import { calculoDebito } from "./calculoDebitoPipe/calculo-debito.pipe";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatDatepickerModule } from "@angular/material/datepicker";

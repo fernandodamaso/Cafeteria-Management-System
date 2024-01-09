@@ -5,7 +5,7 @@ import { Subject, Subscription } from "rxjs";
 import { SocioModel } from "src/app/_models/socio.model";
 import { MatDialog } from "@angular/material/dialog";
 import { ProdutoModel } from "src/app/_models/produto.model";
-import { PagarComponent } from "src/app/pagarModal/pagar.component";
+import { PagarComponent } from "src/app/modal-pagar/pagar.component";
 import { sociosService } from "src/app/_services/socios.service";
 import { produtosAgrupados } from "../vender.component";
 import { vendaModel } from "src/app/_models/venda.model";
@@ -31,7 +31,12 @@ export class BarraVendaComponent implements OnInit {
   @Input() produtosAgrupados: produtosAgrupados[];
   @Input() listaProdutosSelecionados: ProdutoModel[];
 
-  constructor(private snackBar: MatSnackBar, private matDialog: MatDialog, private vendasService: vendasService, private produtosService: produtosService) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private matDialog: MatDialog,
+    private vendasService: vendasService,
+    private produtosService: produtosService
+  ) {}
 
   nenhumProdutoSelecionado = false;
   socioSelecionadoInterno: SocioModel;

@@ -5,7 +5,6 @@
 
   @media (max-width: 750px) {
     flex-direction: column;
-
   }
 
   .esquerda {
@@ -142,6 +141,14 @@
       order: 1;
     }
 
+    &.semProdutos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+      }
+    }
+
     table {
       width: 100%;
 
@@ -172,7 +179,6 @@
         td {
           cursor: pointer;
 
-
           .tag {
             display: inline-block;
           }
@@ -180,7 +186,6 @@
           &:nth-child(1) {
             padding-right: 0;
           }
-
         }
 
         .checkbox {
@@ -191,7 +196,7 @@
           border: 2px solid #c1d2dd;
           border-radius: 5px;
           display: inline-block;
-          transition: all ease-in-out 0.20s;
+          transition: all ease-in-out 0.2s;
           position: relative;
           top: 3px;
           display: flex;
@@ -201,12 +206,12 @@
           &:after {
             transition: all ease-in-out 0.15s;
             content: url(../../assets/check.png);
-            color: #3498DB;
+            color: #3498db;
             opacity: 0;
           }
 
           &.ativo {
-            border: 2px solid #3498DB;
+            border: 2px solid #3498db;
 
             &:after {
               opacity: 1;
@@ -214,10 +219,8 @@
           }
         }
       }
-
     }
   }
-
 
   .valores {
     display: flex;
@@ -257,7 +260,6 @@
       }
     }
   }
-
 }
 
 .base {

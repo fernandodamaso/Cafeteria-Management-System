@@ -102,21 +102,23 @@
             [matDatepicker]="picker"
             (dateInput)="addEvent($event)"
           />
-          <mat-datepicker-toggle
-            matIconSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </div>
     </div>
   </div>
-  <div class="direita">
-    <table>
+  <div class="direita" [ngClass]="{ semProdutos: listaProdutosAbertos.length == 0 }">
+    <h2 *ngIf="listaProdutosAbertos.length == 0">Sem produtos para dar baixa</h2>
+    <table *ngIf="listaProdutosAbertos.length > 0">
       <thead>
         <tr>
           <th>
-            <span class="checkbox" (click)="toggleCheckboxes()" [ngClass]="{ ativo:verificaListaProdutos() === true }"></span>
+            <span
+              class="checkbox"
+              (click)="toggleCheckboxes()"
+              [ngClass]="{ ativo: verificaListaProdutos() === true }"
+            ></span>
           </th>
           <th>Produtos a dar baixa</th>
           <th>Valor</th>
@@ -126,14 +128,11 @@
       <tbody>
         <tr
           *ngFor="let produto of listaProdutosAbertos; let i = index"
-          [ngClass]="{ ativo:produto.selecionado === true }"
+          [ngClass]="{ ativo: produto.selecionado === true }"
           (click)="toggleProduto(produto, i)"
         >
           <td>
-            <span
-              [ngClass]="{ ativo: produto.selecionado === true }"
-              class="checkbox"
-            ></span>
+            <span [ngClass]="{ ativo: produto.selecionado === true }" class="checkbox"></span>
           </td>
           <td>
             <span
@@ -161,10 +160,10 @@
 
 <div class="base">
   <div class="botoes">
-    <button class="botao cinza" (click)="this.dialogRef.close()">
-      Cancelar
-    </button>
+    <button class="botao cinza" (click)="this.dialogRef.close()">Cancelar</button>
     <button *ngIf="semCompras === false" (click)="salvar()" class="botao azul">Salvar</button>
-    <button *ngIf="semCompras === true" (click)="salvar()" class="botao azul">Adicionar Crédito</button>
+    <button *ngIf="semCompras === true" (click)="salvar()" class="botao azul">
+      Adicionar Crédito
+    </button>
   </div>
 </div>
