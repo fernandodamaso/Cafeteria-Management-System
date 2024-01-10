@@ -50,6 +50,7 @@ export class VenderComponent implements OnInit {
   produtoRemovido: Subject<ProdutoModel> = new Subject();
   socioSelecionadoIndex: number;
   valorTotal: number;
+  listaTipos: string[] = [];
 
   ngOnInit(): void {
     this.getData();
@@ -59,12 +60,21 @@ export class VenderComponent implements OnInit {
     this.dataSocios = await this.sociosService.getSociosArray();
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
+    this.getListaTipos();
     this.getVendasAbertas();
     this.getListaNucleos();
   }
 
   getListaNucleos() {
     this.listaNucleos = Array.from(new Set(this.dataSocios.map((el) => el.nucleo.nome)));
+  }
+
+  getListaTipos() {
+    let listaTodosTipos: tipoModel[] = [];
+    this.dataProdutos.forEach((produto) => {
+      listaTodosTipos.push(produto.tipo);
+    });
+    this.listaTipos = Array.from(new Set(listaTodosTipos.map((el) => el.nome)));
   }
 
   getVendasAbertas() {

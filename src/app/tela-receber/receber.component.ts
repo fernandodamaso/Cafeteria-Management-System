@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { sociosService } from "../_services/socios.service";
-import { MatDialog, MatDialogRef } from "@angular/material/dialog";
-import { NovoSocioComponent } from "../novo-socio/novo-socio.component";
+import { MatDialog } from "@angular/material/dialog";
+import { NovoSocioComponent } from "../modal-novo-socio/novo-socio.component";
 import { SocioModel } from "../_models/socio.model";
 import { PagarComponent } from "../modal-pagar/pagar.component";
 import { ReciboComponent } from "./reciboModal/recibo.component";
@@ -9,7 +9,6 @@ import { vendasService } from "../_services/vendas.service";
 import { produtosService } from "../_services/produtos.service";
 import { ProdutoModel } from "../_models/produto.model";
 import { vendaModel } from "../_models/venda.model";
-import { OrdenarSociosPipe } from "../_shared/ordernarSociosPipe/ordenar-socios.pipe";
 
 @Component({
   selector: "app-receber",

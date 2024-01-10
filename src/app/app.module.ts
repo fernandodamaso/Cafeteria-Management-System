@@ -6,15 +6,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NovoSocioComponent } from './novo-socio/novo-socio.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { NovoProdutoComponent } from './novo-produto/novo-produto.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from "@angular/material/core";
-import { NovoNucleoComponent } from './novo-nucleo/novo-nucleo.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NovoSocioComponent } from "./modal-novo-socio/novo-socio.component";
+import { NovoProdutoComponent } from "./modal-novo-produto/novo-produto.component";
+import { NovoNucleoComponent } from "./modal-novo-nucleo/novo-nucleo.component";
 
 export const options: Partial<null|IConfig> | (() => Partial<IConfig>) = null;
 

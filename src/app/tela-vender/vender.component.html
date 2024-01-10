@@ -88,8 +88,8 @@
     <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
     <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
       <option value="">Filtro por Tipo</option>
-      <option value="{{ produto.tipo.nome }}" *ngFor="let produto of dataProdutos">
-        {{ produto.tipo.nome }}
+      <option value="{{ produto }}" *ngFor="let produto of listaTipos">
+        {{ produto }}
       </option>
     </select>
   </div>

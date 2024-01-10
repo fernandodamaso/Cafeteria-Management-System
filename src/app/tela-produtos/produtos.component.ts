@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
-import { Subject } from "rxjs";
-import { NovoProdutoComponent } from "../novo-produto/novo-produto.component";
+import { NovoProdutoComponent } from "../modal-novo-produto/novo-produto.component";
 import { ProdutoModel } from "../_models/produto.model";
 import { produtosService } from "../_services/produtos.service";
+import { tipoModel } from "../_models/tipo.model";
 
 @Component({
   templateUrl: "./produtos.component.html",
@@ -15,14 +15,26 @@ export class ProdutosComponent implements OnInit {
   dataProdutos: ProdutoModel[] = [];
   filterProdutos = "";
   filterTipo = "";
+  listaTipos: string[] = [];
 
   ngOnInit(): void {
     this.getData();
   }
 
+  getListaTipos() {
+    let listaTodosTipos: tipoModel[] = [];
+    this.dataProdutos.forEach((produto) => {
+      listaTodosTipos.push(produto.tipo);
+    });
+    this.listaTipos = Array.from(new Set(listaTodosTipos.map((el) => el.nome)));
+  }
+
   getData() {
     this.produtosService.getProdutos().subscribe({
-      next: (data) => (this.dataProdutos = data),
+      next: (data) => {
+        this.dataProdutos = data;
+        this.getListaTipos();
+      },
       error: (e) => console.error(e),
       complete: () => {},
     });
