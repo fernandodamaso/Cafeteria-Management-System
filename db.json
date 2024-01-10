@@ -115,7 +115,7 @@
       "nome": "Cola Cola",
       "precoVenda": 4,
       "precoCusto": 2,
-      "qtdVendas": 36,
+      "qtdVendas": 37,
       "ativo": true,
       "tipo": {
         "id": 1,
@@ -185,7 +185,7 @@
       "nome": "Cajuína",
       "precoVenda": 12,
       "precoCusto": 6,
-      "qtdVendas": 23,
+      "qtdVendas": 24,
       "ativo": true,
       "tipo": {
         "id": 1,
@@ -1077,6 +1077,72 @@
       "desconto": 0,
       "dataVenda": "2024-01-10T13:24:52.561Z",
       "id": 24
+    },
+    {
+      "idCliente": 13,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 5,
+          "nome": "Cola Cola",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 36,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:49:15.670Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2024-01-10T18:18:44.493Z",
+      "id": 25,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-10T18:19:12.677Z"
+    },
+    {
+      "idCliente": 12,
+      "produtosAbertos": [
+        {
+          "id": 10,
+          "nome": "Cajuína",
+          "precoVenda": 12,
+          "precoCusto": 6,
+          "qtdVendas": 23,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2024-01-09T11:31:54.240Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [
+        {
+          "id": 10,
+          "nome": "Cajuína",
+          "precoVenda": 12,
+          "precoCusto": 6,
+          "qtdVendas": 23,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2024-01-09T11:31:54.240Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-01-10T18:19:16.169Z",
+      "id": 26,
+      "formaPagamento": "pix"
     }
   ],
   "socios": [
@@ -1220,7 +1286,7 @@
         "nome": "Rei Divino",
         "id": 1
       },
-      "credito": 0,
+      "credito": 1,
       "grau": "CI",
       "produtosEmAberto": null
     },
