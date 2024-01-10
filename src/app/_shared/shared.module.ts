@@ -15,6 +15,7 @@ import { ReciboComponent } from "../tela-receber/reciboModal/recibo.component";
 import { OrdenarSociosPipe } from "./ordernarSociosPipe/ordenar-socios.pipe";
 import { OrdernarProdutosPipe } from "./ordenarProdutosPipe/ordernar-produtos.pipe";
 import { buscaNucleoPipe } from "./filtroNucleoPipe/filtro-nucleo.pipe";
+import { checarProdutosAbertosPipe } from "./checarProdutosAbertosPipe/checar-produtos-abertos.pipe";
 
 // Modulo para ser compartilhado com toda a aplicação, aqui estão declaradas e exportados os pipes
 
@@ -29,6 +30,7 @@ import { buscaNucleoPipe } from "./filtroNucleoPipe/filtro-nucleo.pipe";
     OrdenarSociosPipe,
     OrdernarProdutosPipe,
     buscaNucleoPipe,
+    checarProdutosAbertosPipe,
   ],
   exports: [
     BuscaGrauPipe,
@@ -40,6 +42,7 @@ import { buscaNucleoPipe } from "./filtroNucleoPipe/filtro-nucleo.pipe";
     PagarComponent,
     ReciboComponent,
     buscaNucleoPipe,
+    checarProdutosAbertosPipe,
   ],
   imports: [
     // Caso os pipes tenham alguma dependencia especifica, devem ser importados para funcionar

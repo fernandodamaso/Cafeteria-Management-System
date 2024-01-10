@@ -32,6 +32,7 @@
           <th>NOME</th>
           <th>TELEFONE</th>
           <th>NUCLEO</th>
+          <th class="center">PRODUTOS EM ABERTO</th>
           <th class="alignRight">SALDO ATUAL</th>
           <th class="alignRight">AÇÕES</th>
         </tr>
@@ -39,7 +40,12 @@
 
       <tbody>
         <tr
-          *ngFor="let socio of dataSocios | buscaPalavras : filterSocios | buscaGrau : filterGrau | ordenarSocios"
+          *ngFor="
+            let socio of dataSocios
+              | buscaPalavras : filterSocios
+              | buscaGrau : filterGrau
+              | ordenarSocios
+          "
         >
           <td (click)="abrirPagar(socio)">
             <span
@@ -60,6 +66,14 @@
           </td>
           <td (click)="abrirPagar(socio)">{{ socio.telefone }}</td>
           <td (click)="abrirPagar(socio)">{{ socio?.nucleo?.nome }}</td>
+          <td (click)="abrirPagar(socio)" class="center">
+            <span class="status inativo" *ngIf="socio | checarProdutosAbertos : vendasAbertas"
+              >Compras em aberto</span
+            >
+            <span class="status ativo" *ngIf="(socio | checarProdutosAbertos : vendasAbertas) == false"
+              >Quite</span
+            >
+          </td>
           <td (click)="abrirPagar(socio)" class="alignRight saldo">
             <span
               class="debito"

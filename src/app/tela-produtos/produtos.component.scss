@@ -59,27 +59,7 @@ table {
       flex-direction: column;
     }
 
-    .status {
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: 5px;
-      border-radius: 5px;
-      padding: 5px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &.ativo {
-        background-color: #d7f1e2;
-        color: #2ecc71;
-
-      }
-
-      &.inativo {
-        background-color: #ffe9e6;
-        color: #e74c3c;
-      }
-    }
+ 
 
     button {
       width: 27px;

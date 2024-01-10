@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,10 +19,15 @@ $ng-cantina-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$ng-cantina-theme: mat.define-light-theme((color: (primary: $ng-cantina-primary,
-        accent: $ng-cantina-accent,
-        warn: $ng-cantina-warn,
-      )));
+$ng-cantina-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $ng-cantina-primary,
+      accent: $ng-cantina-accent,
+      warn: $ng-cantina-warn,
+    ),
+  )
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -32,9 +37,7 @@ $ng-cantina-theme: mat.define-light-theme((color: (primary: $ng-cantina-primary,
 @import "assets/normalize.css";
 
 * {
-  font-family: Montserrat
-    /* Replace with your custom font */
-    , sans-serif !important;
+  font-family: Montserrat /* Replace with your custom font */, sans-serif !important;
 }
 
 $azul: #3498db;
@@ -118,7 +121,8 @@ select {
   padding-bottom: 0;
   padding-left: 10px;
 
-  &[type="text"] {}
+  &[type="text"] {
+  }
 }
 
 a {
@@ -186,9 +190,11 @@ a {
     align-items: center;
     margin-bottom: 15px;
 
-    h2 {}
+    h2 {
+    }
 
-    a {}
+    a {
+    }
   }
 }
 
@@ -205,7 +211,6 @@ table {
   border-collapse: collapse;
 
   tr {
-
     &:hover {
       td {
         .acoes {
@@ -213,7 +218,6 @@ table {
         }
       }
     }
-
 
     th {
       padding: 12px 0;
@@ -246,7 +250,6 @@ table {
         justify-content: center !important;
       }
 
-
       span {
         transition: color ease-in-out 0.1s;
 
@@ -255,8 +258,7 @@ table {
         }
 
         &.saldoPositivo {
-          color: #3498DB;
-
+          color: #3498db;
         }
 
         &.saldoNegativo {
@@ -277,14 +279,14 @@ table {
           &.AdicionarProduto {
             height: 20px;
             width: 20px;
-            border: 2px solid #5E5873;
+            border: 2px solid #5e5873;
             border-radius: 20px;
             font-weight: bold;
             font-size: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #5E5873;
+            color: #5e5873;
             margin: 0 3px;
           }
 
@@ -371,8 +373,6 @@ table {
 
     .fechar {
       border: 1px solid #3498db;
-
-
     }
   }
 
@@ -389,8 +389,6 @@ table {
 
     .fechar {
       border: 1px solid #ff9f43;
-
-
     }
   }
 
@@ -407,8 +405,6 @@ table {
 
     .fechar {
       border: 1px solid #776bf1;
-
-
     }
   }
 
@@ -425,8 +421,6 @@ table {
 
     .fechar {
       border: 1px solid #776bf1;
-
-
     }
   }
 
@@ -443,8 +437,6 @@ table {
 
     .fechar {
       border: 1px solid #776bf1;
-
-
     }
   }
 
@@ -461,8 +453,6 @@ table {
 
     .fechar {
       border: 1px solid #776bf1;
-
-
     }
   }
 
@@ -479,13 +469,9 @@ table {
 
     .fechar {
       border: 1px solid #776bf1;
-
-
     }
   }
 }
-
-
 
 html,
 body {
@@ -505,7 +491,6 @@ body {
 }
 
 .mat-form-field-flex {
-
   padding-top: 4px !important;
   background-color: #fff !important;
   // border: 1px solid #d5d9e1;
@@ -521,7 +506,8 @@ body {
 .mat-form-field {
   padding-top: 0;
 
-  input {}
+  input {
+  }
 
   mat-datepicker-toggle {
     position: absolute;
@@ -529,7 +515,8 @@ body {
     right: -10px;
   }
 
-  mat-datepicker {}
+  mat-datepicker {
+  }
 }
 
 .mat-icon-button {
@@ -563,7 +550,6 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-
 .alignRight {
   justify-content: flex-end;
   text-align: right !important;
@@ -579,7 +565,6 @@ body {
 
 form,
 .form {
-
   .linha,
   .row {
     display: flex;
@@ -599,7 +584,6 @@ form,
   }
 }
 
-
 .NovoSocioComponent,
 .NovoProdutoComponent {
   width: 100%;
@@ -612,9 +596,7 @@ form,
   overflow: auto;
 }
 
-
 .botoes {
-
   .botao,
   .btn {
     font-size: 14px;
@@ -635,48 +617,46 @@ form,
     }
 
     &.vermelho {
-      background-color: #E74C3C;
+      background-color: #e74c3c;
       color: #fff;
 
       &:hover {
-        background-color: darken(#E74C3C, 15%);
+        background-color: darken(#e74c3c, 15%);
       }
     }
 
     &.cinza {
-      background-color: #E7E6EC;
-      color: #828C93;
+      background-color: #e7e6ec;
+      color: #828c93;
 
       &:hover {
-        background-color: darken(#E7E6EC, 7%);
+        background-color: darken(#e7e6ec, 7%);
       }
     }
 
     &.solid,
     &.azul {
-      background-color: #3498DB;
+      background-color: #3498db;
       color: #fff;
 
-
       &:hover {
-        background-color: darken(#3498DB, 10%);
+        background-color: darken(#3498db, 10%);
       }
     }
 
     &.border,
     &.borda {
       background-color: #fff;
-      border: 2px solid #3498DB;
-      color: #3498DB;
+      border: 2px solid #3498db;
+      color: #3498db;
 
       &:hover {
-        background-color: #3498DB;
+        background-color: #3498db;
         color: #fff;
       }
     }
   }
 }
-
 
 .mat-dialog-container {
   padding: 0 !important;
@@ -694,7 +674,7 @@ form,
     margin-top: 15px;
 
     .botoes {
-      border-top: #E0DFE5 solid 1px;
+      border-top: #e0dfe5 solid 1px;
       padding: 15px;
       display: flex;
 
@@ -715,7 +695,7 @@ form,
 }
 
 .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
-  background-color: #3498DB;
+  background-color: #3498db;
 }
 
 .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
@@ -779,5 +759,26 @@ label {
       background: #ffffff;
       color: #2ecc71;
     }
+  }
+}
+
+.status {
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.ativo {
+    background-color: #d7f1e2;
+    color: #2ecc71;
+  }
+
+  &.inativo {
+    background-color: #ffe9e6;
+    color: #e74c3c;
   }
 }
