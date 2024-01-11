@@ -210,19 +210,18 @@ export class PagarComponent implements OnInit {
   }
 
   calculaCredito(venda: vendaModel, produto: produtosAbertos) {
-    console.log(venda);
-    console.log(produto);
-
     if (this.informacoesSocio.credito > 0) {
       this.informacoesSocio.credito = this.informacoesSocio.credito - produto.valor;
       if (this.informacoesSocio.credito < 0) {
         this.informacoesSocio.credito = 0;
       }
     }
-    if (this.valorPago > this.valorTotal * -1) {
-      const valorTotalConvertido = this.valorTotal * -1;
-      const diferencaValor = this.valorPago - valorTotalConvertido;
-      this.informacoesSocio.credito = this.informacoesSocio.credito + diferencaValor;
+    if (this.valorTotal < 0) {
+      if (this.valorPago > this.valorTotal * -1) {
+        const valorTotalConvertido = this.valorTotal * -1;
+        const diferencaValor = this.valorPago - valorTotalConvertido;
+        this.informacoesSocio.credito = this.informacoesSocio.credito + diferencaValor;
+      }
     }
   }
 
@@ -269,8 +268,6 @@ export class PagarComponent implements OnInit {
       (venda: any) => venda.idCliente === this.informacoesSocio.id && venda.status === "aberto"
     );
 
-    console.log(vendasFiltradas);
-
     if (this.listaProdutosAbertos.length > 0) {
       for (let produto of this.produtosAtivos) {
         for (let venda of this.listaVendas) {
@@ -297,7 +294,7 @@ export class PagarComponent implements OnInit {
           next: (data) => data,
           error: (e) => console.error(e),
           complete: () => {
-            setTimeout(() => {}, 1000);
+            setTimeout(() => {}, 3000);
             this.sociosService
               .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
               .subscribe({
