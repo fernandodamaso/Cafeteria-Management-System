@@ -33,23 +33,20 @@ export class VenderComponent implements OnInit {
 
   dataVendas: vendaModel[] = [];
   vendasAbertas: vendaModel[] = [];
+  listaNucleos: string[] = [];
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
-  filterNucleo: string = "";
-  listaNucleos: string[] = [];
   listaProdutosSelecionados: ProdutoModel[] = [];
   listaProdutosAgrupada: produtosAgrupados[] = [];
   listaSociosDebito: { nome: string; total: number }[] = [];
-  filterSocios = "";
   filterProdutos = "";
-  filterGrau = "";
   filterTipo = "";
-  socioSelecionado: SocioModel;
   jsonDataResult: any;
   produtoSelecionado: Subject<ProdutoModel> = new Subject();
   produtoRemovido: Subject<ProdutoModel> = new Subject();
-  socioSelecionadoIndex: number;
   valorTotal: number;
+  socioSelecionado: SocioModel;
+  socioSelecionadoIndex: number;
   listaTipos: string[] = [];
 
   ngOnInit(): void {
@@ -79,16 +76,6 @@ export class VenderComponent implements OnInit {
 
   getVendasAbertas() {
     this.vendasAbertas = this.dataVendas.filter((venda: any) => venda.status === "aberto");
-  }
-
-  pegarSocio(socio: SocioModel, index: number) {
-    if (this.socioSelecionado == socio) {
-      this.socioSelecionadoIndex = undefined!;
-      this.socioSelecionado = undefined!;
-    } else {
-      this.socioSelecionadoIndex = index;
-      this.socioSelecionado = socio;
-    }
   }
 
   adicionarProduto(produto: ProdutoModel) {
@@ -121,6 +108,10 @@ export class VenderComponent implements OnInit {
     });
 
     return produtoListaProdutosAgrupada?.qtd || 0;
+  }
+
+  atualizaSocio(socio: any) {
+    this.socioSelecionado = socio;
   }
 
   agrupaProdutos(): produtosAgrupados[] {

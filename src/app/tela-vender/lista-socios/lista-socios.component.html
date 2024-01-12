@@ -1,0 +1,81 @@
+<div class="box">
+    <div class="tituloBox">
+      <h2>Lista de Sócios</h2>
+      <a routerLink="/receber">Editar</a>
+    </div>
+    <div class="filtros">
+      <input type="text" placeholder="Busca por nome" [(ngModel)]="filterSocios" />
+      <select name="grau" title="Filtro por Grau" [(ngModel)]="filterGrau">
+        <option value="">Filtro por Grau</option>
+        <option value="VI">Visitante</option>
+        <option value="QS">Quadro de Sócio</option>
+        <option value="CI">Corpo Instrutivo</option>
+        <option value="CDC">Corpo do Conselho</option>
+        <option value="QM">Quadro de Mestre</option>
+      </select>
+      <select name="nucleo" title="Filtro por Nucleo" [(ngModel)]="filterNucleo">
+        <option value="">Filtro por Nucleo</option>
+        <option [ngValue]="nucleo" *ngFor="let nucleo of listaNucleos">
+          {{ nucleo }}
+        </option>
+      </select>
+    </div>
+    <div class="tableScroll">
+      <table class="socios">
+        <thead>
+          <tr>
+            <th>GRAU</th>
+            <th>NOME</th>
+            <th>Núcleo</th>
+            <th class="alignRight">DÉBITO</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr
+            [class.active]="socioSelecionadoIndex === i"
+            (click)="getSocio(socio, i)"
+            *ngFor="
+              let socio of dataSocios
+                | buscaPalavras : filterSocios
+                | buscaGrau : filterGrau
+                | buscaNucleo : filterNucleo
+                | ordenarSocios;
+              let i = index
+            "
+          >
+            <td>
+              <span
+                [ngClass]="{
+                  grauQM: socio.grau === 'QM',
+                  grauCDC: socio.grau === 'CDC',
+                  grauCI: socio.grau === 'CI',
+                  grauQS: socio.grau === 'QS',
+                  grauVI: socio.grau === 'VI'
+                }"
+                class="tag"
+              >
+                {{ socio.grau }}
+              </span>
+            </td>
+            <td>
+              <span class="nome">{{ socio.nome }}</span>
+            </td>
+            <td>
+              <span class="nucleo">{{ socio.nucleo.nome }}</span>
+            </td>
+            <td class="alignRight">
+              <span
+                class="debito"
+                [ngClass]="{
+                  saldoPositivo: (socio | calculoDebito : vendasAbertas) > 0,
+                  saldoNegativo: (socio | calculoDebito : vendasAbertas) < 0
+                }"
+                >{{ socio | calculoDebito : vendasAbertas | currency : "R$" }}</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

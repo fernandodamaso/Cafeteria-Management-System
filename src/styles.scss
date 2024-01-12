@@ -782,3 +782,83 @@ label {
     color: #e74c3c;
   }
 }
+
+
+.tableScroll {
+  height: calc(80vh - 195px);
+  overflow-y: auto;
+
+  @media (max-width: 850px) {
+    height: initial;
+  }
+
+  table {
+    &.socios {
+      tr {
+        cursor: pointer;
+
+        &.active {
+          background-color: #3498db;
+          color: #fff !important;
+
+          .debito,
+          .nucleo,
+          .nome {
+            color: #fff !important;
+          }
+        }
+
+        td,
+        th {
+          &:nth-child(1) {
+            flex-basis: 10%;
+          }
+
+          &:nth-child(2) {
+            flex-basis: 70%;
+          }
+          &.alignRight {
+            min-width: 70px;
+          }
+        }
+      }
+    }
+
+    &.produtos {
+      tr {
+        &.inativo {
+          display: none;
+        }
+
+        td,
+        th {
+          &:nth-child(1) {
+            cursor: pointer;
+            flex-basis: 13%;
+            min-width: 60px;
+          }
+
+          &:nth-child(2) {
+            cursor: pointer;
+            flex-basis: 68%;
+          }
+        }
+      }
+    }
+
+    tr {
+      display: flex;
+
+      td,
+      th {
+        display: flex;
+        align-items: center;
+
+        &:nth-child(3) {
+          flex-basis: 20%;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
