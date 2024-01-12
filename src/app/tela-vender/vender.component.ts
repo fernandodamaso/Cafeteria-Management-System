@@ -38,7 +38,7 @@ export class VenderComponent implements OnInit {
   filterNucleo: string = "";
   listaNucleos: string[] = [];
   listaProdutosSelecionados: ProdutoModel[] = [];
-  listaAgrupada: any[] = [];
+  listaProdutosAgrupada: produtosAgrupados[] = [];
   listaSociosDebito: { nome: string; total: number }[] = [];
   filterSocios = "";
   filterProdutos = "";
@@ -78,7 +78,6 @@ export class VenderComponent implements OnInit {
   }
 
   getVendasAbertas() {
-    this.getVendas();
     this.vendasAbertas = this.dataVendas.filter((venda: any) => venda.status === "aberto");
   }
 
@@ -94,39 +93,35 @@ export class VenderComponent implements OnInit {
 
   adicionarProduto(produto: ProdutoModel) {
     this.listaProdutosSelecionados.push(produto);
-    this.listaAgrupada = this.agrupaProdutos();
-    this.calcularValorTotal();
+    this.updateListAndTotal();
   }
 
   removerProduto(produto: ProdutoModel) {
     const indexProduto = this.listaProdutosSelecionados.indexOf(produto);
-    if (this.listaProdutosSelecionados.indexOf(produto) > -1) {
+    if (indexProduto > -1) {
       this.listaProdutosSelecionados.splice(indexProduto, 1);
     }
-    this.listaAgrupada = this.agrupaProdutos();
+    this.updateListAndTotal();
+  }
+
+  updateListAndTotal() {
+    this.listaProdutosAgrupada = this.agrupaProdutos();
     this.calcularValorTotal();
   }
 
+  calcularValorTotal() {
+    this.valorTotal = this.listaProdutosSelecionados
+      .map((el) => el.precoVenda)
+      .reduce((el, el2) => el + el2, 0);
+  }
+
   calcularQuantidade(produto: ProdutoModel) {
-    const produtoListaAgrupada = this.listaAgrupada.find((el) => {
+    const produtoListaProdutosAgrupada = this.listaProdutosAgrupada.find((el) => {
       return el.nome === produto.nome;
     });
 
-    return produtoListaAgrupada?.qtd || 0;
+    return produtoListaProdutosAgrupada?.qtd || 0;
   }
-
-  calcularValorTotal() {
-    if (this.listaProdutosSelecionados.length > 0) {
-      this.valorTotal = this.listaProdutosSelecionados
-        .map((el) => el.precoVenda)
-        .reduce((el, el2) => el + el2);
-    }
-  }
-
-  /**
-   * Retorna um array agrupado de acordo com id a lista de produtos selecionados
-   * @returns lista de produtos agrupados
-   */
 
   agrupaProdutos(): produtosAgrupados[] {
     const arrAgrupado: produtosAgrupados[] = [];
@@ -151,18 +146,10 @@ export class VenderComponent implements OnInit {
     return arrAgrupado;
   }
 
-  getVendas() {
-    this.vendasService.getVendas().subscribe({
-      next: (data) => (this.dataVendas = data),
-      error: (e) => console.error(e),
-      complete: () => {},
-    });
-  }
-
   terminouCompra(terminouCompraIndex: boolean) {
     if (terminouCompraIndex == true) {
       this.listaProdutosSelecionados = [];
-      this.listaAgrupada = [];
+      this.listaProdutosAgrupada = [];
       this.socioSelecionadoIndex = undefined!;
       this.getData();
     }
