@@ -6,12 +6,11 @@ import { SocioModel } from "src/app/_models/socio.model";
 import { MatDialog } from "@angular/material/dialog";
 import { ProdutoModel } from "src/app/_models/produto.model";
 import { PagarComponent } from "src/app/modal-pagar/pagar.component";
-import { sociosService } from "src/app/_services/socios.service";
-import { produtosAgrupados } from "../vender.component";
 import { vendaModel } from "src/app/_models/venda.model";
 import { vendasService } from "src/app/_services/vendas.service";
 import { produtosService } from "src/app/_services/produtos.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { produtosAgrupados } from "src/app/_models/produtosAgrupados.model";
 
 @Component({
   selector: "app-barra-venda",

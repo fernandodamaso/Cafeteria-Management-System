@@ -1,69 +1,18 @@
-<app-lista-socios [vendasAbertas]="vendasAbertas" [dataSocios]="dataSocios" (socioSelecionadoOutput)="atualizaSocio($event)"></app-lista-socios>
-
 <div class="box">
-  <div class="tituloBox">
-    <h2>Lista de Produtos</h2>
-    <a routerLink="/produtos">Editar</a>
-  </div>
-  <div class="filtros">
-    <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
-    <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
-      <option value="">Filtro por Tipo</option>
-      <option value="{{ produto }}" *ngFor="let produto of listaTipos">
-        {{ produto }}
-      </option>
-    </select>
-  </div>
-  <div class="tableScroll">
-    <table class="produtos">
-      <tr>
-        <th>TIPO</th>
-        <th>NOME</th>
-        <th class="alignRight">PREÇO</th>
-      </tr>
-      <tr
-        *ngFor="
-          let produto of dataProdutos
-            | buscaPalavras : filterProdutos
-            | buscaTipo : filterTipo
-            | ordernarProdutos;
-          let i = index
-        "
-        [class.inativo]="produto.ativo == false"
-      >
-        <td (click)="adicionarProduto(produto)">
-          <span
-            [ngClass]="{
-              tipoAcai: produto.tipo.nome === 'Açai',
-              tipoDoce: produto.tipo.nome === 'Doce',
-              tipoBebida: produto.tipo.nome === 'Bebida',
-              tipoSalgado: produto.tipo.nome === 'Salgado'
-            }"
-            class="tag"
-            >{{ produto.tipo.nome }}</span
-          >
-        </td>
-        <td (click)="adicionarProduto(produto)">
-          <span class="nome">{{ produto.nome }}</span>
-        </td>
-        <td class="center">
-          <span
-            class="acoes"
-            [ngClass]="{
-              temProduto: calcularQuantidade(produto) > 0
-            }"
-          >
-            <button (click)="removerProduto(produto)" class="removerProduto">-</button>
-            <button class="qtdProduto">{{ calcularQuantidade(produto) }}</button>
-            <button (click)="adicionarProduto(produto)" class="AdicionarProduto">+</button>
-          </span>
-        </td>
-        <td class="alignRight">
-          <span class="debito">{{ produto.precoVenda | currency : "R$" }}</span>
-        </td>
-      </tr>
-    </table>
-  </div>
+  <app-lista-socios
+    [vendasAbertas]="vendasAbertas"
+    [dataSocios]="dataSocios"
+    (socioSelecionadoOutput)="atualizaSocio($event)"
+  ></app-lista-socios>
+</div>
+<div class="box">
+  <app-lista-produtos
+    [dataProdutos]="dataProdutos"
+    [listaTipos]="listaTipos"
+    [listaProdutosAgrupadaInput]="listaProdutosAgrupada"
+    (adicionaProdutoOutput)="adicionarProduto($event)"
+    (removeProdutOutput)="removerProduto($event)"
+  ></app-lista-produtos>
 </div>
 
 <app-barra-venda

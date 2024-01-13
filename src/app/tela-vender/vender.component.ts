@@ -10,14 +10,8 @@ import { vendaModel } from "../_models/venda.model";
 import { OrdenarSociosPipe } from "../_shared/ordernarSociosPipe/ordenar-socios.pipe";
 import { OrdernarProdutosPipe } from "../_shared/ordenarProdutosPipe/ordernar-produtos.pipe";
 import { nucleoModel } from "../_models/nucleo.model";
-
-export class produtosAgrupados {
-  nome: string;
-  id: number;
-  qtd: number;
-  tipo: tipoModel;
-  listaProdutos: ProdutoModel[];
-}
+import { agrupaProdutosPipe } from "../_shared/agrupaProdutosPipe/agrupa-produtos-pipe";
+import { produtosAgrupados } from "../_models/produtosAgrupados.model";
 
 @Component({
   selector: "app-vender",
@@ -74,10 +68,6 @@ export class VenderComponent implements OnInit {
     this.listaTipos = Array.from(new Set(listaTodosTipos.map((el) => el.nome)));
   }
 
-  getVendasAbertas() {
-    this.vendasAbertas = this.dataVendas.filter((venda: any) => venda.status === "aberto");
-  }
-
   adicionarProduto(produto: ProdutoModel) {
     this.listaProdutosSelecionados.push(produto);
     this.updateListAndTotal();
@@ -91,8 +81,22 @@ export class VenderComponent implements OnInit {
     this.updateListAndTotal();
   }
 
+  getVendasAbertas() {
+    this.vendasAbertas = this.dataVendas.filter((venda: any) => venda.status === "aberto");
+  }
+
+  atualizaProduto(produto: ProdutoModel) {
+    console.log(produto);
+  }
+
+  agrupaProdutos() {
+    let agrupa = new agrupaProdutosPipe();
+    let listaProdutosAgrupada = agrupa.transform(this.listaProdutosSelecionados);
+    this.listaProdutosAgrupada = listaProdutosAgrupada;
+  }
+
   updateListAndTotal() {
-    this.listaProdutosAgrupada = this.agrupaProdutos();
+    this.agrupaProdutos();
     this.calcularValorTotal();
   }
 
@@ -114,28 +118,28 @@ export class VenderComponent implements OnInit {
     this.socioSelecionado = socio;
   }
 
-  agrupaProdutos(): produtosAgrupados[] {
-    const arrAgrupado: produtosAgrupados[] = [];
+  // agrupaProdutos(): produtosAgrupados[] {
+  //   const arrAgrupado: produtosAgrupados[] = [];
 
-    for (const item of this.listaProdutosSelecionados) {
-      const produtoDentroArray = arrAgrupado.some((el) => el.id === item.id);
+  //   for (const item of this.listaProdutosSelecionados) {
+  //     const produtoDentroArray = arrAgrupado.some((el) => el.id === item.id);
 
-      if (!produtoDentroArray) {
-        const arrFiltrado = this.listaProdutosSelecionados.filter((el) => el.id === item.id);
+  //     if (!produtoDentroArray) {
+  //       const arrFiltrado = this.listaProdutosSelecionados.filter((el) => el.id === item.id);
 
-        const obj = {
-          nome: item.nome,
-          tipo: item.tipo,
-          id: item.id,
-          qtd: arrFiltrado.length,
-          listaProdutos: arrFiltrado,
-        };
-        arrAgrupado.push(obj);
-      }
-    }
+  //       const obj = {
+  //         nome: item.nome,
+  //         tipo: item.tipo,
+  //         id: item.id,
+  //         qtd: arrFiltrado.length,
+  //         listaProdutos: arrFiltrado,
+  //       };
+  //       arrAgrupado.push(obj);
+  //     }
+  //   }
 
-    return arrAgrupado;
-  }
+  //   return arrAgrupado;
+  // }
 
   terminouCompra(terminouCompraIndex: boolean) {
     if (terminouCompraIndex == true) {

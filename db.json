@@ -157,7 +157,7 @@
       "nome": "Café",
       "precoVenda": 4,
       "precoCusto": 2,
-      "qtdVendas": 44,
+      "qtdVendas": 50,
       "ativo": true,
       "tipo": {
         "id": 1,
@@ -1246,7 +1246,8 @@
     },
     {
       "idCliente": 11,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 8,
           "nome": "Café",
@@ -1262,11 +1263,142 @@
           "status": "ativo"
         }
       ],
-      "produtosVendidos": [],
-      "status": "aberto",
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2024-01-12T21:09:08.305Z",
-      "id": 30
+      "id": 30,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-13T16:52:27.197Z"
+    },
+    {
+      "idCliente": 11,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 8,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 45,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2024-01-13T16:52:36.082Z",
+      "id": 31,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-13T16:52:48.363Z"
+    },
+    {
+      "idCliente": 11,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 8,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 46,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2024-01-13T16:53:04.819Z",
+      "id": 32,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-13T16:53:11.436Z"
+    },
+    {
+      "idCliente": 11,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 8,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 47,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2024-01-13T16:53:16.314Z",
+      "id": 33,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-13T16:53:23.213Z"
+    },
+    {
+      "idCliente": 3,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 8,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 48,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2024-01-13T16:55:59.829Z",
+      "id": 34,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-13T16:56:11.556Z"
+    },
+    {
+      "idCliente": 11,
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": 8,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 49,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2024-01-13T16:56:14.952Z",
+      "id": 35,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-13T16:56:24.469Z"
     }
   ],
   "socios": [
@@ -1302,7 +1434,7 @@
         "nome": "Gaspar",
         "id": 0
       },
-      "credito": 3,
+      "credito": 0,
       "grau": "QM",
       "produtosEmAberto": null
     },
@@ -1386,7 +1518,7 @@
         "nome": "Gaspar",
         "id": 0
       },
-      "credito": 50,
+      "credito": 38,
       "grau": "QM",
       "produtosEmAberto": null
     },

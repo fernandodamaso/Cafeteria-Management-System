@@ -10,9 +10,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatInputModule} from '@angular/material/input';
 import { ListaSociosComponent } from './lista-socios/lista-socios.component';
+import { ListaProdutosComponent } from './lista-produtos/lista-produtos.component';
 
 @NgModule({
-  declarations: [VenderComponent, BarraVendaComponent, ListaSociosComponent, ListaSociosComponent],
+  declarations: [VenderComponent, BarraVendaComponent, ListaSociosComponent, ListaSociosComponent, ListaProdutosComponent, ListaProdutosComponent],
   imports: [CommonModule, VenderRoutingModule, FormsModule, SharedModule, MatNativeDateModule, MatDatepickerModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule ],
 })
 export class VenderModule {}

@@ -16,6 +16,7 @@ import { OrdenarSociosPipe } from "./ordernarSociosPipe/ordenar-socios.pipe";
 import { OrdernarProdutosPipe } from "./ordenarProdutosPipe/ordernar-produtos.pipe";
 import { buscaNucleoPipe } from "./filtroNucleoPipe/filtro-nucleo.pipe";
 import { checarProdutosAbertosPipe } from "./checarProdutosAbertosPipe/checar-produtos-abertos.pipe";
+import { agrupaProdutosPipe } from "./agrupaProdutosPipe/agrupa-produtos-pipe";
 
 // Modulo para ser compartilhado com toda a aplicação, aqui estão declaradas e exportados os pipes
 
@@ -31,6 +32,7 @@ import { checarProdutosAbertosPipe } from "./checarProdutosAbertosPipe/checar-pr
     OrdernarProdutosPipe,
     buscaNucleoPipe,
     checarProdutosAbertosPipe,
+    agrupaProdutosPipe,
   ],
   exports: [
     BuscaGrauPipe,
@@ -43,6 +45,7 @@ import { checarProdutosAbertosPipe } from "./checarProdutosAbertosPipe/checar-pr
     ReciboComponent,
     buscaNucleoPipe,
     checarProdutosAbertosPipe,
+    agrupaProdutosPipe,
   ],
   imports: [
     // Caso os pipes tenham alguma dependencia especifica, devem ser importados para funcionar

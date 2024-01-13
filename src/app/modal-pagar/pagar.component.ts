@@ -11,6 +11,7 @@ import { sociosService } from "src/app/_services/socios.service";
 import { vendasService } from "src/app/_services/vendas.service";
 import { DatePipe } from "@angular/common";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { delay } from "rxjs";
 
 export interface dialogData {
   editar: boolean;
@@ -310,15 +311,19 @@ export class PagarComponent implements OnInit {
               });
           },
         });
-        setTimeout(() => {}, 2000);
+        setTimeout(() => {}, 3000);
       }
     } else {
       this.informacoesSocio.credito = this.informacoesSocio.credito + this.valorPago;
-      this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
-        next: (data) => data,
-        error: (e) => console.error(e),
-        complete: () => this.dialogRef.close(),
-      });
+
+      this.sociosService
+        .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
+        .pipe(delay(3000))
+        .subscribe({
+          next: (data) => data,
+          error: (e) => console.error(e),
+          complete: () => this.dialogRef.close(),
+        });
     }
   }
 }
