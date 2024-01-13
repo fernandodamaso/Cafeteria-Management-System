@@ -125,33 +125,6 @@ export class PagarComponent implements OnInit {
     console.log(event.value);
   }
 
-  // atualizarSocio(venda: vendaModel) {
-  //   const produtosADeletar = new Set(venda.produtosAbertos);
-  //   const calculoCredito = this.valorPago + this.valorTotal;
-
-  //   if (calculoCredito > 0) {
-  //     if (venda.produtosAbertos.length > 0) {
-  //       this.informacoesSocio.credito = calculoCredito;
-  //     } else {
-  //       this.informacoesSocio.credito = this.informacoesSocio.credito + calculoCredito;
-  //     }
-  //   } else {
-  //     this.informacoesSocio.credito = 0;
-  //   }
-
-  //   this.informacoesSocio.produtosEmAberto = this.informacoesSocio.produtosEmAberto.filter(
-  //     (produto) => {
-  //       return !produtosADeletar.has(produto);
-  //     }
-  //   );
-
-  //   this.sociosService.editarSocio(this.informacoesSocio, this.informacoesSocio.id).subscribe({
-  //     next: (data) => console.log(data),
-  //     error: (e) => console.error(e),
-  //     complete: () => this.dialogRef.close(),
-  //   });
-  // }
-
   toggleProduto(produto: any, i: number) {
     const index = this.produtosAtivos.findIndex((index) => {
       return index === produto;
@@ -264,66 +237,72 @@ export class PagarComponent implements OnInit {
     return 0;
   }
 
-  salvar() {
-    const vendasFiltradas = this.listaVendas.filter(
+  filtrarVendas() {
+    return this.listaVendas.filter(
       (venda: any) => venda.idCliente === this.informacoesSocio.id && venda.status === "aberto"
     );
+  }
+
+  processarProdutosAtivos(vendasFiltradas: vendaModel[], vendasMap: Map<number, vendaModel>) {
+    for (let produto of this.produtosAtivos) {
+      let venda = vendasMap.get(produto.idVenda);
+
+      if (venda && venda.status === "aberto") {
+        venda.formaPagamento = this.formaPagamento;
+        venda.desconto = this.divideDesconto(vendasFiltradas);
+        this.adicionarVendaProduto(venda, produto);
+        this.calculaCredito(venda, produto);
+
+        venda = this.deletaProdutosAbertos(venda, produto);
+      }
+    }
+  }
+
+  async atualizarVendasFiltradas(vendasFiltradas: vendaModel[]) {
+    for (const venda of vendasFiltradas) {
+      if (venda.produtosAbertos.length === 0) {
+        venda.status = "fechado";
+        venda.dataQuitacao = new Date();
+      }
+
+      try {
+        await this.vendasService.editarVendas(venda).toPromise();
+        await this.sociosService
+          .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
+          .toPromise();
+
+        this.snackBar.open("Venda concluida com sucesso", "fechar", {
+          panelClass: "sucesso",
+        });
+        this.dialogRef.close();
+      } catch (e) {
+        console.error(e);
+        // Handle error properly here
+      }
+    }
+  }
+
+  async atualizarCreditoSocio() {
+    this.informacoesSocio.credito = this.informacoesSocio.credito + this.valorPago;
+
+    try {
+      await this.sociosService
+        .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
+        .toPromise();
+      this.dialogRef.close();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  async salvar() {
+    const vendasFiltradas = this.filtrarVendas();
+    const vendasMap = new Map(this.listaVendas.map((venda) => [venda.id, venda]));
 
     if (this.listaProdutosAbertos.length > 0) {
-      for (let produto of this.produtosAtivos) {
-        for (let venda of this.listaVendas) {
-          if (produto.idVenda !== venda.id || venda.status != "aberto") {
-            continue;
-          }
-
-          venda.formaPagamento = this.formaPagamento;
-          venda.desconto = this.divideDesconto(vendasFiltradas);
-          this.adicionarVendaProduto(venda, produto);
-          this.calculaCredito(venda, produto);
-
-          venda = this.deletaProdutosAbertos(venda, produto);
-        }
-      }
-
-      for (const venda of vendasFiltradas) {
-        if (venda.produtosAbertos.length === 0) {
-          venda.status = "fechado";
-          venda.dataQuitacao = new Date();
-        }
-
-        this.vendasService.editarVendas(venda).subscribe({
-          next: (data) => data,
-          error: (e) => console.error(e),
-          complete: () => {
-            setTimeout(() => {}, 3000);
-            this.sociosService
-              .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
-              .subscribe({
-                next: (data) => data,
-                error: (e) => console.error(e),
-                complete: () => {
-                  this.snackBar.open("Venda concluida com sucesso", "fechar", {
-                    duration: 3000,
-                    panelClass: "sucesso",
-                  });
-                  this.dialogRef.close();
-                },
-              });
-          },
-        });
-        setTimeout(() => {}, 3000);
-      }
+      this.processarProdutosAtivos(vendasFiltradas, vendasMap);
+      await this.atualizarVendasFiltradas(vendasFiltradas);
     } else {
-      this.informacoesSocio.credito = this.informacoesSocio.credito + this.valorPago;
-
-      this.sociosService
-        .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
-        .pipe(delay(3000))
-        .subscribe({
-          next: (data) => data,
-          error: (e) => console.error(e),
-          complete: () => this.dialogRef.close(),
-        });
+      await this.atualizarCreditoSocio();
     }
   }
 }
