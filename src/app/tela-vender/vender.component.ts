@@ -118,29 +118,6 @@ export class VenderComponent implements OnInit {
     this.socioSelecionado = socio;
   }
 
-  // agrupaProdutos(): produtosAgrupados[] {
-  //   const arrAgrupado: produtosAgrupados[] = [];
-
-  //   for (const item of this.listaProdutosSelecionados) {
-  //     const produtoDentroArray = arrAgrupado.some((el) => el.id === item.id);
-
-  //     if (!produtoDentroArray) {
-  //       const arrFiltrado = this.listaProdutosSelecionados.filter((el) => el.id === item.id);
-
-  //       const obj = {
-  //         nome: item.nome,
-  //         tipo: item.tipo,
-  //         id: item.id,
-  //         qtd: arrFiltrado.length,
-  //         listaProdutos: arrFiltrado,
-  //       };
-  //       arrAgrupado.push(obj);
-  //     }
-  //   }
-
-  //   return arrAgrupado;
-  // }
-
   terminouCompra(terminouCompraIndex: boolean) {
     if (terminouCompraIndex == true) {
       this.listaProdutosSelecionados = [];

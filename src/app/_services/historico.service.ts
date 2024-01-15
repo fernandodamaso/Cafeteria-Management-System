@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HistoricoModel } from "../_models/historico.model";
+import { historicoModel } from "../_models/historico.model";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
@@ -9,7 +9,7 @@ export class historicoService {
   constructor(private http: HttpClient) {}
 
   getHistorico() {
-    return this.http.get<HistoricoModel[]>("http://localhost:3000/historico");
+    return this.http.get<historicoModel[]>("http://localhost:3000/historico");
   }
 
 }

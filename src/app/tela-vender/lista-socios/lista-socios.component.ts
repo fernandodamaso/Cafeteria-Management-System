@@ -14,7 +14,7 @@ export class ListaSociosComponent implements OnInit {
   @Input() vendasAbertas: vendaModel[] = [];
   @Input() dataSocios: SocioModel[] = [];
   @Input() dataProdutos: ProdutoModel[] = [];
-  @Input() listaNucleos: nucleoModel[] = [];
+  @Input() listaNucleos: string[] = [];
   @Input() socioSelecionadoIndex: number;
   @Output() socioSelecionadoOutput = new EventEmitter<SocioModel>();
   filterSocios = "";

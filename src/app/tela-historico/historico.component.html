@@ -1,7 +1,7 @@
-<ul>
+<ul *ngIf="dataHistorico">
   <li *ngFor="let historico of dataHistorico">
-    {{historico.cliente}}
-    {{historico.historico}}
-    {{historico.data}}
+    {{ historico.cliente }}
+    {{ historico.historico }}
+    {{ historico.data }}
   </li>
 </ul>
