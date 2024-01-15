@@ -129,7 +129,7 @@
       "nome": "Pão de queijo",
       "precoVenda": 5,
       "precoCusto": 2.5,
-      "qtdVendas": 0,
+      "qtdVendas": 1,
       "ativo": true,
       "tipo": {
         "id": 2,
@@ -157,7 +157,7 @@
       "nome": "Café",
       "precoVenda": 4,
       "precoCusto": 2,
-      "qtdVendas": 57,
+      "qtdVendas": 58,
       "ativo": true,
       "tipo": {
         "id": 1,
@@ -185,7 +185,7 @@
       "nome": "Cajuína",
       "precoVenda": 12,
       "precoCusto": 6,
-      "qtdVendas": 25,
+      "qtdVendas": 26,
       "ativo": true,
       "tipo": {
         "id": 1,
@@ -1992,7 +1992,8 @@
     },
     {
       "idCliente": 16,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 10,
           "nome": "Cajuína",
@@ -2008,15 +2009,17 @@
           "status": "ativo"
         }
       ],
-      "produtosVendidos": [],
-      "status": "aberto",
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2024-01-14T19:58:35.980Z",
-      "id": 56
+      "id": 56,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-15T14:05:30.206Z"
     },
     {
       "idCliente": 16,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 8,
           "nome": "Café",
@@ -2032,15 +2035,17 @@
           "status": "ativo"
         }
       ],
-      "produtosVendidos": [],
-      "status": "aberto",
+      "status": "fechado",
       "desconto": 0,
       "dataVenda": "2024-01-14T20:05:39.213Z",
-      "id": 57
+      "id": 57,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-15T14:05:30.521Z"
     },
     {
       "idCliente": 16,
-      "produtosAbertos": [
+      "produtosAbertos": [],
+      "produtosVendidos": [
         {
           "id": 6,
           "nome": "Pão de queijo",
@@ -2056,11 +2061,112 @@
           "status": "ativo"
         }
       ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2024-01-14T20:05:39.213Z",
+      "id": 58,
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-01-15T14:05:30.580Z"
+    },
+    {
+      "idCliente": 9,
+      "produtosAbertos": [
+        {
+          "id": 8,
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 58,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
       "produtosVendidos": [],
       "status": "aberto",
       "desconto": 0,
-      "dataVenda": "2024-01-14T20:05:39.213Z",
-      "id": 58
+      "dataVenda": "2024-01-15T14:05:32.748Z",
+      "id": 59
+    },
+    {
+      "idCliente": 10,
+      "produtosAbertos": [
+        {
+          "id": 10,
+          "nome": "Cajuína",
+          "precoVenda": 12,
+          "precoCusto": 6,
+          "qtdVendas": 26,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2024-01-09T11:31:54.240Z",
+          "status": "ativo"
+        },
+        {
+          "id": 10,
+          "nome": "Cajuína",
+          "precoVenda": 12,
+          "precoCusto": 6,
+          "qtdVendas": 26,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2024-01-09T11:31:54.240Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-01-15T14:05:32.748Z",
+      "id": 60
+    },
+    {
+      "idCliente": 11,
+      "produtosAbertos": [
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 122,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        },
+        {
+          "id": 1,
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 122,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-01-15T14:05:50.106Z",
+      "id": 61
     }
   ],
   "socios": [
@@ -2240,7 +2346,7 @@
         "nome": "Pupura Manta",
         "id": 2
       },
-      "credito": 0,
+      "credito": 30,
       "grau": "CDC",
       "produtosEmAberto": null
     }
