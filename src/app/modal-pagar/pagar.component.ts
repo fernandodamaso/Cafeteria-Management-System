@@ -184,6 +184,7 @@ export class PagarComponent implements OnInit {
   }
 
   calculaCredito(venda: vendaModel, produto: produtosAbertos) {
+    console.log(this.valorTotal);
     if (this.informacoesSocio.credito > 0) {
       this.informacoesSocio.credito = this.informacoesSocio.credito - produto.valor;
       if (this.informacoesSocio.credito < 0) {
@@ -244,6 +245,7 @@ export class PagarComponent implements OnInit {
   }
 
   processarProdutosAtivos(vendasFiltradas: vendaModel[], vendasMap: Map<number, vendaModel>) {
+    console.log(this.produtosAtivos);
     for (let produto of this.produtosAtivos) {
       let venda = vendasMap.get(produto.idVenda);
 
@@ -252,8 +254,8 @@ export class PagarComponent implements OnInit {
         venda.desconto = this.divideDesconto(vendasFiltradas);
         this.adicionarVendaProduto(venda, produto);
         this.calculaCredito(venda, produto);
-
         venda = this.deletaProdutosAbertos(venda, produto);
+        this.calcularValorTotal();
       }
     }
   }

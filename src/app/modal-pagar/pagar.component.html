@@ -14,7 +14,7 @@
       </div>
       <div class="col" *ngIf="semCompras === false">
         <label class="titulo">
-          <span *ngIf="valorTotal < 0">Valor Total</span>
+          <span *ngIf="valorTotal <= 0">Valor Total</span>
           <span *ngIf="valorTotal > 0">Crédito Restante</span>
         </label>
         <p

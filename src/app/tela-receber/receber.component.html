@@ -33,6 +33,7 @@
           <th>TELEFONE</th>
           <th>NUCLEO</th>
           <th class="center">PRODUTOS EM ABERTO</th>
+          <th class="alignRight">CRÉDITO</th>
           <th class="alignRight">SALDO ATUAL</th>
           <th class="alignRight">AÇÕES</th>
         </tr>
@@ -70,9 +71,20 @@
             <span class="status inativo" *ngIf="socio | checarProdutosAbertos : vendasAbertas"
               >Compras em aberto</span
             >
-            <span class="status ativo" *ngIf="(socio | checarProdutosAbertos : vendasAbertas) == false"
+            <span
+              class="status ativo"
+              *ngIf="(socio | checarProdutosAbertos : vendasAbertas) == false"
               >Quite</span
             >
+          </td>
+          <td
+            (click)="abrirPagar(socio)"
+            class="alignRight saldo"
+            [ngClass]="{
+              saldoPositivo: (socio | calculoDebito : vendasAbertas) > 0
+            }"
+          >
+            {{ socio.credito | currency : "R$" }}
           </td>
           <td (click)="abrirPagar(socio)" class="alignRight saldo">
             <span
