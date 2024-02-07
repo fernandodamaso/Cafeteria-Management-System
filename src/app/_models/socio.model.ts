@@ -9,7 +9,6 @@ export class SocioModel {
   nucleo: nucleoModel = new nucleoModel();
   credito: number = 0;
   grau: grauSocioEnum = grauSocioEnum.QS;
-  produtosEmAberto: ProdutoModel[] = [];
 }
 
 export enum grauSocioEnum {

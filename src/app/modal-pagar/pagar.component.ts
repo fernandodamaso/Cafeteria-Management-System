@@ -183,20 +183,14 @@ export class PagarComponent implements OnInit {
     }
   }
 
-  calculaCredito(venda: vendaModel, produto: produtosAbertos) {
-    console.log(this.valorTotal);
+  calculaCredito() {
     if (this.informacoesSocio.credito > 0) {
-      this.informacoesSocio.credito = this.informacoesSocio.credito - produto.valor;
-      if (this.informacoesSocio.credito < 0) {
-        this.informacoesSocio.credito = 0;
-      }
+      this.informacoesSocio.credito = this.informacoesSocio.credito + this.debito;
     }
-    if (this.valorTotal < 0) {
-      if (this.valorPago > this.valorTotal * -1) {
-        const valorTotalConvertido = this.valorTotal * -1;
-        const diferencaValor = this.valorPago - valorTotalConvertido;
-        this.informacoesSocio.credito = this.informacoesSocio.credito + diferencaValor;
-      }
+    if (this.valorPago + this.valorTotal <= 0) {
+      this.informacoesSocio.credito = 0;
+    } else {
+      this.informacoesSocio.credito = this.valorPago + this.valorTotal;
     }
   }
 
@@ -245,7 +239,8 @@ export class PagarComponent implements OnInit {
   }
 
   processarProdutosAtivos(vendasFiltradas: vendaModel[], vendasMap: Map<number, vendaModel>) {
-    console.log(this.produtosAtivos);
+    this.calculaCredito();
+
     for (let produto of this.produtosAtivos) {
       let venda = vendasMap.get(produto.idVenda);
 
@@ -253,9 +248,9 @@ export class PagarComponent implements OnInit {
         venda.formaPagamento = this.formaPagamento;
         venda.desconto = this.divideDesconto(vendasFiltradas);
         this.adicionarVendaProduto(venda, produto);
-        this.calculaCredito(venda, produto);
         venda = this.deletaProdutosAbertos(venda, produto);
         this.calcularValorTotal();
+        // adiciona dentro do produtosQueFecharam
       }
     }
   }
@@ -296,6 +291,7 @@ export class PagarComponent implements OnInit {
       console.error(e);
     }
   }
+
   async salvar() {
     const vendasFiltradas = this.filtrarVendas();
     const vendasMap = new Map(this.listaVendas.map((venda) => [venda.id, venda]));
