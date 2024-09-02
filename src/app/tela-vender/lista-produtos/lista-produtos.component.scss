@@ -1,0 +1,88 @@
+.produtoSelecionado {
+  font-size: 19px;
+  font-family: "Montserrat", sans-serif;
+  color: #5e5873;
+  font-weight: initial;
+  font-weight: 500;
+  margin: 0;
+  color: rgb(52, 152, 219);
+}
+
+.modal-mobile {
+  padding-bottom: 0;
+  .botoes {
+    background: #ededed;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.acoesTd {
+  @media (max-width: 1024px) {
+    padding: 0;
+    order: 4;
+    margin-top: 10px;
+  }
+}
+
+tr {
+  &.active {
+    background-color: rgb(52, 152, 219);
+    .nome, .debito {
+      color: #fff;
+    }
+  }
+}
+
+table {
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 10px;
+  }
+  tr {
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-basis: 24%;
+      text-align: center;
+      background-color: #f8f9fa;
+      padding: 15px 0px;
+      border-radius: 10px;
+      &:nth-child(1) {
+        display: none;
+      }
+      @media (max-width: 855px) {
+        flex-basis: 32%;
+      }
+      
+      @media (max-width: 550px) {
+        flex-basis: 48%;
+      }
+
+    }
+    td {
+      @media (max-width: 1024px) {
+        padding: 0px 0px;
+        &:nth-child(1) {
+          min-width: initial;
+        }
+        &:nth-child(2) {
+          padding-top: 7px;
+          padding-bottom: 5px;
+        }
+
+        .debito {
+          font-weight: bold;
+          color: #3498db;
+        }
+      }
+    }
+  }
+}

@@ -201,21 +201,17 @@ a {
       gap: 5px;
       padding-top: 10px;
     }
-    h2 {
-    }
 
     a {
-      display: none;
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
   }
 }
 
 .alignRight {
   text-align: right;
-}
-
-.tableScroll {
-  // overflow-y: scroll;
 }
 
 table {
@@ -281,28 +277,33 @@ table {
       .acoes {
         display: flex;
         opacity: 0;
-
+        background: #69b0df;
+        padding: 5px 5px;
+        border-radius: 7px;
         button {
           background: none;
-
+          color: #3498db;
+          border-color: #fff;
+          background: #fff;
           cursor: pointer;
-
           &.removerProduto,
           &.AdicionarProduto {
             height: 20px;
             width: 20px;
-            border: 2px solid #5e5873;
+            border: 0;
             border-radius: 20px;
             font-weight: bold;
             font-size: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #5e5873;
+            color: #3498db;
             margin: 0 3px;
           }
 
           &.qtdProduto {
+            color: #fff;
+            background: none;
             margin: 0 3px;
             font-size: 14px;
             border: 0;
@@ -890,5 +891,29 @@ label {
     z-index: 1;
     opacity: 0.7;
     visibility: visible;
+  }
+}
+
+.modal-mobile {
+  @media (max-width: 1024px) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    height: auto;
+    max-height: 80%;
+    width: 90%;
+    overflow-y: scroll;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }

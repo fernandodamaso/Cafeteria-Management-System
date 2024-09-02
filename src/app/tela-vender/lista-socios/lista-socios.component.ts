@@ -3,6 +3,7 @@ import { nucleoModel } from "src/app/_models/nucleo.model";
 import { ProdutoModel } from "src/app/_models/produto.model";
 import { SocioModel } from "src/app/_models/socio.model";
 import { vendaModel } from "src/app/_models/venda.model";
+import { WindowSizeService } from "src/app/_services/window-size.service";
 
 @Component({
   selector: "app-lista-socios",
@@ -24,19 +25,10 @@ export class ListaSociosComponent implements OnInit {
   windowSize = "";
   modalOpened = false;
 
-  constructor() {}
+  constructor(private windowSizeService: WindowSizeService) {}
 
   ngOnInit(): void {
-    this.windowSize = this.getWindowSize();
-    console.log(this.windowSize);
-  }
-
-  getWindowSize() {
-    if (window.innerWidth > 1024) {
-      return "desktop";
-    } else {
-      return "mobile";
-    }
+    this.windowSize = this.windowSizeService.getWindowSize();
   }
 
   getTitle() {

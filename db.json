@@ -2613,6 +2613,214 @@
       "status": "aberto",
       "desconto": 0,
       "dataVenda": "2024-08-30T00:09:30.870Z"
+    },
+    {
+      "id": "f926",
+      "idCliente": "17",
+      "produtosAbertos": [
+        {
+          "id": "11",
+          "nome": "Hamburger",
+          "precoVenda": 15,
+          "precoCusto": 7,
+          "qtdVendas": 0,
+          "ativo": true,
+          "tipo": {
+            "id": 2,
+            "nome": "Salgado"
+          },
+          "dataCompra": "2024-02-22T22:14:20.735Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T12:25:44.722Z"
+    },
+    {
+      "id": "c95a",
+      "idCliente": "8",
+      "produtosAbertos": [
+        {
+          "id": "3",
+          "nome": "Agua com gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 65,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-31T12:57:10.920Z",
+          "status": "ativo"
+        },
+        {
+          "id": "5",
+          "nome": "Cola Cola",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 41,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:49:15.670Z",
+          "status": "ativo"
+        },
+        {
+          "id": "6",
+          "nome": "Pão de queijo",
+          "precoVenda": 5,
+          "precoCusto": 2.5,
+          "qtdVendas": 1,
+          "ativo": true,
+          "tipo": {
+            "id": 2,
+            "nome": "Salgado"
+          },
+          "dataCompra": "2023-02-01T13:49:28.495Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T14:38:15.343Z"
+    },
+    {
+      "id": "c47b",
+      "idCliente": "8",
+      "produtosAbertos": [
+        {
+          "id": "8",
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 71,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        },
+        {
+          "id": "9",
+          "nome": "Bolo de cenoura",
+          "precoVenda": 6,
+          "precoCusto": 0,
+          "qtdVendas": 10,
+          "ativo": true,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "dataCompra": "2024-01-09T11:05:29.779Z",
+          "status": "ativo"
+        },
+        {
+          "id": "6",
+          "nome": "Pão de queijo",
+          "precoVenda": 5,
+          "precoCusto": 2.5,
+          "qtdVendas": 1,
+          "ativo": true,
+          "tipo": {
+            "id": 2,
+            "nome": "Salgado"
+          },
+          "dataCompra": "2023-02-01T13:49:28.495Z",
+          "status": "ativo"
+        },
+        {
+          "id": "6",
+          "nome": "Pão de queijo",
+          "precoVenda": 5,
+          "precoCusto": 2.5,
+          "qtdVendas": 1,
+          "ativo": true,
+          "tipo": {
+            "id": 2,
+            "nome": "Salgado"
+          },
+          "dataCompra": "2023-02-01T13:49:28.495Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T15:49:30.249Z"
+    },
+    {
+      "id": "e901",
+      "idCliente": "11",
+      "produtosAbertos": [
+        {
+          "id": "8",
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 71,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        },
+        {
+          "id": "9",
+          "nome": "Bolo de cenoura",
+          "precoVenda": 6,
+          "precoCusto": 0,
+          "qtdVendas": 10,
+          "ativo": true,
+          "tipo": {
+            "id": 3,
+            "nome": "Doce"
+          },
+          "dataCompra": "2024-01-09T11:05:29.779Z",
+          "status": "ativo"
+        },
+        {
+          "id": "7",
+          "nome": "Misto Quente",
+          "precoVenda": 5,
+          "precoCusto": 2,
+          "qtdVendas": 37,
+          "ativo": true,
+          "tipo": {
+            "id": 2,
+            "nome": "Salgado"
+          },
+          "dataCompra": "2023-02-01T13:49:42.954Z",
+          "status": "ativo"
+        },
+        {
+          "id": "7",
+          "nome": "Misto Quente",
+          "precoVenda": 5,
+          "precoCusto": 2,
+          "qtdVendas": 37,
+          "ativo": true,
+          "tipo": {
+            "id": 2,
+            "nome": "Salgado"
+          },
+          "dataCompra": "2023-02-01T13:49:42.954Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T16:39:06.515Z"
     }
   ],
   "socios": [

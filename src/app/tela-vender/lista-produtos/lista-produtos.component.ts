@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ProdutoModel } from "src/app/_models/produto.model";
 import { produtosAgrupados } from "src/app/_models/produtosAgrupados.model";
+import { WindowSizeService } from "src/app/_services/window-size.service";
 
 @Component({
   selector: "app-lista-produtos",
@@ -18,10 +19,15 @@ export class ListaProdutosComponent implements OnInit {
 
   filterProdutos: string = "";
   filterTipo: string = "";
+  windowSize = "";
+  modalOpened = false;
 
-  constructor() {}
+  constructor(private windowSizeService: WindowSizeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.windowSize = this.windowSizeService.getWindowSize();
+  }
+
 
   adicionarProduto(produto: ProdutoModel) {
     this.adicionaProdutoOutput.emit(produto);
@@ -37,5 +43,17 @@ export class ListaProdutosComponent implements OnInit {
 
   removerProduto(produto: ProdutoModel) {
     this.removeProdutOutput.emit(produto);
+  }
+
+  openModal() {
+    if (this.windowSize == "desktop") {
+      return;
+    } else {
+      this.modalOpened = true;
+    }
+  }
+
+  closeModal() {
+    this.modalOpened = false;
   }
 }

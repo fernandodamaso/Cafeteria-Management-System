@@ -1,7 +1,7 @@
 <div class="tituloBox">
   <h2 (click)="openModal()">{{ getTitle() }}</h2>
   <a routerLink="/receber">Editar</a>
-  <p class="socioSelecionado" (click)="openModal()">
+  <p class="socioSelecionado" (click)="openModal()" *ngIf="windowSize === 'mobile'">
     <ng-container *ngIf="socioSelecionado; else noSocio">
       {{ socioSelecionado.nome }}
     </ng-container>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="modal-mobile" [ngClass]="{ active: modalOpened }">
-  <div class="tabelaWrap" [ngClass]="{ mobile: getWindowSize() === 'mobile' }">
+  <div class="tabelaWrap" [ngClass]="{ mobile: windowSize === 'mobile' }">
     <div class="filtros">
       <input type="text" placeholder="Busca por nome" [(ngModel)]="filterSocios" />
       <select name="grau" title="Filtro por Grau" [(ngModel)]="filterGrau">
@@ -36,7 +36,7 @@
           <tr>
             <th>GRAU</th>
             <th>NOME</th>
-            <th *ngIf="getWindowSize() === 'desktop'">Núcleo</th>
+            <th *ngIf="windowSize === 'desktop'">Núcleo</th>
             <th class="alignRight">DÉBITO</th>
           </tr>
         </thead>
@@ -71,7 +71,7 @@
             <td>
               <span class="nome">{{ socio.nome }}</span>
             </td>
-            <td *ngIf="getWindowSize() === 'desktop'">
+            <td *ngIf="windowSize === 'desktop'">
               <span class="nucleo">{{ socio.nucleo.nome }}</span>
             </td>
             <td class="alignRight">
