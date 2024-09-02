@@ -32,7 +32,6 @@
               | ordernarProdutos;
             let i = index
           "
-          [class.inativo]="produto.ativo == false"
           [ngClass]="{
             active: calcularQuantidade(produto) > 0
           }"

@@ -838,10 +838,6 @@ label {
 
     &.produtos {
       tr {
-        &.inativo {
-          display: none;
-        }
-
         td,
         th {
           &:nth-child(1) {
