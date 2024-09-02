@@ -28,6 +28,10 @@ export class ListaProdutosComponent implements OnInit {
     this.windowSize = this.windowSizeService.getWindowSize();
   }
 
+  filterProdutosAtivos() {
+    const produtosFiltrados = this.dataProdutos.filter(produto => produto.ativo);
+    return produtosFiltrados;
+  }
 
   adicionarProduto(produto: ProdutoModel) {
     this.adicionaProdutoOutput.emit(produto);
