@@ -1,0 +1,32 @@
+.modal-mobile {
+  @media (max-width: 1024px) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 0 ;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    height: 80%;
+    width: 90%;
+    overflow: scroll;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.socioSelecionado {
+  font-size: 19px;
+  font-family: "Montserrat", sans-serif;
+  color: #5e5873;
+  font-weight: initial;
+  font-weight: 500;
+  margin: 0;
+  color: rgb(52, 152, 219);
+}

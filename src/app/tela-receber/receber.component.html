@@ -103,7 +103,7 @@
             <mat-menu #menu="matMenu">
               <button (click)="editarSocio(socio)" mat-menu-item>Editar</button>
               <button (click)="deletarSocio(socio.id)" mat-menu-item>Deletar</button>
-              <button (click)="abrirRecibo(socio)" mat-menu-item>Ver Recibo</button>
+              <button *ngIf="(socio | calculoDebito : vendasAbertas) < 0" (click)="abrirRecibo(socio)" mat-menu-item>Ver Recibo</button>
               <!-- <button mat-menu-item>Mandar Cobrança</button> -->
             </mat-menu>
           </td>

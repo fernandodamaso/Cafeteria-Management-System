@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter, SimpleChanges } from "@angular/core";
 import { nucleoModel } from "src/app/_models/nucleo.model";
 import { ProdutoModel } from "src/app/_models/produto.model";
 import { SocioModel } from "src/app/_models/socio.model";
@@ -21,11 +21,46 @@ export class ListaSociosComponent implements OnInit {
   filterGrau = "";
   filterNucleo = "";
   socioSelecionado: SocioModel;
+  windowSize = "";
+  modalOpened = false;
 
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.dataSocios);
+    this.windowSize = this.getWindowSize();
+    console.log(this.windowSize);
+  }
+
+  getWindowSize() {
+    if (window.innerWidth > 1024) {
+      return "desktop";
+    } else {
+      return "mobile";
+    }
+  }
+
+  getTitle() {
+    if (this.windowSize == "desktop") {
+      return "Lista de Sócios:";
+    } else {
+      return "Vender para:";
+    }
+  }
+
+  ngOnChanges() {
+    this.socioSelecionadoIndex = undefined!;
+  }
+
+  openModal() {
+    if (this.windowSize == "desktop") {
+      return;
+    } else {
+      this.modalOpened = true;
+    }
+  }
+
+  closeModal() {
+    this.modalOpened = false;
   }
 
   getSocio(socio: SocioModel, index: number) {
@@ -35,6 +70,7 @@ export class ListaSociosComponent implements OnInit {
     } else {
       this.socioSelecionado = socio;
       this.socioSelecionadoIndex = index;
+      this.modalOpened = false;
     }
     this.socioSelecionadoOutput.emit(this.socioSelecionado);
   }
