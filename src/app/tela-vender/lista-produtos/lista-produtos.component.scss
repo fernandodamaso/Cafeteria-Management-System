@@ -16,6 +16,10 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    display: none;
+    @media (max-width: 1024px) {
+      display: block;
+    }
   }
 }
 
@@ -29,9 +33,10 @@
 
 tr {
   &.active {
-    background-color: rgb(52, 152, 219);
-    .nome, .debito {
-      color: #fff;
+    background-color: rgb(52, 152, 219) !important;
+    .nome,
+    .debito {
+      color: #fff !important;
     }
   }
 }
@@ -61,11 +66,10 @@ table {
       @media (max-width: 855px) {
         flex-basis: 32%;
       }
-      
+
       @media (max-width: 550px) {
         flex-basis: 48%;
       }
-
     }
     td {
       @media (max-width: 1024px) {

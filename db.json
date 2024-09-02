@@ -2821,6 +2821,336 @@
       "status": "aberto",
       "desconto": 0,
       "dataVenda": "2024-09-02T16:39:06.515Z"
+    },
+    {
+      "id": "1e09",
+      "idCliente": "8",
+      "produtosAbertos": [
+        {
+          "id": "3",
+          "nome": "Agua com gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 65,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-31T12:57:10.920Z",
+          "status": "ativo"
+        },
+        {
+          "id": "4",
+          "nome": "Açai pequeno",
+          "precoVenda": 7,
+          "precoCusto": 3,
+          "qtdVendas": 21,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-02-01T13:49:04.761Z",
+          "status": "ativo"
+        },
+        {
+          "id": "5",
+          "nome": "Cola Cola",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 41,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:49:15.670Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T16:47:35.844Z"
+    },
+    {
+      "id": "e584",
+      "idCliente": "10",
+      "produtosAbertos": [
+        {
+          "id": "4",
+          "nome": "Açai pequeno",
+          "precoVenda": 7,
+          "precoCusto": 3,
+          "qtdVendas": 21,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-02-01T13:49:04.761Z",
+          "status": "ativo"
+        },
+        {
+          "id": "5",
+          "nome": "Cola Cola",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 41,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:49:15.670Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:20:56.388Z"
+    },
+    {
+      "id": "e749",
+      "idCliente": "12",
+      "produtosAbertos": [
+        {
+          "id": "8",
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 71,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:24:41.615Z"
+    },
+    {
+      "id": "db3e",
+      "idCliente": "16",
+      "produtosAbertos": [
+        {
+          "id": "8",
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 71,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:26:52.955Z"
+    },
+    {
+      "id": "9beb",
+      "idCliente": "12",
+      "produtosAbertos": [
+        {
+          "id": "4",
+          "nome": "Açai pequeno",
+          "precoVenda": 7,
+          "precoCusto": 3,
+          "qtdVendas": 21,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-02-01T13:49:04.761Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:26:52.955Z"
+    },
+    {
+      "id": "284b",
+      "idCliente": "11",
+      "produtosAbertos": [
+        {
+          "id": "10",
+          "nome": "Cajuína",
+          "precoVenda": 12,
+          "precoCusto": 6,
+          "qtdVendas": 31,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2024-01-09T11:31:54.240Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:28:14.756Z"
+    },
+    {
+      "id": "1237",
+      "idCliente": "16",
+      "produtosAbertos": [
+        {
+          "id": "3",
+          "nome": "Agua com gás",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 65,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-01-31T12:57:10.920Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:31:37.623Z"
+    },
+    {
+      "id": "c06f",
+      "idCliente": "8",
+      "produtosAbertos": [
+        {
+          "id": "8",
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 71,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:52:31.985Z"
+    },
+    {
+      "id": "8880",
+      "idCliente": "8",
+      "produtosAbertos": [
+        {
+          "id": "8",
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 71,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:53:05.613Z"
+    },
+    {
+      "id": "62d3",
+      "idCliente": "8",
+      "produtosAbertos": [
+        {
+          "id": "8",
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 71,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:53:34.762Z"
+    },
+    {
+      "id": "70d9",
+      "idCliente": "8",
+      "produtosAbertos": [
+        {
+          "id": "1",
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 142,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:53:57.919Z"
+    },
+    {
+      "id": "633d",
+      "idCliente": "16",
+      "produtosAbertos": [
+        {
+          "id": "1",
+          "nome": "Açai",
+          "precoVenda": 12,
+          "precoCusto": 7,
+          "qtdVendas": 142,
+          "ativo": true,
+          "tipo": {
+            "id": 0,
+            "nome": "Açai"
+          },
+          "dataCompra": "2023-01-31T12:56:37.025Z",
+          "status": "ativo"
+        }
+      ],
+      "produtosVendidos": [],
+      "status": "aberto",
+      "desconto": 0,
+      "dataVenda": "2024-09-02T18:54:16.333Z"
     }
   ],
   "socios": [

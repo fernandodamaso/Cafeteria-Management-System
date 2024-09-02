@@ -5,9 +5,7 @@
     <ng-container *ngIf="socioSelecionado; else noSocio">
       {{ socioSelecionado.nome }}
     </ng-container>
-    <ng-template #noSocio>
-      Selecione um sócio
-    </ng-template>
+    <ng-template #noSocio> Selecione um sócio </ng-template>
   </p>
 </div>
 
@@ -30,6 +28,7 @@
         </option>
       </select>
     </div>
+
     <div class="tableScroll">
       <table class="socios">
         <thead>

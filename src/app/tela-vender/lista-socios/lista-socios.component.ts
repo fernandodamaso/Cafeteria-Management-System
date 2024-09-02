@@ -16,11 +16,11 @@ export class ListaSociosComponent implements OnInit {
   @Input() dataSocios: SocioModel[] = [];
   @Input() dataProdutos: ProdutoModel[] = [];
   @Input() listaNucleos: string[] = [];
-  @Input() socioSelecionadoIndex: number;
   @Output() socioSelecionadoOutput = new EventEmitter<SocioModel>();
   filterSocios = "";
   filterGrau = "";
   filterNucleo = "";
+  socioSelecionadoIndex!: number;
   socioSelecionado: SocioModel;
   windowSize = "";
   modalOpened = false;
@@ -41,6 +41,7 @@ export class ListaSociosComponent implements OnInit {
 
   ngOnChanges() {
     this.socioSelecionadoIndex = undefined!;
+    this.socioSelecionado = undefined!;
   }
 
   openModal() {
@@ -57,12 +58,17 @@ export class ListaSociosComponent implements OnInit {
 
   getSocio(socio: SocioModel, index: number) {
     if (this.socioSelecionado == socio) {
+      console.log(1)
       this.socioSelecionadoIndex = undefined!;
       this.socioSelecionado = undefined!;
+      this.modalOpened = false;
     } else {
+      console.log(12)
       this.socioSelecionado = socio;
       this.socioSelecionadoIndex = index;
       this.modalOpened = false;
+      console.log(this.socioSelecionado)
+      console.log(this.socioSelecionadoIndex)
     }
     this.socioSelecionadoOutput.emit(this.socioSelecionado);
   }
