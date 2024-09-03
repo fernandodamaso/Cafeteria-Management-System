@@ -1,0 +1,34 @@
+<div class="filtros">
+  <input
+    type="text"
+    placeholder="Busca por nome"
+    [(ngModel)]="filterSocios"
+    (ngModelChange)="filterChange($event, 'socios')"
+  />
+
+  <select
+    (ngModelChange)="filterChange($event, 'grau')"
+    name="grau"
+    title="Filtro por Grau"
+    [(ngModel)]="filterGrau"
+  >
+    <option value="">Filtro por Grau</option>
+    <option value="QS">Quadro de Sócio</option>
+    <option value="CI">Corpo Instrutivo</option>
+    <option value="CDC">Corpo do Conselho</option>
+    <option value="QM">Quadro de Mestre</option>
+    <option value="VI">Visitante</option>
+  </select>
+
+  <select
+    (ngModelChange)="filterChange($event, 'nucleos')"
+    name="nucleo"
+    title="Filtro por Nucleo"
+    [(ngModel)]="filterNucleo"
+  >
+    <option value="">Filtro por Nucleo</option>
+    <option [ngValue]="nucleo" *ngFor="let nucleo of listaNucleos">
+      {{ nucleo }}
+    </option>
+  </select>
+</div>

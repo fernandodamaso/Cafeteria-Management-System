@@ -17,9 +17,11 @@ export class ListaSociosComponent implements OnInit {
   @Input() dataProdutos: ProdutoModel[] = [];
   @Input() listaNucleos: string[] = [];
   @Output() socioSelecionadoOutput = new EventEmitter<SocioModel>();
+
   filterSocios = "";
   filterGrau = "";
   filterNucleo = "";
+
   socioSelecionadoIndex!: number;
   socioSelecionado: SocioModel;
   windowSize = "";
@@ -44,6 +46,19 @@ export class ListaSociosComponent implements OnInit {
     this.socioSelecionado = undefined!;
   }
 
+  buscaFilterSocios(event: any) {
+    this.filterSocios = event;
+    console.log(this.filterSocios)
+  }
+  buscaFiltroGrau(event: any) {
+    this.filterGrau = event;
+    console.log(this.filterGrau)
+  }
+  buscaFilterNucleo(event: any) {
+    this.filterNucleo = event;
+    console.log(this.filterNucleo)
+  }
+
   openModal() {
     if (this.windowSize == "desktop") {
       return;
@@ -58,17 +73,17 @@ export class ListaSociosComponent implements OnInit {
 
   getSocio(socio: SocioModel, index: number) {
     if (this.socioSelecionado == socio) {
-      console.log(1)
+      console.log(1);
       this.socioSelecionadoIndex = undefined!;
       this.socioSelecionado = undefined!;
       this.modalOpened = false;
     } else {
-      console.log(12)
+      console.log(12);
       this.socioSelecionado = socio;
       this.socioSelecionadoIndex = index;
       this.modalOpened = false;
-      console.log(this.socioSelecionado)
-      console.log(this.socioSelecionadoIndex)
+      console.log(this.socioSelecionado);
+      console.log(this.socioSelecionadoIndex);
     }
     this.socioSelecionadoOutput.emit(this.socioSelecionado);
   }
