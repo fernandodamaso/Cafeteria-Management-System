@@ -8,15 +8,9 @@
 
 <div class="modal-mobile" [ngClass]="{ active: modalOpened }">
   <div class="tabelaWrap" [ngClass]="{ mobile: windowSize === 'mobile' }">
-    <div class="filtros">
-      <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
-      <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
-        <option value="">Filtro por Tipo</option>
-        <option value="{{ produto }}" *ngFor="let produto of listaTipos">
-          {{ produto }}
-        </option>
-      </select>
-    </div>
+
+    <app-filter [filterLocation]="'produtos'" [listaTipos]="listaTipos" (filterNomeOutput)="buscaFilterNome($event)" (filterTipoOutput)="buscaFilterTipo($event)" ></app-filter>
+
     <div class="tableScroll">
       <table class="produtos">
         <tr>
@@ -27,7 +21,7 @@
         <tr
           *ngFor="
             let produto of filterProdutosAtivos()
-              | buscaPalavras : filterProdutos
+              | buscaPalavras : filterNome
               | buscaTipo : filterTipo
               | ordernarProdutos;
             let i = index

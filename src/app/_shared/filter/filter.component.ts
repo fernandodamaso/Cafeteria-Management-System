@@ -10,18 +10,20 @@ export class FilterComponent implements OnInit {
   constructor() {}
 
   @Input() listaNucleos: string[] = [];
+  @Input() listaTipos: string[] = [];
   @Input() filterLocation: string = "";
 
   @Output() filterNomeOutput = new EventEmitter<string>();
   @Output() filterNucleoOutput = new EventEmitter<string>();
   @Output() filterProdutosOutput = new EventEmitter<string>();
   @Output() filterGrauOutput = new EventEmitter<string>();
-  @Output() filterOutput = new EventEmitter<any>();
+  @Output() filterTipoOutput = new EventEmitter<string>();
 
 
   buscaNome: string = "";
   filterGrau: string = "";
   filterNucleo: string = "";
+  filterTipo: string = "";
 
   ngOnInit(): void {}
 
@@ -37,6 +39,10 @@ export class FilterComponent implements OnInit {
     if (filterChanged == 'nucleos') {
       this.filterNucleo = event;
       this.filterNucleoOutput.emit(this.filterNucleo);
+    }
+    if (filterChanged == 'tipo') {
+      this.filterTipo = event;
+      this.filterTipoOutput.emit(this.filterTipo);
     }
 
   }

@@ -33,4 +33,17 @@
       {{ nucleo }}
     </option>
   </select>
+
+  <select
+    *ngIf="filterLocation == 'produtos'"
+    (ngModelChange)="filterChange($event, 'tipo')"
+    name="tipo"
+    title="Filtro por Tipo"
+    [(ngModel)]="filterTipo"
+  >
+    <option value="">Filtro por Tipo</option>
+    <option value="{{ produto }}" *ngFor="let produto of listaTipos">
+      {{ produto }}
+    </option>
+  </select>
 </div>

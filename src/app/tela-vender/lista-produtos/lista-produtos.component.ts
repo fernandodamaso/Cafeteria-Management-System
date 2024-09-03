@@ -17,7 +17,7 @@ export class ListaProdutosComponent implements OnInit {
   @Output() adicionaProdutoOutput = new EventEmitter<ProdutoModel>();
   @Output() removeProdutOutput = new EventEmitter<ProdutoModel>();
 
-  filterProdutos: string = "";
+  filterNome: string = "";
   filterTipo: string = "";
   windowSize = "";
   modalOpened = false;
@@ -47,6 +47,15 @@ export class ListaProdutosComponent implements OnInit {
 
   removerProduto(produto: ProdutoModel) {
     this.removeProdutOutput.emit(produto);
+  }
+
+  buscaFilterNome(event: any) {
+    console.log(event);
+    this.filterNome = event;
+  }
+  buscaFilterTipo(event: any) {
+    console.log(event);
+    this.filterTipo = event;
   }
 
   openModal() {
