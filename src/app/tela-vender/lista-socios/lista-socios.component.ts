@@ -18,7 +18,7 @@ export class ListaSociosComponent implements OnInit {
   @Input() listaNucleos: string[] = [];
   @Output() socioSelecionadoOutput = new EventEmitter<SocioModel>();
 
-  filterSocios = "";
+  filterNome = "";
   filterGrau = "";
   filterNucleo = "";
 
@@ -46,17 +46,14 @@ export class ListaSociosComponent implements OnInit {
     this.socioSelecionado = undefined!;
   }
 
-  buscaFilterSocios(event: any) {
-    this.filterSocios = event;
-    console.log(this.filterSocios)
+  buscaFilterNome(event: any) {
+    this.filterNome = event;
   }
   buscaFiltroGrau(event: any) {
     this.filterGrau = event;
-    console.log(this.filterGrau)
   }
   buscaFilterNucleo(event: any) {
     this.filterNucleo = event;
-    console.log(this.filterNucleo)
   }
 
   openModal() {

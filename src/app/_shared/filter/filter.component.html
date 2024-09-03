@@ -2,11 +2,12 @@
   <input
     type="text"
     placeholder="Busca por nome"
-    [(ngModel)]="filterSocios"
-    (ngModelChange)="filterChange($event, 'socios')"
+    [(ngModel)]="buscaNome"
+    (ngModelChange)="filterChange($event, 'nome')"
   />
 
   <select
+    *ngIf="filterLocation == 'socios'"
     (ngModelChange)="filterChange($event, 'grau')"
     name="grau"
     title="Filtro por Grau"
@@ -21,6 +22,7 @@
   </select>
 
   <select
+    *ngIf="filterLocation == 'socios'"
     (ngModelChange)="filterChange($event, 'nucleos')"
     name="nucleo"
     title="Filtro por Nucleo"

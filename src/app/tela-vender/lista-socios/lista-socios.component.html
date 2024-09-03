@@ -12,7 +12,7 @@
 <div class="modal-mobile" [ngClass]="{ active: modalOpened }">
   <div class="tabelaWrap" [ngClass]="{ mobile: windowSize === 'mobile' }">
 
-    <app-filter [listaNucleos]="listaNucleos" [filterLocation]="'socios'" (filterSociosOutput)="buscaFilterSocios($event)" (filterGrauOutput)="buscaFiltroGrau($event)" (filterNucleoOutput)="buscaFilterNucleo($event)"></app-filter>
+    <app-filter [listaNucleos]="listaNucleos" [filterLocation]="'socios'" (filterNomeOutput)="buscaFilterNome($event)" (filterGrauOutput)="buscaFiltroGrau($event)" (filterNucleoOutput)="buscaFilterNucleo($event)"></app-filter>
 
     <div class="tableScroll">
       <table class="socios">
@@ -31,7 +31,7 @@
             (click)="getSocio(socio, i)"
             *ngFor="
               let socio of dataSocios
-                | buscaPalavras : filterSocios
+                | buscaPalavras : filterNome
                 | buscaGrau : filterGrau
                 | buscaNucleo : filterNucleo
                 | ordenarSocios;

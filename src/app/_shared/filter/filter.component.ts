@@ -12,21 +12,23 @@ export class FilterComponent implements OnInit {
   @Input() listaNucleos: string[] = [];
   @Input() filterLocation: string = "";
 
-  @Output() filterSociosOutput = new EventEmitter<string>();
+  @Output() filterNomeOutput = new EventEmitter<string>();
   @Output() filterNucleoOutput = new EventEmitter<string>();
   @Output() filterProdutosOutput = new EventEmitter<string>();
   @Output() filterGrauOutput = new EventEmitter<string>();
+  @Output() filterOutput = new EventEmitter<any>();
 
-  filterSocios: string = "";
+
+  buscaNome: string = "";
   filterGrau: string = "";
   filterNucleo: string = "";
 
   ngOnInit(): void {}
 
   filterChange(event: any, filterChanged: string) {
-    if (filterChanged == 'socios') {
-      this.filterSocios = event;
-      this.filterSociosOutput.emit(this.filterSocios);
+    if (filterChanged == 'nome') {
+      this.buscaNome = event;
+      this.filterNomeOutput.emit(this.buscaNome);
     }
     if (filterChanged == 'grau') {
       this.filterGrau = event;
