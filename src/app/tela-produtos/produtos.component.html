@@ -4,15 +4,9 @@
   </div>
 
   <div class="filtrosWrap">
-    <div class="filtros">
-      <input [(ngModel)]="filterProdutos" type="text" placeholder="Busca por nome" />
-      <select name="tipo" title="Filtro por Tipo" [(ngModel)]="filterTipo">
-        <option value="">Filtro por Tipo</option>
-        <option value="{{ tipoProduto }}" *ngFor="let tipoProduto of listaTipos">
-          {{ tipoProduto }}
-        </option>
-      </select>
-    </div>
+
+    <app-filter [filterLocation]="'produtos'" [listaTipos]="listaTipos" (filterNomeOutput)="buscaFilterNome($event)" (filterTipoOutput)="buscaFilterTipo($event)" ></app-filter>
+
     <div class="botoes">
       <button class="botao azul" (click)="adicionarProduto()">Adicionar Novo Produto</button>
     </div>
@@ -28,7 +22,7 @@
         <th class="center">Ativo/Inativo</th>
         <th>Ações</th>
       </tr>
-      <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterProdutos | buscaTipo : filterTipo | ordernarProdutos">
+      <tr *ngFor="let produto of dataProdutos | buscaPalavras : filterNome | buscaTipo : filterTipo | ordernarProdutos">
         <td (click)="editarProduto(produto)" class="center">
           <span
             [ngClass]="{

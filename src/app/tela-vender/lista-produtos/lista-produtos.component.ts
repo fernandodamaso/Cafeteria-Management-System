@@ -50,11 +50,9 @@ export class ListaProdutosComponent implements OnInit {
   }
 
   buscaFilterNome(event: any) {
-    console.log(event);
     this.filterNome = event;
   }
   buscaFilterTipo(event: any) {
-    console.log(event);
     this.filterTipo = event;
   }
 

@@ -13,12 +13,19 @@ export class ProdutosComponent implements OnInit {
   constructor(private produtosService: produtosService, private matDialog: MatDialog) {}
 
   dataProdutos: ProdutoModel[] = [];
-  filterProdutos = "";
+  filterNome = "";
   filterTipo = "";
   listaTipos: string[] = [];
 
   ngOnInit(): void {
     this.getData();
+  }
+
+  buscaFilterNome(event: any) {
+    this.filterNome = event;
+  }
+  buscaFilterTipo(event: any) {
+    this.filterTipo = event;
   }
 
   getListaTipos() {
