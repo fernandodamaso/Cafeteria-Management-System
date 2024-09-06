@@ -2,13 +2,18 @@
   <div class="tituloBox">
     <h2>Lista de Sócios</h2>
   </div>
+  <div class="filtrosWrap">
+    <app-filter
+      [listaNucleos]="listaNucleos"
+      [filterLocation]="'socios'"
+      (filterNomeOutput)="buscaFilterNome($event)"
+      (filterGrauOutput)="buscaFiltroGrau($event)"
+      (filterNucleoOutput)="buscaFilterNucleo($event)"></app-filter>
 
-  <app-filter
-  [listaNucleos]="listaNucleos"
-  [filterLocation]="'socios'"
-  (filterNomeOutput)="buscaFilterNome($event)"
-  (filterGrauOutput)="buscaFiltroGrau($event)"
-  (filterNucleoOutput)="buscaFilterNucleo($event)"></app-filter>
+    <div class="botoes">
+      <button class="botao azul" (click)="adicionarNovoSocio()">Adicionar Novo Sócio</button>
+    </div>
+  </div>
 
   <div class="receberWrap">
     <table class="socios">
@@ -26,15 +31,7 @@
       </thead>
 
       <tbody>
-        <tr
-          *ngFor="
-            let socio of dataSocios
-              | buscaPalavras : filterNome
-              | buscaGrau : filterGrau
-              | buscaNucleo : filterNucleo
-              | ordenarSocios
-          "
-        >
+        <tr *ngFor="let socio of dataSocios | buscaPalavras : filterNome | buscaGrau : filterGrau | buscaNucleo : filterNucleo | ordenarSocios">
           <td (click)="abrirPagar(socio)">
             <span
               [ngClass]="{
@@ -44,8 +41,7 @@
                 grauQS: socio.grau === 'QS',
                 grauVI: socio.grau === 'VI'
               }"
-              class="tag"
-            >
+              class="tag">
               {{ socio.grau }}
             </span>
           </td>
@@ -55,23 +51,16 @@
           <td (click)="abrirPagar(socio)">{{ socio.telefone }}</td>
           <td (click)="abrirPagar(socio)">{{ socio?.nucleo?.nome }}</td>
           <td (click)="abrirPagar(socio)" class="center">
-            <span class="status inativo" *ngIf="socio | checarProdutosAbertos : vendasAbertas"
-              >Compras em aberto</span
-            >
-            <span
-              class="status ativo"
-              *ngIf="(socio | checarProdutosAbertos : vendasAbertas) == false"
-              >Quite</span
-            >
+            <span class="status inativo" *ngIf="socio | checarProdutosAbertos : vendasAbertas">Compras em aberto</span>
+            <span class="status ativo" *ngIf="(socio | checarProdutosAbertos : vendasAbertas) == false">Quite</span>
           </td>
           <td
             (click)="abrirPagar(socio)"
             class="alignRight saldo"
             [ngClass]="{
               saldoPositivo: (socio | calculoDebito : vendasAbertas) > 0
-            }"
-          >
-            {{ socio.credito | currency : "R$" }}
+            }">
+            {{ socio.credito | currency : 'R$' }}
           </td>
           <td (click)="abrirPagar(socio)" class="alignRight saldo">
             <span
@@ -79,9 +68,9 @@
               [ngClass]="{
                 saldoPositivo: (socio | calculoDebito : vendasAbertas) > 0,
                 saldoNegativo: (socio | calculoDebito : vendasAbertas) < 0
-              }"
-              >{{ socio | calculoDebito : vendasAbertas | currency : "R$" }}</span
-            >
+              }">
+              {{ socio | calculoDebito : vendasAbertas | currency : 'R$' }}
+            </span>
           </td>
           <td class="center">
             <button title="Ações" mat-button [matMenuTriggerFor]="menu">
