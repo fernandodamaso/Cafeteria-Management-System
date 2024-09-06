@@ -157,7 +157,7 @@
       "nome": "Café",
       "precoVenda": 4,
       "precoCusto": 2,
-      "qtdVendas": 71,
+      "qtdVendas": 72,
       "ativo": true,
       "tipo": {
         "id": 1,
@@ -3151,6 +3151,32 @@
       "status": "aberto",
       "desconto": 0,
       "dataVenda": "2024-09-02T18:54:16.333Z"
+    },
+    {
+      "id": "3e7e",
+      "idCliente": "1",
+      "produtosAbertos": [],
+      "produtosVendidos": [
+        {
+          "id": "8",
+          "nome": "Café",
+          "precoVenda": 4,
+          "precoCusto": 2,
+          "qtdVendas": 71,
+          "ativo": true,
+          "tipo": {
+            "id": 1,
+            "nome": "Bebida"
+          },
+          "dataCompra": "2023-02-01T13:58:37.227Z",
+          "status": "ativo"
+        }
+      ],
+      "status": "fechado",
+      "desconto": 0,
+      "dataVenda": "2024-09-03T21:21:43.540Z",
+      "formaPagamento": "pix",
+      "dataQuitacao": "2024-09-03T21:22:32.517Z"
     }
   ],
   "socios": [

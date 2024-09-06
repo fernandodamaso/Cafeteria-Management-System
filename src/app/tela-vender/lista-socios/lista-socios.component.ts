@@ -1,14 +1,13 @@
-import { Component, Input, OnInit, Output, EventEmitter, SimpleChanges } from "@angular/core";
-import { nucleoModel } from "src/app/_models/nucleo.model";
-import { ProdutoModel } from "src/app/_models/produto.model";
-import { SocioModel } from "src/app/_models/socio.model";
-import { vendaModel } from "src/app/_models/venda.model";
-import { WindowSizeService } from "src/app/_services/window-size.service";
+import { Component, Input, OnInit, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { ProdutoModel } from 'src/app/_models/produto.model';
+import { SocioModel } from 'src/app/_models/socio.model';
+import { vendaModel } from 'src/app/_models/venda.model';
+import { WindowSizeService } from 'src/app/_services/window-size.service';
 
 @Component({
-  selector: "app-lista-socios",
-  templateUrl: "./lista-socios.component.html",
-  styleUrls: ["./lista-socios.component.scss"],
+  selector: 'app-lista-socios',
+  templateUrl: './lista-socios.component.html',
+  styleUrls: ['./lista-socios.component.scss'],
 })
 export class ListaSociosComponent implements OnInit {
   @Input() dataVendas: vendaModel[] = [];
@@ -18,13 +17,13 @@ export class ListaSociosComponent implements OnInit {
   @Input() listaNucleos: string[] = [];
   @Output() socioSelecionadoOutput = new EventEmitter<SocioModel>();
 
-  filterNome = "";
-  filterGrau = "";
-  filterNucleo = "";
+  filterNome = '';
+  filterGrau = '';
+  filterNucleo = '';
 
   socioSelecionadoIndex!: number;
   socioSelecionado: SocioModel;
-  windowSize = "";
+  windowSize = '';
   modalOpened = false;
 
   constructor(private windowSizeService: WindowSizeService) {}
@@ -34,10 +33,10 @@ export class ListaSociosComponent implements OnInit {
   }
 
   getTitle() {
-    if (this.windowSize == "desktop") {
-      return "Lista de Sócios:";
+    if (this.windowSize == 'desktop') {
+      return 'Lista de Sócios:';
     } else {
-      return "Vender para:";
+      return 'Vender para:';
     }
   }
 
@@ -57,7 +56,7 @@ export class ListaSociosComponent implements OnInit {
   }
 
   openModal() {
-    if (this.windowSize == "desktop") {
+    if (this.windowSize == 'desktop') {
       return;
     } else {
       this.modalOpened = true;
@@ -70,17 +69,13 @@ export class ListaSociosComponent implements OnInit {
 
   getSocio(socio: SocioModel, index: number) {
     if (this.socioSelecionado == socio) {
-      console.log(1);
       this.socioSelecionadoIndex = undefined!;
       this.socioSelecionado = undefined!;
       this.modalOpened = false;
     } else {
-      console.log(12);
       this.socioSelecionado = socio;
       this.socioSelecionadoIndex = index;
       this.modalOpened = false;
-      console.log(this.socioSelecionado);
-      console.log(this.socioSelecionadoIndex);
     }
     this.socioSelecionadoOutput.emit(this.socioSelecionado);
   }

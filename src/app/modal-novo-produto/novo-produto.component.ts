@@ -63,7 +63,6 @@ export class NovoProdutoComponent implements OnInit {
 
   ngOnInit() {
     if (this.produtoData) {
-      console.log(this.produtoData);
       this.ativo = this.informacoesProduto.ativo;
       this.nome = this.informacoesProduto.nome;
       this.precoCusto = this.informacoesProduto.precoCusto;

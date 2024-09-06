@@ -1,19 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { sociosService } from "../_services/socios.service";
-import { MatDialog } from "@angular/material/dialog";
-import { NovoSocioComponent } from "../modal-novo-socio/novo-socio.component";
-import { SocioModel } from "../_models/socio.model";
-import { PagarComponent } from "../modal-pagar/pagar.component";
-import { ReciboComponent } from "./reciboModal/recibo.component";
-import { vendasService } from "../_services/vendas.service";
-import { produtosService } from "../_services/produtos.service";
-import { ProdutoModel } from "../_models/produto.model";
-import { vendaModel } from "../_models/venda.model";
+import { Component, OnInit } from '@angular/core';
+import { sociosService } from '../_services/socios.service';
+import { MatDialog } from '@angular/material/dialog';
+import { NovoSocioComponent } from '../modal-novo-socio/novo-socio.component';
+import { SocioModel } from '../_models/socio.model';
+import { PagarComponent } from '../modal-pagar/pagar.component';
+import { ReciboComponent } from './reciboModal/recibo.component';
+import { vendasService } from '../_services/vendas.service';
+import { produtosService } from '../_services/produtos.service';
+import { ProdutoModel } from '../_models/produto.model';
+import { vendaModel } from '../_models/venda.model';
 
 @Component({
-  selector: "app-receber",
-  templateUrl: "./receber.component.html",
-  styleUrls: ["./receber.component.scss"],
+  selector: 'app-receber',
+  templateUrl: './receber.component.html',
+  styleUrls: ['./receber.component.scss'],
 })
 export class ReceberComponent implements OnInit {
   socioSelecionado: SocioModel;
@@ -22,17 +22,20 @@ export class ReceberComponent implements OnInit {
     private vendasService: vendasService,
     private produtosService: produtosService,
 
-    private matDialog: MatDialog
+    private matDialog: MatDialog,
   ) {}
 
-  filterSocios = "";
-  filterProdutos = "";
-  filterGrau = "";
-  filterTipo = "";
+  filterSocios = '';
+  filterProdutos = '';
+  filterGrau = '';
+  filterTipo = '';
+  filterNome = '';
+  filterNucleo = '';
   dataVendas: vendaModel[] = [];
   vendasAbertas: vendaModel[] = [];
   dataSocios: SocioModel[] = [];
   dataProdutos: ProdutoModel[] = [];
+  listaNucleos: string[] = [];
 
   ngOnInit(): void {
     this.getData();
@@ -43,18 +46,20 @@ export class ReceberComponent implements OnInit {
     this.dataVendas = await this.vendasService.getVendasArray();
     this.dataProdutos = await this.produtosService.getProdutosArray();
     this.getVendasAbertas();
-    // this.abrirRecibo(this.dataSocios[0])
+    this.getListaNucleos();
+  }
+
+  getListaNucleos() {
+    this.listaNucleos = Array.from(new Set(this.dataSocios.map((el) => el.nucleo.nome)));
   }
 
   getVendasAbertas() {
-    this.vendasAbertas = this.dataVendas.filter(
-      (venda: any) => venda.status === "aberto"
-    );
+    this.vendasAbertas = this.dataVendas.filter((venda: any) => venda.status === 'aberto');
   }
 
   adicionarNovoSocio() {
     const dialogRef = this.matDialog.open(NovoSocioComponent, {
-      panelClass: "NovoSocioComponent",
+      panelClass: 'NovoSocioComponent',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -67,7 +72,7 @@ export class ReceberComponent implements OnInit {
       next: (data) => data,
       error: (e) => console.error(e),
       complete: () => {
-        console.log("Sócio deletado");
+        console.log('Sócio deletado');
         this.getData();
       },
     });
@@ -75,7 +80,7 @@ export class ReceberComponent implements OnInit {
 
   abrirPagar(socio: SocioModel) {
     const dialogRef = this.matDialog.open(PagarComponent, {
-      panelClass: "PagarComponent",
+      panelClass: 'PagarComponent',
       data: {
         socioData: socio,
         vendasData: this.dataVendas,
@@ -89,7 +94,7 @@ export class ReceberComponent implements OnInit {
 
   abrirRecibo(socio: SocioModel) {
     const dialogRef = this.matDialog.open(ReciboComponent, {
-      panelClass: "reciboComponent",
+      panelClass: 'reciboComponent',
       data: {
         socioData: socio,
         vendas: this.vendasAbertas,
@@ -103,7 +108,7 @@ export class ReceberComponent implements OnInit {
 
   editarSocio(socio: SocioModel) {
     const dialogRef = this.matDialog.open(NovoSocioComponent, {
-      panelClass: "NovoSocioComponent",
+      panelClass: 'NovoSocioComponent',
       data: {
         socioData: socio,
       },
@@ -112,5 +117,15 @@ export class ReceberComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this.getData();
     });
+  }
+
+  buscaFilterNome(event: any) {
+    this.filterNome = event;
+  }
+  buscaFiltroGrau(event: any) {
+    this.filterGrau = event;
+  }
+  buscaFilterNucleo(event: any) {
+    this.filterNucleo = event;
   }
 }

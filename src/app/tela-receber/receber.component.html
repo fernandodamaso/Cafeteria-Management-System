@@ -3,26 +3,12 @@
     <h2>Lista de Sócios</h2>
   </div>
 
-  <div class="filtrosWrap">
-    <div class="filtros">
-      <input type="text" placeholder="Busca por nome" [(ngModel)]="filterSocios" />
-      <select name="grau" title="Filtro por Grau" [(ngModel)]="filterGrau">
-        <option value="">Filtro por Grau</option>
-        <option value="VI">Visitante</option>
-        <option value="QS">Quadro de Sócio</option>
-        <option value="CI">Corpo Instrutivo</option>
-        <option value="CDC">Corpo do Conselho</option>
-        <option value="QM">Quadro de Mestre</option>
-      </select>
-      <!-- <select name="grau" title="Filtro por debito">
-        <option value="#">Sócios com valor em aberto</option>
-        <option value="#">Todos os sócios</option>
-      </select> -->
-    </div>
-    <div class="botoes">
-      <button class="botao azul" (click)="adicionarNovoSocio()">Adicionar novo Sócio</button>
-    </div>
-  </div>
+  <app-filter
+  [listaNucleos]="listaNucleos"
+  [filterLocation]="'socios'"
+  (filterNomeOutput)="buscaFilterNome($event)"
+  (filterGrauOutput)="buscaFiltroGrau($event)"
+  (filterNucleoOutput)="buscaFilterNucleo($event)"></app-filter>
 
   <div class="receberWrap">
     <table class="socios">
@@ -43,8 +29,9 @@
         <tr
           *ngFor="
             let socio of dataSocios
-              | buscaPalavras : filterSocios
+              | buscaPalavras : filterNome
               | buscaGrau : filterGrau
+              | buscaNucleo : filterNucleo
               | ordenarSocios
           "
         >

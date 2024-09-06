@@ -5,14 +5,18 @@
     <ng-container *ngIf="socioSelecionado; else noSocio">
       {{ socioSelecionado.nome }}
     </ng-container>
-    <ng-template #noSocio> Selecione um sócio </ng-template>
+    <ng-template #noSocio>Selecione um sócio</ng-template>
   </p>
 </div>
 
 <div class="modal-mobile" [ngClass]="{ active: modalOpened }">
   <div class="tabelaWrap" [ngClass]="{ mobile: windowSize === 'mobile' }">
-
-    <app-filter [listaNucleos]="listaNucleos" [filterLocation]="'socios'" (filterNomeOutput)="buscaFilterNome($event)" (filterGrauOutput)="buscaFiltroGrau($event)" (filterNucleoOutput)="buscaFilterNucleo($event)"></app-filter>
+    <app-filter
+      [listaNucleos]="listaNucleos"
+      [filterLocation]="'socios'"
+      (filterNomeOutput)="buscaFilterNome($event)"
+      (filterGrauOutput)="buscaFiltroGrau($event)"
+      (filterNucleoOutput)="buscaFilterNucleo($event)"></app-filter>
 
     <div class="tableScroll">
       <table class="socios">
@@ -30,14 +34,9 @@
             [class.active]="socioSelecionadoIndex === i"
             (click)="getSocio(socio, i)"
             *ngFor="
-              let socio of dataSocios
-                | buscaPalavras : filterNome
-                | buscaGrau : filterGrau
-                | buscaNucleo : filterNucleo
-                | ordenarSocios;
+              let socio of dataSocios | buscaPalavras : filterNome | buscaGrau : filterGrau | buscaNucleo : filterNucleo | ordenarSocios;
               let i = index
-            "
-          >
+            ">
             <td>
               <span
                 [ngClass]="{
@@ -47,8 +46,7 @@
                   grauQS: socio.grau === 'QS',
                   grauVI: socio.grau === 'VI'
                 }"
-                class="tag"
-              >
+                class="tag">
                 {{ socio.grau }}
               </span>
             </td>
@@ -64,9 +62,9 @@
                 [ngClass]="{
                   saldoPositivo: (socio | calculoDebito : vendasAbertas) > 0,
                   saldoNegativo: (socio | calculoDebito : vendasAbertas) < 0
-                }"
-                >{{ socio | calculoDebito : vendasAbertas | currency : "R$" }}</span
-              >
+                }">
+                {{ socio | calculoDebito : vendasAbertas | currency : 'R$' }}
+              </span>
             </td>
           </tr>
         </tbody>
