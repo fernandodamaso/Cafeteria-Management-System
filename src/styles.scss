@@ -563,6 +563,8 @@ form,
   width: 100%;
   max-width: 850px !important;
   overflow: auto;
+  max-height: 90vh;
+  position: relative!important;
 }
 
 .botoes {

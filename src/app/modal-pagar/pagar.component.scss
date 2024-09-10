@@ -1,8 +1,11 @@
+:host {
+}
+
 .box {
   display: flex;
-  max-height: 750px;
+  // max-height: 750px;
   overflow: auto;
-
+  margin-bottom: 75px;
   @media (max-width: 750px) {
     flex-direction: column;
   }
@@ -263,6 +266,10 @@
 }
 
 .base {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   .botoes {
     background-color: #fff;
   }
