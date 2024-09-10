@@ -11,7 +11,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatDialogModule } from "@angular/material/dialog";
-import { ReciboComponent } from "../tela-receber/reciboModal/recibo.component";
+import { ReciboComponent } from "../page-receber/reciboModal/recibo.component";
 import { OrdenarSociosPipe } from "./ordernarSociosPipe/ordenar-socios.pipe";
 import { OrdernarProdutosPipe } from "./ordenarProdutosPipe/ordernar-produtos.pipe";
 import { buscaNucleoPipe } from "./filtroNucleoPipe/filtro-nucleo.pipe";

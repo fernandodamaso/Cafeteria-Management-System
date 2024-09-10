@@ -4,11 +4,11 @@ import { AuthGuard } from './_services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'vender', pathMatch: 'full' },
-  { path: 'historico', loadChildren: () => import('./tela-historico/historico.module').then((m) => m.HistoricoModule), canActivate: [AuthGuard] },
-  { path: 'vender', loadChildren: () => import('./tela-vender/vender.module').then((m) => m.VenderModule), canActivate: [AuthGuard] },
-  { path: 'receber', loadChildren: () => import('./tela-receber/receber.module').then((m) => m.ReceberModule), canActivate: [AuthGuard] },
-  { path: 'produtos', loadChildren: () => import('./tela-produtos/produtos.module').then((m) => m.ProdutosModule), canActivate: [AuthGuard] },
-  { path: 'login', loadChildren: () => import('./tela-login/tela-login.module').then((m) => m.TelaLoginModule) },
+  { path: 'historico', loadChildren: () => import('./page-historico/historico.module').then((m) => m.HistoricoModule), canActivate: [AuthGuard] },
+  { path: 'vender', loadChildren: () => import('./page-vender/vender.module').then((m) => m.VenderModule), canActivate: [AuthGuard] },
+  { path: 'receber', loadChildren: () => import('./page-receber/receber.module').then((m) => m.ReceberModule), canActivate: [AuthGuard] },
+  { path: 'produtos', loadChildren: () => import('./page-produtos/produtos.module').then((m) => m.ProdutosModule), canActivate: [AuthGuard] },
+  { path: 'login', loadChildren: () => import('./page-login/login.module').then((m) => m.LoginModule) },
 ];
 
 @NgModule({
