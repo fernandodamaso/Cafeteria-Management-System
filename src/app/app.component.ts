@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
+import { AuthService } from './_services/authService.service';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit() {}
-
 }
