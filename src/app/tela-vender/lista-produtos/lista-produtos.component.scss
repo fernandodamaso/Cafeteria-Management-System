@@ -33,10 +33,10 @@
 
 tr {
   &.active {
-    background-color: rgb(52, 152, 219) !important;
+    background-color: rgb(212 231 243) !important;
     .nome,
     .debito {
-      color: #fff !important;
+      color: rgb(52, 152, 219) !important;
     }
   }
 }

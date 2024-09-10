@@ -230,14 +230,12 @@ table {
       .acoes {
         display: flex;
         opacity: 0;
-        background: #69b0df;
+        background: #fff;
         padding: 5px 5px;
         border-radius: 7px;
         button {
           background: none;
-          color: #3498db;
-          border-color: #fff;
-          background: #fff;
+          background: #3498db;
           cursor: pointer;
           &.removerProduto,
           &.AdicionarProduto {
@@ -250,12 +248,12 @@ table {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #3498db;
+            color: #fff;
             margin: 0 3px;
           }
 
           &.qtdProduto {
-            color: #fff;
+            color: #3498db;
             background: none;
             margin: 0 3px;
             font-size: 14px;
