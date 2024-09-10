@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { sociosService } from '../_services/socios.service';
 import { MatDialog } from '@angular/material/dialog';
-import { NovoSocioComponent } from '../modal-novo-socio/novo-socio.component';
+import { NovoSocioComponent } from './modal-novo-socio/novo-socio.component';
 import { SocioModel } from '../_models/socio.model';
 import { PagarComponent } from '../modal-pagar/pagar.component';
 import { ReciboComponent } from './reciboModal/recibo.component';

@@ -1,11 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ProdutoModel } from '../_models/produto.model';
-import { tipoModel } from '../_models/tipo.model';
-import { tipoService } from '../_services/tipos.service';
-import { produtosService } from '../_services/produtos.service';
+import { ProdutoModel } from 'src/app/_models/produto.model';
+import { tipoModel } from 'src/app/_models/tipo.model';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { produtosService } from 'src/app/_services/produtos.service';
+import { tipoService } from 'src/app/_services/tipos.service';
 
 export interface dialogData {
   editar: boolean;

@@ -1,11 +1,11 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { NovoNucleoComponent } from "../modal-novo-nucleo/novo-nucleo.component";
-import { nucleoModel } from "../_models/nucleo.model";
-import { SocioModel } from "../_models/socio.model";
-import { nucleosService } from "../_services/nucleos.service";
-import { sociosService } from "../_services/socios.service";
+import { NovoNucleoComponent } from "../../modal-novo-nucleo/novo-nucleo.component";
+import { nucleoModel } from "../../_models/nucleo.model";
+import { SocioModel } from "../../_models/socio.model";
+import { nucleosService } from "../../_services/nucleos.service";
+import { sociosService } from "../../_services/socios.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 export interface dialogData {

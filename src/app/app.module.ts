@@ -12,8 +12,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask';
-import { NovoSocioComponent } from './modal-novo-socio/novo-socio.component';
-import { NovoProdutoComponent } from './modal-novo-produto/novo-produto.component';
 import { NovoNucleoComponent } from './modal-novo-nucleo/novo-nucleo.component';
 import { AuthService } from './_services/authService.service';
 import { AuthGuard } from './_services/auth.guard';
@@ -21,7 +19,7 @@ import { AuthGuard } from './_services/auth.guard';
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
-  declarations: [AppComponent, NovoSocioComponent, NovoProdutoComponent, NovoNucleoComponent],
+  declarations: [AppComponent, NovoNucleoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
