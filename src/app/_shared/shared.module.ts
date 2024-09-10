@@ -18,6 +18,7 @@ import { buscaNucleoPipe } from "./filtroNucleoPipe/filtro-nucleo.pipe";
 import { checarProdutosAbertosPipe } from "./checarProdutosAbertosPipe/checar-produtos-abertos.pipe";
 import { agrupaProdutosPipe } from "./agrupaProdutosPipe/agrupa-produtos-pipe";
 import { FilterComponent } from './filter/filter.component';
+import { DialogConfirmacaoComponent } from './dialog-confirmacao/dialog-confirmacao.component';
 
 // Modulo para ser compartilhado com toda a aplicação, aqui estão declaradas e exportados os pipes
 
@@ -35,6 +36,7 @@ import { FilterComponent } from './filter/filter.component';
     checarProdutosAbertosPipe,
     agrupaProdutosPipe,
     FilterComponent,
+    DialogConfirmacaoComponent,
   ],
   exports: [
     BuscaGrauPipe,

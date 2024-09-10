@@ -1,0 +1,13 @@
+<div class="topo">
+  <h2 mat-dialog-title>{{ titulo }}</h2>
+</div>
+<div class="corpo">
+  <p>{{ mensagem }}</p>
+</div>
+
+<div class="base">
+  <div class="botoes">
+    <button class="botao cinza" mat-button (click)="closeModal('Não')">Não</button>
+    <button class="botao azul" mat-button (click)="closeModal('Sim')" cdkFocusInitial>Sim</button>
+  </div>
+</div>

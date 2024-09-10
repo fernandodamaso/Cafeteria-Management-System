@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use "@angular/material" as mat;
+@use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -34,7 +34,7 @@ $ng-cantina-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($ng-cantina-theme);
 
-@import "assets/normalize.css";
+@import 'assets/normalize.css';
 
 * {
   font-family: Montserrat /* Replace with your custom font */, sans-serif !important;
@@ -45,7 +45,7 @@ $corTexto: #5e5873;
 
 body {
   height: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: $corTexto;
   font-size: 14px;
   font-weight: 400;
@@ -68,7 +68,7 @@ p,
 li,
 a {
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: $corTexto;
   font-weight: 400;
   margin: 0;
@@ -78,7 +78,7 @@ a {
 h2,
 h1 {
   font-size: 19px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: $corTexto;
   font-weight: initial;
   font-weight: 500;
@@ -112,7 +112,7 @@ body {
 input,
 select {
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   border: 1px solid #d5d9e1;
   color: $corTexto;
   height: 37px;
@@ -121,7 +121,7 @@ select {
   padding-bottom: 0;
   padding-left: 10px;
 
-  &[type="text"] {
+  &[type='text'] {
   }
 }
 
@@ -139,8 +139,6 @@ a {
   @media (max-width: 1024px) {
     overflow: auto;
   }
-
-
 
   .tituloBox {
     padding: 20px;
@@ -186,7 +184,7 @@ table {
       padding: 12px 0;
       background: #f4f5f7;
       font-size: 12px;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       color: $corTexto;
       font-weight: 600;
       text-align: left;
@@ -204,7 +202,7 @@ table {
 
     td {
       padding: 7px 20px;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       color: $corTexto;
       transition: all ease-in-out 0.1s;
 
@@ -448,7 +446,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .mat-form-field-infix {
@@ -502,7 +500,7 @@ body {
 .mat-typography .mat-body,
 .mat-typography .mat-body-1,
 .mat-typography {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: 'Montserrat', sans-serif !important;
   color: #5e5873 !important;
   font-size: 14px !important;
   font-weight: 400 !important;
@@ -515,7 +513,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .alignRight {
@@ -552,6 +550,11 @@ form,
   }
 }
 
+.dialogConfirmacao {
+  width: 100%;
+  max-width: 450px !important;
+
+}
 .NovoSocioComponent,
 .NovoProdutoComponent {
   width: 100%;

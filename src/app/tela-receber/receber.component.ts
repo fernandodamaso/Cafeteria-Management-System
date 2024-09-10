@@ -9,6 +9,7 @@ import { vendasService } from '../_services/vendas.service';
 import { produtosService } from '../_services/produtos.service';
 import { ProdutoModel } from '../_models/produto.model';
 import { vendaModel } from '../_models/venda.model';
+import { DialogConfirmacaoComponent } from '../_shared/dialog-confirmacao/dialog-confirmacao.component';
 
 @Component({
   selector: 'app-receber',
@@ -64,6 +65,22 @@ export class ReceberComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       this.getData();
+    });
+  }
+
+  deletarSocioModal(id: number) {
+    const dialogRef = this.matDialog.open(DialogConfirmacaoComponent, {
+      panelClass: 'dialogConfirmacao',
+      data: {
+        titulo: 'Deletar Sócio',
+        mensagem: 'Deseja realmente deletar este sócio?',
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result == 'Sim') {
+        this.deletarSocio(id);
+      }
     });
   }
 

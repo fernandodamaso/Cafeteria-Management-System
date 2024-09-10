@@ -1,11 +1,11 @@
-import { Component, Inject, OnInit } from "@angular/core";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
-import { ProdutoModel } from "../_models/produto.model";
-import { tipoModel } from "../_models/tipo.model";
-import { tipoService } from "../_services/tipos.service";
-import { produtosService } from "../_services/produtos.service";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProdutoModel } from '../_models/produto.model';
+import { tipoModel } from '../_models/tipo.model';
+import { tipoService } from '../_services/tipos.service';
+import { produtosService } from '../_services/produtos.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 export interface dialogData {
   editar: boolean;
@@ -13,9 +13,9 @@ export interface dialogData {
 }
 
 @Component({
-  selector: "app-novo-produto",
-  templateUrl: "./novo-produto.component.html",
-  styleUrls: ["./novo-produto.component.scss"],
+  selector: 'app-novo-produto',
+  templateUrl: './novo-produto.component.html',
+  styleUrls: ['./novo-produto.component.scss'],
 })
 export class NovoProdutoComponent implements OnInit {
   public model: ProdutoModel;
@@ -27,7 +27,7 @@ export class NovoProdutoComponent implements OnInit {
     public dialogRef: MatDialogRef<NovoProdutoComponent>,
     private produtosService: produtosService,
     private categoriasService: tipoService,
-    @Inject(MAT_DIALOG_DATA) public produtoData: dialogData
+    @Inject(MAT_DIALOG_DATA) public produtoData: dialogData,
   ) {
     this.model = new ProdutoModel();
     this.formGroup = this.formBuilder.group(this.model);
@@ -37,10 +37,7 @@ export class NovoProdutoComponent implements OnInit {
       this.id = this.informacoesProduto.id;
       this.formGroup.patchValue(this.informacoesProduto);
     }
-    this.formGroup.addControl(
-      "tipoProduto",
-      new FormControl(this.informacoesProduto?.tipo?.id || 0)
-    );
+    this.formGroup.addControl('tipoProduto', new FormControl(this.informacoesProduto?.tipo?.id || 0));
   }
 
   initValidators() {
@@ -51,7 +48,7 @@ export class NovoProdutoComponent implements OnInit {
     this.formGroup.controls.ativo.setValidators(Validators.required);
   }
 
-  nome = "";
+  nome = '';
   id: number;
   precoCusto: number;
   precoVenda: number;
@@ -76,7 +73,7 @@ export class NovoProdutoComponent implements OnInit {
     this.produtosService.deletarProduto(this.id).subscribe({
       next: (data) => data,
       error: (e) => console.error(e),
-      complete: () => this.dialogRef.close("Pizza!"),
+      complete: () => this.dialogRef.close('Pizza!'),
     });
   }
 
@@ -89,7 +86,7 @@ export class NovoProdutoComponent implements OnInit {
   }
 
   abrirSnack(mensagem: string, classe: string, tempo: number) {
-    this.snackBar.open(mensagem, "fechar", {
+    this.snackBar.open(mensagem, 'fechar', {
       duration: tempo,
       panelClass: classe,
     });
@@ -107,10 +104,10 @@ export class NovoProdutoComponent implements OnInit {
         next: (data) => data,
         error: (e) => {
           console.error(e);
-          this.abrirSnack("Erro ao editar produto", "erro", 3000);
+          this.abrirSnack('Erro ao editar produto', 'erro', 3000);
         },
         complete: () => {
-          this.abrirSnack("Produto editado com sucesso", "sucesso", 3000);
+          this.abrirSnack('Produto editado com sucesso', 'sucesso', 3000);
           this.dialogRef.close();
         },
       });
@@ -119,10 +116,10 @@ export class NovoProdutoComponent implements OnInit {
         next: (data) => data,
         error: (e) => {
           console.error(e);
-          this.abrirSnack("Erro ao adicionar Produto", "erro", 3000);
+          this.abrirSnack('Erro ao adicionar Produto', 'erro', 3000);
         },
         complete: () => {
-          this.abrirSnack("Produto adicionado com sucesso", "sucesso", 3000);
+          this.abrirSnack('Produto adicionado com sucesso', 'sucesso', 3000);
           this.dialogRef.close();
         },
       });
