@@ -7,7 +7,7 @@ import { SharedModule } from '../_shared/shared.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { NovoSocioComponent } from './modal-novo-socio/novo-socio.component';
+import { NovoSocioComponent } from './novo-socio/novo-socio.component';
 @NgModule({
   declarations: [ReceberComponent, NovoSocioComponent],
   imports: [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
-import { NovoProdutoComponent } from "./modal-novo-produto/novo-produto.component";
+import { NovoProdutoComponent } from "./novo-produto/novo-produto.component";
 import { ProdutoModel } from "../_models/produto.model";
 import { produtosService } from "../_services/produtos.service";
 import { tipoModel } from "../_models/tipo.model";
