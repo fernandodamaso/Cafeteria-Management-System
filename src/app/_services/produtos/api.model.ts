@@ -29,3 +29,19 @@ export class ApiProductCategory {
     updatedAt: Date;
     deletedAt?: Date;
 }
+
+export class ApiCreateProductDto {
+    name: string;
+    description?: string;
+    value?: number;
+    categoryId?: number;
+}
+
+export class ApiUpdateProductDto {
+    name?: string;
+    description?: string;
+    value?: number;
+    categoryId?: number;
+}
+
+

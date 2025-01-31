@@ -3,7 +3,7 @@ import { ProdutoModel } from "../../_models/produto.model";
 import { HttpClient } from "@angular/common/http";
 import { first, map, Observable } from "rxjs";
 import { ProdutosService } from "./produtos.service";
-import { ApiProduct } from "./api.model";
+import { ApiCreateProductDto, ApiProduct, ApiUpdateProductDto } from "./api.model";
 
 @Injectable({
   providedIn: "root",
@@ -34,21 +34,21 @@ export class ProdutosServiceApiProductsImpl implements ProdutosService {
   }
 
   adicionarProduto(produto: ProdutoModel): Observable<ProdutoModel> {
-    return this.http.post<ApiProduct>("http://localhost:3000/produtos", produto)
+    return this.http.post<ApiProduct>("http://localhost:3000/products", this.toApiCreateProductDto(produto))
       .pipe(
         map(product => this.toProdutoModel(product))
       );
   }
 
   editarProduto(produto: ProdutoModel, id: number): Observable<ProdutoModel> {
-    return this.http.put<ApiProduct>("http://localhost:3000/produtos/" + id, produto)
-    .pipe(
-      map(product => this.toProdutoModel(product))
-    );
+    return this.http.patch<ApiProduct>("http://localhost:3000/products/" + id, this.toApiUpdateProductDto(produto))
+      .pipe(
+        map(product => this.toProdutoModel(product))
+      );
   }
 
   deletarProduto(id: number): Observable<ProdutoModel> {
-    return this.http.delete<ProdutoModel>("http://localhost:3000/produtos/" + id);
+    return this.http.delete<ProdutoModel>("http://localhost:3000/products/" + id);
   }
 
   private toProdutoModel(product: ApiProduct): ProdutoModel {
@@ -67,4 +67,23 @@ export class ProdutosServiceApiProductsImpl implements ProdutosService {
       status: product.isActive ? "ativo" : "inativo"
     }
   }
+
+  private toApiCreateProductDto(produto: ProdutoModel): ApiCreateProductDto {
+    return {
+      name: produto.nome,
+      value: produto.precoVenda,
+      categoryId: produto.tipo.id,
+      description: undefined // TODO
+    }
+  }
+
+  private toApiUpdateProductDto(produto: ProdutoModel): ApiUpdateProductDto {
+    return {
+      name: produto.nome,
+      value: produto.precoVenda,
+      categoryId: produto.tipo.id,
+      description: undefined // TODO
+    }
+  }
+
 }

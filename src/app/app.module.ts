@@ -16,6 +16,7 @@ import { NovoNucleoComponent } from './modal-novo-nucleo/novo-nucleo.component';
 import { AuthService } from './_services/authService.service';
 import { AuthGuard } from './_services/auth.guard';
 import { ProdutosService, ProdutosServiceApiProductsImpl } from './_services/produtos';
+import { TiposService, TiposServiceApiProductCategoryImpl } from './_services/tipos';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -41,6 +42,9 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     AuthGuard,
     {
       provide: ProdutosService, useClass: ProdutosServiceApiProductsImpl
+    },
+    { 
+      provide: TiposService, useClass: TiposServiceApiProductCategoryImpl
     }
   ],
 
