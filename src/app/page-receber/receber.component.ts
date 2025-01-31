@@ -6,7 +6,7 @@ import { SocioModel } from '../_models/socio.model';
 import { PagarComponent } from '../modal-pagar/pagar.component';
 import { ReciboComponent } from './reciboModal/recibo.component';
 import { vendasService } from '../_services/vendas.service';
-import { produtosService } from '../_services/produtos.service';
+import { ProdutosService } from '../_services/produtos/produtos.service';
 import { ProdutoModel } from '../_models/produto.model';
 import { vendaModel } from '../_models/venda.model';
 import { DialogConfirmacaoComponent } from '../_shared/dialog-confirmacao/dialog-confirmacao.component';
@@ -21,7 +21,7 @@ export class ReceberComponent implements OnInit {
   constructor(
     private sociosService: sociosService,
     private vendasService: vendasService,
-    private produtosService: produtosService,
+    private produtosService: ProdutosService,
 
     private matDialog: MatDialog,
   ) {}

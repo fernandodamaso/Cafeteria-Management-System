@@ -8,7 +8,7 @@ import { ProdutoModel } from "src/app/_models/produto.model";
 import { PagarComponent } from "src/app/modal-pagar/pagar.component";
 import { vendaModel } from "src/app/_models/venda.model";
 import { vendasService } from "src/app/_services/vendas.service";
-import { produtosService } from "src/app/_services/produtos.service";
+import { ProdutosService } from "src/app/_services/produtos/produtos.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { produtosAgrupados } from "src/app/_models/produtosAgrupados.model";
 
@@ -34,7 +34,7 @@ export class BarraVendaComponent implements OnInit {
     private snackBar: MatSnackBar,
     private matDialog: MatDialog,
     private vendasService: vendasService,
-    private produtosService: produtosService
+    private produtosService: ProdutosService
   ) {}
 
   nenhumProdutoSelecionado = false;

@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cantina-app
+    env_file: ".env"
+    ports:
+      - '4200:4200'
+    networks:
+      - cantina-network
+    volumes:
+      - '/app/node_modules'
+      - './:/app'
+
+networks:
+  cantina-network:
+    driver: bridge

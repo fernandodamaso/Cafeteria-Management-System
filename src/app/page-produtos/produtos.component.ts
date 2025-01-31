@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { NovoProdutoComponent } from "./novo-produto/novo-produto.component";
 import { ProdutoModel } from "../_models/produto.model";
-import { produtosService } from "../_services/produtos.service";
+import { ProdutosService } from "../_services/produtos/produtos.service";
 import { tipoModel } from "../_models/tipo.model";
 
 @Component({
@@ -10,7 +10,7 @@ import { tipoModel } from "../_models/tipo.model";
   styleUrls: ["./produtos.component.scss"],
 })
 export class ProdutosComponent implements OnInit {
-  constructor(private produtosService: produtosService, private matDialog: MatDialog) {}
+  constructor(private produtosService: ProdutosService, private matDialog: MatDialog) {}
 
   dataProdutos: ProdutoModel[] = [];
   filterNome = "";
@@ -29,11 +29,11 @@ export class ProdutosComponent implements OnInit {
   }
 
   getListaTipos() {
-    let listaTodosTipos: tipoModel[] = [];
-    this.dataProdutos.forEach((produto) => {
-      listaTodosTipos.push(produto.tipo);
-    });
-    this.listaTipos = Array.from(new Set(listaTodosTipos.map((el) => el.nome)));
+    // let listaTodosTipos: tipoModel[] = [];
+    // this.dataProdutos.forEach((produto) => {
+    //   listaTodosTipos.push(produto.tipo);
+    // });
+    // this.listaTipos = Array.from(new Set(listaTodosTipos.map((el) => el.nome)));
   }
 
   getData() {

@@ -15,6 +15,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { NovoNucleoComponent } from './modal-novo-nucleo/novo-nucleo.component';
 import { AuthService } from './_services/authService.service';
 import { AuthGuard } from './_services/auth.guard';
+import { ProdutosService, ProdutosServiceApiProductsImpl } from './_services/produtos';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -35,7 +36,13 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     NgxMaskModule.forRoot(),
   ],
 
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService, 
+    AuthGuard,
+    {
+      provide: ProdutosService, useClass: ProdutosServiceApiProductsImpl
+    }
+  ],
 
   bootstrap: [AppComponent],
 })

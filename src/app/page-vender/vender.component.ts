@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Subject } from "rxjs";
 import { SocioModel } from "../_models/socio.model";
 import { ProdutoModel } from "../_models/produto.model";
-import { produtosService } from "../_services/produtos.service";
+import { ProdutosService } from "../_services/produtos/produtos.service";
 import { sociosService } from "../_services/socios.service";
 import { tipoModel } from "../_models/tipo.model";
 import { vendasService } from "../_services/vendas.service";
@@ -22,7 +22,7 @@ export class VenderComponent implements OnInit {
   constructor(
     private sociosService: sociosService,
     private vendasService: vendasService,
-    private produtosService: produtosService
+    private produtosService: ProdutosService
   ) {}
 
   dataVendas: vendaModel[] = [];

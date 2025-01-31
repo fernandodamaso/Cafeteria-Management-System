@@ -6,7 +6,7 @@ import { ProdutoModel } from "src/app/_models/produto.model";
 import { SocioModel } from "src/app/_models/socio.model";
 import { tipoModel } from "src/app/_models/tipo.model";
 import { vendaModel } from "src/app/_models/venda.model";
-import { produtosService } from "src/app/_services/produtos.service";
+import { ProdutosService } from "src/app/_services/produtos/produtos.service";
 import { sociosService } from "src/app/_services/socios.service";
 import { vendasService } from "src/app/_services/vendas.service";
 import { DatePipe } from "@angular/common";
@@ -38,7 +38,7 @@ export class PagarComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<PagarComponent>,
-    private produtosService: produtosService,
+    private produtosService: ProdutosService,
     private sociosService: sociosService,
     private vendasService: vendasService,
     @Inject(MAT_DIALOG_DATA) public el: dialogData

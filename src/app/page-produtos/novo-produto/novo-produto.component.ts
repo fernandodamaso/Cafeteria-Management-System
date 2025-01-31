@@ -4,7 +4,7 @@ import { ProdutoModel } from 'src/app/_models/produto.model';
 import { tipoModel } from 'src/app/_models/tipo.model';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { produtosService } from 'src/app/_services/produtos.service';
+import { ProdutosService } from "../../_services/produtos/produtos.service";
 import { tipoService } from 'src/app/_services/tipos.service';
 
 export interface dialogData {
@@ -25,7 +25,7 @@ export class NovoProdutoComponent implements OnInit {
     private snackBar: MatSnackBar,
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<NovoProdutoComponent>,
-    private produtosService: produtosService,
+    private produtosService: ProdutosService,
     private categoriasService: tipoService,
     @Inject(MAT_DIALOG_DATA) public produtoData: dialogData,
   ) {
