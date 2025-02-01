@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialogRef } from "@angular/material/dialog";
 import { nucleoModel } from "../_models/nucleo.model";
-import { nucleosService } from "../_services/nucleos.service";
+import { NucleosService } from "../_services/nucleos/nucleos.service";
 
 @Component({
   selector: "app-novo-nucleo",
@@ -11,7 +11,7 @@ import { nucleosService } from "../_services/nucleos.service";
 export class NovoNucleoComponent implements OnInit {
 
   constructor(
-    private nucleosService: nucleosService,
+    private nucleosService: NucleosService,
     public dialogRef: MatDialogRef<NovoNucleoComponent>
   ) {}
 

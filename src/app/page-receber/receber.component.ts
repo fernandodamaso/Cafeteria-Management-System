@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { sociosService } from '../_services/socios.service';
+import { SociosService } from '../_services/socios/socios.service';
 import { MatDialog } from '@angular/material/dialog';
 import { NovoSocioComponent } from './novo-socio/novo-socio.component';
 import { SocioModel } from '../_models/socio.model';
 import { PagarComponent } from '../modal-pagar/pagar.component';
 import { ReciboComponent } from './reciboModal/recibo.component';
-import { vendasService } from '../_services/vendas.service';
+import { VendasService } from '../_services/vendas/vendas.service';
 import { ProdutosService } from '../_services/produtos/produtos.service';
 import { ProdutoModel } from '../_models/produto.model';
 import { vendaModel } from '../_models/venda.model';
@@ -19,8 +19,8 @@ import { DialogConfirmacaoComponent } from '../_shared/dialog-confirmacao/dialog
 export class ReceberComponent implements OnInit {
   socioSelecionado: SocioModel;
   constructor(
-    private sociosService: sociosService,
-    private vendasService: vendasService,
+    private sociosService: SociosService,
+    private vendasService: VendasService,
     private produtosService: ProdutosService,
 
     private matDialog: MatDialog,

@@ -3,9 +3,9 @@ import { Subject } from "rxjs";
 import { SocioModel } from "../_models/socio.model";
 import { ProdutoModel } from "../_models/produto.model";
 import { ProdutosService } from "../_services/produtos/produtos.service";
-import { sociosService } from "../_services/socios.service";
+import { SociosService } from "../_services/socios/socios.service";
 import { tipoModel } from "../_models/tipo.model";
-import { vendasService } from "../_services/vendas.service";
+import { VendasService } from "../_services/vendas/vendas.service";
 import { vendaModel } from "../_models/venda.model";
 import { OrdenarSociosPipe } from "../_shared/ordernarSociosPipe/ordenar-socios.pipe";
 import { OrdernarProdutosPipe } from "../_shared/ordenarProdutosPipe/ordernar-produtos.pipe";
@@ -20,8 +20,8 @@ import { produtosAgrupados } from "../_models/produtosAgrupados.model";
 })
 export class VenderComponent implements OnInit {
   constructor(
-    private sociosService: sociosService,
-    private vendasService: vendasService,
+    private sociosService: SociosService,
+    private vendasService: VendasService,
     private produtosService: ProdutosService
   ) {}
 

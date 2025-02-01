@@ -17,6 +17,12 @@ import { AuthService } from './_services/authService.service';
 import { AuthGuard } from './_services/auth.guard';
 import { ProdutosService, ProdutosServiceApiProductsImpl } from './_services/produtos';
 import { TiposService, TiposServiceApiProductCategoryImpl } from './_services/tipos';
+import { SociosService } from './_services/socios/socios.service';
+import { SociosServiceApiUserImpl } from './_services/socios/socios.api';
+import { NucleosService } from './_services/nucleos/nucleos.service';
+import { NucleosServiceApiNucleosImpl } from './_services/nucleos/nucleos.api';
+import { VendasService } from './_services/vendas/vendas.service';
+import { VendasServiceApiOrderImpl } from './_services/vendas/vendas.api';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -45,6 +51,15 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     },
     { 
       provide: TiposService, useClass: TiposServiceApiProductCategoryImpl
+    },
+    { 
+      provide: SociosService, useClass: SociosServiceApiUserImpl
+    },
+    { 
+      provide: NucleosService, useClass: NucleosServiceApiNucleosImpl
+    },
+    { 
+      provide: VendasService, useClass: VendasServiceApiOrderImpl
     }
   ],
 

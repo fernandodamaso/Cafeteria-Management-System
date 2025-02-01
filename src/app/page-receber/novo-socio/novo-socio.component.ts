@@ -4,8 +4,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dial
 import { NovoNucleoComponent } from "../../modal-novo-nucleo/novo-nucleo.component";
 import { nucleoModel } from "../../_models/nucleo.model";
 import { SocioModel } from "../../_models/socio.model";
-import { nucleosService } from "../../_services/nucleos.service";
-import { sociosService } from "../../_services/socios.service";
+import { NucleosService } from "../../_services/nucleos/nucleos.service";
+import { SociosService } from "../../_services/socios/socios.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 export interface dialogData {
@@ -25,8 +25,8 @@ export class NovoSocioComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<NovoSocioComponent>,
-    private sociosService: sociosService,
-    private nucleosService: nucleosService,
+    private sociosService: SociosService,
+    private nucleosService: NucleosService,
     private matDialog: MatDialog,
     private formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public socioData: dialogData

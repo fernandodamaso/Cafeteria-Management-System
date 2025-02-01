@@ -7,8 +7,8 @@ import { SocioModel } from "src/app/_models/socio.model";
 import { tipoModel } from "src/app/_models/tipo.model";
 import { vendaModel } from "src/app/_models/venda.model";
 import { ProdutosService } from "src/app/_services/produtos/produtos.service";
-import { sociosService } from "src/app/_services/socios.service";
-import { vendasService } from "src/app/_services/vendas.service";
+import { SociosService } from "src/app/_services/socios/socios.service";
+import { VendasService } from "src/app/_services/vendas/vendas.service";
 import { DatePipe } from "@angular/common";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { delay } from "rxjs";
@@ -39,8 +39,8 @@ export class PagarComponent implements OnInit {
     private snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<PagarComponent>,
     private produtosService: ProdutosService,
-    private sociosService: sociosService,
-    private vendasService: vendasService,
+    private sociosService: SociosService,
+    private vendasService: VendasService,
     @Inject(MAT_DIALOG_DATA) public el: dialogData
   ) {
     if (el) {
@@ -263,7 +263,7 @@ export class PagarComponent implements OnInit {
       }
 
       try {
-        await this.vendasService.editarVendas(venda).toPromise();
+        await this.vendasService.editarVenda(venda).toPromise();
         await this.sociosService
           .editarSocio(this.informacoesSocio, this.informacoesSocio.id)
           .toPromise();

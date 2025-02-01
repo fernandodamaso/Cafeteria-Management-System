@@ -7,7 +7,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { ProdutoModel } from "src/app/_models/produto.model";
 import { PagarComponent } from "src/app/modal-pagar/pagar.component";
 import { vendaModel } from "src/app/_models/venda.model";
-import { vendasService } from "src/app/_services/vendas.service";
+import { VendasService } from "src/app/_services/vendas/vendas.service";
 import { ProdutosService } from "src/app/_services/produtos/produtos.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { produtosAgrupados } from "src/app/_models/produtosAgrupados.model";
@@ -33,7 +33,7 @@ export class BarraVendaComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private matDialog: MatDialog,
-    private vendasService: vendasService,
+    private vendasService: VendasService,
     private produtosService: ProdutosService
   ) {}
 
