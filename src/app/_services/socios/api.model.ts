@@ -6,6 +6,7 @@ export class ApiUser {
     mobileNumber: string;
     degree: ApiDegree;
     nucleo: ApiNucleo;
+    account: ApiAccount;
     createdAt: Date;
     updatedAt: Date;
     deletedAt?: Date;
@@ -18,6 +19,13 @@ export class ApiDegree {
     createdAt: Date;
     updatedAt: Date;
     deleteAt?: Date;
+}
+
+export class ApiAccount {
+    id: number;
+    ownerId: number;
+    users: ApiUser[];
+    balance: number;
 }
 
 export class ApiCreateUserDto {

@@ -23,7 +23,7 @@ export class calculoDebito implements PipeTransform {
       });
       valorTotalVenda += total;
     }
-    valorTotalVenda = -Math.abs(valorTotalVenda) + socio.credito;
+    valorTotalVenda = -Math.abs(valorTotalVenda) + +socio.credito;
     return valorTotalVenda;
   }
 }

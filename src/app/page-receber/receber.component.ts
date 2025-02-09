@@ -96,6 +96,7 @@ export class ReceberComponent implements OnInit {
   }
 
   abrirPagar(socio: SocioModel) {
+    console.log(socio);
     const dialogRef = this.matDialog.open(PagarComponent, {
       panelClass: 'PagarComponent',
       data: {

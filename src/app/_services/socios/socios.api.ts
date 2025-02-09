@@ -56,7 +56,7 @@ export class SociosServiceApiUserImpl implements SociosService {
       id: user.id,
       nome: user.name,
       grau: user.degree.name as grauSocioEnum,
-      credito: 0, // TODO
+      credito: user.account?.balance ?? 0,
       nucleo: {
         id: user.nucleo.id,
         nome: user.nucleo.name

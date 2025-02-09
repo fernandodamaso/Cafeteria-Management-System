@@ -24,6 +24,9 @@ export class ApiOrderItem {
   createdAt: Date;
   updatedAt: Date;
   deletedAt?: Date;
+  
+  // TODO: remove with OrderItemPayment
+  paymentId?: number;
 }
 
 class ApiOrderItemDto {

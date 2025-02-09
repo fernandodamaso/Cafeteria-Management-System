@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { first, map, Observable } from "rxjs";
 import { VendasService } from "./vendas.service";
 import { ApiCreateOrderDto, ApiOrder } from "./api.model";
+import { ProdutoModel } from "src/app/_models/produto.model";
 
 @Injectable({
   providedIn: "root",
@@ -58,25 +59,43 @@ export class VendasServiceApiOrderImpl implements VendasService {
   }
 
   private toVendaModel(order: ApiOrder): vendaModel {
+
+    const produtosAbertos: ProdutoModel[] = order.items.filter(orderItem => !orderItem.paymentId).map( orderItem => ({
+      id: orderItem.id,
+      ativo: orderItem.product.product.isActive,
+      nome: orderItem.product.product.name,
+      precoCusto: 0, // TODO
+      precoVenda: orderItem.product.value,
+      qtdVendas: 0, // TODO
+      tipo: {
+        id: orderItem.product.product.category.id,
+        nome: orderItem.product.product.category.name
+      },
+      dataCompra: new Date(), // TODO
+      status: orderItem.product.product.isActive ? "ativo" : "inativo"
+    }));
+
+    const produtosVendidos: ProdutoModel[] = order.items.filter(orderItem => !!orderItem.paymentId).map( orderItem => ({
+      id: orderItem.id,
+      ativo: orderItem.product.product.isActive,
+      nome: orderItem.product.product.name,
+      precoCusto: 0, // TODO
+      precoVenda: orderItem.product.value,
+      qtdVendas: 0, // TODO
+      tipo: {
+        id: orderItem.product.product.category.id,
+        nome: orderItem.product.product.category.name
+      },
+      dataCompra: new Date(), // TODO
+      status: orderItem.product.product.isActive ? "ativo" : "inativo"
+    }));
+
     return {
       id: order.id,
       idCliente: order.clientId,
-      produtosAbertos: order.items.map( orderItem => ({
-        id: orderItem.product.id,
-        ativo: orderItem.product.product.isActive,
-        nome: orderItem.product.product.name,
-        precoCusto: 0, // TODO
-        precoVenda: orderItem.product.value ?? 0,
-        qtdVendas: 0, // TODO
-        tipo: {
-          id: orderItem.product.product.category.id,
-          nome: orderItem.product.product.category.name
-        },
-        dataCompra: new Date(), // TODO
-        status: orderItem.product.product.isActive ? "ativo" : "inativo"
-      })),
-      produtosVendidos: [],
-      status: "aberto", // TODO
+      produtosAbertos,
+      produtosVendidos,
+      status: produtosAbertos.length > 0 ? "aberto" : "fechado", // TODO
       desconto: 0,
       dataVenda: order.createdAt,
       formaPagamento: "pix", // TODO

@@ -23,6 +23,8 @@ import { NucleosService } from './_services/nucleos/nucleos.service';
 import { NucleosServiceApiNucleosImpl } from './_services/nucleos/nucleos.api';
 import { VendasService } from './_services/vendas/vendas.service';
 import { VendasServiceApiOrderImpl } from './_services/vendas/vendas.api';
+import { PagamentosService } from './_services/pagamentos/pagamentos.service';
+import { PagamentosServiceApiPaymentImpl } from './_services/pagamentos/pagamentos.api';
 
 export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
@@ -60,6 +62,9 @@ export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
     },
     { 
       provide: VendasService, useClass: VendasServiceApiOrderImpl
+    },
+    { 
+      provide: PagamentosService, useClass: PagamentosServiceApiPaymentImpl
     }
   ],
 

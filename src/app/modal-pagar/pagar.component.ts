@@ -12,6 +12,8 @@ import { VendasService } from "src/app/_services/vendas/vendas.service";
 import { DatePipe } from "@angular/common";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { delay } from "rxjs";
+import { PagamentosService } from "../_services/pagamentos/pagamentos.service";
+import { PagamentoProdutosModel } from "../_models/pagamento.model";
 
 export interface dialogData {
   editar: boolean;
@@ -41,6 +43,7 @@ export class PagarComponent implements OnInit {
     private produtosService: ProdutosService,
     private sociosService: SociosService,
     private vendasService: VendasService,
+    private pagamentosService: PagamentosService,
     @Inject(MAT_DIALOG_DATA) public el: dialogData
   ) {
     if (el) {
@@ -108,12 +111,14 @@ export class PagarComponent implements OnInit {
       let somaTotal: number = listaValores.reduce((a, b) => a + b);
       somaTotal = somaTotal * -1;
       this.debito = somaTotal;
-      this.valorTotal = somaTotal + this.informacoesSocio.credito + this.desconto;
+      // this.valorTotal = somaTotal + +this.informacoesSocio.credito + +this.desconto;
+      this.valorTotal = somaTotal;
 
       if (this.valorTotal > 0) {
         this.valorPago = 0;
       } else {
-        this.valorPago = this.valorTotal * -1;
+        this.valorPago = (this.valorTotal * -1) - +this.informacoesSocio.credito;
+        this.valorPago = this.valorPago > 0 ? this.valorPago : 0;
       }
     } else {
       this.valorTotal = 0;
@@ -176,7 +181,7 @@ export class PagarComponent implements OnInit {
   verificarValorPago() {
     const valorTotalPositivo = this.valorTotal * -1;
     if (this.valorPago < valorTotalPositivo) {
-      this.desconto = this.valorPago - valorTotalPositivo;
+      this.desconto = this.valorPago - valorTotalPositivo + +this.informacoesSocio.credito;
       this.desconto = this.desconto * -1;
     } else {
       this.desconto = 0;
@@ -293,14 +298,30 @@ export class PagarComponent implements OnInit {
   }
 
   async salvar() {
-    const vendasFiltradas = this.filtrarVendas();
-    const vendasMap = new Map(this.listaVendas.map((venda) => [venda.id, venda]));
+    // const vendasFiltradas = this.filtrarVendas();
+    // const vendasMap = new Map(this.listaVendas.map((venda) => [venda.id, venda]));
 
-    if (this.listaProdutosAbertos.length > 0) {
-      this.processarProdutosAtivos(vendasFiltradas, vendasMap);
-      await this.atualizarVendasFiltradas(vendasFiltradas);
-    } else {
-      await this.atualizarCreditoSocio();
+    // if (this.listaProdutosAbertos.length > 0) {
+    //   this.processarProdutosAtivos(vendasFiltradas, vendasMap);
+    //   await this.atualizarVendasFiltradas(vendasFiltradas);
+    // } else {
+    //   await this.atualizarCreditoSocio();
+    // }
+
+    const valorItems = this.produtosAtivos.reduce((total, item) => total + item.valor, 0);
+    if (this.valorPago + this.informacoesSocio.credito + this.desconto - valorItems >= 0 ) {
+      const pagamento: PagamentoProdutosModel = {
+        idCliente: this.informacoesSocio.id,
+        valorPago: this.valorPago,
+        produtosVendidos: this.produtosAtivos.map((produto) => produto.idProduto),
+        formaPagamento: this.formaPagamento,
+        desconto: this.desconto
+      }
+
+      await this.pagamentosService.adicionarPagamentoProdutos(pagamento).toPromise();
     }
+
+    this.dialogRef.close();
+
   }
 }
