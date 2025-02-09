@@ -180,7 +180,10 @@ export class PagarComponent implements OnInit {
 
   verificarValorPago() {
     const valorTotalPositivo = this.valorTotal * -1;
-    if (this.valorPago < valorTotalPositivo) {
+    if (
+      (this.valorPago < valorTotalPositivo) &&
+      (this.informacoesSocio.credito < valorTotalPositivo)
+    ) {
       this.desconto = this.valorPago - valorTotalPositivo + +this.informacoesSocio.credito;
       this.desconto = this.desconto * -1;
     } else {
@@ -298,16 +301,7 @@ export class PagarComponent implements OnInit {
   }
 
   async salvar() {
-    // const vendasFiltradas = this.filtrarVendas();
-    // const vendasMap = new Map(this.listaVendas.map((venda) => [venda.id, venda]));
-
-    // if (this.listaProdutosAbertos.length > 0) {
-    //   this.processarProdutosAtivos(vendasFiltradas, vendasMap);
-    //   await this.atualizarVendasFiltradas(vendasFiltradas);
-    // } else {
-    //   await this.atualizarCreditoSocio();
-    // }
-
+    
     const valorItems = this.produtosAtivos.reduce((total, item) => total + item.valor, 0);
     if (this.valorPago + this.informacoesSocio.credito + this.desconto - valorItems >= 0 ) {
       const pagamento: PagamentoProdutosModel = {
